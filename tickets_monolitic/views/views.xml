@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <record id="sale_tickets_smart_button" model="ir.ui.view">
+            <field name="name">tickets.view.buttons</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button name="get_tickets" type="object" class="oe_stat_button" icon="fa-ticket icon">
+                        <div class="o_field_widget o_stat_info">
+                            <field string="Tickets" name="tickets_count" widget="statinfo"/>
+                        </div>
+                    </button>
+                </div>
+            </field>
+        </record>
+        <record id="sale_tickets_view_form" model="ir.ui.view">
+            <field name="name">sale.tickets.view.form</field>
+            <field name="model">sale.tickets</field>
+            <field name="arch" type="xml">
+                <form string="Tickets">
+                    <header>
+                        <button string="Enviar solicitud" name="set_state_to_solitud" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['1', '2', '3','4'])]}"/>
+                        <button string="Comenzar proceso" name="set_state_to_proceso" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['0', '2', '3','4'])]}"/>
+                        <button string="Informar" name="set_state_to_informada" type="object" class="oe_highlight" attrs="{'invisible': [('state', 'in', ['0', '1', '3','4'])]}"/>
+                        <button string="Cancelar" name="set_state_to_cancel" type="object"/>
+                        <field name="state" widget="statusbar" clickable="True"/>                                        
+                    </header>
+                    <sheet>
+                        <h1><field name="name"/></h1>
+                        <h2>
+                            <div class="col">
+                                <label for="monetary_expected" class="oe_edit_only"/>
+                                <div class="o_row">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="monetary_expected" class="oe_inline" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <span class="oe_grey p-2">con Porcentaje de éxito</span>
+                                    <field name="porcertage" widget="float" class="oe_inline"/>
+                                    <span class="oe_grey"> %</span>
+                                </div>
+                            </div>
+                        </h2>
+                        <group>
+                            <group name="ticket_resume" string="Resumen">
+                                <field name="solicitud"/>
+                                <field name="precio"/>
+                                <field name="plazo"/>
+                                <field name="asunto"/>
+                                <field name="autor_id"/>
+                                <field name="asignado_id"/>
+                                <field name="fecha_entrega"/>
+                            </group>
+                            <group name="ticket_details" string="Detalles">
+                                <field name="monetary_expected" widget="monetary" invisible="1"/>
+                                <field name="descripcion"/>
+                                <field name="proveedor_ids" widget="many2many_tags"/>
+                                <field name="products_ids" widget="many2many_tags"/>
+                                <field name="order_id"/>
+                                <field name="partner_id"/>
+                                <field name="currency_id"/>
+                            </group>
+                          </group>
+                          <notebook invisible="1">
+                              <page name="lines" string="Lines">
+                                  <field name="line_ids" widget="one2many_list"/>
+                              </page>
+                          </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sale_tickets_view_tree" model="ir.ui.view">
+            <field name="name">sale.tickets.view.tree</field>
+            <field name="model">sale.tickets</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="order_id" />
+                    <field name="partner_id" />
+                    <field name="solicitud" />
+                    <field name="precio" />
+                    <field name="plazo" />
+                    <field name="asunto" />
+                    <field name="autor_id" />
+                    <field name="asignado_id" />
+                    <field name="currency_id" />
+                    <field name="fecha_entrega" />
+                    <field name="proveedor_ids" widget="many2many_tags"/>
+                    <field name="products_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+        <record id="sale_tickets_action" model="ir.actions.act_window">
+            <field name="name">Tickets</field>
+            <field name="res_model">sale.tickets</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <!--field name="context">{'chat_icon': True}</field-->
+            <field name="view_id" eval="False"/>
+            <!--field name="search_view_id" ref="view_employee_filter"/-->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Add a new ticket
+                </p>
+            </field>
+        </record>
+        <menuitem
+            id="sale_tickets_menu"
+            name="Tickets"
+            action="sale_tickets_action"
+            parent="sale.sale_menu_root"/>
+    </data>
+</odoo>
