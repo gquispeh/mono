@@ -46,8 +46,8 @@
                                 <field name="precio"/>
                                 <field name="plazo"/>
                                 <field name="asunto"/>
-                                <field name="autor_id"/>
-                                <field name="asignado_id"/>
+                                <field name="autor_id" widget="many2one_avatar_user"/>
+                                <field name="asignado_id" widget="many2one_avatar_user"/>
                                 <field name="fecha_entrega"/>
                             </group>
                             <group name="ticket_details" string="Detalles">
