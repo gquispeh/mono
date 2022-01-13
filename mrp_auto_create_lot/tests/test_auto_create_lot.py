@@ -12,7 +12,8 @@ class TestMrpAutoCreateLot(TransactionCase):
         self.bom_model = self.env['mrp.bom']
         self.picking_model = self.env['stock.picking']
         self.stock_location_stock = self.env.ref('stock.stock_location_stock')
-        self.manufacture_route = self.env.ref('mrp.route_warehouse0_manufacture')
+        self.manufacture_route = self.env.ref(
+            'mrp.route_warehouse0_manufacture')
         self.uom_unit = self.env.ref('uom.product_uom_unit')
 
         self.workcenter = self.env['mrp.workcenter'].create({
