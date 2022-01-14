@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <!-- Add you code here -->
+        <record id="mail.mail_activity_rule_user" model="ir.rule">
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('sub_user_ids', 'in', user.id)]</field>
+        </record>
+    </data>
+</odoo>

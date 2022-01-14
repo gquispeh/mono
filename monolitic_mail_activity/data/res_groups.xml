@@ -1,0 +1,7 @@
+<odoo>
+    <record id="monolitic_crm.group_crm_view" model="res.groups">
+        <field name="menu_access" eval="[
+            (4, ref('monolitic_mail_activity.menu_crm_activity_sub_type')),
+        ]"/>
+    </record>
+</odoo>

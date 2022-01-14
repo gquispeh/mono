@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Import leads wizard form -->
+    <record id="view_import_activities" model="ir.ui.view">
+        <field name="name">import.activities.form</field>
+        <field name="model">import.activity</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import Activities">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="delimeter"/>
+                    <field name="data" filename="name" colspan="4" />
+                </group>
+                <footer>
+                    <button name="action_import" string="Import" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_activities" model="ir.actions.act_window">
+        <field name="name">Import Activities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">import.activity</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_import_activities"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_definition_import_activities"
+        parent="import_attachments.menu_import_data" action="action_import_activities"/>
+
+</odoo>

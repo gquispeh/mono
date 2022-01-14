@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Import leads wizard form -->
+    <record id="view_import_lead" model="ir.ui.view">
+        <field name="name">import.lead.form</field>
+        <field name="model">import.lead</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import leads">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="delimeter"/>
+                    <field name="data" filename="name" colspan="4" />
+                    <field name="update"/>
+                </group>
+                <footer>
+                    <button name="action_import" string="Import" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_lead" model="ir.actions.act_window">
+        <field name="name">Import leads / opportunities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">import.lead</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_import_lead"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_definition_import_lead" sequence="1"
+        parent="crm.crm_menu_config" action="action_import_lead"/>
+
+</odoo>

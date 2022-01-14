@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate="1">
+    <record model="ir.cron" id="copy_stock_quant_cron">
+        <field name="name">Copy stock quant table</field>
+        <field name="interval_number">7</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=7)).strftime('%Y-%m-%d %H:01:00')"/>
+        <field name="doall" eval="True"/>
+        <field name="model_id" ref="monolitic_stock.model_stock_quant_historic"/>
+        <field name="state">code</field>
+        <field name="code">
+            model._copy_stock_quant_table()
+        </field>
+    </record>
+</odoo>

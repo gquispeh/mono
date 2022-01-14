@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record id="crm_project_action" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="domain">[('lead_id', '=', active_id)]</field>
+            <field name="context">{'search_default_lead_id': [active_id], 'default_lead_id': active_id}
+            </field>
+        </record>
+        <!-- REDIRIGIR ACCIÓN A UNA VISTA CREAR PROYECTO WIZARD -->
+        <record id="action_project_new" model="ir.actions.act_window">
+            <field name="name">Create Project</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">form,tree,graph</field>
+            <field name="domain">[('lead_id', '=', active_id)]</field>
+            <field name="context">{'search_default_lead_id': active_id, 'default_lead_id': active_id}
+            </field>
+        </record>
+
+        <record id="crm_case_form_view_oppor_inherit" model="ir.ui.view">
+            <field name="name">crm.case.form.view.oppor.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button"
+                            type="action"
+                            context="{'lead_id': active_id}"
+                            name="%(crm_project_action)d"
+                            icon="fa-puzzle-piece">
+                        <div class="o_stat_info">
+                            <field name="count_project" class="o_stat_value"/>
+                            <span>Projects</span>
+                        </div>
+                    </button>
+                </xpath>
+                <!-- CAMBIAR BOTÓN CREAR PROYECTO -->
+                <xpath expr="//header/button[last()]" position="before">
+                    <button string="Create Project"
+                            name="%(project.open_create_project)d"
+                            type="action"
+                            context="{'default_lead_id': id}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

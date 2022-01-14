@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="wizard_create_project_lead_view">
+        <field name="name">create.project.wizard.view</field>
+        <field name="model">create.crm.project.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Project">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Project Name"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page name="settings" string="Settings">
+                            <group>
+                                <group string="Principal Settings">
+                                    <field name="user_id" string="Project Manager"/>
+                                    <field name="privacy_visibility" widget="radio"/>
+                                    <field name="partner_id" string="Contact"/>
+                                    <label for="rating_status"/>
+                                    <div>
+                                        <field name="rating_status" widget="radio"/>
+                                    </div>
+                                    <field name="rating_status_period" class="oe_inline"
+                                           attrs="{'required': [('rating_status','=','periodic')], 'invisible': [('rating_status','!=','periodic')]}"/>
+                                    <field name="portal_show_rating"
+                                           attrs="{'invisible': [('rating_status','==','no')]}"/>
+                                    <field name="color"/>
+                                </group>
+                                    <group string="Time Scheduling">
+                                        <field name="resource_calendar_id"/>
+                                        <field name="date_start"/>
+                                        <field name="date"/>
+                                    </group>
+                            </group>
+                        </page>
+                        <page string="Project Stages"
+                              name="project_stages">
+                            <field name="type_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="create_project"
+                            string="Create Project"
+                            type="object"
+                            default_focus="1"
+                            class="oe_highlight"/>
+                    or
+                    <button string="Cancel"
+                            class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_wizard_create_report">
+        <field name="name">Create Poject</field>
+        <field name="res_model">create.crm.project.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_create_project_lead_view"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

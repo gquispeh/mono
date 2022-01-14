@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rma_claim_line_ept_tree_view">
+            <field name="name">RMA Claim Line Ept Tree</field>
+            <field name="model">claim.line.ept</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_id"/>
+                    <field name="product_description"/>
+                    <field name="product_categ_id"/>
+                    <field name="product_reference"/>
+                    <field name="manufacturer_rma"/>
+                    <field name="done_qty"/>
+                    <field name="quantity"/>
+                    <field name="rma_reason_id"/>
+                    <field name="return_qty" readonly="1"/>
+                    <field name="claim_type" string="Action"/>
+                    <field name="is_create_refund" attrs="{'invisible':[('claim_type','!=','replace')]}"/>
+                    <field name="sale_line_id" invisible="1"/>
+                    <field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                    <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="currency_id" invisible="1" />
+                    <field name="warranty"/>
+                    <field name="ept_state_id" options="{'no_create_edit': True, 'no_open': True}" />
+                    <!-- <button name="open_notes" icon="fa-pencil" type="object" title="Notes"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="rma_claim_line_ept_form_view">
+            <field name="name">RMA Claim Line Ept Form</field>
+            <field name="model">claim.line.ept</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="product_description"/>
+                            <field name="product_categ_id"/>
+                            <field name="product_reference"/>
+                            <field name="manufacturer_rma"/>
+                            <field name="done_qty"/>
+                            <field name="quantity"/>
+                            <field name="rma_reason_id"/>
+                            <field name="return_qty" readonly="1"/>
+                            <field name="claim_type" string="Action"/>
+                            <field name="is_create_refund" attrs="{'invisible':[('claim_type','!=','replace')]}"/>
+                            <field name="sale_line_id" invisible="1"/>
+                            <field name="price_unit" widget="monetary" options="{'currency_field': 'currency_id'}" invisible="1"/>
+                            <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="currency_id" invisible="1" />
+                            <field name="warranty"/>
+                            <field name="ept_state_id" options="{'no_create_edit': True, 'no_open': True}" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rma_claim_line_ept_action">
+            <field name="name">RMA Lines</field>
+            <field name="res_model">claim.line.ept</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="rma_claim_line_ept_tree_view"/>
+        </record>
+
+        <menuitem name="RMA Lines" id="menu_rma_claim_line_ept" groups="rma_ept.group_rma_manager_ept" action="rma_claim_line_ept_action" parent="rma_ept.menu_crm_claim_ept_after_sale" sequence="4"/>
+    </data>
+</odoo>

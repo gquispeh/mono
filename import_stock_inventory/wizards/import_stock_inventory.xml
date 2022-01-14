@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Import stock inventory wizard form -->
+    <record id="view_import_stock_inventory" model="ir.ui.view">
+        <field name="name">import.stock.inventory.form</field>
+        <field name="model">import.stock.inventory</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import Stock Inventory">
+                <group colspan="4" col="4">
+                    <field name="name" />
+                    <field name="delimeter"/>
+                </group>
+                <group>
+                    <field name="data" filename="name"/>
+                </group>
+                <separator colspan="4"/>
+                <footer>
+                    <button name="action_import" string="Import" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_stock_inventory" model="ir.actions.act_window">
+        <field name="name">Import Stock Inventory</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">import.stock.inventory</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_import_stock_inventory"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_definition_import_stock_inventory" sequence="99"
+        parent="stock.menu_stock_config_settings" action="action_import_stock_inventory"/>
+
+</odoo>

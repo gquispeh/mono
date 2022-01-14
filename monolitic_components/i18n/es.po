@@ -1,0 +1,388 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_hr_training
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-03 07:55+0000\n"
+"PO-Revision-Date: 2019-09-03 09:57+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__responsable_id
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__user_id
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__responsable_id
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__user_id
+msgid "Assigned User"
+msgstr "Usuario Asignado"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+msgid "Assigned to me"
+msgstr "Asignados a mi"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_component_type__attributes_ids
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__attribute_ids
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__attribute_ids
+msgid "Attributes"
+msgstr "Attributos"
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "BCN-Planta0"
+msgstr ""
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "BCN-Planta1"
+msgstr ""
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "BCN-Planta2"
+msgstr ""
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "BCN-Planta3"
+msgstr ""
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "Bilbao"
+msgstr ""
+
+#. module: monolitic_components
+#: selection:product.template,component_state:0
+msgid "Broken"
+msgstr "Estropeado"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_tree
+msgid "Component Attributes"
+msgstr "Attributos"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.components_form_view
+msgid "Component Info"
+msgstr "Información Componente"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__component_location
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__component_location
+msgid "Component Location"
+msgstr "Localizacion"
+
+#. module: monolitic_components
+#: model:ir.actions.act_window,name:monolitic_components.product_component_type_action
+#: model:ir.model,name:monolitic_components.model_product_component_type
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__component_type
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__component_type
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+msgid "Component Type"
+msgstr "Tipo Componente"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__is_component
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__is_component
+msgid "Componente"
+msgstr ""
+
+#. module: monolitic_components
+#: model:ir.actions.act_window,name:monolitic_components.components_action_view
+#: model:product.category,name:monolitic_components.component_product_category
+msgid "Components"
+msgstr "Componentes"
+
+#. module: monolitic_components
+#: model_terms:ir.actions.act_window,help:monolitic_components.components_action_view
+msgid "Create a new Component Here"
+msgstr "Crear un nuevo componente aqui"
+
+#. module: monolitic_components
+#: model_terms:ir.actions.act_window,help:monolitic_components.product_component_type_action
+msgid "Create new component type"
+msgstr "Crear un nuevo tipo de componente"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_component_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__create_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__create_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_component_type__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: monolitic_hr_training
+#: model:ir.model,name:monolitic_hr_training.model_hr_employee
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__employee_id
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: monolitic_hr_training
+#: selection:training.training,type:0
+msgid "Empty"
+msgstr "Vacio"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__favorited_ids
+msgid "Favorite of"
+msgstr "Favorito de"
+
+#. module: monolitic_hr_training
+#: selection:training.training,type:0
+msgid "File"
+msgstr "Archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__datas
+msgid "File Content"
+msgstr "Contenido del archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__file_size
+msgid "File Size"
+msgstr "Tamaño del archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__datas_fname
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__folder_id
+msgid "Folder"
+msgstr "Carpeta"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__grade
+msgid "Grades"
+msgstr "Nota"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__id
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__id
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__id
+msgid "ID"
+msgstr ""
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+msgid "Insured"
+msgstr "Asegurado"
+
+#. module: monolitic_components
+#: model:ir.ui.menu,name:monolitic_components.components_menu_act
+msgid "Inventory TIC"
+msgstr "Inventario TIC"
+
+#. module: monolitic_components
+#: model:ir.ui.menu,name:monolitic_components.components_menu_parent
+msgid "Inventory TIC Managment"
+msgstr "Gestión Inventario TIC"
+
+#. module: monolitic_components
+#: model:ir.ui.menu,name:monolitic_components.components_type_menu_act
+msgid "Inventory TIC Types"
+msgstr "Tipos de inventario TIC"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__is_accounting_active
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__is_accounting_active
+msgid "Is Accounting Active"
+msgstr "Contablemente Activo"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__is_insured
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__is_insured
+msgid "Is Insured"
+msgstr "Asegurado"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_sale_form_view
+msgid "Is a component"
+msgstr "Es un componente"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__last_check_date
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__last_check_date
+msgid "Last Check Date"
+msgstr "Fecha ultima revisión"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_component_type____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__write_uid
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__write_uid
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__write_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__write_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_components
+#: selection:product.template,component_state:0
+msgid "Lost"
+msgstr "Perdido"
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "Madrid"
+msgstr ""
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_component_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_components
+#: selection:product.template,component_state:0
+msgid "Obsolete"
+msgstr "Obsoleto"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+#: selection:product.template,component_state:0
+msgid "Operative"
+msgstr "Operativo"
+
+#. module: monolitic_components
+#: model:ir.model.fields,help:monolitic_components.field_product_product__responsable_id
+#: model:ir.model.fields,help:monolitic_components.field_product_template__responsable_id
+msgid "Partner-related data of the user"
+msgstr "Datos del usuario relativos a la empresa"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__attribute_line_ids
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__attribute_line_ids
+msgid "Product Attributes"
+msgstr "Atributos del producto"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__categ_id
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__categ_id
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: monolitic_components
+#: model:ir.model,name:monolitic_components.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: monolitic_components
+#: model:ir.model,name:monolitic_components.model_product_template_attribute_line
+msgid "Product Template Attribute Line"
+msgstr "Plantilla Producto Lineas de Attributo"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__purchase_date
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__purchase_date
+msgid "Purchase Date"
+msgstr "Fecha de compra"
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__component_quantity
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__component_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+msgid "Search Components"
+msgstr "Buscar componentes"
+
+#. module: monolitic_components
+#: model:ir.model.fields,help:monolitic_components.field_product_product__categ_id
+#: model:ir.model.fields,help:monolitic_components.field_product_template__categ_id
+msgid "Select category for the current product"
+msgstr "Seleccione la categoría para el producto actual."
+
+#. module: monolitic_components
+#: model:ir.model.fields,field_description:monolitic_components.field_product_product__component_state
+#: model:ir.model.fields,field_description:monolitic_components.field_product_template__component_state
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_search
+msgid "State"
+msgstr "Estado"
+
+#. module: monolitic_components
+#: model:res.groups,name:monolitic_components.group_tic_department
+msgid "Stock Manager TIC Department"
+msgstr "Gestión de Stock Departamento TIC"
+
+#. module: monolitic_components
+#: selection:product.template,component_state:0
+msgid "Stolen"
+msgstr "Robado"
+
+#. module: monolitic_components
+#: model_terms:ir.ui.view,arch_db:monolitic_components.component_view_tree
+msgid "Total"
+msgstr ""
+
+#. module: monolitic_components
+#: selection:product.template,component_location:0
+msgid "Valencia"
+msgstr ""
+
+#. module: monolitic_components
+#: code:addons/monolitic_components/models/product_template_attribute_line.py:18
+#, python-format
+msgid "You cannot use this attribute with the following value."
+msgstr "No puedes utilizar el attributo con este valor."

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="group_commercial_rules" model="res.groups">
+        <field name="name">Commercial rules</field>
+        <field name="menu_access" eval="[(4, ref('contacts.menu_contacts'))]"/>
+    </record>
+    <record id="group_delegate_rules" model="res.groups">
+        <field name="name">Delegate rules</field>
+        <field name="menu_access" eval="[(4, ref('contacts.menu_contacts'))]"/>
+    </record>
+    <record id="group_sale_order_line_edition" model="res.groups">
+        <field name="name">Sale order line edition</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+        <field name="menu_access" eval="[
+            (4, ref('sale.sale_menu_root')),
+        ]"/>
+    </record>
+    <record id="group_budget_view" model="res.groups">
+        <field name="name">Budget and Sale order view</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+        <field name="menu_access" eval="[
+            (4, ref('sale.sale_menu_root')),
+            (4, ref('sale.sale_order_menu')),
+            (4, ref('sale.menu_sale_order')),
+            (4, ref('sale.report_sales_team')),
+            (4, ref('sale.res_partner_menu')),
+            (4, ref('sale.menu_sale_quotations')),
+            (4, ref('sale.menu_sale_invoicing')),
+            (4, ref('sale.menu_sale_order_invoice')),
+            (4, ref('sale.menu_sale_order_upselling')),
+            (4, ref('sale.product_menu_catalog')),
+            (4, ref('sale.menu_product_template_action')),
+            (4, ref('sale.menu_products')),
+            (4, ref('sale.menu_product_pricelist_main')),
+            (4, ref('monolitic_components.components_menu_act')),
+            (4, ref('monolitic_components.components_type_menu_act')),
+            (4, ref('sale.menu_sale_report')),
+            (4, ref('monolitic_sales.menu_commercial_target_amount')),
+            (4, ref('monolitic_sales.menu_sales_prevision_amount')),
+            (4, ref('sale.menu_sale_config')),
+            (4, ref('sale.menu_sale_general_settings')),
+            (4, ref('sale.sales_team_config')),
+            (4, ref('monolitic_sales.menu_commercial_target_coeficient')),
+            (4, ref('monolitic_sales.menu_commercial_users')),
+            (4, ref('monolitic_sales.menu_mass_edit_commercial_wizard')),
+            (4, ref('sale.menu_sales_config')),
+            (4, ref('sale.menu_tag_config')),
+            (4, ref('delivery.sale_menu_action_delivery_carrier_form')),
+            (4, ref('sale.prod_config_main')),
+            (4, ref('sale_management.menu_product_attribute_action')),
+            (4, ref('sale.menu_product_uom_form_action')),
+            (4, ref('sale.menu_product_uom_categ_form_action')),
+            (4, ref('sale.sale_menu_config_activity_type')),
+            (4, ref('sale_cancel_reason.menu_sale_order_cancel_reason')),
+        ]"/>
+    </record>
+    <record id="group_budget_edition" model="res.groups">
+        <field name="name">Budget edition</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+        <field name="implied_ids" eval="[(4, ref('monolitic_sales.group_budget_view'))]"/>
+    </record>
+    <record id="group_sale_order_edition" model="res.groups">
+        <field name="name">Sale order edition</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+        <field name="implied_ids" eval="[(4, ref('monolitic_sales.group_budget_view'))]"/>
+    </record>
+    <record id="group_sat_view" model="res.groups">
+        <field name="name">SAT view</field>
+        <field name="category_id" ref="base.module_category_sales"/>
+        <field name="menu_access" eval="[
+            (4, ref('sale.sale_menu_root')),
+            (4, ref('rma_ept.menu_crm_claim_ept_after_sale')),
+            (4, ref('rma_ept.menu_crm_claim_ept')),
+            (4, ref('rma_ept.menu_rma_reason_ept')),
+            (4, ref('rma_ept.menu_rma_state_ept')),
+            (4, ref('rma_ept.menu_rma_claim_line_ept')),
+        ]"/>
+    </record>
+</odoo>

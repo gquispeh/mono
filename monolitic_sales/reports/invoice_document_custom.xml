@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="ml_report_invoice_document">
+        <t t-call="web.html_container">
+            <t t-call="monolitic_stock.ml_picking_external_layout">
+                <style>
+                    .table_header {
+                    border: 1px solid;
+                    }
+                    .border_rb {
+                    border-left: 1px solid;
+                    border-top: 1px solid;
+                    }
+                    .left {
+                    float: left;
+                    }
+                    .right {
+                    float: right;
+                    align: left;
+                    width: 40%;
+                    }
+                    .table-padding td{
+                    padding:0 5px 0 0;
+                    }
+                </style>
+                <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+                <t t-set="company" t-value="o.company_id" />
+                <t t-set="partner" t-value="o.partner_id or (o.invoice_line_ids and o.invoice_line_ids[0].partner_id) or False"/>
+                <div class="address row" style="padding-bottom:50px;">
+                    <div name="information_block" class="col-6">
+                        <br/>
+                        <p></p>
+                        <div class="border_rb" t-if="o.partner_shipping_id">
+                            <strong>Shipping address:</strong>
+                            <div t-field="o.partner_shipping_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: False}"/>
+                        </div>
+                    </div>
+                    <div class="col-5 offset-1">
+                        <br/>
+                        <p></p>
+                        <div class="border_rb left" t-if="o.partner_id">
+                            <strong>Invoicing address:</strong>
+                            <div t-esc="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;:[&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                    <div style="display:inline;">
+                        <table class="left">
+                            <tr>
+                                <td>
+                                    <strong>Customer Number:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.partner_id.ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>CIF / NIF:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.partner_id.vat"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="border_rb right">
+                            <tr>
+                                <td>
+                                    <strong>Supplier Nº:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.partner_id.monolitic_supplier_code"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Ntro. Order:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.invoice_origin"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Comercial:</strong>
+                                </td>
+                                <td>
+                                    <span t-esc="', '.join(o.partner_id.user_id.mapped('name'))"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Payment Mode:</strong>
+                                </td>
+                                <td>
+                                    <p t-if="o.payment_mode_id.note">
+                                        <strong>Payment Mode:</strong>
+                                        <span t-field="o.payment_mode_id.note"/>
+                                        <t t-if="o.invoice_payment_term_id">
+                                            <span t-field="o.invoice_payment_term_id.note"/>
+                                        </t>
+                                    </p>
+
+                                </td>
+                                <tr>
+                                    <td>
+                                        <strong>Bank Account:</strong>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.payment_mode_id and o.payment_mode_id.show_bank_account != 'no'">
+                                            <p t-foreach="o.partner_banks_to_show()" t-as="partner_bank">
+                                                <t t-if="partner_bank.bank_id">
+                                                    <t t-esc="partner_bank.bank_id.name + ('' if not partner_bank.bank_id.bic else ' (' + partner_bank.bank_id.bic + ')')"/>
+                                                </t>
+                                                <t t-if="o.payment_mode_id.show_bank_account == 'full'">
+                                                    <span t-field="partner_bank.acc_number"/>
+                                                </t>
+                                                <t t-elif="o.payment_mode_id.show_bank_account == 'first'">
+                                                    <span t-esc="partner_bank.acc_number[:o.payment_mode_id.show_bank_account_chars] + '*' * (len(partner_bank.acc_number) - o.payment_mode_id.show_bank_account_chars)"/>
+                                                </t>
+                                                <t t-elif="o.payment_mode_id.show_bank_account == 'last'">
+                                                    <span t-esc="'*' * (len(partner_bank.acc_number) - o.payment_mode_id.show_bank_account_chars) + partner_bank.acc_number[-o.payment_mode_id.show_bank_account_chars:]"/>
+                                                </t>
+                                            </p>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Date Due:</strong>
+                                    </td>
+                                    <td t-if="o.invoice_date_due">
+                                        <span t-field="o.invoice_date_due"/>
+                                    </td>
+                                </tr>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div style="padding-top:60px">
+                        <table>
+                            <tr style="margin-top:15px">
+                                <td>
+                                    <strong>Order:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.invoice_origin"/>
+                                </td>
+                            </tr>
+                            <tr t-if="o.user_id">
+                                <td>
+                                    <strong>Commercial:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.user_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Delivery Conditions:</strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.picking_ids" t-field="o.picking_ids[0].delivery_conditions"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Carrier:</strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.picking_ids" t-field="o.picking_ids[0].carrier_id"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <p></p>
+                        <p>
+                            Le informamos de que las condiciones relacionadas con pedidos, entregas, formas de pago, propiedad
+                            intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta
+                            que aparecen publicadas en la web: www.monolitic.com
+                        </p>
+                    </div>
+                    <table class="table table-sm mt48">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <br/>
+                                    <strong>Su código</strong>
+                                </th>
+                                <th>
+                                    <strong>Reference - Description</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Quantity</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Price Unit</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Subtotal</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="description" t-value="''" />
+                            <tr t-foreach="o.invoice_line_ids" t-as="line" style="border-top:0px">
+                                <td>
+                                    <span t-esc="line.product_id.get_customer_code(o.partner_id)" />
+                                </td>
+                                <td>
+                                    <strong>
+                                        <p t-if="line.product_id and line.product_id.default_code" t-esc="line.product_id.default_code" />
+                                    </strong>
+                                    <p t-if="line.product_id" t-esc="line.product_id.name" />
+
+                                    <t t-if="line.product_id and line.product_id.default_code and 'Delivery' not in line.product_id.default_code">
+                                        <p>
+                                            <span t-if="line.product_id and not line.product_id.rohs_regulation">No</span>
+                                    RoHS Compilant
+                                        </p>
+                                        <p t-if="line.product_id and line.product_id.ecoraee_active">Precio de venta incluye ecotasa RAEE</p>
+                                    </t>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="'%0.1f'%(line.quantity)"/>
+                                    <span t-field="line.product_uom_id" groups="uom.group_uom"/>
+                                </td>
+                                <td t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                    <span t-esc="'%0.2f'%(line.price_unit)" />
+                                </td>
+
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p></p>
+                    <div class="clearfix">
+                        <div id="total" class="row">
+                            <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                                <table class="table table-sm" style="page-break-inside: avoid;">
+                                    <tr class="border-black o_subtotal" style="">
+                                        <td>
+                                            <strong>Subtotal</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_untaxed"/>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                        <tr style="">
+                                            <!-- <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and float_compare(o.amount_untaxed, amount_by_group[2], precision_rounding=o.currency_id.rounding) == 0">
+                                                <td><span class="text-nowrap" t-esc="amount_by_group[0]"/></td>
+                                                <td class="text-right o_price_total">
+                                                    <span class="text-nowrap" t-esc="amount_by_group[3]" />
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td>
+                                                    <span t-esc="amount_by_group[0]"/>
+                                                    <span class="text-nowrap"> on
+                                                        <t t-esc="amount_by_group[4]"/>
+                                                    </span>
+                                                </td>
+                                                <td class="text-right o_price_total">
+                                                    <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                                </td>
+                                            </t> -->
+                                            <td>
+                                                <span t-esc="amount_by_group[0]"/>
+                                                <span class="text-nowrap"> on
+                                                    <t t-esc="amount_by_group[4]"/>
+                                                </span>
+                                            </td>
+                                            <td class="text-right o_price_total">
+                                            <span class="text-nowrap" t-esc="amount_by_group[3]"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr class="border-black o_total">
+                                        <td>
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_total"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <p t-if="o.payment_reference">
+                        Please use the following communication for your payment : <b>
+                        <span t-field="o.payment_reference"/>
+                    </b>
+                </p>
+                <p t-if="o.invoice_payment_term_id" name="payment_term">
+                    <span t-field="o.invoice_payment_term_id.note"/>
+                </p>
+                <p t-if="o.fiscal_position_id.note" name="note">
+                    <span t-field="o.fiscal_position_id.note"/>
+                </p>
+                <div id="qrcode" t-if="(o.company_id.qr_code) and (o.currency_id.name == 'EUR') and (o.partner_bank_id.acc_number != False)">
+                    <p t-if="(o.partner_bank_id.qr_code_valid)">
+                        <strong class="text-center">Scan me with your banking app.</strong>
+                        <br/>
+                        <br/>
+                        <img class="border border-dark rounded" t-att-src="o.partner_bank_id.build_qr_code_url(o.residual,(o.payment_reference) if (o.payment_reference) else o.name)"/>
+                    </p>
+                    <p t-if="(o.partner_bank_id.qr_code_valid == False)">
+                        <strong class="text-center">The SEPA QR Code informations are not set correctly.</strong>
+                        <br/>
+                    </p>
+                </div>
+            </div>
+        </t>
+    </t>
+</template>
+
+<template id="ml_report_invoice">
+    <t t-foreach="docs" t-as="o">
+        <t t-call="monolitic_sales.ml_report_invoice_document" t-lang="o.partner_id.lang"/>
+    </t>
+</template>
+
+<report id="ml_report_invoice_custom" model="account.move" string="Invoice" report_type="qweb-pdf" name="monolitic_sales.ml_report_invoice" file="'Delivery Slip - %s - %s' % (object.partner_id.name or '', object.name)" />
+
+<record id="ml_report_invoice_custom" model="ir.actions.report">
+    <field name="paperformat_id" ref="monolitic_stock.paperformat_wo_mrp_stock_picking"/>
+</record>
+
+</odoo>

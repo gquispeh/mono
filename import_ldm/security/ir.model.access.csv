@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_ldm,access.import.ldm,model_import_ldm,base.group_system,1,1,1,1
+access_import_operations,access.import.operations,model_import_ldm_operations,base.group_system,1,1,1,1

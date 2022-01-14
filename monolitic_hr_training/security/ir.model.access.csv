@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_training_training,access.training.training,model_training_training,base.group_user,1,1,1,1
+manager_training_training,access.training.training,model_training_training,hr.group_hr_manager,1,1,1,1
+access_training_course,access.training.course,model_training_course,base.group_user,1,0,0,0
+manager_training_course,manager.training.course,model_training_course,hr.group_hr_manager,1,1,1,1
+access_training_course_tags,access.training.course.tags,model_training_course_tags,base.group_user,1,1,1,1

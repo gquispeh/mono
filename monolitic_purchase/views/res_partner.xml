@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="partner_supplier_view_id" model="ir.ui.view">
+        <field name="name">res.partner.supplier.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="purchase.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_purchase_currency_id']" position="after">
+                <field name="is_supplier" invisible="1"/>
+                <field name="supplier_classification" attrs="{'required': [('is_supplier', '=', True)]}" />
+                <label for="product_category_id" string="Segmentación de Producto"/>
+                <span>
+                    <field name="product_category_id" domain="[('level_parents', '>=', 2), ('complete_name', 'not ilike', 'All')]" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <button name="%(monolitic_product.product_category_wizard_action)d" string="Asistente" context="{'default_num_required': 2, 'field_to_write': 'product_category_id'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                </span>
+                <field name="register_project_protection" attrs="{'readonly': [('supplier_classification', 'not in', ['critic','no_critic'])]}" />
+
+                <label name="warranty" for="warranty"/>
+                <div>
+                    <field name="warranty" class="oe_inline"/>
+                    <field name="warranty_type" class="oe_inline"/>
+                </div>
+
+                <label name="lead_time" for="lead_time"/>
+                <div>
+                    <field name="lead_time" class="oe_inline"/>
+                    <field name="lead_time_type" class="oe_inline"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner buttons inherit form view -->
+    <record  model="ir.ui.view" id="purchase.res_partner_view_purchase_buttons">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+    <record id="res_partner_view_purchase_buttons_inherit" model="ir.ui.view">
+        <field name="name">res.partner.view.purchase.buttons.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="purchase.res_partner_view_purchase_buttons"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(purchase.act_res_partner_2_purchase_order)d']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_purchase_view</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template id="monolitic_report_inventory" inherit_id="stock.report_inventory">
+        <xpath expr="//table/thead/tr/th[last()]" position="replace">
+            <th class="text-right"><strong>Quantity (scanned / real)</strong></th>
+        </xpath>
+        <xpath expr="//table/tbody/t/tr[last()]/td[last()]" position="replace">
+            <td class="text-right"><span t-field="line.product_qty"/> / <span t-field="line.theoretical_qty"/> <span t-field="line.product_uom_id" groups="uom.group_uom"/></td>
+        </xpath>
+    </template>
+
+</odoo>

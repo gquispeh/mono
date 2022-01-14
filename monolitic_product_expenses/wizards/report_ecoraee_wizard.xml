@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- report.ecoraee.wizard form view -->
+    <record id="report_ecoraee_wizard_view" model="ir.ui.view">
+        <field name="name">report.ecoraee.wizard.view</field>
+        <field name="model">report.ecoraee.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group col="4">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>
+
+                <footer>
+                    <button name="%(report_ecoraee)d" string="Generate Report" type="action" class="oe_highlight" />
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_report_ecoraee" model="ir.actions.act_window">
+        <field name="name">EcoRAEE Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.ecoraee.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="report_ecoraee_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="report_menu_ecoraee_act" name="EcoRAEE Report"
+        parent="account_reports.account_reports_audit_reports_menu"
+        action="action_report_ecoraee" sequence="1"/>
+</odoo>

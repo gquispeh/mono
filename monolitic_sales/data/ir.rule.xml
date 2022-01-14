@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="commercial_own_leads" model="ir.rule">
+        <field name="name">Commercial own leads</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">['|', '|', '|', ('partner_id.user_id', 'in', user.ids),
+            ('partner_id.user_id', '=', False),
+            ('partner_id.user_id', 'in', user.replacement_ids.ids),
+            ('partner_id', '=', False)]</field>
+        <field name="active" eval="True" />
+    </record>
+
+    <record id="delegate_own_leads" model="ir.rule">
+        <field name="name">Delegate own leads</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', ('partner_id.user_id', 'in', user.subordinate_ids.ids),
+            ('partner_id.user_id', 'in', user.ids),
+            ('partner_id.user_id', '=', False),
+            ('partner_id.user_id', 'in', user.replacement_ids.ids),
+            ('partner_id','=', False)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="commercial_own_activities" model="ir.rule">
+        <field name="name">Commercial own activities</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('create_uid','=',user.id)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="user_own_activities" model="ir.rule">
+        <field name="name">User own activities</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('create_uid','=',user.id)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_activities" model="ir.rule">
+        <field name="name">Delegate own activities</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('create_uid','=',user.id)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="commercial_own_partners" model="ir.rule">
+        <field name="name">Commercial own partners</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">['|', '|',
+            ('user_id', 'in', user.ids),
+            ('user_id', '=', False),
+            ('user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_partners" model="ir.rule">
+        <field name="name">Delegate own partners</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', '|', '|','|',
+            ('user_id', 'in', user.ids),
+            ('user_id', '=', False),
+            ('user_id', 'in', user.replacement_ids.ids),
+            ('user_id', 'in', user.subordinate_ids.ids),
+            ('type','=','person')]
+        </field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="partner_edition_person_view" model="ir.rule">
+        <field name="name">Partner edition person view</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">[('type','=','person')]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="company_create_company_view" model="ir.rule">
+        <field name="name">Company create company view</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">[('type','=','company')]</field>
+        <field name="active" eval="True" />
+    </record>
+
+    <record id="commercial_own_commercial_target" model="ir.rule">
+        <field name="name">Commercial own commercial target</field>
+        <field name="model_id" ref="monolitic_sales.model_commercial_target"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="commercial_own_customer_prevision" model="ir.rule">
+        <field name="name">Commercial own customer prevision</field>
+        <field name="model_id" ref="monolitic_sales.model_customer_prevision"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="commercial_own_monthly_amounts" model="ir.rule">
+        <field name="name">Commercial own monthly amounts</field>
+        <field name="model_id" ref="monolitic_sales.model_commercial_monthly_amount"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="commercial_own_sale_order_lines" model="ir.rule">
+        <field name="name">Commercial own sale order lines</field>
+        <field name="model_id" ref="sale.model_sale_order_line"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">['|','|',('order_id.partner_id.user_id','in',user.ids),('order_id.partner_id.user_id','=',False), ('order_id.partner_id.user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="commercial_own_sale_order" model="ir.rule">
+        <field name="name">Commercial own sale orders</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_commercial_rules'))]"/>
+        <field name="domain_force">['|', '|', ('partner_id.user_id', 'in', user.ids), ('partner_id.user_id', '=', False), ('partner_id.user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_commercial_target" model="ir.rule">
+        <field name="name">Delegate own commercial target</field>
+        <field name="model_id" ref="monolitic_sales.model_commercial_target"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', ('user_id', 'in', user.ids), ('user_id', 'in', user.subordinate_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_customer_prevision" model="ir.rule">
+        <field name="name">Delegate own customer prevision</field>
+        <field name="model_id" ref="monolitic_sales.model_customer_prevision"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', ('user_id', 'in', user.ids), ('user_id', 'in', user.subordinate_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_monthly_amounts" model="ir.rule">
+        <field name="name">Delegate own monthly amounts</field>
+        <field name="model_id" ref="monolitic_sales.model_commercial_monthly_amount"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', '|', ('user_id', '=', user.id), ('user_id', 'in', user.subordinate_ids.ids), ('user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_sale_order_lines" model="ir.rule">
+        <field name="name">Delegate own sale order lines</field>
+        <field name="model_id" ref="sale.model_sale_order_line"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|', '|', '|', ('order_id.partner_id.user_id','in',user.ids),('order_id.partner_id.user_id','=',False), ('order_id.partner_id.user_id', 'in', user.subordinate_ids.ids), ('order_id.partner_id.user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="delegate_own_sale_order" model="ir.rule">
+        <field name="name">Delegate own sale orders</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_sales.group_delegate_rules'))]"/>
+        <field name="domain_force">['|','|','|',
+            ('partner_id.user_id', 'in', user.subordinate_ids.ids),
+            ('partner_id.user_id', 'in', user.ids),
+            ('partner_id.user_id', '=', False),
+            ('partner_id.user_id', 'in', user.replacement_ids.ids)]</field>
+        <field name="active" eval="True" />
+    </record>
+</odoo>

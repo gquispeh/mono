@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- fleet.vehicle inherit form view -->
+    <record id="fleet_vehicle_view_id" model="ir.ui.view">
+        <field name="name">fleet.vehicle.inherit.view.form</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='open_assignation_logs']" position="attributes">
+                <attribute name="groups">fleet.fleet_group_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='return_action_to_open'][1]" position="attributes">
+                <attribute name="groups">fleet.fleet_group_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='return_action_to_open'][2]" position="attributes">
+                <attribute name="groups">fleet.fleet_group_manager</attribute>
+            </xpath>
+            <xpath expr="//button[@name='return_action_to_open'][3]" position="attributes">
+                <attribute name="groups">fleet.fleet_group_manager</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='horsepower_tax']" position="after">
+                <label for="car_consumption"/>
+                <div class="o_row" name="car_consumption">
+                    <field name="car_consumption"/>
+                    <span>/100 km</span>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='first_contract_date']" position="after">
+                <label for="contracted_km"/>
+                <div class="o_row" name="contracted_km">
+                    <field name="contracted_km"/>
+                    <span>km</span>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Add Rma Portal validation js into Odoo -->
+        <template id="rma_form_validation_ept" inherit_id="website.assets_frontend">
+          <xpath expr="link[last()]" position="after">
+               <link rel="stylesheet" href="/website_rma_ept/static/src/scss/rma_portal_validation.scss"></link>
+            </xpath>
+            <xpath expr="script[last()]" position="after">
+            	 <script type="text/javascript" src="/website_rma_ept/static/src/js/rma_portal_validation.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

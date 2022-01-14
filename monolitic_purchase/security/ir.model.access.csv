@@ -1,0 +1,27 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_supplierinfo_wizard,access_import_supplierinfo_wizard,model_import_supplierinfo_wizard,base.group_user,1,1,1,1
+access_purchase_order_line,purchase.order.line view,purchase.model_purchase_order_line,group_purchase_view,1,0,0,0
+access_purchase_order,purchase.order,purchase.model_purchase_order,group_purchase_view,1,0,0,0
+access_account_tax_purchase_view,account.tax,account.model_account_tax,group_purchase_view,1,0,0,0
+access_account_tag_purchase_view,account.account.tag,account.model_account_account_tag,group_purchase_view,1,0,0,0
+access_product_product_purchase_view,product.product.purchase.view,product.model_product_product,group_purchase_view,1,0,0,0
+access_product_template_purchase_view,product.template purchase_view,product.model_product_template,group_purchase_view,1,0,0,0
+access_account_fiscal_position_purchase_view,account.fiscal.position purchase,account.model_account_fiscal_position,group_purchase_view,1,0,0,0
+access_res_partner_purchase_view,res.partner purchase,base.model_res_partner,group_purchase_view,1,0,0,0
+access_account_journal,account.journal,account.model_account_journal,group_purchase_view,1,0,0,0
+access_account_move,account.move,account.model_account_move,group_purchase_view,1,0,0,0
+access_account_move_line,account.move.line,account.model_account_move_line,group_purchase_view,1,0,0,0
+access_account_analytic_line,account.analytic.line,account.model_account_analytic_line,group_purchase_view,1,0,0,0
+access_account_type,account.acount.type.purchase.view,account.model_account_account_type,group_purchase_view,1,0,0,0
+account_partial_reconcile,account.partial.reconcile.purchase.view,account.model_account_partial_reconcile,group_purchase_view,1,0,0,0
+access_purchase_bill_union,access_purchase_bill_union,purchase.model_purchase_bill_union,group_purchase_view,1,0,0,0
+access_report_purchase_order,purchase.stock.report.view,purchase.model_purchase_report,group_purchase_view,1,0,0,0
+access_purchase_requisition_type,purchase.requisition.type,purchase_requisition.model_purchase_requisition_type,group_purchase_view,1,0,0,0
+access_purchase_requisition,purchase.requisition,purchase_requisition.model_purchase_requisition,group_purchase_view,1,0,0,0
+access_purchase_requisition_line_purchase_view,purchase.requisition.line,purchase_requisition.model_purchase_requisition_line,group_purchase_view,1,0,0,0
+access_stock_location_purchase_view,stock.location,stock.model_stock_location,group_purchase_view,1,0,0,0
+access_stock_warehouse_purchase_view,stock.warehouse,stock.model_stock_warehouse,group_purchase_view,1,0,0,0
+access_stock_picking_purchase_view,stock.picking,stock.model_stock_picking,group_purchase_view,1,0,0,0
+access_stock_move_purchase_view,stock.move,stock.model_stock_move,group_purchase_view,1,0,0,0
+access_stock_warehouse_orderpoint_view,stock.warehouse.orderpoint,stock.model_stock_warehouse_orderpoint,group_purchase_view,1,0,0,0
+access_report_purchase_order_view,vendor.delay.report view,purchase_stock.model_vendor_delay_report,group_purchase_view,1,0,0,0

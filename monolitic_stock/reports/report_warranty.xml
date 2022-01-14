@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template id="report_warranty_layout_standard">
+
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer">
+            <hr style="display: block; height: 1px; border: 0; border-top: 5px solid #AFCED5; margin: 1em 0; padding: 0;"></hr>
+        </div>
+    </template>
+
+    <template id="report_warranty_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <t t-call="monolitic_stock.report_warranty_layout_standard">
+            <t t-raw="0"/>
+        </t>
+    </template>
+
+    <template id="report_warranty_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-foreach="o.move_ids_without_package.filtered(lambda x: x.product_id.tracking != 'none')" t-as="move_line">
+
+                    <!-- COPY 1 (PARTNER) -->
+                    <div class="article o_report_layout_standard">
+                        <div class="row mb2">
+                            <div class="col-3">
+                                <img class="img img-responsive"  t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 30px; margin-top: 10%;" alt="Logo"/>
+                            </div>
+                            <div class="col-5 offset-4" style="text-align: center; margin-top: 2%">
+                                <div>
+                                    <strong><span style="font-size: 28px">CERTIFICADO</span> <span style="font-size: 16px">DE</span> <span style="font-size: 28px">GARANTÍA</span></strong>
+                                </div>
+                                <div style="border: 3px solid black;">
+                                    <strong style="font-size: 14px; font-style:italic"><span>COPIA PARA </span><span t-field="move_line.picking_partner_id.name"/></strong>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="display: block; height: 1px; border: 0; border-top: 5px solid #AFCED5; margin: 1em 0; padding: 0;"></hr>
+
+
+                        <div class="oe_structure"/>
+
+                        <div class="row mb32">
+                            <div class="col-12">
+                                <p>
+                                    Para que su garantía sea válida observe las siguientes instrucciones :
+                                </p>
+
+                                <p>
+                                    Envíe el comprobante a MONOLITIC, S.A. debidamente rellenado antes de 30 días a partir de la fecha del albarán de entrega del material suministrado.
+                                    Esta garantía ampara los posibles defectos de fabricación, durante <strong style="font-style: italic"><span t-field="move_line.product_id.warranty"/> <span t-field="move_line.product_id.warranty_type"/></strong> , a partir de la fecha del albarán de entrega, para todo el material suministrado.
+                                    En ningún caso el periodo de garantía ofrecido podrá ser superior al que nos ofrecen nuestros proveedores de material.
+                                </p>
+
+                                <p>
+                                    Para poder hacer efectiva esta garantía, el material deberá ser enviado al domicilio de MONOLITIC, S.A. con los portes pagados, efectuándose la
+                                    reparación sin cargo alguno, salvo en los casos siguientes, en los que esta garantía no será considerada válida :
+                                </p>
+
+                                <ol style="margin-left: 5%">
+                                    <li>Cuando se desee repaso y limpieza general del equipo.</li>
+                                    <li>Si se observan señales de que el equipo haya sido manipulado por personal ajeno a MONOLITIC, S.A. durante la vigencia de la presente garantía.</li>
+                                    <li>Si el equipo ha recibido golpes o malos tratos por accidente o falta de cuidado.</li>
+                                    <li>Si el uso no se corresponde a lo indicado en las especificaciones técnicas del equipo.</li>
+                                    <li>Si no se observan las instrucciones de la presente garantía.</li>
+                                </ol>
+
+                                <p style="font-style: italic">
+                                    IMPORTANTE: Cuide el embalaje y asegure el envío.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mb16" style="font-size: 15px">
+                            <div class="col-7">
+                                <i class="fa fa-arrow-right" style="color: #006579"></i><strong> Ficha de Garantía</strong>
+                            </div>
+                            <div class="col-5 ">
+                                <i class="fa fa-arrow-right" style="color: #006579"></i><strong> Fecha, Sello y Firma</strong>
+                            </div>
+                        </div>
+
+                        <div class="row mb64" style="font-size: 15px;">
+                            <div class="col-3" style="margin-left: 2%">
+                                <span>Nombre del comprador</span>
+                                <br></br>
+                                <span>Dirección</span>
+                                <br></br>
+                                <span>C.P. y Población</span>
+                                <br></br>
+                                <span>Modelo</span>
+                                <br></br>
+                                <span>Nº de serie</span>
+                                <br></br>
+                                <span>Nº Albarán</span>
+                                <br></br>
+                                <span>Fecha Envío Material</span>
+                            </div>
+                            <div class="col-4" style="font-style: italic">
+                                <span t-field="move_line.picking_partner_id.name"/>
+                                <br></br>
+                                <span t-field="move_line.picking_partner_id.street"/>
+                                <br></br>
+                                <span t-field="move_line.picking_partner_id.zip"/> - <span t-field="move_line.picking_partner_id.city"/>
+                                <br></br>
+                                <span t-field="move_line.product_id.default_code"/>
+                                <br></br>
+                                <t t-if="move_line.get_serial_numbers()">
+                                    <span t-esc="move_line.get_serial_numbers()"/>
+                                    <br></br>
+                                </t>
+                                <span t-field="move_line.picking_id.name"/>
+                                <br></br>
+                                <span t-field="move_line.date" t-options='{"format": "dd/MM/yyyy"}'/>
+                            </div>
+                            <div class="col-2" style="margin-left: 2%; width: 50%; font-size: 12px; border: 1px solid black">
+                                <div style="text-align: center">
+                                    <strong>MONOLITIC, S.A.</strong>
+                                </div>
+                                <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                                    <span>Fecha : </span><span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"></span>
+                                </div>
+                            </div>
+                            <div class="col-2" style="margin-left: 2%; font-size: 12px; border: 1px solid black">
+                                <div style="text-align: center">
+                                    <strong><span t-field="move_line.picking_partner_id.name"/></strong>
+                                </div>
+                                <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                                    <span>Fecha : </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="display: block; height: 1px; border: 0; border-top: 5px solid #AFCED5; margin: 1em 0; padding: 0;"></hr>
+
+                    <!-- COPY 2 (MONOLITIC) -->
+                    <div class="article o_report_layout_standard">
+                        <div class="row mb2">
+                            <div class="col-3">
+                                <img class="img img-responsive"  t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 30px; margin-top: 10%;" alt="Logo"/>
+                            </div>
+                            <div class="col-5 offset-4" style="text-align: center; margin-top: 2%">
+                                <div>
+                                    <strong><span style="font-size: 28px">CERTIFICADO</span> <span style="font-size: 16px">DE</span> <span style="font-size: 28px">GARANTÍA</span></strong>
+                                </div>
+                                <div style="border: 3px solid black;">
+                                    <strong><span style="font-size: 14px; font-style:italic">COPIA PARA MONOLITIC S.A.</span></strong>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="display: block; height: 1px; border: 0; border-top: 5px solid #AFCED5; margin: 1em 0; padding: 0;"></hr>
+
+                        <div class="oe_structure"/>
+
+                        <div class="row mb32">
+                            <div class="col-12">
+                                <p>
+                                    Para que su garantía sea válida observe las siguientes instrucciones :
+                                </p>
+
+                                <p>
+                                    Envíe el comprobante a MONOLITIC, S.A. debidamente rellenado antes de 30 días a partir de la fecha del albarán de entrega del material suministrado.
+                                    Esta garantía ampara los posibles defectos de fabricación, durante <strong style="font-style: italic"><span t-field="move_line.product_id.warranty"/> <span t-field="move_line.product_id.warranty_type"/></strong> , a partir de la fecha del albarán de entrega, para todo el material suministrado.
+                                    En ningún caso el periodo de garantía ofrecido podrá ser superior al que nos ofrecen nuestros proveedores de material.
+                                </p>
+
+                                <p>
+                                    Para poder hacer efectiva esta garantía, el material deberá ser enviado al domicilio de MONOLITIC, S.A. con los portes pagados, efectuándose la
+                                    reparación sin cargo alguno, salvo en los casos siguientes, en los que esta garantía no será considerada válida :
+                                </p>
+
+                                <ol style="margin-left: 5%">
+                                    <li>Cuando se desee repaso y limpieza general del equipo.</li>
+                                    <li>Si se observan señales de que el equipo haya sido manipulado por personal ajeno a MONOLITIC, S.A. durante la vigencia de la presente garantía.</li>
+                                    <li>Si el equipo ha recibido golpes o malos tratos por accidente o falta de cuidado.</li>
+                                    <li>Si el uso no se corresponde a lo indicado en las especificaciones técnicas del equipo.</li>
+                                    <li>Si no se observan las instrucciones de la presente garantía.</li>
+                                </ol>
+
+                                <p style="font-style: italic">
+                                    IMPORTANTE: Cuide el embalaje y asegure el envío.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mb16" style="font-size: 15px">
+                            <div class="col-7">
+                                <i class="fa fa-arrow-right" style="color: #006579"></i><strong> Ficha de Garantía</strong>
+                            </div>
+                            <div class="col-5">
+                                <i class="fa fa-arrow-right" style="color: #006579"></i><strong> Fecha, Sello y Firma</strong>
+                            </div>
+                        </div>
+
+                        <div class="row mb64" style="font-size: 15px;">
+                            <div class="col-3" style="margin-left: 2%">
+                                <span>Nombre del comprador</span>
+                                <br></br>
+                                <span>Dirección</span>
+                                <br></br>
+                                <span>C.P. y Población</span>
+                                <br></br>
+                                <span>Modelo</span>
+                                <br></br>
+                                <span>Nº de serie</span>
+                                <br></br>
+                                <span>Nº Albarán</span>
+                                <br></br>
+                                <span>Fecha Envío Material</span>
+                            </div>
+                            <div class="col-4" style="font-style: italic">
+                                <span t-field="move_line.picking_partner_id.name"/>
+                                <br></br>
+                                <span t-field="move_line.picking_partner_id.street"/>
+                                <br></br>
+                                <span t-field="move_line.picking_partner_id.zip"/> - <span t-field="move_line.picking_partner_id.city"/>
+                                <br></br>
+                                <span t-field="move_line.product_id.default_code"/>
+                                <br></br>
+                                <t t-if="move_line.get_serial_numbers()">
+                                    <span t-esc="move_line.get_serial_numbers()"/>
+                                </t>
+                                <br></br >
+                                <span t-field="move_line.picking_id.name"/>
+                                <br></br>
+                                <span t-field="move_line.date" t-options='{"format": "dd/MM/yyyy"}'/>
+                            </div>
+                            <div class="col-2" style="margin-left: 2%; width: 50%; font-size: 12px; border: 1px solid black">
+                                <div style="text-align: center">
+                                    <strong>MONOLITIC, S.A.</strong>
+                                </div>
+                                <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                                    <span>Fecha : </span><span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"></span>
+                                </div>
+                            </div>
+                            <div class="col-2" style="margin-left: 2%; font-size: 12px; border: 1px solid black">
+                                <div style="text-align: center">
+                                    <strong><span t-field="move_line.picking_partner_id.name"/></strong>
+                                </div>
+                                <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                                    <span>Fecha : </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="display: block; height: 1px; border: 0; border-top: 5px solid #AFCED5; margin: 1em 0; padding: 0;"></hr>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="report_warranty" model="ir.actions.report">
+        <field name="name">Warranty Report</field>
+        <field name="model">stock.picking</field>
+        <field name="report_name">monolitic_stock.report_warranty_document</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">Warranty Report</field>
+    </record>
+
+    <record id="report_warranty" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_report_warranty"/>
+    </record>
+
+</odoo>

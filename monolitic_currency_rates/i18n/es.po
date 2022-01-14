@@ -1,0 +1,140 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_currency_rates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-07 19:36+0000\n"
+"PO-Revision-Date: 2022-01-07 19:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_currency_rates
+#: model:ir.model,name:monolitic_currency_rates.model_currency_rates_mixing
+msgid "Add rates to currencies to the inherit model"
+msgstr ""
+
+#. module: monolitic_currency_rates
+#: model:res.groups,name:monolitic_currency_rates.change_rate_account_moves
+msgid "Change rate on account moves"
+msgstr "Cambiar tasa en asientos contables"
+
+#. module: monolitic_currency_rates
+#: model:ir.model,name:monolitic_currency_rates.model_res_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_bank_statement_line__different_agreement_rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_move__different_agreement_rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_payment__different_agreement_rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_currency_rates_mixing__different_agreement_rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_purchase_order__different_agreement_rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__different_agreement_rate
+msgid "Different agreement rate"
+msgstr "Acuerdo de tasa distinto a la del día"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_move__display_name
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_currency_rates_mixing__display_name
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_res_currency__display_name
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_move__id
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_currency_rates_mixing__id
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_purchase_order__id
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_res_currency__id
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_bank_statement_line__is_rate_editable
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_move__is_rate_editable
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_payment__is_rate_editable
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_currency_rates_mixing__is_rate_editable
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_purchase_order__is_rate_editable
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__is_rate_editable
+msgid "Is Rate Editable"
+msgstr ""
+
+#. module: monolitic_currency_rates
+#: model:ir.model,name:monolitic_currency_rates.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_move____last_update
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_currency_rates_mixing____last_update
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_res_currency____last_update
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_res_currency__purchase_margin
+msgid "Margin For Purchases"
+msgstr "Margen compras"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_res_currency__sell_margin
+msgid "Margin For Sales"
+msgstr "Margen ventas"
+
+#. module: monolitic_currency_rates
+#: model_terms:ir.ui.view,arch_db:monolitic_currency_rates.margin_currency_form_view
+msgid "Margins"
+msgstr "Márgenes"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__parity
+msgid "Parity"
+msgstr "Paridad"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__purchase_currency_id
+msgid "Purchase Currency"
+msgstr "Moneda proveedor"
+
+#. module: monolitic_currency_rates
+#: model:ir.model,name:monolitic_currency_rates.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: monolitic_currency_rates
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_bank_statement_line__rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_move__rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_account_payment__rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_currency_rates_mixing__rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_purchase_order__rate
+#: model:ir.model.fields,field_description:monolitic_currency_rates.field_sale_order__rate
+msgid "Rate"
+msgstr "Tasa Euro - Moneda establecida"
+
+#. module: monolitic_currency_rates
+#: model:ir.model,name:monolitic_currency_rates.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: monolitic_currency_rates
+#: code:addons/monolitic_currency_rates/models/sale_order.py:0
+#, python-format
+msgid "There is no currency rate for the date: %s"
+msgstr "No hay tasa de conversión de moneda para la fecha: %s"
+
+#. module: monolitic_currency_rates
+#: code:addons/monolitic_currency_rates/models/sale_order.py:0
+#, python-format
+msgid "Warning"
+msgstr "Aviso"

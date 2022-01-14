@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="product_supplierinfo_warranty_lead_time" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="product_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <xpath expr="//field[@name='price']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+
+            <field name="date_end" position="after">
+                <field name="warranty"/>
+                <field name="warranty_type"/>
+                <field name="lead_time"/>
+                <field name="lead_time_type"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_requisition_warranty_lead_time" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="purchase_requisition.product_supplierinfo_tree_view_inherit"/>
+        <field name="arch" type="xml">
+            <field name="purchase_requisition_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_supplierinfo_form_warranty_lead_time" model="ir.ui.view">
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/group[2]" position="inside">
+                <label name="warranty" for="warranty"/>
+                <div>
+                    <field name="warranty" class="oe_inline"/>
+                    <field name="warranty_type" class="oe_inline"/>
+                </div>
+
+                <label name="lead_time" for="lead_time"/>
+                <div>
+                    <field name="lead_time" class="oe_inline"/>
+                    <field name="lead_time_type" class="oe_inline"/>
+                </div>
+                <field name="observations"/>
+            </xpath>
+
+            <xpath expr="//label[@for='price']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='price']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

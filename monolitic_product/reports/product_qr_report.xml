@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <template id="product_qr_report_wizard" inherit_id="monolitic_stock.report_product_label_wizard_document">
+            <xpath expr="//t[@t-if='product.barcode']" position="replace">
+                <t t-if="product.barcode">
+                    <img t-att-src="'data:image/png;base64,%s' % to_text(product.generate_qr())"
+                        style="height:200px;width:200;margin-bottom:20px;margin-top:-20px;"/>
+                </t>
+            </xpath>
+    </template>
+
+     <template id="product_qr_report_stock_picking2" inherit_id="stock.report_picking">
+            <xpath expr="//div[@name='right_box']" position="replace">
+                <div class="col-4" name="right_box">
+                    <img t-att-src="'data:image/png;base64,%s' % to_text(o.generate_qr())"
+                        style="height:240px;width:240px;"/>
+                </div>
+            </xpath>
+            <xpath expr="//th[@t-if='has_barcode']" position="replace">
+                <th width="15%" class="text-center" t-if="has_barcode">
+                    <strong>Product QR</strong>
+                </th>
+            </xpath>
+            <xpath expr="//t[@t-if='product_barcode != move.product_id.barcode']" position="replace">
+                <span t-if="move.product_id and move.product_id.barcode">
+                    <img t-att-src="'data:image/png;base64,%s' % to_text(move.product_id.generate_qr())"
+                        style="height:80px;width:80px;"/>
+                </span>
+            </xpath>
+    </template>
+
+</odoo>

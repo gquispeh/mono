@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="change_rate_account_moves" model="res.groups">
+        <field name="name">Change rate on account moves</field>
+        <field name="category_id" ref="base.module_category_accounting_accounting"/>
+    </record>
+</odoo>

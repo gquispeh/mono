@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data noupdate="1">
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="product_expenses_menu_categ" name="Product Expenses"
+            parent="stock.menu_stock_config_settings" sequence="5"/>
+    </data>
+</odoo>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_monolitic_view_id" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="attrs">{'required':['|', ('is_customer','=', True), ('is_supplier', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_payment_term_id']" position="attributes">
+                <attribute name="attrs">{'required':[('is_customer','=', True)]}</attribute>
+                <attribute name="widget">many2one</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='customer_payment_mode_id']" position="attributes">
+                <attribute name="attrs">{'required':[('is_customer','=', True)]}</attribute>
+                <attribute name="widget">many2one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_supplier_payment_term_id']" position="attributes">
+                <attribute name="widget">many2one</attribute>
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='supplier_payment_mode_id']" position="attributes">
+                <attribute name="widget">many2one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="recommended_annual_visits"/>
+            </xpath>
+            <!-- team_id visible for everyone -->
+            <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_product_pricelist']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='property_product_pricelist']" position="after">
+                <field name="number_of_invoice_copies"/>
+            </xpath>
+            <xpath expr="//field[@name='industry_id']" position="after">
+                <field name="partner_activity_ids" invisible="1"/>
+                <field name="activity_id" domain="[('id', 'in', partner_activity_ids)]" widget="many2many_tags" />
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="include_on_mailing" widget="many2many_tags"/>
+                <field name="exclude_on_mailing" widget="many2many_tags"/>
+            </xpath>
+
+            <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                <attribute name="attrs">{'invisible':[('parent_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                <attribute name="attrs">{'invisible':[('parent_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet//field[@name='function']" position="attributes">
+                <attribute name="widget">many2many_tags</attribute>
+            </xpath>
+            <xpath expr="//group[@col='12']//field[@name='function']" position="attributes">
+                <attribute name="widget">many2many_tags</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_monolitic_view_id_aeat_custom" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form.aeat.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_es_aeat.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@id='aeat']" position="attributes">
+                <attribute name="attrs">{'invisible':[('parent_id', '!=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_monolitic_view_id_custom" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <attribute name="groups"></attribute>
+                <attribute name="attrs">{'invisible':[('parent_id','!=',False)]}</attribute>
+            </xpath>
+            <xpath expr="//group[@name='banks']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//page[@name='accounting_disabled']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!-- Fiscal info visible for everyone -->
+            <xpath expr="//group[@name='fiscal_information']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_warn_view_id" model="ir.ui.view">
+        <field name="name">invoice.warn.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@groups='account.group_warning_account']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="partner_ledger_button_view_id" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_reports.partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='open_partner_ledger']" position="attributes">
+                <attribute name="groups">monolitic_base.group_view_partner_ledger</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- account.financial.risk inherited view -->
+    <record  model="ir.ui.view" id="account_financial_risk.res_partner_view_risk">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+    <!-- account inherited view -->
+    <record  model="ir.ui.view" id="account.partner_view_buttons">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+    <!-- account inherited view -->
+    <record  model="ir.ui.view" id="account_reports.partner_view_buttons">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_view_risk_custom_id" model="ir.ui.view">
+        <field name="name">res.partner.inherit.risk.custom.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_financial_risk.res_partner_view_risk"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='risk_exception']" position="after">
+                <field name="extra_limit"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

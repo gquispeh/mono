@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="closing_actions_tree_view" model="ir.ui.view">
+        <field name="name">crm.closing.action.tree.view</field>
+        <field name="model">crm.closing.action</field>
+        <field name="arch" type="xml">
+            <tree string="Closing Actions" editable="bottom">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_closing_actions" model="ir.actions.act_window">
+        <field name="name">Closing Actions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.closing.action</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_closing_actions" name="Closing Actions" parent="crm.menu_crm_config_lead"
+        action="action_closing_actions" sequence="10" groups="sales_team.group_sale_manager"/>
+
+</odoo>

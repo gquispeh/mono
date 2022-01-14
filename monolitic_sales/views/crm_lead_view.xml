@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="crm_lead_customer_prevision_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.customer.prevision.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expected_revenue']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+
+            <xpath expr="//notebook[last()]" position="inside">
+                <page string="Sales Prevision">
+                    <field name="prevision_editable" invisible="1"/>
+                    <field name="customer_prevision_ids" nolabel="1" colspan="4"
+                        widget="one2many_list" context="{'default_lead_id': active_id, 'default_partner_id': partner_id, 'default_user_id': user_id}"
+                        attrs="{'readonly': [('prevision_editable', '=', False)]}">
+                        <tree string="Sale Previsions">
+                            <field name="year" />
+                            <field name="user_id" />
+                            <field name="market_segmentation_id" />
+                            <field name="product_segmentation_id" />
+                            <field name="total_amount" />
+                        </tree>
+                   </field>
+               </page>
+            </xpath>
+        </field>
+    </record>
+
+     <record id="commercial_zone_view_crm_lead_form_lead" model="ir.ui.view">
+        <field name="name">commercial.zone.view.crm.lead.form.lead</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="monolitic_crm.crm_case_from_view_leads_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="commercial_user_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', commercial_user_ids)]</attribute>
+                <attribute name="options">{'no_create_edit': True}</attribute>
+            </xpath>
+
+           <xpath expr="//field[@name='supplier_id']" position="after">
+               <field name="commercial_zone_id" options="{'no_create_edit': True}" readonly="1" force_save="1"/>
+           </xpath>
+        </field>
+    </record>
+
+</odoo>

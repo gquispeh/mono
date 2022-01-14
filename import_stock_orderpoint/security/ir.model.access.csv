@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_stock_orderpoint,access.import.stock_orderpoint,model_import_stock_orderpoint,base.group_system,1,1,1,1
+access_import_stock_customer_reservation,access.import.stock_customer_reservation,model_import_stock_customer_reservation,base.group_system,1,1,1,1

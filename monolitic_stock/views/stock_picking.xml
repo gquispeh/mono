@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- stock.picking delivery inherit form view -->
+    <record id="stock_delivery_extra_info_form_view" model="ir.ui.view">
+        <field name="name">stock.delivery.extra.info.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='delivery_type']" position="after">
+                <field name="delivery_conditions"/>
+                <field name="delivery_time"/>
+            </xpath>
+
+            <xpath expr="//field[@name='note']" position="after">
+                <separator name="Picking Notes"/>
+                <field name="picking_note"/>
+            </xpath>
+
+            <xpath expr="//div[@name='tracking']" position="after">
+                <field name="not_valued_picking"/>
+                <field name="prohibited_partial_shippings"/>
+                <field name="number_lumps"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="stock_delivery_shipping_weight_form_view" model="ir.ui.view">
+        <field name="name">stock.delivery.shipping.weight.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='carrier_data']/div[last()]" position="after">
+                <label for="impack_weight" string="Weight for Impack shipping"/>
+                <div>
+                    <field name="impack_weight" class="oe_inline"/>
+                    <field name="weight_uom_name" nolabel="1" class="oe_inline" style="margin-left:5px"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- stock.picking inherit form view -->
+    <record id="view_id" model="ir.ui.view">
+        <field name="name">stock.picking.inherit.view.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='product_uom']" position="after">
+                <field name="date"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_show_details']" position="after">
+                <button name="%(action_stock_move_label_wizard)d" type="action" icon="fa-tags"/>
+            </xpath>
+
+            <xpath expr="//group[@name='other_infos']//field[@name='company_id']" position="after">
+                <field name="is_return"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

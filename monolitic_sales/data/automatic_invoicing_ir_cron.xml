@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id='automatic_invoicing_ir_cron' model='ir.cron'>
+            <field name='name'>Automatic Invoicing Orders</field>
+            <field name='model_id' ref='model_sale_order'/>
+            <field name='state'>code</field>
+            <field name='code'>model.check_sale_orders()</field>
+            <field name='interval_number'>1</field>
+            <field name='interval_type'>days</field>
+            <field name='numbercall'>-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+
+        <record id="confirmation_invoice_mail" model="base.automation">
+            <field name="name">Confirmation Invoice Email</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="template_id" ref="account.email_template_edi_invoice"/>
+            <field name="state">email</field>
+            <field name="trigger">on_write</field>
+            <field name="active" eval="True"/>
+            <field name="filter_pre_domain">[('partner_id.include_on_mailing','ilike','eFactura'),('state', '=', 'draft')]</field>
+            <field name="filter_domain">[('partner_id.include_on_mailing','ilike','eFactura'), ('state', '=', 'posted')]</field>
+        </record>
+    </data>
+</odoo>

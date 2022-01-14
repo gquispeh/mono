@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="monolitic_agent_zone_categ" model="res.partner.category">
+            <field name="name">Zona Agente</field>
+            <field name="color" eval="10"/>
+        </record>
+
+        <record id="monolitic_agent_vjcvaz" model="res.partner">
+            <field name="firstname">JOAN CARLES</field>
+            <field name="lastname">VAZQUEZ</field>
+            <field name="agent_zone">V-JCVAZ</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="21" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vaneilar" model="res.partner">
+            <field name="firstname">ABEL</field>
+            <field name="lastname">NEILA ARAGON</field>
+            <field name="agent_zone">V-ANEIL-AR</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="25" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Aragón</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vhlamaar" model="res.partner">
+            <field name="firstname">HECTOR</field>
+            <field name="lastname">LAMA ARAGON</field>
+            <field name="agent_zone">V-HLAMA-AR</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Aragón</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vxandar" model="res.partner">
+            <field name="firstname">XAVIER</field>
+            <field name="lastname">ANDIÑACH ARAGON</field>
+            <field name="agent_zone">V-XAND-AR</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="24" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Aragón</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vaneil" model="res.partner">
+            <field name="firstname">ABEL</field>
+            <field name="lastname">NEILA CATALUÑA</field>
+            <field name="agent_zone">V-ANEIL</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="25" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Cataluña</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vhlama" model="res.partner">
+            <field name="firstname">HECTOR</field>
+            <field name="lastname">LAMA ARAGON</field>
+            <field name="agent_zone">V-HLAMA</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Cataluña</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vxand" model="res.partner">
+            <field name="firstname">XAVIER</field>
+            <field name="lastname">ANDIÑACH CATALUÑA</field>
+            <field name="agent_zone">V-XAND</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="24" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Cataluña</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbncue" model="res.partner">
+            <field name="firstname">CARMEN</field>
+            <field name="lastname">GONZÁLEZ</field>
+            <field name="agent_zone">V-BNC-UE</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="32" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbnccent" model="res.partner">
+            <field name="firstname">CARMEN</field>
+            <field name="lastname">GONZÁLEZ</field>
+            <field name="agent_zone">V-BNC-CENT</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="32" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno Zona Centro</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbncest2" model="res.partner">
+            <field name="firstname">DANIEL</field>
+            <field name="lastname">RUEDA</field>
+            <field name="agent_zone">V-BNC-EST2</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="23" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno Zona Este</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbnceste" model="res.partner">
+            <field name="firstname">DANIEL</field>
+            <field name="lastname">RUEDA</field>
+            <field name="agent_zone">V-BNC-ESTE</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="23" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno Zona Este</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbncnor2" model="res.partner">
+            <field name="firstname">JORGE</field>
+            <field name="lastname">CUADRA</field>
+            <field name="agent_zone">V-BNC-NOR2</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="29" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno Zona Norte</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbncnort" model="res.partner">
+            <field name="firstname">JORGE</field>
+            <field name="lastname">CUADRA</field>
+            <field name="agent_zone">V-BNC-NORT</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="29" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno Zona Norte</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbncsur" model="res.partner">
+            <field name="firstname">CARMEN</field>
+            <field name="lastname">GONZÁLEZ</field>
+            <field name="agent_zone">V-BNC-SUR</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="32" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Interno Zona Sur</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vapoveda" model="res.partner">
+            <field name="firstname">ALEJANDRO</field>
+            <field name="lastname">POVEDA</field>
+            <field name="agent_zone">V-APOVEDA</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="26" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">VENDEDOR LEVANTE</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vmferpo" model="res.partner">
+            <field name="firstname">MAYTE</field>
+            <field name="lastname">FERNANDEZ PORTUGAL</field>
+            <field name="agent_zone">V-MFER-PO</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="30" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Portugal</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vsat" model="res.partner">
+            <field name="firstname">SERVICIO</field>
+            <field name="lastname">ASISTENCIA TÉCNICA</field>
+            <field name="agent_zone">V-SAT</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor SAT</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vavac" model="res.partner">
+            <field name="firstname">ANTONIO</field>
+            <field name="lastname">VACAS</field>
+            <field name="agent_zone">V-AVAC</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="31" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Centro</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbnccent2" model="res.partner">
+            <field name="firstname">CARMEN</field>
+            <field name="lastname">GONZÁLEZ</field>
+            <field name="agent_zone">V-BNC-CENT2</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="32" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Centro</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vcgarce" model="res.partner">
+            <field name="firstname">CARLES</field>
+            <field name="lastname">GARCIA CENTRO</field>
+            <field name="agent_zone">V-CGAR-CE</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="35" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Centro</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vggarcia" model="res.partner">
+            <field name="firstname">GABRIEL</field>
+            <field name="lastname">GARCIA</field>
+            <field name="agent_zone">V-GGARCIA</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="33" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Centro</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vmfer" model="res.partner">
+            <field name="firstname">MAYTE</field>
+            <field name="lastname">FERNANFEZ CENTRO</field>
+            <field name="agent_zone">V-MFER</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="30" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Centro</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vdmart" model="res.partner">
+            <field name="firstname">DIEGO</field>
+            <field name="lastname">MARTIN</field>
+            <field name="agent_zone">V-DMART</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="27" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Norte</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vigar" model="res.partner">
+            <field name="firstname">IKER</field>
+            <field name="lastname">GARCIA SEISAS</field>
+            <field name="agent_zone">V-IGAR</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="28" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Norte</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vavacan" model="res.partner">
+            <field name="firstname">ANTONIO</field>
+            <field name="lastname">VACAS ANDALUCÍA</field>
+            <field name="agent_zone">V-AVAC-AN</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field eval="31" name="parent_id"/>
+            <field name="lang">es_ES</field>
+            <field name="function">Vendedor Zona Sur</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vbncexpo" model="res.partner">
+            <field name="firstname">BNC</field>
+            <field name="lastname">ZONA EXPORT</field>
+            <field name="agent_zone">V-BNC-EXPO</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field name="lang">es_ES</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vnoactivi" model="res.partner">
+            <field name="firstname">NO</field>
+            <field name="lastname">ACTIVIDAD</field>
+            <field name="agent_zone">V-NOACTIVI</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field name="lang">es_ES</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+        <record id="monolitic_agent_vrip" model="res.partner">
+            <field name="firstname">CUENTA</field>
+            <field name="lastname">NO OPERATIVA</field>
+            <field name="agent_zone">V-RIP</field>
+            <field name="agent_type">salesman</field>
+            <field name="settlement">monthly</field>
+            <field eval="1" name="commission"/>
+            <field name="agent">1</field>
+            <field name="company_type">person</field>
+            <field name="lang">es_ES</field>
+            <field eval="[(6, 0, [ref('monolitic_agent_zone_categ')])]" name="category_id"/>
+        </record>
+
+    </data>
+</odoo>

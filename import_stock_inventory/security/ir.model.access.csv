@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_stock_inventory,access.import.stock_inventory,model_import_stock_inventory,base.group_system,1,1,1,1
+access_update_stock_dates,access.update.stock.dates,model_update_stock_dates,base.group_system,1,1,1,1

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Import ldm wizard form -->
+    <record id="view_import_operations" model="ir.ui.view">
+        <field name="name">import.operations.form</field>
+        <field name="model">import.ldm.operations</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import operations">
+                <group colspan="4" col="4">
+                    <field name="name" />
+                    <field name="delimeter"/>
+                </group>
+                <group>
+                    <field name="data" filename="name"/>
+                </group>
+                <separator colspan="4"/>
+                <footer>
+                    <button name="action_import" string="Import" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_operations" model="ir.actions.act_window">
+        <field name="name">Import Operations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">import.ldm.operations</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_import_operations"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_definition_import_operations" sequence="99"
+        parent="mrp.menu_mrp_configuration" action="action_import_operations"/>
+
+</odoo>

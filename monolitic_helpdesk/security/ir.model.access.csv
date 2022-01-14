@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_helpdesk_area,access_helpdesk_area,model_helpdesk_area,helpdesk.group_helpdesk_user,1,1,1,1
+access_helpdesk_error_classification,access_helpdesk_error_classification,model_helpdesk_error_classification,helpdesk.group_helpdesk_user,1,1,1,1
+access_helpdesk_team,access.helpdesk.team,helpdesk.model_helpdesk_team,helpdesk.group_helpdesk_user,1,1,0,1

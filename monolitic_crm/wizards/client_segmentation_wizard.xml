@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- product.category.wizard form view -->
+    <record id="client_segmentation_wizard_view_form" model="ir.ui.view">
+        <field name="name">product.category.wizard.view.form</field>
+        <field name="model">client.segmentation.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Select Category">
+                <sheet>
+                    <group>
+                        <field name="num_required" invisible="1"/>
+                        <field name="allow_categ_ids"
+                            widget="many2many_tags"
+                            invisible="1"/>
+                        <field name="level_1"
+                            options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"
+                            domain="[('level_parents', '=', 1)]" context="{'get_only_name': True}"/>
+                        <field name="level_2"
+                            options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"
+                            attrs="{'invisible': ['|', ('level_1', '=', False), ('hide_level_2', '=', True)]}"
+                            context="{'get_only_name': True}"/>
+                        <field name="level_3"
+                            options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"
+                            attrs="{'invisible': ['|', ('level_2', '=', False), ('hide_level_3', '=', True)]}"
+                            context="{'get_only_name': True}"/>
+                        <field name="level_4"
+                            options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"
+                            attrs="{'invisible': ['|', ('level_3', '=', False), ('hide_level_4', '=', True)]}"
+                            context="{'get_only_name': True}"/>
+                        <field name="hide_level_2" invisible="1"/>
+                        <field name="hide_level_3" invisible="1"/>
+                        <field name="hide_level_4" invisible="1"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="save_category" string="Save" type="object" class="oe_highlight"/>
+                    <button string="Cancel" name="cancel" type="object" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- product.category.wizard action window -->
+    <record id="client_segmentation_wizard_action" model="ir.actions.act_window">
+        <field name="name">Select a Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">client.segmentation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

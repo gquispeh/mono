@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Aleix De la Rubia Campamà <aleix.delarubia@qubiq.es>
+License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- monolitic.client.segmentation form view -->
+    <record id="monolitic_client_segmentation_view_form" model="ir.ui.view">
+        <field name="name">monolitic.client.segmentation.view.form</field>
+        <field name="model">monolitic.client.segmentation</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="parent_id"/>
+                        <field name="complete_name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- monolitic.client.segmentation tree view -->
+    <record id="monolitic_client_segmentation_tree_list" model="ir.ui.view">
+        <field name="name">monolitic.client.segmentation.view.tree</field>
+        <field name="model">monolitic.client.segmentation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="complete_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- monolitic.client.segmentation action view -->
+    <record id="action_monolitic_client_segmentation" model="ir.actions.act_window">
+        <field name="name">Segmentación del cliente</field>
+        <field name="res_model">monolitic.client.segmentation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_monolitic_client_segmentation_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="monolitic_client_segmentation_tree_list"/>
+        <field name="act_window_id" ref="action_monolitic_client_segmentation"/>
+    </record>
+
+    <menuitem id="menu_action_client_segmentation" parent="crm.crm_menu_config" action="action_monolitic_client_segmentation" sequence="16"/>
+
+</odoo>

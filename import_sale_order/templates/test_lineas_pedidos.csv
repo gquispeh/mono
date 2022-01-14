@@ -1,0 +1,3 @@
+id_pedido;sequence;product_id;name;product_uom_qty;price_unit;tax_id;discount
+(Código único del pedido al que pertenecen las líneas);(Número de línea);(Código único del producto);(Descripcion linea);(Cantidad pedida);(Precio unitario);(Impuestos separados por comas);(Descuento)
+S00099;34;#1N4004-T+A;Esta linea se ha añadido desde el importador;3;2,99;IVA 21% (ISP), IVA 0% Prestación de servicios intracomunitario ;15

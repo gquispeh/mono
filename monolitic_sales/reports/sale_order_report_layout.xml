@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2021 Albert Farrés <albert.farres@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Public api: layout to t-call from reports sale order -->
+    <data noupdate="0">
+        <template id="external_layout_sale_order">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="monolitic_sales.external_layout_standard_sale_order">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="external_layout_standard_sale_order">
+            <div class="header">
+                <div class="row"/>
+                <div class="row" style="margin-left: 0px;margin-bottom:-40px;">
+                    <div style="margin-top:5px;">
+                        <div style="font-size:10px;line-height:0px;margin-right: 20px;">
+                            <p>
+                                <strong>
+                                    <p> Monolitic S.A.</p>
+                                </strong>
+                            </p>
+                            <p>
+                                C/De la Mora, 34(P.E. GranLand)
+                            </p>
+                            <p>08918 Badalona(BARCELONA)</p>
+                            <p>
+                                <span>
+                                    <p>Tel:93 285 92 92</p>
+                                    <p>Fax:93 284 11 93</p>
+                                </span>
+                            </p>
+                            <p>
+                                monolitic@monolitc.com
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top:5px;">
+                        <div style="font-size:10px;line-height:0px;margin-right: 20px;">
+                            <p>
+                                <strong>
+                                    <p> MONOLITIC S.A.</p>
+                                </strong>
+                            </p>
+                            <p>
+                                Fco. Gervas, 17 5º G
+                            </p>
+                            <p>
+                                28020 MADRID
+                            </p>
+                            <p>
+                                <span>
+                                    <p>Tel:91 572 03 28</p>
+                                    <p>Fax:91 572 02 18</p>
+                                </span>
+                            </p>
+                            <p>
+                                monolitic.madrid@monolitic.com
+                            </p>
+                        </div>
+                    </div>
+                    <div style="font-size:10px;line-height:0px;margin-right: 20px; margin-top:5px;">
+                        <p>
+                            <strong>
+                                <p> MONOLITIC S.A. </p>
+                            </strong>
+                        </p>
+                        <p>
+                            Av. J. Luis de Goyoaga 32, Of, 208
+                        </p>
+                        <p>
+                            48950 Erandio(VIZCAYA)
+                        </p>
+                        <p>
+                            <span>
+                                <p>Tel:94 411 62 49</p>
+                                <p>Fax:93 264 11 93</p>
+                            </span>
+                        </p>
+                        <p>
+                            monolitic.bilbao@monolitic.com
+                        </p>
+                    </div>
+                    <div class="col-3" style="float: right;text-align: right;margin-bottom:80px;">
+                        <span style="margin-left: 20%">Page:</span>
+                        <span class="page"/>
+                        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 140px;max-width:300px;" class="float-left"/>
+                    </div>
+                </div>
+
+                <div class="col-9" style="padding-left: 0px;margin-left: 0;">
+                    <strong>Website: https://www.monolitic.com</strong>
+                    <t t-if="o.state in ['draft', 'sent', 'cancel']">
+                        <p style="line-height:20px;"><strong style="font-size: 26px;">QUOTATION</strong></p>
+                    </t>
+                    <t t-if="o.state in ['sale_to_acuse', 'pending_payment']">
+                        <p style="line-height:20px;"><strong style="font-size: 26px;">ACUSE ORDER RECEIPT</strong></p>
+                    </t>
+                    <t t-if="o.state in ['sale_confirmed', 'sale', 'done']">
+                        <p style="line-height:20px;"><strong style="font-size: 26px;">SALE ORDER CONFIRMATION</strong></p>
+                    </t>
+                </div>
+                <div>
+                    <strong style="font-size: 30px; position:relative;">Att. <span style="font-size: 16px; position:relative;font-weight:normal;" t-esc="o.partner_id.name"/></strong>
+                    <div style="display:inline;float: right;border: solid;width: 200px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;padding-left: 5px;">
+                        <p style="margin-bottom: 5px;">
+                            <t t-if="o.state in ['draft', 'sent', 'cancel']">
+                                <strong>Offer Nº</strong>
+                            </t>
+                            <t t-else="">
+                                <strong>Sale Order Nº</strong>
+                            </t>
+                        </p>
+                        <p style="margin-bottom: 0;text-align:center;" t-esc="o.name"/>
+                    </div>
+                    <div style="display:inline;float: right;border: solid;width: 200px;border-bottom: 0;margin-right: 30px;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;padding-left: 5px;">
+                        <p style="margin-bottom: 5px;">
+                            <t t-if="o.state in ['draft', 'sent', 'cancel']">
+                                <strong>Offer Date</strong>
+                            </t>
+                            <t t-else="">
+                                <strong>Sale Order Date</strong>
+                            </t>
+                        </p>
+                        <p style="margin-bottom: 0;text-align:right;" t-esc="o.date_order.strftime('%d/%m/%Y')"/>
+                    </div>
+                </div>
+            </div>
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+            </div>
+        </template>
+    </data>
+</odoo>

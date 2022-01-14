@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- training.training tree view -->
+    <record id="training_training_view_tree" model="ir.ui.view">
+        <field name="name">training.training.view.tree</field>
+        <field name="model">training.training</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="course_name"/>
+                <field name="start_date"/>
+                <field name="department_id"/>
+                <field name="address_course"/>
+                <field name="bonus_price" sum="Total" />
+                <field name="price" sum="Total"/>
+                <field name="is_pass" invisible="1"/>
+                <field name="grade"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- training.training  USER FORM view -->
+    <record id="training_my_training_view_form" model="ir.ui.view">
+        <field name="name">training.my.training.view.form</field>
+        <field name="model">training.training</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_approve" string="Approve" type="object" groups="hr.group_hr_manager" attrs="{'invisible': [('state', 'not in', ['to_validate'])]}"/>
+                    <button name="action_cancel" string="Cancel" groups="hr.group_hr_manager" type="object" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+                    <button name="action_confirm" string="Confirm" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                    <button name="action_draft" string="Draft" type="object" attrs="{'invisible': [('state', 'not in', ['cancel'])]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,to_validate,validated,cancel"/>
+                </header>
+                <sheet>
+                    <group colspan="4" col="4">
+                        <field name="course_name" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                        <field name="start_date" autocomplete="off" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                        <field name="employee_id" invisible="1"/>
+                        <field name="department_id" invisible="1"/>
+                        <field name="user_id"/>
+                        <field name="address_course" attrs="{'readonly': [('state','not in',('draft'))]}"/>
+                        <!-- domain="[('company_type', '=', 'company')]" -->
+                    </group>
+                    <group colspan="2" col="2" name="certification" string="Calification">
+                        <field name="is_pass" attrs="{'invisible': [('state','not in',('validated'))]}"
+                        />
+                        <field name="grade" attrs="{'invisible': [('state','not in',('validated'))]}"/>
+                    </group>
+                    <group colspan="2" col="2" name="cost" string="Cost">
+                        <field name="price" invisible="1"/>
+                        <field name="bonus_price" invisible="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- training.training  MANAGER FORM view -->
+    <record id="training_manager_training_view_form" model="ir.ui.view">
+        <field name="name">training.manager.training.view.form</field>
+        <field name="model">training.training</field>
+        <field name="inherit_id" ref="training_my_training_view_form" />
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_manager'))]"/>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='course_name']" position="after">
+                <field name="employee_id"
+                options="{'no_create_edit': True}"
+                />
+            </xpath>
+                <xpath expr="//field[@name='price']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='bonus_price']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+        </field>
+    </record>
+
+    <!-- training.training search view -->
+    <record id="training_training_view_search" model="ir.ui.view">
+        <field name="name">training.training.view.search</field>
+        <field name="model">training.training</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <field name="course_name"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <filter string="To Validate"
+                    name="to_validate"
+                    domain="[('state', '=', 'to_validate'), ('department_id.manager_id.user_id', '=', uid)]"
+                    context="{}"
+                    help="" />
+                <group expand="0" string="Group By">
+                    <filter name="group_by_employee_id" string="Employee" context="{'group_by':'employee_id'}" help=""/>
+                    <filter name="group_by_state" string="State" context="{'group_by':'state'}" help=""/>
+                    <filter name="group_by_department_id" string="Department" context="{'group_by':'department_id'}" help=""/>
+                    <filter name="group_by_course_name" string="Course" context="{'group_by':'course_name'}" help=""/>
+                    <filter name="group_by_start_date" string="Date" context="{'group_by':'start_date:month'}" help=""/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <!--Menu-->
+    <!-- product.component.type action window -->
+    <record id="all_training_training_type_action" model="ir.actions.act_window">
+        <field name="name">All Trainings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">training.training</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create new training
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+    <record id="my_training_training_type_action" model="ir.actions.act_window">
+        <field name="name">My Trainings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">training.training</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create new training
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+    <record id="to_validate_training_training_type_action" model="ir.actions.act_window">
+        <field name="name">To Approve</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">training.training</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_to_validate': 1}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create new training
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+    <menuitem id="my_training_training_menu_act" name="My Trainings" parent="training_root_menu"
+        action="my_training_training_type_action" sequence="1"/>
+    <menuitem id="approve_training_training_menu_act" name="Trainings To Approve" parent="training_root_menu"
+        action="to_validate_training_training_type_action" groups="hr.group_hr_manager" sequence="3"/>
+    <menuitem id="all_training_training_menu_act" name="All Trainings" groups="hr.group_hr_manager" parent="training_root_menu"
+        action="all_training_training_type_action" sequence="2"/>
+</odoo>

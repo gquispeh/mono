@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Jordi Jané <jordi.jane@qubiq.es>
+            License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- product.category inherit form view -->
+    <record id="view_id_product_category_responsibles2" model="ir.ui.view">
+        <field name="name">product.category.inherit.view.form2</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="level_parents" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

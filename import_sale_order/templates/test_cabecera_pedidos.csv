@@ -1,0 +1,3 @@
+name;partner_id;pricelist_id;payment_term_id;payment_mode_id;date_order;fiscal_position_id;user_id;tag_ids;team_id;client_order_ref;origin
+(Ej. S00001);(Código único del cliente);(Tarifa);(Términos de pago);(Modo de pago);(Fecha pedido);(posicion fiscal;(Comercial);(Etiquetas;(Equipo de ventas;(Referencia Cliente);(Doc. Origen)
+S00099;100001;Tarifa pública;5 Días;cash;11/03/20;Régimen Intracomunitario;Aina Servent;TEST;Europa;83748497F;123873786QQ

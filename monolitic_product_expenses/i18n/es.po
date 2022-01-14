@@ -1,0 +1,493 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* monolitic_product_expenses
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-13 09:55+0000\n"
+"PO-Revision-Date: 2020-03-13 09:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "<br/>\n"
+"                    <br/>\n"
+"                    <span>Registration Date:</span>"
+msgstr "<br/>\n"
+"                    <br/>\n"
+"                    <span>Fecha del Registro:</span>"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "<br/>\n"
+"                   <span>Page </span><span class=\"page\"/>\n"
+"                   <br/>"
+msgstr "<br/>\n"
+"                   <span>Pagina </span><span class=\"page\"/>\n"
+"                   <br/>"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "<br/>\n"
+"                <span>Página</span>\n"
+"                <span class=\"page\"/>\n"
+"                <br/>"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "<strong>Cálculo Gasto Ponderado con Costes Logísticos REALES</strong>\n"
+"                <br/>\n"
+"                <span>MONOLITIC, S.A.</span>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <span>Nº Proveedor:</span>\n"
+"                <br/>\n"
+"                <span>Comprador:</span>"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "<strong>Gastos IMPORTACIÓN</strong>"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "<strong>Importe TOTAL Material Comprado</strong>"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "<strong>Product Billing RAEE</strong>\n"
+"                    <br/>"
+msgstr "<strong>Facturacion de Productos RAEE</strong>\n"
+"                    <br/>"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "<strong>TOTAL Quantity:</strong>"
+msgstr "<strong>Cantidad Total:</strong>"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__amount_untaxed
+msgid "Amount Untaxed"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_product__arancel_id
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_template__arancel_id
+msgid "Arancel Cost"
+msgstr "Coste Arancel"
+
+#. module: monolitic_product_expenses
+#: model:ir.actions.act_window,name:monolitic_product_expenses.product_expenses_arancel_action
+#: model:ir.ui.menu,name:monolitic_product_expenses.product_expense_arancel_menu_act
+msgid "Arancel Costs"
+msgstr "Costes del Arancel"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_ecoraee_wizard_view
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expense_wizard_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__name
+msgid "Code"
+msgstr "Código"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__create_uid
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__create_uid
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__create_date
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__create_date
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: monolitic_product_expenses
+#: code:addons/monolitic_product_expenses/wizards/report_ecoraee.py:28
+#, python-format
+msgid "Date end must be after initial date in range"
+msgstr "La fecha final debe ser posterior a la inicial en el rango"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__display_name
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Dossier Nº"
+msgstr "Nº Dossier"
+
+#. module: monolitic_product_expenses
+#: model:ir.actions.act_window,name:monolitic_product_expenses.action_report_ecoraee
+#: model:ir.ui.menu,name:monolitic_product_expenses.report_menu_ecoraee_act
+msgid "EcoRAEE Report"
+msgstr "Informe EcoRAEE"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_product__ecoraee_active
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_template__ecoraee_active
+msgid "Ecoraee Expense"
+msgstr "Gasto EcoRAEE"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_res_company__ecorrae_perc
+msgid "Ecorrae (%)"
+msgstr "EcoRAEE (%)"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__end_date
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__end_date
+msgid "End Date"
+msgstr "Fecha finalización"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_category__estimate_cost
+msgid "Estimate Import Cost"
+msgstr "Gastos de Importación Estimados (%)"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice_line__estimated_perc
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_purchase_order_line__estimated_perc
+msgid "Estimated Import Cost (%)"
+msgstr "Gastos de Importación Estimados (%)"
+
+#. module: monolitic_product_expenses
+#: model:ir.ui.menu,name:monolitic_product_expenses.expense_report_menu_act
+msgid "Expense Weighted Report"
+msgstr "Informe Gastos Ponderados"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.expenses_product_template_form_view
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Fecha reg."
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Aranceles"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Aranceles TOTALES"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos ECORAEE"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos ECORAEE TOTALES"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Imp. Est."
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Imp. Real"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Transport"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Transport Est."
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Gastos Transporte TOTALES"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_ecoraee_wizard_view
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expense_wizard_view
+msgid "Generate Report"
+msgstr "Generar Informe"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.actions.act_window,help:monolitic_product_expenses.product_expenses_arancel_action
+msgid "Here you can create Arancel Costs"
+msgstr "Aquí puedes crear los Costes del Arancel"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__id
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__id
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "IMPRESIÓN"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Imp. Previsto"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Imp. Real"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice_line__total_expense
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_purchase_order_line__total_expense
+msgid "Import Expenses"
+msgstr "Gastos Importación"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Importe Factura"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Importe Material"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Importe TOTAL Facturas de Compra"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "Invoice Date"
+msgstr "Fecha factura"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Linea de Factura"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "Invoice Number"
+msgstr "Numero de Factura"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel____last_update
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__write_uid
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__write_uid
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__write_date
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__write_date
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__doc_number
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_purchase_order__doc_number
+msgid "Nº Document"
+msgstr "Nº Documento"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "Nº Factura"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_product_expenses_arancel__perc
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "Product"
+msgstr "Producto"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: monolitic_product_expenses
+#: model:ir.ui.menu,name:monolitic_product_expenses.product_expenses_menu_categ
+msgid "Product Expenses"
+msgstr "Gastos Producto"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea pedido de compra"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_product_ecoraee
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice_line__real_perc
+msgid "Real Import Cost (%)"
+msgstr "Gastos de Importación Reales (%)"
+
+#. module: monolitic_product_expenses
+#: model:ir.actions.report,name:monolitic_product_expenses.report_ecoraee
+msgid "Report EcoRAEE"
+msgstr "Informe de productos EcoRAEE"
+
+#. module: monolitic_product_expenses
+#: model:ir.actions.act_window,name:monolitic_product_expenses.action_report_expense_weighted
+msgid "Report Expense Weighted"
+msgstr "Informe Gastos Ponderados"
+
+#. module: monolitic_product_expenses
+#: model:ir.actions.report,name:monolitic_product_expenses.report_expense_weighted
+msgid "Report Expenses Weighted"
+msgstr "Informe Gastos Ponderados"
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_ecoraee_wizard__start_date
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_report_expense_wizard__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "TOTAL APS"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model_terms:ir.ui.view,arch_db:monolitic_product_expenses.report_expenses_weighted_document
+msgid "TOTALES REPORT"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_arancel
+msgid "Total Arancel"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_cost_delivery
+msgid "Total Cost Delivery"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_cost_delivery_expected
+msgid "Total Cost Delivery Expected"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_ecorae
+msgid "Total Ecorae"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_expected_expenses
+msgid "Total Expected Expenses"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_expenses
+msgid "Total Expenses"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_import_invoice
+msgid "Total Import Invoice"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model.fields,field_description:monolitic_product_expenses.field_account_invoice__total_import_material
+msgid "Total Import Material"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_report_ecoraee_wizard
+msgid "Wizard for Generate EcoRAEE Report"
+msgstr "Asistente para generar Informe EcoRAEE"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_report_expense_wizard
+msgid "Wizard for Generate Expense Report"
+msgstr "Asistente para generar Informe Gastos Ponderados"
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_product_expense_mixin
+msgid "product.expense.mixin"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_product_expense_mixing
+msgid "product.expense.mixing"
+msgstr ""
+
+#. module: monolitic_product_expenses
+#: model:ir.model,name:monolitic_product_expenses.model_product_expenses_arancel
+msgid "product.expenses.arancel"
+msgstr ""
+

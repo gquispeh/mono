@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2021 Albert Farrés <albert.farres@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="ml_report_sale_order_document">
+        <t t-call="web.html_container">
+            <t t-call="monolitic_sales.external_layout_sale_order">
+                <style>
+                    .table_header {
+                    border: 1px solid;
+                    }
+                    .border_rb {
+                    border-left: 1px solid;
+                    border-top: 1px solid;
+                    }
+                    .left {
+                    float: left;
+                    }
+                    .right {
+                    float: right;
+                    align: left;
+                    width: 40%;
+                    }
+                    .table-padding td{
+                    padding:0 5px 0 0;
+                    }
+                    .table-bordered th, td {
+                    border-color:black !important;
+                    }
+                </style>
+                <div class="address row" style="padding-bottom: 30px;">
+                    <div name="information_block" class="col-6">
+                        <br/>
+                        <p></p>
+                        <div class="border_rb" t-if="o.partner_shipping_id" style="border: solid;width: 430px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;padding-left: 5px; margin-top:15px !important;">
+                            <strong>Shipping Address:</strong>
+                            <div style="margin-left:20px;" t-field="o.partner_shipping_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: False}"/>
+                        </div>
+                    </div>
+                    <div class="col-5 offset-1">
+                        <br/>
+                        <p></p>
+                        <div class="border_rb left" t-if="o.partner_id" style="border: solid;width: 410px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;padding-left: 5px;margin-top:0px !important;margin-left:-43px !important;">
+                            <strong>Invoicing Address:</strong>
+                            <div style="margin-left:20px;" t-esc="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;:[&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="page">
+                    <div style="display:inline;">
+                        <table t-if="o.state in ['draft', 'sent', 'cancel']" class="left" style="width:430px;">
+                            <tr>
+                                <td>
+                                    <strong>Customer Nº</strong>
+                                    <span style="margin-left:15px" t-field="o.partner_id.ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>CIF / NIF</strong>
+                                    <span style="margin-left:15px" t-field="o.partner_id.vat"/>
+                                </td>
+                            </tr>
+                            <tr t-if="o.user_id">
+                                <td>
+                                    <strong>Commercial</strong>
+                                    <span style="margin-left:15px" t-field="o.user_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Delivery Conditions</strong>
+                                    <span style="margin-left:15px" t-if="o.picking_policy" t-field="o.picking_policy"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Carrier</strong>
+                                    <span style="margin-left:15px" t-if="o.carrier_id" t-field="o.carrier_id"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table t-else="" class="border_rb left" style="border: solid;width: 430px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;margin-bottom:25px;">
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>Your Sale Order:</strong>
+                                    <span style="margin-left:15px" t-field="o.client_order_ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>Customer Nº:</strong>
+                                    <span style="margin-left:15px" t-field="o.partner_id.ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>CIF / NIF:</strong>
+                                    <span style="margin-left:15px" t-field="o.partner_id.vat"/>
+                                </td>
+                            </tr>
+                            <tr t-if="o.user_id">
+                                <td style="padding-left:5px !important;">
+                                    <strong>Commercial:</strong>
+                                    <span style="margin-left:15px" t-field="o.user_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>Delivery Conditions:</strong>
+                                    <span style="margin-left:15px" t-if="o.picking_policy" t-field="o.picking_policy"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>Carrier:</strong>
+                                    <span style="margin-left:15px" t-if="o.carrier_id" t-field="o.carrier_id"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="border_rb right" style="border: solid;width: 382px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;margin-bottom:80px;">
+                            <tr>
+                                <td>
+                                    <strong style="margin-left:5px">Payment Mode</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p t-if="o.payment_mode_id" style="margin-left:15px;margin-bottom:-5px;">
+                                        <span t-field="o.payment_mode_id"/>
+                                        <t t-if="o.payment_term_id">
+                                            <span style="margin-left:100px;" t-field="o.payment_term_id"/>
+                                        </t>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong style="margin-left:5px">Bank</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p t-if="o.partner_bank_account_id" style="margin-left:15px; margin-bottom:-5px;">
+                                        <t t-if="o.partner_bank_account_id.bank_id">
+                                            <span t-field="o.partner_bank_account_id.bank_id.name"/>
+                                        </t>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong style="margin-left:5px">Office</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p t-if="o.partner_bank_account_id" style="margin-left:15px;margin-bottom:-5px;">
+                                        <t t-if="o.partner_bank_account_id.bank_id">
+                                            <span t-field="o.partner_bank_account_id.bank_id.code"/>
+                                        </t>
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </table>
+                        <table t-if="o.state not in ['draft', 'sent', 'cancel']" class="border_rb left" style="border: solid;width: 420px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;">
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>Document Confirmation Date:</strong>
+                                    <span style="margin-left:15px" t-esc="o.date_order.strftime('%d/%m/%Y')"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table t-if="o.state not in ['draft', 'sent', 'cancel']" class="border_rb right" style="border: solid;width: 382px;border-bottom: 0;border-right: 0;border-top: 1px solid;border-top-color: #C2C2C2;">
+                            <tr>
+                                <td style="padding-left:5px !important;">
+                                    <strong>Confirmation Number:</strong>
+                                    <span style="margin-left:15px" t-esc="o.confirmation_number"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table t-if="o.state not in ['draft', 'sent', 'cancel']" class="border_rb left" style="border: solid;width: 820px;border-bottom: 0;border-right: 0;border-top: 0px;margin-bottom:30px;">
+                            <tr>
+                                <td style="padding-left:5px !important;margin-top:5px;">
+                                    <strong>Le informamos que su pedido ha sido procesado:</strong><br/>
+                                    <p style="margin-left:15px;font-size:14px;">
+                                        · Plazo Estimado: Fecha orientativa de envío de material basada en los plazos de entrega habituales de nuestros proveedores.<br/>
+                                        · Plazo Confirmado: Fecha planificada de envío de material desde nuestros almacenes basada en los plazos de entrega confirmados
+                                          de nuestros proveedores. Monolitic no se hace responsable de posibles retrasos de entrega motivados por causas ajenas.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table class="table table-sm table-bordered" t-if="o.state in ['draft', 'sent', 'cancel']">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    <strong>Marca</strong>
+                                </th>
+                                <th class="text-center" style="width:340px;">
+                                    <strong>Reference - Description</strong>
+                                </th>
+                                <th class="text-center">
+                                    <strong>Quantity</strong>
+                                </th>
+                                <th class="text-center" style="width:130px;">
+                                    <strong>Unit Price</strong>
+                                </th>
+                                <th class="text-center" style="width:170px;">
+                                    <strong>DELIVERY TERM</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="description" t-value="''" />
+                            <tr t-foreach="o.order_line" t-as="line" style="border-top:0px">
+                                <td>
+                                    <span t-esc="line.product_id.manufacturer.name" />
+                                </td>
+                                <td>
+                                    <strong style="line-height: 0px;">
+                                        <span t-if="line.product_id" t-esc="line.product_id.default_code" />
+                                    </strong>
+                                    <p t-if="line.product_id" t-esc="line.product_id.description" style="line-height: 0px;"/>
+                                    <p t-if="line.product_id" style="line-height: 0px;">
+                                        <span t-if="line.product_id and not line.product_id.rohs_regulation">No</span>
+                                    RoHS Compilant
+                                    </p>
+                                </td>
+                                <t t-if="line.max_quantity">
+                                    <td class="text-center">
+                                        <strong>
+                                            <span t-esc="line.quantity_report"/>
+                                        </strong>
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td class="text-center">
+                                        <strong>
+                                            <span t-esc="'%0.0f'%line.product_uom_qty"/>
+                                        </strong>
+                                    </td>
+                                </t>
+                                <td t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                    <span t-esc="'%0.2f'%(line.price_unit)" />
+                                    <span style="margin-left:20px;" t-esc="o.pricelist_id.currency_id.name"></span>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="line.delivery_term"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered" style="margin-top:40px;" t-if="o.state not in ['draft', 'sent', 'cancel']">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width:80px;">
+                                    <strong>P.Pv</strong>
+                                </th>
+                                <th class="text-center" style="width:80px;">
+                                    <strong>Marca</strong>
+                                </th>
+                                <th class="text-center" style="width:360px;">
+                                    <strong>Reference - Description</strong>
+                                </th>
+                                <th class="text-center">
+                                    <strong>Quantity</strong>
+                                </th>
+                                <th class="text-center" style="width:150px;">
+                                    <strong>Unit Price</strong>
+                                </th>
+                                <th class="text-center" style="width:130px;">
+                                    <strong>Requested Date</strong>
+                                </th>
+                                <th class="text-center" style="width:130px;">
+                                    <strong>Expected Date</strong>
+                                </th>
+                                <th class="text-center" style="width:130px;">
+                                    <strong>Confirmed Date</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="description" t-value="''" />
+                            <tr t-foreach="o.order_line" t-as="line" style="border-top:0px">
+                                <td class="text-center">
+                                    <span t-esc="line.number"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line.product_id.manufacturer.name" />
+                                </td>
+                                <td>
+                                    <strong style="line-height: 0px;">
+                                        <span t-if="line.product_id" t-esc="line.product_id.default_code" />
+                                    </strong>
+                                    <p t-if="line.product_id" t-esc="line.product_id.description" style="line-height: 0px;"/>
+                                    <p t-if="line.product_id" style="line-height: 12px;">
+                                        <span t-if="line.product_id and not line.product_id.rohs_regulation">No</span>
+                                    RoHS Compilant
+                                    </p>
+                                    <t t-if="line.product_id.get_customer_code(o.partner_id)">
+                                        <span>Its Code:</span><span t-esc="line.product_id.get_customer_code(o.partner_id)"/>
+                                    </t>
+                                </td>
+                                <t t-if="line.max_quantity">
+                                    <td class="text-center">
+                                        <strong>
+                                            <span t-esc="line.quantity_report"/>
+                                        </strong>
+                                    </td>
+                                </t>
+                                <t t-else="">
+                                    <td class="text-center">
+                                        <strong>
+                                            <span t-esc="'%0.0f'%line.product_uom_qty"/>
+                                        </strong>
+                                    </td>
+                                </t>
+                                <td t-attf-class="text-center {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                    <span t-esc="'%0.2f'%(line.price_unit)" />
+                                    <span style="margin-left:20px;" t-esc="o.pricelist_id.currency_id.name"></span>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.requested_shipping_date">
+                                        <span t-esc="line.requested_shipping_date.strftime('%d/%m/%Y')"></span>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.estimated_shipping_date">
+                                        <span t-esc="line.estimated_shipping_date.strftime('%d/%m/%Y')"></span>
+                                    </t>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="line.commitment_date">
+                                        <span t-esc="line.commitment_date.strftime('%d/%m/%Y')"></span>
+                                    </t>
+                                    <t t-else="">
+                                        <span>Pending supplier confirmation</span>
+                                    </t>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-left:50px;margin-right:50px;">
+                        <div t-if="o.state in ['draft', 'sent', 'cancel']" style="page-break-inside:avoid;">
+                            <strong style="font-size:18px;margin-top:40px;">Comments:</strong>
+                            <p t-esc="o.note" />
+                        </div>
+                        <div t-if="o.state in ['draft', 'sent', 'cancel']" style="page-break-inside:avoid;">
+                            <strong style="font-size:20px;margin-top:20px;">PARITY</strong>
+                            <span style="margin-left:20px;">|</span>
+                            <span style="margin-left:20px;" t-esc="o.parity"/>
+                            <span style="margin-left:20px;" t-esc="o.purchase_currency_id.name"/>
+                            <p style="margin-top:10px;">Todos los precios de esta oferta están expresados en euros y se mantendrán invariables si,
+                            a la fecha defacturación, la paridad no varía más del +/- 3%, aplicándose la corrección
+                                oportuna en caso contrario.</p>
+                        </div>
+                        <div>
+                            <strong t-if="o.state in ['draft', 'sent', 'cancel']" style="font-size:20px;">Sale Order minimum import : # 100 EUR #</strong>
+
+                            <p style="font-size:14px;margin-top:20px;page-break-inside:avoid;">La oferta está calculada con los aranceles vigentes y en función de su país de origen.
+                            Cualquier cambio de estos aranceles serárepercutido en el precio.</p>
+
+                            <p style="font-size:14px;page-break-inside:avoid;" t-if="o.state in ['draft', 'sent', 'cancel']">Plazo de entrega considerado a partir de la confirmación del pedido.</p>
+
+                            <p style="font-size:14px;page-break-inside:avoid;">El/Los productos ofertados son conforme a lo solicitado por el cliente y cumplen las
+                                especificaciones técnicas expresadas en el catálogo del proveedor. La responsabilidad de Monolitic se circunscribe a las especificaciones
+                                que definan nuestros proveedores.</p>
+
+                            <p style="font-size:14px;page-break-inside:avoid;" t-if="o.state in ['draft', 'sent', 'cancel']">Condiciones de garantía según catálogo.</p>
+
+                            <p style="font-size:14px;page-break-inside:avoid;" t-if="o.state in ['draft', 'sent', 'cancel']">Estos productos pueden precisar autorización previa para ser exportados.</p>
+
+                            <p style="font-size:14px;page-break-inside:avoid;">Le informamos que las condiciones relacionadas con la formalización de pedidos, entregas,
+                                formas de pago, propiedad intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta
+                                que aparecen publicadas en la web : www.monolitic.com
+                            </p>
+
+                            <strong style="font-size:20px;margin-top:15px;border: 2px solid black;padding: 5px;page-break-inside:avoid;" t-if="o.state in ['draft', 'sent', 'cancel']">
+                            SALE ORDER VALIDITY : <strong style="font-size:20px;" t-esc="o.remaining_validity_days"/> DAYS
+                            </strong>
+                            <br/>
+                            <br/>
+                            <div class="row" style="page-break-inside:avoid;">
+                                <div class="col-9">
+                                    <span style="margin-top:20px;">Saludos.</span><br/>
+                                    <span>Núria Soler</span><br/>
+                                    <span>Dpto. Comercial</span><br/>
+                                    <span>Teléfono:93 285 92 92</span><br/>
+                                    <span>E-mail: nsoler@monolitic.com</span>
+                                </div>
+                                <div class="col-3" style="float: right;">
+                                    <img src="/monolitic_sales/static/DNV logo-iso.png" style="height: 120px; width: 140px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_sale_order_quotation">
+    </template>
+    <template id="report_sale_order_acuse_confirmation">
+    </template>
+
+    <template id="ml_report_sale_order">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="monolitic_sales.ml_report_sale_order_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </template>
+
+    <report id="ml_report_sale_order_custom" model="sale.order" string="Sale Order" report_type="qweb-pdf" name="monolitic_sales.ml_report_sale_order" file="'Delivery Slip - %s - %s' % (object.partner_id.name or '', object.name)" />
+
+    <record id="ml_report_sale_order_custom" model="ir.actions.report">
+        <field name="paperformat_id" ref="monolitic_stock.paperformat_wo_mrp_stock_picking"/>
+    </record>
+
+</odoo>

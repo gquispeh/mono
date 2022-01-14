@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="monolitic_custom_header">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header">
+            <div class="row">
+                <div class="col-3 mb4">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>
+                </div>
+                <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+            </div>
+            <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                <div class="col-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+            <div class="row">
+                <t t-foreach="company.adress_report_header" t-as="partner_adress">
+                    <div class="col-3" style="font-size:12px;line-height:5px">
+                        <p>
+                            <strong>
+                                <span t-field="partner_adress.name"/>
+                            </strong>
+                        </p>
+                        <p>
+                            <span t-field="partner_adress.street"/>
+                        </p>
+                        <p>
+                            <span t-field="partner_adress.zip"/>
+                            <t t-if="partner_adress.city">
+                                <span t-field="partner_adress.city"/>
+                            </t>
+                            <t t-if="partner_adress.state_id">
+                                (
+                                <span t-field="partner_adress.state_id"/>
+                                )
+                            </t>
+                        </p>
+                        <p t-if="partner_adress.phone">
+                            <span>
+                                Tel:
+                                <span t-field="partner_adress.phone" />
+                            </span>
+                        </p>
+                        <p t-if="partner_adress.email">
+                            <span t-field="partner_adress.email" />
+                        </p>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </template>
+</odoo>

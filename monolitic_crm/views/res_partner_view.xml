@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- res.partner inherit form view -->
+    <record id="monolitic_crm_form_view" model="ir.ui.view">
+        <field name="name">monolitic.crm.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="before">
+                <field name="is_customer" invisible="1"/>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
+                <attribute name="attrs">{'required': [('is_customer','=', True)]}</attribute>
+                <attribute name="widget">many2many_tags</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='child_ids']" position="attributes">
+                <attribute name="context">
+                    {'default_name': name,
+                    'default_parent_id': active_id,
+                    'default_street': street,
+                    'default_street2': street2,
+                    'default_city': city,
+                    'default_state_id': state_id,
+                    'default_zip': zip,
+                    'default_country_id': country_id,
+                    'default_is_customer': is_customer,
+                    'default_lang': lang,
+                    'default_user_id': user_id}
+                </attribute>
+            </xpath>
+
+            <group name="sale">
+                <!--<field name="hr_department_id"/>-->
+                <field name="supplier_id"/>
+                <field name="business_option"/>
+            </group>
+
+            <field name="industry_id" position="after">
+                <label for="segmentation_ids" string="Market segmentation"/>
+                <span>
+                    <button name="%(monolitic_crm.client_segmentation_wizard_action)d" string="Assistant"
+                        context="{'default_num_required': 4, 'field_to_write': 'segmentation_ids', 'many2many_field': True}"
+                        icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                    <field name="segmentation_ids" domain="[('level_parents', '>=', 4)]" options="{'no_create': True, 'no_create_edit':True}"/>
+                </span>
+                <field name="strategic_classification"
+                    context="{'form_view_ref': 'monolitic_crm.monolitic_client_segmentation_view_form'}"
+                    />
+            </field>
+
+        </field>
+    </record>
+
+    <!-- res.partner buttons inherit form view -->
+    <record  model="ir.ui.view" id="crm.view_partners_form_crm1">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+    <record id="view_partners_form_crm1_inherit" model="ir.ui.view">
+        <field name="name">view.res.partner.form.crm.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_opportunity']" position="attributes">
+                <attribute name="groups">monolitic_crm.group_crm_view</attribute>
+            </xpath>
+            <xpath expr="//button[@name='schedule_meeting']" position="attributes">
+                <attribute name="groups">monolitic_crm.group_crm_view</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

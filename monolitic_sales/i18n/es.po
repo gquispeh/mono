@@ -1,0 +1,2252 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_sales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-10 07:18+0000\n"
+"PO-Revision-Date: 2022-01-10 07:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__percent_proforma_payment
+msgid "% Payment Proforma"
+msgstr "% Pago Proforma"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "08918 Badalona(BARCELONA)"
+msgstr "08918 Badalona (BARCELONA)"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__res_partner__automatic_billing__15_days
+msgid "15 days"
+msgstr "15 días"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "28020 MADRID"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "48950 Erandio(VIZCAYA)"
+msgstr "48950 Erandio (VIZCAYA)"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid ""
+"<br/>\n"
+"                                    <strong>Su código</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_res_partner_view_buttons_inherit
+msgid "<span class=\"o_stat_text\">Sales Prevision</span>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_form_view_id_inherit
+msgid "<span class=\"o_stat_text\">Sales orders</span>"
+msgstr "<span class=\"o_stat_text\">Pedidos de venta</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid ""
+"<span style=\"margin-left: 20%\">Page:</span>\n"
+"                        <span class=\"page\"/>"
+msgstr ""
+"<span style=\"margin-left: 20%\">Pág. </span>\n"
+"                        <span class=\"page\"/>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid ""
+"<span style=\"margin-left: 20%; font-size:14px;\">Page:</span>\n"
+"                        <span style=\"font-size:14px;\" class=\"page\"/>"
+msgstr ""
+"<span style=\"margin-left: 20%; font-size:14px;\">Pág:</span>\n"
+"                        <span style=\"font-size:14px;\" class=\"page\"/>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"<span style=\"margin-top:20px;\">Saludos.</span><br/>\n"
+"                                    <span>Núria Soler</span><br/>\n"
+"                                    <span>Dpto. Comercial</span><br/>\n"
+"                                    <span>Teléfono:93 285 92 92</span><br/>\n"
+"                                    <span>E-mail: nsoler@monolitic.com</span>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid ""
+"<span style=\"margin-top:20px;\">Saludos.</span><br/>\n"
+"                            <span>Núria Soler</span><br/>\n"
+"                            <span>Dpto. Comercial</span><br/>\n"
+"                            <span>Teléfono:93 285 92 92</span><br/>\n"
+"                            <span>E-mail: nsoler@monolitic.com</span>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>CIF / NIF</span>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Delivery Conditions</span>"
+msgstr "<span>Condiciones envío</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>His/Our ref.</span>"
+msgstr "<span>Su/Ntra. ref.</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>IBAN code</span>"
+msgstr "<span>Código IBAN</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Invoice-to Customer Nº</span>"
+msgstr "<span>Factura-a Nº acliente</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<span>Its Code:</span>"
+msgstr "<span>Cód. cliente:</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Nº Customer Order</span>"
+msgstr "<span>Nº pedido cliente</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Order Date</span>"
+msgstr "<span>Fecha envío</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Order Nº</span>"
+msgstr "<span>Nº pedido</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Payment Mode</span>"
+msgstr "<span>Forma pago</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Payment Terms</span>"
+msgstr "<span>Términos pago</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<span>Pending supplier confirmation</span>"
+msgstr "<span>Pendiente confirmación proveedor</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<span>Seller</span>"
+msgstr "<span>Vendedor</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking app.</strong>\n"
+"                        <br/>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid ""
+"<strong class=\"text-center\">The SEPA QR Code informations are not set correctly.</strong>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong style=\"font-size: 26px;\">ACUSE ORDER RECEIPT</strong>"
+msgstr ""
+"<br/><strong style=\"font-size: 26px;\">ACUSE RECEPCIÓN DE  PEDIDO</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong style=\"font-size: 26px;\">QUOTATION</strong>"
+msgstr "<strong style=\"font-size: 26px;\">OFERTA</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong style=\"font-size: 26px;\">SALE ORDER CONFIRMATION</strong>"
+msgstr "<br/><strong style=\"font-size: 26px;\">CONFIRMACIÓN DE PEDIDO</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong style=\"font-size:18px;margin-top:40px;\">Comments:</strong>"
+msgstr "<strong style=\"font-size:18px;margin-top:40px;\">Comentarios:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"<strong style=\"font-size:20px;margin-top:20px;\">PARITY</strong>\n"
+"                            <span style=\"margin-left:20px;\">|</span>"
+msgstr ""
+"<strong style=\"font-size:20px;margin-top:20px;\">PARIDAD</strong>\n"
+"                            <span style=\"margin-left:20px;\">|</span>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong style=\"margin-left:5px\">Bank</strong>"
+msgstr "<strong style=\"margin-left:5px\">Banco</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong style=\"margin-left:5px\">Office</strong>"
+msgstr "<strong style=\"margin-left:5px\">Sucursal</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong style=\"margin-left:5px\">Payment Mode</strong>"
+msgstr "<strong style=\"margin-left:5px\">Modo de pago</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Bank Account:</strong>"
+msgstr "<strong>Cuenta bancaria:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Base invoice discount</strong>"
+msgstr "<strong>Base descuento factura</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>CIF / NIF:</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>CIF / NIF</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Carrier:</strong>"
+msgstr "<strong>Transportista:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Carrier</strong>"
+msgstr "<strong>Transporte</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Code</strong>"
+msgstr "<strong>Su Código</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Comercial:</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Commercial:</strong>"
+msgstr "<strong>Comercial:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Commercial</strong>"
+msgstr "<strong>Comercial</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Confirmation Number:</strong>"
+msgstr "<strong>Confirmación número:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Confirmed Date</strong>"
+msgstr "<strong>Plazo Confirmado</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Customer Number:</strong>"
+msgstr "<strong>Nº Cliente:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Customer Nº:</strong>"
+msgstr "<strong>Nº Cliente:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Customer Nº</strong>"
+msgstr "<strong>Nº Cliente</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>DELIVERY TERM</strong>"
+msgstr "<strong>PLAZO ENTREGA</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Date Due:</strong>"
+msgstr "<strong>Fecha Vencimiento:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Delivery Conditions:</strong>"
+msgstr "<strong>Condiciones de envío:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Delivery Conditions</strong>"
+msgstr "<strong>Condiciones de envío:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Document Confirmation Date:</strong>"
+msgstr "<strong>Fecha confirmación documento:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Dto. invoice and P.P.</strong>"
+msgstr "<strong>Dto. factura y P.P.</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Expected Date</strong>"
+msgstr "<strong>Plazo Estimado</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Identific Tax</strong>"
+msgstr "<strong>Identific Impuesto</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Import to Pay</strong>"
+msgstr "<strong>Importe a pagar</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Invoicing Address:</strong>"
+msgstr "<strong>Facturar a:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Invoicing address:</strong>"
+msgstr "<strong>Facturar a:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Le informamos que su pedido ha sido procesado:</strong><br/>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Marca</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Ntro. Order:</strong>"
+msgstr "<strong>Ntro. Pedido:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong>Offer Date</strong>"
+msgstr "<strong>Fecha oferta</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong>Offer Nº</strong>"
+msgstr "<strong>Nº oferta</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Order:</strong>"
+msgstr "<strong>Pedido:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>P.Pv</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Payment Mode:</strong>"
+msgstr "<strong>Modo de pago:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Price Unit</strong>"
+msgstr "<strong>Precio Venta</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Reference - Description</strong>"
+msgstr "<strong>Referencia - Descripción</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Requested Date</strong>"
+msgstr "<strong>Plazo Solicitado</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong>Sale Order Date</strong>"
+msgstr "<strong>Fecha pedido</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong>Sale Order Nº</strong>"
+msgstr "<strong>Nº pedido</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Sale Price</strong>"
+msgstr "<strong>Precio Venta</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Shipping Address:</strong>"
+msgstr "<strong>Dirección de Envío</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de Envío</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Specify Import Taxes</strong>"
+msgstr "<strong>Especificar importe impuestos</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Supplier Nº:</strong>"
+msgstr "<strong>Nº Proveedor:</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Tax Base</strong>"
+msgstr "<strong>Base Impuestos</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Total Import to pay EUR (IVA+RE incl.)</strong>"
+msgstr "<strong>Importe Total a pagar EUR (IVA+RE incl.)</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "<strong>Total Import to pay EUR</strong>"
+msgstr "<strong>Importe Total a pagar EUR</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Precio Unidad</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "<strong>Website: https://www.monolitic.com</strong>"
+msgstr "<strong>Página web: http://www.monolitic.com</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid ""
+"<strong>Website: https://www.monolitic.com</strong><br/><br/>\n"
+"                <strong style=\"font-size: 26px;\">Proforma Invoice</strong>"
+msgstr ""
+"<strong>Página web: http://www.monolitic.com</strong><br/><br/>\n"
+"                <strong style=\"font-size: 26px;margin-left:40px;\">Factura Proforma</strong>"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "<strong>Your Sale Order:</strong>"
+msgstr "<strong>Su pedido:</strong>"
+
+#. module: monolitic_sales
+#: model:ir.model.constraint,message:monolitic_sales.constraint_commercial_target_coeficient_year_commercial_uniq
+msgid "A commercial can only have one target coeficient per year!"
+msgstr "El comercial solo puede tener un coeficiente objetivo por año!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/customer_prevision.py:0
+#, python-format
+msgid ""
+"A target coeficient for this contact, commercial and year could not be "
+"found. Please create one before assigning prevision amounts."
+msgstr ""
+"No se ha podido encontrar un coeficiente de previsión/objetivo para este "
+"contacto, comercial y año. Por favor cree uno antes de asignar una previsión"
+" de venta."
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_target.py:0
+#, python-format
+msgid ""
+"A target coeficient for this year or commercial could not be found. Please "
+"create one before assigning target amounts."
+msgstr ""
+"No se ha podido encontrar un coeficiente de previsión/objetivo para este año"
+" o comercial. Por favor cree uno antes de asignar una cifra objetivo."
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_mail_activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_discount_sale_lines
+msgid "Add max discount sale lines"
+msgstr "Añadir máximo descuento en líneas de venta"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_term__advanced_payment
+msgid "Advanced Payment"
+msgstr "Pago avanzado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__amount_type
+msgid "Amount Type"
+msgstr "Tipo de importe"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__approve_price
+msgid "Approve Price"
+msgstr "Aprobar precio"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__4
+msgid "April"
+msgstr "Abril"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.customer_prevision_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.invoice_form_inherit_account_intrastat
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_segmentation_form_view_id
+msgid "Assistant"
+msgstr "Asistente"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+msgid "Att."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__8
+msgid "August"
+msgstr "Agosto"
+
+#. module: monolitic_sales
+#: model:ir.actions.server,name:monolitic_sales.automatic_invoicing_ir_cron_ir_actions_server
+#: model:ir.cron,cron_name:monolitic_sales.automatic_invoicing_ir_cron
+#: model:ir.cron,name:monolitic_sales.automatic_invoicing_ir_cron
+msgid "Automatic Invoicing Orders"
+msgstr "Facturación Automática de Pedidos"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__automatic_billing
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__automatic_billing
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__automatic_billing
+msgid "Automatic billing"
+msgstr "Facturación automática"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Av. J. Luis de Goyoaga 32, Of, 208"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_form_view_id_inherit
+msgid "Back to Confirm"
+msgstr "Volver a confirmar"
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_budget_view
+msgid "Budget and Sale order view"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_budget_edition
+msgid "Budget edition"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__offer_type__buy
+msgid "Buy"
+msgstr "Comprar"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "C/De la Mora, 34(P.E. GranLand)"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_crm_stage
+msgid "CRM Stages"
+msgstr "Fases del CRM"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__can_edit_pricelist_price
+msgid "Can Edit Pricelist Price"
+msgstr "Puede editar Precio tarifa"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.mass_edit_commercial_wizard_form
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_import_commercial_target
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_import_customer_prevision
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__cancel
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__chance_of_success
+msgid "Chance of Success"
+msgstr "Posibilidad de éxito"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__city
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__clasif_customer
+msgid "Clasif Customer"
+msgstr "Clasif. cliente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__client_seg_ids
+msgid "Client Seg"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__amount_type__coeficient
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_coeficient_form_view
+msgid "Coeficient"
+msgstr "Coeficiente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__user_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__user_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__user_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__user_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__user_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__user_id
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_search
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Commercial"
+msgstr "Comercial"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__field_id
+msgid "Commercial Field"
+msgstr "Campo de comercial"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_monthly_amount.py:0
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__commercial_target_id
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_form_view
+#, python-format
+msgid "Commercial Target"
+msgstr "Cifra Objetivo"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_commercial_target_coeficient
+#: model:ir.ui.menu,name:monolitic_sales.menu_commercial_target_coeficient
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_coeficient_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_coeficient_tree_view
+msgid "Commercial Target Coeficient"
+msgstr "Coeficiente de Previsión/Objetivo"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_form_view
+msgid "Commercial Target Monthly Amounts"
+msgstr "Cifras Objetivo Mensuales Comercial"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__commercial_target_ids
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.res_users_commercial_simple_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.res_users_target_amount_inherit
+msgid "Commercial Targets"
+msgstr "Cifras Objetivo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_bank_statement_line__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_lead__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_country_state__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_report__commercial_zone_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_picking__commercial_zone_id
+#: model:ir.ui.menu,name:monolitic_sales.menu_commercial_zone
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_report2_view_id
+msgid "Commercial Zone"
+msgstr "Zona Comercial"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_commercial_zone
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_zone_tree_view
+msgid "Commercial Zones"
+msgstr "Zonas Comerciales"
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_commercial_rules
+msgid "Commercial rules"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_commercial_users
+#: model:ir.ui.menu,name:monolitic_sales.menu_commercial_users
+msgid "Commercials"
+msgstr "Comerciales"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "Condiciones de garantía según catálogo."
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.mass_edit_commercial_wizard_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__confirm_line
+msgid "Confirm Line"
+msgstr "Confirmación en línea"
+
+#. module: monolitic_sales
+#: model:base.automation,name:monolitic_sales.confirmation_invoice_mail
+#: model:ir.actions.server,name:monolitic_sales.confirmation_invoice_mail_ir_actions_server
+msgid "Confirmation Invoice Email"
+msgstr "Confirmación con factura por correo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__confirmation_number
+msgid "Confirmation Number"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__sale_confirmed
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_res_partner
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__partner_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__partner_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__partner_id
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order_line.py:0
+#, python-format
+msgid ""
+"Couldn't update quantity on stock move due to stock move not found or "
+"already reserved/done!"
+msgstr ""
+"No se ha podido actualizar la cantidad en el movimiento de stock debido a "
+"que no se ha encontrado o ya está reservado/enviado!"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__create_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__create_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,help:monolitic_sales.field_sale_order_line__date_order
+msgid ""
+"Creation date of draft/sent orders,\n"
+"Confirmation date of confirmed orders."
+msgstr ""
+"Fecha de creación de pedidos en borrador/enviados,\n"
+"Fecha de confirmación de pedidos confirmados."
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__client_order_ref
+msgid "Customer Order"
+msgstr "Pedido cliente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__customer_prevision_id
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.customer_prevision_form_view
+msgid "Customer Prevision"
+msgstr "Previsión de Ventas"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.customer_prevision_form_view
+msgid "Customer Prevision Monthly Amounts"
+msgstr "Previsiones Ventas Mensuales Cliente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_lead__customer_prevision_ids
+msgid "Customer Previsions"
+msgstr "Previsiones de Ventas"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__client_order_ref
+msgid "Customer order"
+msgstr "Pedido del cliente"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "DAYS"
+msgstr "DÍAS"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__res_partner__automatic_billing__daily
+msgid "Daily"
+msgstr "Diario"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__date_order
+msgid "Date Order"
+msgstr "Fecha pedido"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__12
+msgid "December"
+msgstr "Diciembre"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,help:monolitic_sales.field_import_commercial_target__delimeter
+msgid "Default delimiter \",\""
+msgstr "Delimitador predeterminado \",\""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,help:monolitic_sales.field_import_customer_prevision__delimeter
+msgid "Default delimiter \"|\""
+msgstr ""
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_delegate_rules
+msgid "Delegate rules"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__delimeter
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__delimeter
+msgid "Delimiter"
+msgstr "Delimitador"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__partner_shipping_id
+msgid "Delivery Address"
+msgstr "Dirección de entrega"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__delivery_conditions_id
+msgid "Delivery carrier"
+msgstr "Transportista"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__delivery_term
+msgid "Delivery term"
+msgstr "Plazo de entrega"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__difference
+msgid "Difference"
+msgstr "Diferencia"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__diff_amount
+msgid "Difference target vs prevision"
+msgstr "Diferencia Objetivo vs Previsión"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__pricelist_discount
+msgid "Disc. (%)"
+msgstr "Desc. (%)"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_register__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_term__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_stage__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_activity__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_compose_message__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_thread__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_country_state__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_advance_payment_inv__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_report__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move__display_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__model_id
+msgid "Document"
+msgstr "Documento"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__filter_domain
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid "EUR"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.edit_pricelist_price
+msgid "Edit pricelist price"
+msgstr "Editar precio de tarifa"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"El/Los productos ofertados son conforme a lo solicitado por el cliente y cumplen las\n"
+"                                especificaciones técnicas expresadas en el catálogo del proveedor. La responsabilidad de Monolitic se circunscribe a las especificaciones\n"
+"                                que definan nuestros proveedores."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Asistente de redacción de correo electrónico"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.res_users_commercial_simple_inherit
+msgid "Employee Functions"
+msgstr "Funciones Empleado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__pricelist_date_end
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__pricelist_date_end
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move__pricelist_date_end
+msgid "End Date"
+msgstr "Fecha final tarifa"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__offer_type__est
+msgid "Estimated"
+msgstr "Estimación"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__estimated_shipping_date
+msgid "Estimated shipping date"
+msgstr "Fecha estimada"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"Estos productos pueden precisar autorización previa para ser exportados."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__validity_date
+msgid "Expiration"
+msgstr "Expiración"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Fax:91 572 02 18"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Fax:93 264 11 93"
+msgstr "Fax:93 26411 93"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Fax:93 284 11 93"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Fco. Gervas, 17 5º G"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__2
+msgid "February"
+msgstr "Febrero"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_sales_order_line_input_tree_view_id
+msgid "Fecha confirmación"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_line_view_id_inherit
+msgid "Fecha de confirmación"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__data
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__data
+msgid "File"
+msgstr "Archivo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__name
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__name
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__generate_due_dates
+msgid "Generate Due Dates"
+msgstr "Genera Fechas de Vencimiento"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_form_view_id_inherit
+msgid "Generate Sale Order"
+msgstr "Generar Pedido"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_search
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__has_sale_order
+msgid "Has Sale Order"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_register__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_term__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_lead__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_stage__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_activity__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_compose_message__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_thread__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_country_state__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_advance_payment_inv__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_report__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move__id
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_picking__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,help:monolitic_sales.field_sale_order__pricelist_id
+msgid "If you change the pricelist, only newly added lines will be affected."
+msgstr ""
+"Si cambia la tarifa, solo se verán afectadas las líneas que añada o cambie a"
+" partir de ese momento."
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_import_commercial_target
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_import_customer_prevision
+msgid "Import"
+msgstr "Importar"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_import_commercial_target
+#: model:ir.ui.menu,name:monolitic_sales.menu_definition_import_ctarget
+msgid "Import Commercial Target"
+msgstr "Importar Objetivo Comercial"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_import_customer_prevision
+#: model:ir.ui.menu,name:monolitic_sales.menu_definition_import_cprevision
+msgid "Import Customer Prevision"
+msgstr "Importar Previsión de Cliente"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_import_commercial_target
+msgid "Import commercial target"
+msgstr "Importar objetivo comercial"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_import_commercial_target
+#: model:ir.model,name:monolitic_sales.model_import_customer_prevision
+msgid "Import commercial target wizard"
+msgstr "Asistente de importación de objetivos comerciales"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.view_import_customer_prevision
+msgid "Import customer prevision"
+msgstr "Importar previsión de cliente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__inform_on_client_platform
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__inform_on_client_platform
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__inform_on_client_platform
+msgid "Inform On Client Platform"
+msgstr "Informar en plataforma cliente"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/customer_prevision.py:0
+#, python-format
+msgid "Invalid client ref: ref"
+msgstr "Cliente inválido ref:ref"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/customer_prevision.py:0
+#, python-format
+msgid "Invalid commercial id: commercial"
+msgstr "Identificación comercial no válida: comercial"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/customer_prevision.py:0
+#, python-format
+msgid "Invalid market segmentation id: market_segmentation"
+msgstr "Id de segmentación de mercado no válido: market_segmentation"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/customer_prevision.py:0
+#, python-format
+msgid "Invalid product segmentation id: product_segmentation"
+msgstr "Id de segmentación de producto no válido: product_segmentation"
+
+#. module: monolitic_sales
+#: model:ir.actions.report,name:monolitic_sales.ml_report_invoice_custom
+msgid "Invoice"
+msgstr "Factura de cliente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__partner_invoice_id
+msgid "Invoice Address"
+msgstr "Dirección de factura"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_account_invoice_line
+#: model:ir.ui.menu,name:monolitic_sales.menu_action_account_invoice_line
+msgid "Invoice Lines"
+msgstr "Líneas de factura"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_monthly_amount.py:0
+#, python-format
+msgid "Invoiced Amount Lines"
+msgstr "Líneas Cifra Facturados"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__invoiced_amount
+msgid "Invoiced amount"
+msgstr "Cifra pedidos facturados"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__1
+msgid "January"
+msgstr "Enero"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__7
+msgid "July"
+msgstr "Julio"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__6
+msgid "June"
+msgstr "Junio"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"La oferta está calculada con los aranceles vigentes y en función de su país de origen.\n"
+"                            Cualquier cambio de estos aranceles serárepercutido en el precio."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_register____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_payment_term____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_stage____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_activity____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_compose_message____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_thread____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_country_state____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_advance_payment_inv____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_report____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move____last_update
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__write_uid
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_commercial_target__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_import_customer_prevision__write_date
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid ""
+"Le informamos de que las condiciones relacionadas con pedidos, entregas, formas de pago, propiedad\n"
+"                            intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta\n"
+"                            que aparecen publicadas en la web: www.monolitic.com"
+msgstr ""
+"Le informamos de que las condiciones relacionadas con pedidos, entregas, formas de pago, propiedad\n"
+"                            intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta\n"
+"                            que aparecen publicadas en la web: www.monolitic.com\""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"Le informamos que las condiciones relacionadas con la formalización de pedidos, entregas,\n"
+"                                formas de pago, propiedad intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta\n"
+"                                que aparecen publicadas en la web : www.monolitic.com"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.proforma_report_sale_order_document
+msgid ""
+"Le informamos que las condiciones relacionadas con la formalización de pedidos, entregas, formas de pago, propiedad\n"
+"                            intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta\n"
+"                            que aparecen publicadas en la web : www.monolitic.com"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__lead_id
+msgid "Lead/Oppn"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__done
+msgid "Locked"
+msgstr "Bloqueado"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_monthly_amount.py:0
+#, python-format
+msgid "MENF Amount Lines"
+msgstr "Líneas Cifra MENF"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__menf_amount
+msgid "MENF amount"
+msgstr "Cifra MENF"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "MONOLITIC S.A."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__3
+msgid "March"
+msgstr "Marzo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__market_ids
+msgid "Market"
+msgstr "Mercado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__client_segmentation_id
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_search
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Market Segmentation"
+msgstr "Segmentación de mercado"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/crm_lead.py:0
+#, python-format
+msgid "Market Segmentation field is not set!"
+msgstr "Campo de segmentación de mercado no está configurado!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/crm_lead.py:0
+#: code:addons/monolitic_sales/models/res_users.py:0
+#, python-format
+msgid "Market and product segmnetation are required !"
+msgstr "La segmentación de mercado y producto son obligatorias !"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__client_segmentation_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__market_segmentation_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__market_segmentation_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__market_segmentation_id
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_segmentation_form_view_id
+msgid "Market segmentation"
+msgstr "Segmentación de mercado"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_mass_edit_commercial_wizard
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.mass_edit_commercial_wizard_form
+msgid "Mass Edit Commercial"
+msgstr "Edición masiva de comercial"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_mass_edit_commercial_wizard
+msgid "Mass Edit Commercial Wizard"
+msgstr "Asistente de Edición Masiva Comercial"
+
+#. module: monolitic_sales
+#: model:ir.ui.menu,name:monolitic_sales.menu_mass_edit_commercial_wizard
+msgid "Mass Edit Commercials"
+msgstr "Edición masiva de comerciales"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__max_quantity
+msgid "Maximum quantity"
+msgstr "Cantidad máxima"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__5
+msgid "May"
+msgstr "Mayo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__model_name
+msgid "Model Name"
+msgstr "Nombre del modelo"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_commercial_monthly_amount
+msgid "Model for managing Commercial Monthly Amounts"
+msgstr "Modelo de gestión de importes mensuales comerciales"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_commercial_target_coeficient
+msgid "Model for managing Commercial Target Coeficients"
+msgstr "Modelo de gestión de coeficientes objetivo comercial"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_commercial_zone
+msgid "Model for managing commercial zones"
+msgstr "Modelo de gestión de zonas comerciales"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_customer_prevision
+msgid "Model for managing previsions for customers"
+msgstr "Modelo de gestión de previsiones para clientes"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_commercial_target
+msgid "Model for managing targets for commercials"
+msgstr "Modelo de gestión de objetivos para comerciales"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Monolitic S.A."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__month
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_search
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Month"
+msgstr "Mes"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.customer_prevision_form_view
+msgid "Month / Amount"
+msgstr "Mes / Importe"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_coeficient_form_view
+msgid "Month / Coeficient"
+msgstr "Mes / Coeficiente"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__monthly_coef_amount_ids
+msgid "Monthly Coeficient Amounts"
+msgstr "Cantidades coeficientes mensuales"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__monthly_prevision_amount_ids
+msgid "Monthly Prevision Amounts"
+msgstr "Cantidades de previsión mensual"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__monthly_target_amount_ids
+msgid "Monthly Target Amounts"
+msgstr "Cantidades objetivo mensuales"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_zone__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__new_commercial_id
+msgid "New Commercial"
+msgstr "Comercial nuevo"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "No"
+msgstr ""
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/mass_edit_commercial_wizard.py:0
+#, python-format
+msgid "No domain was selected !"
+msgstr "No hay dominio seleccionado !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/mass_edit_commercial_wizard.py:0
+#, python-format
+msgid "No records found !"
+msgstr "No se han encontrado registros coincidentes !"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__res_partner__automatic_billing__none
+msgid "None"
+msgstr "Ninguno"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/commercial_target.py:0
+#: code:addons/monolitic_sales/wizards/customer_prevision.py:0
+#, python-format
+msgid "Not a valid file!"
+msgstr "¡No es un archivo válido!"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__11
+msgid "November"
+msgstr "Noviembre"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.account_invoice_line_tree_view
+msgid "Nº Factura"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__10
+msgid "October"
+msgstr "Octubre"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__offer_type
+msgid "Offer Type"
+msgstr "Tipo de oferta"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "Offer about to expire"
+msgstr "Oferta a expirar"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_monthly_amount.py:0
+#, python-format
+msgid "Opportunities"
+msgstr "Oportunidades"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__sale_to_acuse
+msgid "Order to Acuse"
+msgstr "Pedido por acusar"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__sale
+msgid "Order to Confirm"
+msgstr "Pedido por confirmar"
+
+#. module: monolitic_sales
+#: model:ir.actions.report,name:monolitic_sales.proforma_report_sale_order_custom
+msgid "PRO-FORMA Invoice"
+msgstr "Factura PRO-FORMA"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__invoice_paid
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__paid_invoice
+msgid "Paid Invoice"
+msgstr "Factura pagada"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__partner_bank_account_id
+msgid "Partner Bank Account"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__partner_pricelist
+msgid "Partner Pricelist"
+msgstr "Tarifa del contacto"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Plazos de pago"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__pending_payment
+msgid "Pending Payment"
+msgstr "Pendiente pago"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "Plazo de entrega considerado a partir de la confirmación del pedido."
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "Please use the following communication for your payment :"
+msgstr "Por favor utilice la siguiente referencia al realizar su pago:"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_target.py:0
+#: code:addons/monolitic_sales/models/commercial_target_coeficient.py:0
+#: code:addons/monolitic_sales/models/customer_prevision.py:0
+#, python-format
+msgid "Please write a valid year ! "
+msgstr "Por favor, introduzca un año válido ! "
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "Precio de venta incluye ecotasa RAEE"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mass_edit_commercial_wizard__previous_commercial_id
+msgid "Previous Commercial"
+msgstr "Comercial anterior"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__amount_type__prevision
+msgid "Prevision"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__prevision_amount
+msgid "Prevision Amount"
+msgstr "Cifra prevista"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_lead__prevision_editable
+msgid "Prevision Editable"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_tree_view
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_tree_view
+msgid "Prevision amount"
+msgstr "Cifra prevista"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__pricelist_id
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__pricelist_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__pricelist_name
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move__pricelist_name
+msgid "Pricelist Name"
+msgstr "Nombre tarifa"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__pricelist_price
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__pricelist_price
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move__pricelist_price
+msgid "Pricelist Price"
+msgstr "Precio tarifa"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Product Segmentation"
+msgstr "Segmentación de producto"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__product_segmentation_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__product_segmentation_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__product_segmentation_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__product_segmentation_id
+msgid "Product segmentation"
+msgstr "Segmentación de producto"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#: code:addons/monolitic_sales/models/sale_order_line.py:0
+#, python-format
+msgid "Product: %s has no sale pricelist."
+msgstr "No se ha encontrado precio en la tarifa para el producto: %s !"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__quantity_report
+msgid "Quantity Report"
+msgstr "Informe de cantidad"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order_line.py:0
+#, python-format
+msgid ""
+"Quantity requested cannot be less than quantity already reserved/delivered!"
+msgstr "La cantidad no puede ser inferior a la cantidad ya reservada/enviada!"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__quotation_id
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__draft
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__sale_order__state__sent
+msgid "Quotation Sent"
+msgstr "Presupuesto enviado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__real_diff_amount
+msgid "Real difference amount"
+msgstr "Diferencia Cifra Objetivo vs Real"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__related_user
+msgid "Related User"
+msgstr "Usuario relacionado"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__remaining_validity_days
+msgid "Remaining Validity Days"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__requested_shipping_date
+msgid "Requested shipping date"
+msgstr "Fecha envío solicitada"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_crm_stage__required_planned_revenue
+msgid "Required Planned Revenue"
+msgstr "Ingreso Estimado obligatorio"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "RoHS Compilant"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "SALE ORDER VALIDITY :"
+msgstr "VALIDEZ DE LA OFERTA :"
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_sat_view
+msgid "SAT view"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.actions.report,name:monolitic_sales.ml_report_sale_order_custom
+msgid "Sale Order"
+msgstr "Presupuesto / Pedido"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid "Sale Order minimum import : # 100 EUR #"
+msgstr "Importe mínimo por pedido: # 100 EUR #"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.crm_lead_customer_prevision_inherit
+msgid "Sale Previsions"
+msgstr "Previsiones de Venta"
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_sale_order_edition
+msgid "Sale order edition"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:res.groups,name:monolitic_sales.group_sale_order_line_edition
+msgid "Sale order line edition"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Ventas. Anticipo pago factura"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Informe de análisis de ventas"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linea de pedido de venta"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "Sales Orders"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.crm_lead_customer_prevision_inherit
+msgid "Sales Prevision"
+msgstr "Previsión de venta"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_monthly_amount.py:0
+#: model:ir.actions.act_window,name:monolitic_sales.action_sales_prevision_amount
+#, python-format
+msgid "Sales Previsions"
+msgstr "Previsión de Ventas"
+
+#. module: monolitic_sales
+#: model:ir.ui.menu,name:monolitic_sales.menu_sales_prevision_amount
+msgid "Sales previsions"
+msgstr "Previsión de ventas"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__user_id
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_search
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Search Target Amounts"
+msgstr "Cantidades Objetivo de Búsqueda"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.mass_edit_commercial_wizard_form
+msgid "Select the model and field to update the commercial"
+msgstr "Selecciona el documento y el campo para actualizar el comercial"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_form_view_id_inherit
+msgid "Send Acuse"
+msgstr "Enviar Acuse"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sale_order_form_view_id_inherit
+msgid "Send and Confirm"
+msgstr "Enviar y confirmar"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__month__9
+msgid "September"
+msgstr "Setiembre"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__show_commercial_target
+msgid "Show Commercial Target"
+msgstr "Mostrar objetivo comercial"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_account_move_line__pricelist_date_start
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order_line__pricelist_date_start
+#: model:ir.model.fields,field_description:monolitic_sales.field_stock_move__pricelist_date_start
+msgid "Start Date"
+msgstr "Fecha inicio tarifa"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__state_id
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__state_id
+msgid "State"
+msgstr "Provincia"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__street
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: monolitic_sales
+#: model:ir.model.fields.selection,name:monolitic_sales.selection__commercial_monthly_amount__amount_type__target
+msgid "Target"
+msgstr "Objetivo"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.res_users_commercial_simple_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.res_users_target_amount_inherit
+msgid "Target Amount"
+msgstr "Cifra Objetivo"
+
+#. module: monolitic_sales
+#: model:ir.actions.act_window,name:monolitic_sales.action_commercial_target_amount
+msgid "Target Amounts"
+msgstr "Cifras Objetivo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__target_coeficient_id
+msgid "Target Coeficient"
+msgstr "Objetivo Coeficiente"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_coeficient_form_view
+msgid "Target Coeficient Monthly Amounts"
+msgstr "Cantidades Mensuales de Coeficiente Objetivo"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_tree_view
+msgid "Target amount"
+msgstr "Cifra objetivo"
+
+#. module: monolitic_sales
+#: model:ir.ui.menu,name:monolitic_sales.menu_commercial_target_amount
+msgid "Target amounts"
+msgstr "Cifras objetivo"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__sales_prevision_total
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__sales_prevision_total
+msgid "Task Count"
+msgstr "Conteo de Tareas"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__amount_by_group_downpayment
+msgid "Tax amount by group"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,help:monolitic_sales.field_account_move_line__user_id
+msgid "Technical field used to fit the generic behavior in mail templates."
+msgstr ""
+"Campo técnico utilizado para ajustar el comportamiento genérico en las "
+"plantillas de correo."
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Tel:91 572 03 28"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Tel:93 285 92 92"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "Tel:94 411 62 49"
+msgstr ""
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "The client has an unpaid financial risk greater than 0"
+msgstr "El cliente tiene un saldos pendientes de pago mayores a 0!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "The discount of the product  was set over 10%"
+msgstr "El descuento introducido en el prodcuto  está por encima del 10%"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "The discount of the product  was set over 10%! "
+msgstr "El descuento introducido en el prodcuto  está por encima del 10%!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "The parent client has an unpaid financial risk greater than 0"
+msgstr "La empresa tiene saldos pendientes de pago mayores a 0!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/crm_lead.py:0
+#, python-format
+msgid ""
+"The planned revenue must be above 0 on the next stage, please update it "
+"before proceeding !"
+msgstr ""
+"El ingreso estimado debe ser mayor a 0 antes de poder cambiar a la siguiente"
+" etapa !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/crm_lead.py:0
+#, python-format
+msgid "The planned revenue must be above 0 on this stage !"
+msgstr "El ingreso estimado debe ser mayor a 0 en esta etapa !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_target_coeficient.py:0
+#: code:addons/monolitic_sales/models/commercial_target_coeficient.py:0
+#, python-format
+msgid "The total coeficient value must be equal to 1 !"
+msgstr "¡La suma total de los coeficientes debe ser igual a 1!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_target.py:0
+#, python-format
+msgid "The year introduced must be equal or greater than %d ! "
+msgstr "El año introducido debe ser igual o mayor que %d ! "
+
+#. module: monolitic_sales
+#: model:ir.model.constraint,message:monolitic_sales.constraint_commercial_target_year_commercial_uniq
+#: model:ir.model.constraint,message:monolitic_sales.constraint_customer_prevision_year_commercial_uniq
+msgid ""
+"This customer has already a prevision for this year, this market "
+"segmentation, product segmentation and commercial !"
+msgstr ""
+"¡Este cliente ya tiene una previsión para este año, esta segmentación de "
+"mercado, segmentación de producto y comercial!"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid ""
+"This order can't be confirmed manually since the invoice has not been paid !"
+msgstr ""
+"Este pedido no se puede confirmar manualmente ya que la factura no ha sido "
+"pagada !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid ""
+"This order generates due dates, sending the acuse is required before "
+"proceeding !"
+msgstr ""
+"Este pedido genera fechas de vencimiento, se debe enviar el acuse antes de "
+"continuar !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid ""
+"This partner doesn't have VAT, Payment mode and Payment"
+"                        terms. Please fill them up"
+msgstr ""
+"Este cliente no tiene definido el NIF, Modo de pago o Plazo de pago. Por "
+"favor, introdúzcalos en su ficha"
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"Todos los precios de esta oferta están expresados en euros y se mantendrán invariables si,\n"
+"                            a la fecha defacturación, la paridad no varía más del +/- 3%, aplicándose la corrección\n"
+"                                oportuna en caso contrario."
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__total_amount
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__total_amount
+msgid "Total Amount"
+msgstr "Importe total"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: monolitic_sales
+#: model:ir.model,name:monolitic_sales.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "Validity date cannot be before order date!"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_mail_activity__seller_id
+msgid "Vendedor"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.vinculated_sale_orders_view_id
+msgid "Won quotation"
+msgstr "Oferta ganada"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_monthly_amount__year
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target__year
+#: model:ir.model.fields,field_description:monolitic_sales.field_commercial_target_coeficient__year
+#: model:ir.model.fields,field_description:monolitic_sales.field_customer_prevision__year
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.commercial_target_amount_search
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.sales_prevision_amount_search
+msgid "Year"
+msgstr "Año"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order_line.py:0
+#, python-format
+msgid "You can't add a discount superior to 10% !"
+msgstr "No se puede añadir un descuento superior al 10% !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/crm_lead.py:0
+#, python-format
+msgid ""
+"You cannot add/modify a new sales prevision if the Commercial field is empty"
+" !"
+msgstr ""
+"No se puede añadir/modificar una nueva previsión de venta si el Comercial "
+"está vacío !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/commercial_target.py:0
+#, python-format
+msgid "You cannot set a different commercial than this user !"
+msgstr "No puedes seleccionar un comercial diferente para este usuario !"
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "You don't have permision to create a quotation!"
+msgstr ""
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "You don't have permision to create a sale order!"
+msgstr ""
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "You don't have permision to edit a quotation!"
+msgstr ""
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/models/sale_order.py:0
+#, python-format
+msgid "You don't have permision to edit a sale order!"
+msgstr ""
+
+#. module: monolitic_sales
+#: code:addons/monolitic_sales/wizards/commercial_target.py:0
+#: code:addons/monolitic_sales/wizards/customer_prevision.py:0
+#, python-format
+msgid "You need to select a file!"
+msgstr "¡Necesitas seleccionar un archivo!"
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_partner__zip
+#: model:ir.model.fields,field_description:monolitic_sales.field_res_users__zip
+msgid "Zip"
+msgstr "C.P."
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "monolitic.bilbao@monolitic.com"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "monolitic.madrid@monolitic.com"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_layout_standard_sale_order
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.external_proforma_layout_standard_sale_order
+msgid "monolitic@monolitc.com"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_invoice_document
+msgid "on"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__partner_parent_id
+msgid "partner_parent"
+msgstr ""
+
+#. module: monolitic_sales
+#: model:ir.model.fields,field_description:monolitic_sales.field_sale_order__vinculated_sales_orders_count
+msgid "vinculated_sales_orders_count"
+msgstr ""
+
+#. module: monolitic_sales
+#: model_terms:ir.ui.view,arch_db:monolitic_sales.ml_report_sale_order_document
+msgid ""
+"· Plazo Estimado: Fecha orientativa de envío de material basada en los plazos de entrega habituales de nuestros proveedores.<br/>\n"
+"                                        · Plazo Confirmado: Fecha planificada de envío de material desde nuestros almacenes basada en los plazos de entrega confirmados\n"
+"                                          de nuestros proveedores. Monolitic no se hace responsable de posibles retrasos de entrega motivados por causas ajenas."
+msgstr ""

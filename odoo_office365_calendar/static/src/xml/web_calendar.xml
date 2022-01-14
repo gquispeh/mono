@@ -1,0 +1,18 @@
+<template>
+
+    <t t-extend="CalendarView">
+        <t t-jquery=".o_calendar_mini" t-operation="after">
+            <div align='center'>
+                <center>
+                    <br/>
+                     <button id="o365_calendar_sync" class="btn oe_button">
+                        <span>
+                            <img src="/odoo_office365_calendar/static/src/img/o365_calendar.png" height="25px" width="25px"/> Sync with <b>Office365</b>
+                        </span>
+                    </button>
+                </center>
+            </div>
+        </t>
+    </t>
+
+</template>

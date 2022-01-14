@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="project_project_kanban_view_id" model="ir.ui.view">
+        <field name="name">project.project.inherit.view.kanban</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@groups='project.group_project_manager']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//a[@groups='project.group_project_manager']" position="attributes">
+                <attribute name="groups">project.group_project_user</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_project_view_id" model="ir.ui.view">
+        <field name="name">project.project.inherit.view.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="department_id" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_project_custom_view_id" model="ir.ui.view">
+        <field name="name">project.project.inherit.view.form.custom</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="template_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

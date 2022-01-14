@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="rma_ept_backend1" name="rma ept assets1" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/rma_ept/static/src/css/rma_ept.scss"/>
+        </xpath>
+    </template>
+</odoo>

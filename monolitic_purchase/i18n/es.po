@@ -1,0 +1,462 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-23 15:02+0000\n"
+"PO-Revision-Date: 2021-12-23 15:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_purchase
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.inspection_res_config_settings_form_view
+msgid ""
+"<span class=\"o_form_label\">Inspection Users</span>\n"
+"                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"o_form_label\">Usuarios Inspección</span>\n"
+"                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/models/purchase_order.py:0
+#, python-format
+msgid ""
+"A product from this Purchase Order needs inspection but there are no inspection users set!\n"
+"Please check the Purchase Configuration before proceeding."
+msgstr ""
+"Un producto de este Pedido de Compra necesita inspección pero no hay usuarios definidos para ello!\n"
+"Por favor, revise la Configuración de Compras antes de continuar."
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/models/account_move.py:0
+#, python-format
+msgid "Accounting date can't be inferior than invoice date!"
+msgstr "La fecha contable no puede ser anterior a la fecha de factura!"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__supplier_classification__creditor
+msgid "Acreedor"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__active
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: monolitic_purchase
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.partner_supplier_view_id
+msgid "Asistente"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__commitment_date
+msgid "Commitment Date"
+msgstr "Fecha confirmada"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_res_config_settings
+msgid "Config Settings"
+msgstr "Config Ajustes"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:res.groups,name:monolitic_purchase.date_confirmation_alert_purchase_orders_group
+msgid "Date confirmation alert on purchase orders"
+msgstr "Alerta confirmación fecha en pedidos de compra"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__product_template__lead_time_type__day
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__lead_time_type__day
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__warranty_type__day
+msgid "Day(s)"
+msgstr "Dia(s)"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,help:monolitic_purchase.field_purchase_order_line__date_planned
+msgid ""
+"Delivery date expected from vendor. This date respectively defaults to "
+"vendor pricelist lead time then today's date."
+msgstr ""
+"Fecha de entrega esperada del proveedor. Esta fecha, respectivamente, tiene "
+"como valor predeterminado el tiempo de entrega de la lista de precios del "
+"proveedor y luego la fecha actual."
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_category__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_company__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__date_planned
+msgid "Estimated Delivery Date"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__supplier_classification__critic
+msgid "Estratégico Crítico"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__supplier_classification__no_critic
+msgid "Estratégico No Crítico"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_category__field_application_engineer
+msgid "FAE"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_category__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_company__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_config_settings__id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: monolitic_purchase
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.import_supplierinfo_wizard_view
+msgid "Import"
+msgstr "Importar"
+
+#. module: monolitic_purchase
+#: model:ir.ui.menu,name:monolitic_purchase.menu_import_supplierinfo
+msgid "Import Supplier Pricelist"
+msgstr "Importar tarifas de proveedor"
+
+#. module: monolitic_purchase
+#: model:ir.actions.act_window,name:monolitic_purchase.import_supplierinfo_wizard_action
+msgid "Import Supplierinfo"
+msgstr "Importar tarifas de proveedor"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_import_supplierinfo_wizard
+msgid "Import Supplierinfo from csv file"
+msgstr "Importar tarifas de proveedor a partir de un archivo Excel"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_product__incoming_inspection
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__incoming_inspection
+#: model:mail.activity.type,name:monolitic_purchase.mail_incoming_inspection
+msgid "Incoming Inspection"
+msgstr "Inspección de entrada"
+
+#. module: monolitic_purchase
+#: model:ir.actions.act_window,name:monolitic_purchase.action_receipt_picking_move
+#: model:ir.ui.menu,name:monolitic_purchase.menu_action_picking_tree_in_move
+msgid "Incoming Products"
+msgstr "Productos a recibir"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_company__inspection_users
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_config_settings__inspection_users
+msgid "Inspection Users"
+msgstr "Usuarios Inspección"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#, python-format
+msgid "Invalid file"
+msgstr "Archivo inválido"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/models/account_move.py:0
+#, python-format
+msgid "Invoice date can't be superior than today!"
+msgstr "La fecha de factura no puede ser posterior a hoy!"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_category____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_company____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__lead_time
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_product__lead_time
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_product__lead_time_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__lead_time
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__lead_time
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__lead_time_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__lead_time
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__lead_time
+msgid "Lead Time"
+msgstr "Plazo de entrega"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__lead_time_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__lead_time_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__lead_time_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__lead_time_type
+msgid "Lead Time Type"
+msgstr "Tipo de Plazo de entrega"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__max_quantity
+msgid "Maximum quantity"
+msgstr "Cantidad máxima"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__product_template__lead_time_type__month
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__lead_time_type__month
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__warranty_type__month
+msgid "Month(s)"
+msgstr "Mes(es)"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__supplier_classification__no_strat
+msgid "No Estratégico"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__supplier_classification__no_valuable
+msgid "No Evaluable"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__observations
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/models/purchase_order.py:0
+#, python-format
+msgid "Order Confirmed."
+msgstr "Pedido confirmado"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_category__product_manager
+msgid "PM"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_product_category
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__product_category_id
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__product_category_id
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del producto"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__register_project_protection
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__register_project_protection
+msgid "Project Protection and Registration"
+msgstr "Registro y Protección de Proyectos"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea de pedido de compra"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__quantity_report
+msgid "Quantity Report"
+msgstr "Informe de cantidad"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order__related_sale_orders
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.purchase_order_form_inherit
+msgid "Related Sale Orders"
+msgstr "Órdenes de venta relacionadas"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_purchase_order_line__requested_shipping_date
+msgid "Requested Shipping Date"
+msgstr "Fecha envío solicitada"
+
+#. module: monolitic_purchase
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.view_id_product_category_responsibles
+msgid "Responsibles"
+msgstr "Responsables"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_product__rohs_regulation
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__rohs_regulation
+msgid "RoHS regulation"
+msgstr "Normativa RoHS"
+
+#. module: monolitic_purchase
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.partner_supplier_view_id
+msgid "Segmentación de Producto"
+msgstr ""
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_import_supplierinfo_wizard__supplierinfo_file
+msgid "Select File"
+msgstr "Seleccionar archivo"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__supplier_classification
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__supplier_classification
+msgid "Supplier Classification"
+msgstr "Clasificación Proveedor"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_product__supplier_internal_ref
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_template__supplier_internal_ref
+msgid "Supplier Internal Reference"
+msgstr "Referencia interna de proveedor"
+
+#. module: monolitic_purchase
+#: model:ir.model,name:monolitic_purchase.model_product_supplierinfo
+msgid "Supplier Pricelist"
+msgstr "Tarifa de proveedor"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#, python-format
+msgid "There are more than 1 product with the same odoo default code %s"
+msgstr "Hay más de 1 producto con la misma referencia de odoo %s"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#, python-format
+msgid ""
+"There are more than 1 product with the same supplier internal reference %s"
+msgstr ""
+"Hay más de 1 producto con la misma referencia de proveedor %s"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#, python-format
+msgid "There isn't any product with supplier internal reference %s"
+msgstr "No hay ningún producto con la referencia de proveedor %s"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/wizards/import_supplierinfo_wizard.py:0
+#, python-format
+msgid "There's an error creating new supplierinfo in odoo with values %s"
+msgstr ""
+"Ha habido un error al crear la nueva tarifa de proveedor con valores %s"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,help:monolitic_purchase.field_product_customerinfo__product_code
+#: model:ir.model.fields,help:monolitic_purchase.field_product_supplierinfo__product_code
+msgid ""
+"This vendor's product code will be used when printing a request for "
+"quotation. Keep empty to use the internal one."
+msgstr ""
+"El código de producto de proveedor se usará al imprimir una solicitud de "
+"presupuesto. Déjelo vacío para usar el código interno."
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,help:monolitic_purchase.field_res_config_settings__inspection_users
+#: model_terms:ir.ui.view,arch_db:monolitic_purchase.inspection_res_config_settings_form_view
+msgid "Users responsible of inspectioning products"
+msgstr "Usuarios responsables de la inspección de productos"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__product_code
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__product_code
+msgid "Vendor Product Code"
+msgstr "Código de producto del proveedor"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__warranty
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__warranty
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__warranty
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__warranty
+msgid "Warranty Duration"
+msgstr "Duración de la Garantía"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_customerinfo__warranty_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_product_supplierinfo__warranty_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_partner__warranty_type
+#: model:ir.model.fields,field_description:monolitic_purchase.field_res_users__warranty_type
+msgid "Warranty Type"
+msgstr "Tipo de Garantía"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__product_template__lead_time_type__week
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__lead_time_type__week
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__warranty_type__week
+msgid "Week(s)"
+msgstr "Semana(s)"
+
+#. module: monolitic_purchase
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__product_template__lead_time_type__year
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__lead_time_type__year
+#: model:ir.model.fields.selection,name:monolitic_purchase.selection__res_partner__warranty_type__year
+msgid "Year(s)"
+msgstr "Año(s)"
+
+#. module: monolitic_purchase
+#: code:addons/monolitic_purchase/models/product_category.py:0
+#, python-format
+msgid ""
+"You cannot delete this category if there are products associated with it or "
+"with its childs"
+msgstr ""
+"No puede eliminar esta categoría si hay productos asociados a ella o con sus"
+" hijos"

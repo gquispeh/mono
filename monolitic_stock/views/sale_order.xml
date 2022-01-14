@@ -1,0 +1,35 @@
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="view_order_form">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree//field[@name='sequence']" position="after">
+                <field name="number" string="Nbr"/>
+            </xpath>
+
+            <xpath expr="//field[@name='picking_policy']" position="after">
+                <field name="not_valued_picking"/>
+                <field name="prohibited_partial_shippings"/>
+            </xpath>
+
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="carrier_id"/>
+                <field name="delivery_conditions_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_stock_view_order_form_inherit">
+        <field name="name">sale.stock.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_delivery']" position="attributes">
+                <attribute name="context">{'default_state': ''}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

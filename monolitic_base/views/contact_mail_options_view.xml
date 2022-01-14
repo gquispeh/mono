@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- contact.mail.options form view -->
+    <record id="contact_mail_options_view_form" model="ir.ui.view">
+        <field name="name">contact.mail.options.view.form</field>
+        <field name="model">contact.mail.options</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_contact_mail_options_form" model="ir.actions.act_window">
+        <field name="name">Contact Mail Options</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">contact.mail.options</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_contact_mail_options" name="Contact Mail Options"
+        parent="contacts.res_partner_menu_config" sequence="9"
+        action="action_contact_mail_options_form"/>
+    
+</odoo>

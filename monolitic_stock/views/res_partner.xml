@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="res_partner_suplier_number_form_view" model="ir.ui.view">
+        <field name="name">res.partner.suplier.number.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="open_reservation_orderpoint" icon="fa-building-o">
+                    <field string="Reservas" name="reservation_orderpoint_count" widget="statinfo"/>
+                </button>
+            </xpath>
+
+            <xpath expr="//field[@name='property_stock_supplier']" position="after">
+                <field name="not_valued_picking"/>
+                <field name="prohibited_partial_shippings"/>
+                <field name="logistic_customer_tag"/>
+                <field name="logistic_customer_tag_type"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="monolitic_supplier_code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_property_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.custom.property.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="delivery.view_partner_property_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_delivery_carrier_id']" position="after">
+                <field name="delivery_conditions_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_company_property_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.custom.property.form.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='favicon']" position="after">
+                <field name="client_code"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

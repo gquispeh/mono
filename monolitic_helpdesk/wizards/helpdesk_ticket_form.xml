@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- helpdesk.ticket.form form view -->
+    <record id="monolitic_helpdesk_ticket_form" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.form.view.form</field>
+        <field name="model">helpdesk.ticket.form</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Ticket Form">
+                <separator string="Ticket Form"/>
+                <group>
+                    <field name="helpdesk_id" options="{'no_create_edit': True}"/>
+                    <field name="helpdesk_area_id"
+                        domain="[('helpdesk_team_ids', '=', helpdesk_id)]"
+                        options="{'no_create_edit': True}"
+                        attrs="{'invisible': ['|', ('helpdesk_id', '=', False), ('helpdesk_id', '=', 4)], 'required': [('helpdesk_id', '!=', 4)]}"/>
+                    <field name="priority" widget="priority" attrs="{'invisible': [('helpdesk_id', '=', False)]}"/>
+                    <field name="partner_type" attrs="{'invisible': [('helpdesk_id', '=', False)]}"/>
+                    <field name="partner_code" attrs="{'invisible': [('helpdesk_id', '=', False)]}"/>
+                    <field name="partner_id"
+                        options="{'no_create_edit': True}"
+                        attrs="{'invisible': [('helpdesk_id', '=', False)]}"/>
+                    <field name="ticket_type_id"
+                        domain="[('helpdesk_team_ids', '=', helpdesk_id)]"
+                        options="{'no_create_edit': True}"
+                        attrs="{'invisible': [('helpdesk_id', '=', False)]}"/>
+                    <field name="author_id"
+                        options="{'no_create_edit': True}"
+                        attrs="{'invisible': [('helpdesk_id', '=', False)]}"/>
+                    <field name="comment" attrs="{'invisible': [('helpdesk_id', '=', False)]}" type="html"/>
+                </group>
+                <footer>
+                    <button name="generate_ticket_from_form"
+                            string="Create ticket"
+                            class="btn-primary"
+                            type="object"/>
+                    <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- helpdesk.ticket.form action window -->
+    <record id="monolitic_helpdesk_ticket_form_action" model="ir.actions.act_window">
+        <field name="name">Ticket Form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="monolitic_helpdesk_ticket_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="monolitic_helpdesk_forms_menu" name="Helpdesk Forms" parent="helpdesk.menu_helpdesk_root"
+        groups="helpdesk.group_helpdesk_user" sequence="6"/>
+
+    <menuitem id="helpdesk_ticket_form_menu_act" name="Ticket Form"
+        parent="monolitic_helpdesk_forms_menu" action="monolitic_helpdesk_ticket_form_action" sequence="1"/>
+
+</odoo>

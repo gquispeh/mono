@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- report.ecoraee.wizard form view -->
+    <record id="report_ftt_wizard_view" model="ir.ui.view">
+        <field name="name">report.ftt.wizard.view</field>
+        <field name="model">report.ftt.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group col="4">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>
+
+                <footer>
+                    <button name="%(monolitic_ftt_xlsx)d" string="Generate Report" type="action" class="oe_highlight" />
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ftt_report_wizard" model="ir.actions.act_window">
+        <field name="name">Ftt Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.ftt.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="report_ftt_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="report_menu_ftt_act" name="FTT Report"
+        parent="mrp.menu_mrp_reporting"
+        action="action_ftt_report_wizard" sequence="20"/>
+</odoo>

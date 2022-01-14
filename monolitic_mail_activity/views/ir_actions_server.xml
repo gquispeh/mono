@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- ir.actions.server inherit form view -->
+    <record id="ir_actions_server_view_id" model="ir.ui.view">
+        <field name="name">ir.actions.server.inherit.view.form</field>
+        <field name="model">ir.actions.server</field>
+        <field name="inherit_id" ref="mail.view_server_action_form_template"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='activity_type_id']" position="after">
+                <field name="activity_category" invisible="1"/>
+                <field name="sub_type_id"/>
+            </xpath>
+
+            <xpath expr="//label[@for='activity_date_deadline_range']" position="attributes">
+                <attribute name="attrs">{'invisible': [('activity_category', '=', 'meeting')]}</attribute>
+            </xpath>
+            <xpath expr="//div[@class='o_row']" position="attributes">
+                <attribute name="attrs">{'invisible': [('activity_category', '=', 'meeting')]}</attribute>
+            </xpath>
+
+            <xpath expr="//div[@class='o_row']" position="after">
+                <label for="activity_start_date_range" attrs="{'invisible': [('activity_category', '!=', 'meeting')]}"/>
+                <div class="o_row" attrs="{'invisible': [('activity_category', '!=', 'meeting')]}">
+                    <field name="activity_start_date_range" attrs="{'required': [('activity_category', '=', 'meeting')]}"/>
+                    <field name="activity_start_date_range_type" attrs="{'required': [('state', '=', 'next_activity'), ('activity_start_date_range', '&gt;', 0)]}"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='activity_user_type']" position="before">
+                <field name="duration" widget="float_time" attrs="{'invisible': [('activity_category', '!=', 'meeting')]}"/>
+                <field name="place" attrs="{'invisible': [('activity_category', '!=', 'meeting')]}"/>
+                <field name="assistants_ids" widget="many2many_tags" options="{'no_create': True}" attrs="{'invisible': [('activity_category', '!=', 'meeting')], 'required': [('activity_category', '=', 'meeting')]}"/>
+                <field name="sub_user_ids" widget="many2many_tags" options="{'no_create': True}" attrs="{'invisible': [('activity_category', '!=', 'meeting')]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='activity_user_type']" position="attributes">
+                <attribute name="attrs">{'invisible': [('activity_category', '=', 'meeting')], 'required': [('activity_category', '!=', 'meeting')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='activity_user_field_name']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('activity_category', '=', 'meeting'), ('activity_user_type', '=', 'specific')], 'required': [('state', '=', 'next_activity'), ('activity_category', '!=', 'meeting'), '|', ('activity_user_type', '=', 'generic')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='activity_user_id']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('activity_category', '=', 'meeting'), ('activity_user_type', '=', 'generic')], 'required': [('state', '=', 'next_activity'), ('activity_category', '!=', 'meeting'), '|', ('activity_user_type', '=', 'specific')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- sale.order.line inherit form view -->
+    <record id="sale_order_line_view_id_inherit" model="ir.ui.view">
+        <field name="name">sale.order.line.inherit.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/form//field[@name='route_id']" position="before">
+                <field name="max_quantity"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/form//label[@for='customer_lead']" position="before">
+                <field name="requested_shipping_date" />
+                <field name="estimated_shipping_date" />
+                <field name="commitment_date" string="Fecha de confirmación"/>
+                <field name="delivery_term"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/form//field[@name='invoice_lines']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='discount']" position="after">
+                <field name="pricelist_discount"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='discount']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree/field[last()]" position="after">
+                <field name="requested_shipping_date" attrs="{'column_invisible': [('parent.state','in', ['draft','sent'])]}"/>
+                <field name="estimated_shipping_date" attrs="{'column_invisible': [('parent.state','in', ['draft', 'sent'])]}"/>
+                <field name="commitment_date" string="Fecha de confirmación" attrs="{'column_invisible': [('parent.state','in', ['draft', 'sent'])]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
+                <field name="can_edit_pricelist_price" invisible="1"/>
+                <field name="pricelist_name" force_save="1" invisible="1"/>
+                <field name="pricelist_price" force_save="1" attrs="{'readonly': [('can_edit_pricelist_price', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='discount']" position="after">
+                <field name="pricelist_discount"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='discount']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='qty_delivered']" position="after">
+                <field name="max_quantity"/>
+                <field name="delivery_term"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="sale_order_segmentation_form_view_id" model="ir.ui.view">
+        <field name="name">sale.order.segmentation.inherit.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//label[@for='discount']" position="before">
+                <label for="client_segmentation_id" string="Market segmentation" />
+                <div>
+                    <button name="%(monolitic_crm.client_segmentation_wizard_action)d" string="Assistant"
+                        context="{'default_num_required': 4, 'field_to_write': 'client_segmentation_id', 'many2one_field': True}"
+                        icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                    <field name="client_segmentation_id" domain="[('level_parents', '>=', 4)]" options="{'no_create': True, 'no_create_edit':True}"/>
+              </div>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//tree//field[@name='price_tax']" position="after">
+                <button name="%(monolitic_crm.client_segmentation_wizard_action)d"
+                        context="{'default_num_required': 4, 'field_to_write': 'client_segmentation_id', 'many2one_field': True}"
+                        icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                <field name="client_segmentation_id" domain="[('id', 'in', parent.client_seg_ids)]" options="{'no_create': True, 'no_create_edit':True}" attrs="{'required': [('product_type', '=', 'product')]}"/>
+                <field name="pricelist_date_start" force_save="1"/>
+                <field name="pricelist_date_end" force_save="1"/>
+                <field name="confirm_line" invisible="1"/>
+                <field name="approve_price" groups="monolitic_sales.group_approve_sale_lines" attrs="{'invisible': [('confirm_line','=',True)]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- sale.order.line.input inherit form view -->
+    <record id="view_sales_order_line_input_tree_view_id" model="ir.ui.view">
+        <field name="name">sale.order.line.input.inherit.view.tree</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_id']" position="after">
+                <button name="action_sale_order_form" string="" type="object" icon="fa-external-link" class="oe_stat_button"/>
+                <field name="date_order"/>
+                <field name="client_order_ref"/>
+                <field name="clasif_customer"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='price_subtotal']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='price_subtotal']" position="after">
+                <field name="requested_shipping_date"  />
+                <field name="estimated_shipping_date"  />
+                <field name="commitment_date" string="Fecha confirmación"/>
+                <field name="price_subtotal"/>
+                <field name="invoice_paid"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

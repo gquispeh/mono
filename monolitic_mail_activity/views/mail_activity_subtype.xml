@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+        <record id="mail_activity_sub_type_view_search" model="ir.ui.view">
+        <field name="name">mail.activity.sub.type.search</field>
+        <field name="model">mail.activity.sub.type</field>
+        <field name="arch" type="xml">
+            <search string="Activities">
+                <field name="name"/>
+                <filter string="Archived" domain="[('active', '=', False)]" name="archived"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="mail_activity_sub_type_view_tree" model="ir.ui.view">
+        <field name="name">mail.activity.sub.type.view.tree</field>
+        <field name="model">mail.activity.sub.type</field>
+        <field name="arch" type="xml">
+            <tree string="Sub Types" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mail_activity_sub_type_action" model="ir.actions.act_window">
+        <field name="name">Activity Sub Types</field>
+        <field name="res_model">mail.activity.sub.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+      id="menu_mail_activity_sub_type"
+      action="mail_activity_sub_type_action"
+      parent="base.menu_email"
+    />
+    <menuitem
+      id="menu_crm_activity_sub_type"
+      action="mail_activity_sub_type_action"
+      parent="crm.crm_menu_config"
+    />
+    <menuitem
+      id="menu_project_activity_sub_type"
+      action="mail_activity_sub_type_action"
+      parent="project.menu_project_config"
+    />
+
+</odoo>

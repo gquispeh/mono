@@ -1,0 +1,33 @@
+<odoo>
+    <record id="group_crm_view" model="res.groups">
+        <field name="name">CRM view</field>
+        <field name="category_id" ref="base.module_category_sales_crm"/>
+        <field name="menu_access" eval="[
+            (4, ref('crm.crm_menu_root')),
+            (4, ref('crm.crm_menu_report')),
+            (4, ref('crm.crm_menu_config')),
+            (4, ref('crm.crm_config_settings_menu')),
+            (4, ref('import_lead.menu_definition_import_lead')),
+            (4, ref('crm.crm_team_config')),
+            (4, ref('crm.crm_team_menu_config_activity_types')),
+            (4, ref('crm.crm_recurring_plan_menu_config')),
+            (4, ref('crm.menu_crm_config_lead')),
+            (4, ref('crm.menu_crm_lead_stage_act')),
+            (4, ref('crm.menu_crm_lead_categ')),
+            (4, ref('crm.menu_crm_lost_reason')),
+            (4, ref('monolitic_crm.menu_closing_actions')),
+            (4, ref('monolitic_crm.menu_action_client_segmentation')),
+            (4, ref('monolitic_crm.menu_action_monolitic_client_classification')),
+            (4, ref('crm_iap_lead.crm_menu_lead_generation')),
+            (4, ref('crm_iap_lead.crm_iap_lead_mining_request_menu_action')),
+        ]"/>
+    </record>
+    <record id="group_crm_edition" model="res.groups">
+        <field name="name">CRM edition</field>
+        <field name="category_id" ref="base.module_category_sales_crm"/>
+        <field name="menu_access" eval="[
+            (4, ref('crm.crm_menu_root')),
+        ]"/>
+        <field name="implied_ids" eval="[(4, ref('monolitic_crm.group_crm_view'))]"/>
+    </record>
+</odoo>

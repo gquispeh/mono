@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Aleix De la Rubia Campamà <aleix.delarubia@qubiq.es>
+License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- mail.activity inherit form view -->
+    <record id="view_id_activity_form" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.form</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail_activity_board.mail_activity_view_form_board"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='activity_type_id']" position="after">
+                <field name="sub_type_id" />
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="sub_user_ids" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" widget="many2many_tags" />
+            </xpath>
+            <xpath expr="//field[@name='user_id']/.." position="after">
+                <group string="Información Comercial" name="activity_fields" attrs="{'invisible': [('comercial_activity', '=', False)]}">
+                    <group>
+                        <field name="organisation_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                        <label for="application_id" string="Segmentación de mercado"/>
+                        <span>
+                            <button name="%(monolitic_crm.client_segmentation_wizard_action)d" string="Asistente" context="{'default_num_required': 4, 'field_to_write': 'application_id', 'many2many_field': True, 'view_back_ref': 'mail.mail_activity_view_form_popup'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                            <field name="application_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        </span>
+                        <field name="classification_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                        <field name="seller_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                    <group>
+                        <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <label for="business_id" string="Segmentación de producto"/>
+                        <span>
+                            <button name="%(monolitic_product.product_category_wizard_action)d" string="Asistente" context="{'default_num_required': 2, 'field_to_write': 'business_id', 'many2many_field': True, 'view_back_ref': 'mail.mail_activity_view_form_popup'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                            <field name="business_id" domain="[('complete_name', 'not ilike', 'All')]" options="{'no_create': True, 'no_create_edit':True}">
+                                <tree limit="1">
+                                    <field name="complete_name"/>
+                                </tree>
+                            </field>
+                        </span>
+                        <field name="represented_id" domain="[('is_supplier', '=', True)]" options="{'no_create': True, 'no_create_edit':True}" widget="many2many_tags" onchange="_onchange_represented_id"/>
+                        <field name="evaluation"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='summary']" position="after">
+                <field name="comercial_activity"/>
+                <field name="evaluation" attrs="{'invisible': [('comercial_activity', '=',  True)]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- mail.activity inherit form view -->
+    <record id="mail_activity_form_inherit" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.form</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="sub_user_ids" options="{'no_create_edit': True}" widget="many2many_tags" />
+            </xpath>
+            <xpath expr="//field[@name='user_id']/.." position="before">
+                <group attrs="{ 'invisible': [('activity_category', '!=', 'meeting')],
+                    'readonly': [('calendar_event_id', '!=', False)]}">
+                    <field name="calendar_event_id" invisible="1"/>
+                    <field name="start_date" autocomplete="off" attrs="{'required': [('activity_category', '=', 'meeting')]}"/>
+                    <label for='duration'/>
+                    <div>
+                        <span>
+                            <field name="duration" class="oe_inline" autocomplete="off" widget="float_time" readonly="0" attrs="{'required': [('activity_category', '=', 'meeting')]}"/>
+                            Hours
+                        </span>
+                    </div>
+                    <field name="assistants_ids" widget="many2many_tags" options="{'no_create': True}" />
+                    <field name="place"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='user_id']/../.." position="after">
+                <group string="Información Comercial" name="activity_fields" attrs="{'invisible': [('comercial_activity', '=', False)]}">
+                    <group>
+                        <field name="organisation_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                        <label for="application_id" string="Segmentación de mercado"/>
+                        <span>
+                            <button name="%(monolitic_crm.client_segmentation_wizard_action)d" string="Asistente" context="{'default_num_required': 4, 'field_to_write': 'application_id', 'many2many_field': True, 'view_back_ref': 'mail.mail_activity_view_form_popup'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                            <field name="client_seg_ids" invisible="1"/>
+                            <field name="application_id" domain="[('id', 'in', client_seg_ids)]" options="{'no_create': True, 'no_create_edit':True}"/>
+                        </span>
+                        <field name="classification_id" options="{'no_create': True, 'no_create_edit':True}" invisible="1"/>
+                        <field name="seller_id" options="{'no_create': True, 'no_create_edit':True}"/>
+
+                    </group>
+                    <group>
+                        <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <label for="business_id" string="Segmentación de producto"/>
+                        <span>
+                            <button name="%(monolitic_product.product_category_wizard_action)d" string="Asistente" context="{'default_num_required': 2, 'field_to_write': 'business_id', 'many2many_field': True, 'view_back_ref': 'mail.mail_activity_view_form_popup'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                            <field name="business_id" domain="[('complete_name', 'not ilike', 'All')]" options="{'no_create': True, 'no_create_edit':True}">
+                                <tree limit="1">
+                                    <field name="complete_name"/>
+                                </tree>
+                            </field>
+                        </span>
+                        <field name="represented_id" domain="[('is_supplier', '=', True)]" options="{'no_create': True, 'no_create_edit':True}" widget="many2many_tags"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='summary']" position="after">
+                <field name="comercial_activity"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="calendar_view_id_activity_form" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.form</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="calendar.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='note']" position="attributes">
+                  <attribute name="attrs">{'invisible': False}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- mail.activity inherit form view -->
+    <record id="mail_activity_view_form_popup" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.form</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail_activity_done.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="sub_type_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" context="{'default_activity_type_id': activity_type_id}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- mail.activity inherit tree view -->
+    <record id="mail_activity_tree_inherit" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.tree</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='activity_type_id']" position="before">
+                <field name="organisation_id"/>
+            </xpath>
+            <xpath expr="//field[@name='activity_type_id']" position="after">
+                <field name="sub_type_id"/>
+                <field name="res_model_id_name"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="evaluation"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mail_activity_search_inherit" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.search</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_search"/>
+        <field name="arch" type="xml">
+            <field name="res_model_id" position="after">
+                <filter string="All Activities" name="all_activities" domain="['|', ('active', '=', False), ('active', '=', True)]"/>
+            </field>
+            <xpath expr="//field[@name='summary']" position="before">
+                <filter string="My Activities" name="activities_my" domain="['|',('user_id', '=', uid), ('sub_user_ids', 'in', uid)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- mail.activity inherit form view -->
+    <record id="custom_monolitic_mail_activity_calendar" model="ir.ui.view">
+        <field name="name">custom.monolitic.mail.activity.calendar</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="calendar.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_create_calendar_event']" position="attributes">
+                <attribute name="string">Schedule</attribute>
+                <attribute name="attrs">{'invisible': [('activity_category', '!=', 'meeting')]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_create_calendar_event']" position="before">
+                <field name="calendar_event_id" invisible="1"/>
+                <button string="Open Calendar" attrs="{'invisible': [('calendar_event_id', '=', False)]}" name="action_open_calendar_event" type="object" class="btn-primary"/>
+                <button string="Save" attrs="{'invisible': [('calendar_event_id', '=', False)]}" name="action_save" type="object" class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- mail.activity.type inherit form view -->
+    <record id="mail_activity_type_view_form" model="ir.ui.view">
+        <field name="name">mail.activity.type.inherit.view.form</field>
+        <field name="model">mail.activity.type</field>
+        <field name="inherit_id" ref="mail.mail_activity_type_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category']" position="before">
+                <field name="sub_type_ids" widget="many2many_tags" options="{'no_create_edit': True}" />
+            </xpath>
+            <xpath expr="//field[@name='mail_template_ids']" position="after">
+                <field name="required_evaluation" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- mail.activity inherit form view -->
+    <record id="mail_activity_view_id" model="ir.ui.view">
+        <field name="name">mail.activity.inherit.view.form</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='represented_id']" position="after">
+                <field name="evaluation"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mail_activity_view_calendar_custom" model="ir.ui.view">
+        <field name="name">mail.activity.view.calendar.custom</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_calendar" />
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar" position="attributes">
+                <attribute name="mode">month</attribute>
+                <attribute name="create">0</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

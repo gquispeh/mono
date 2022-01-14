@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_res_partner_job_tree" model="ir.ui.view">
+        <field name="name">res.partner.job.tree</field>
+        <field name="model">res.partner.job</field>
+        <field name="arch" type="xml">
+            <tree string="Res Partner Activity" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <!-- res.partner inherit form view -->
+    <record id="view_res_partner_job" model="ir.ui.view">
+        <field name="name">res.partner.job.form</field>
+        <field name="model">res.partner.job</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Res Partner Activity">
+                <field name="name"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_res_partner_job_form" model="ir.actions.act_window">
+        <field name="name">Res Partner Job</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.job</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_res_partner_job" name="Res Partner Job" parent="contacts.res_partner_menu_config" action="action_res_partner_job_form" sequence="4"/>
+</odoo>

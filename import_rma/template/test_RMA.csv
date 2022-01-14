@@ -1,0 +1,2 @@
+"name"|"code"|"rma_type"|"user_id"|"section_id"|"is_rma_without_incoming"|"date"|"date_deadline"|"priority"|"rma_support_person_id"|"picking_id"|"partner_id"|"partner_phone"|"email_from"|"location_id"|"partner_delivery_id"|"description"|"date_action_next"|"action_next"|"cause"|"type_action"|"resolution"
+"NEW"||"comercial"|"Abel Neila"|"Europa"|"True"|"2021-12-15"|"2021-12-20"|2|"Testing Test"|"MONO/OUT/00002"|"AVALON INF. Y SERVICIOS SL"|||||"TEST TEST TEST TEST"|"2021-12-20"|"TEST ACTION"|"TEST CAUSE"|"correction"|"TEST RESOLUTION"

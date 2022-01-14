@@ -1,0 +1,546 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_manufacturing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-10 15:12+0000\n"
+"PO-Revision-Date: 2022-01-10 15:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "(RoHS Compliant)"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.internal_layout_custom
+msgid ""
+"<br/>\n"
+"                         <br/>\n"
+"                         <span>Shipping Date:</span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.internal_layout_custom
+msgid ""
+"<br/>\n"
+"                         <span>Page</span>\n"
+"                         <span class=\"page\"/>\n"
+"                         <br/>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<span style=\"margin-left: 20%\">Page </span><span class=\"page\"/>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "<span>Customer:</span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<span>Date : </span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "<span>Origin:</span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "<span>Reference:</span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "<span>S/N equipment:</span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "<span>Sale Order:</span>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.internal_layout_custom
+msgid ""
+"<strong>Material Stock Situation</strong>\n"
+"                         <br/>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "<strong>Observations</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "<strong>Purchase orders</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "<strong>Sale orders production (Kits)</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "<strong>Sale orders</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<strong>Vº Bº Assembly</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<strong>Vº Bº Production Responsible</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<strong>Vº Bº Quality Control</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<strong>Vº Bº Test and Verification</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "<strong>Website: http://www.monolitic.com</strong>"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.actions.report,name:monolitic_manufacturing.print_product_actual_stock_bom
+#: model:ir.actions.report,name:monolitic_manufacturing.print_product_actual_stock_move
+msgid "Actual Stock Report"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Assembled in kits"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "BCN"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "BDN"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Lista de materiales"
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Línea de Lista de Materiales"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_ftt_wizard_view
+msgid "Cancel"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Comerc."
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Conf. Date"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:res.groups,name:monolitic_manufacturing.group_create_deconstruction_orders
+msgid "Create deconstruction orders"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Currency"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Custom. Ref."
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_production__partner_id
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Customer"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "DEP"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "DOC"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "DOT"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: code:addons/monolitic_manufacturing/wizards/report_ftt_wizard.py:0
+#, python-format
+msgid "Date end must be after initial datein range"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "Description"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom_line__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_production__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_product_stock_mixin__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_product_template__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_monolitic_manufacturing_report_ftt__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_move__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_scrap__display_name
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_warehouse_orderpoint__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Equipment"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Exist"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Exp. Stock"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "FIFO"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.ui.menu,name:monolitic_manufacturing.report_menu_ftt_act
+msgid "FTT Report"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: code:addons/monolitic_manufacturing/models/mrp_production.py:0
+#, python-format
+msgid "From %s to %s"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.actions.act_window,name:monolitic_manufacturing.action_ftt_report_wizard
+msgid "Ftt Report"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_ftt_wizard_view
+msgid "Generate Report"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom_line__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_production__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_product_stock_mixin__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_product_template__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_monolitic_manufacturing_report_ftt__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_move__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_scrap__id
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_warehouse_orderpoint__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_production__interval_tracking
+msgid "Interval Tracking"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom_line____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_production____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_product_stock_mixin____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_product_template____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_monolitic_manufacturing_report_ftt____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_move____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_scrap____last_update
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_warehouse_orderpoint____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Last Purchase Price:"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "Logo"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "Lot/Serial"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "Manufacturer"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_stock_warehouse_orderpoint
+msgid "Minimum Inventory Rule"
+msgstr "Regla de inventario mínimo"
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_scrap__note
+msgid "Note"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "Nº"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_production__observations
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.mrp_production_form_inherit
+msgid "Observations"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_mrp_bom__operation_ids
+msgid "Operations"
+msgstr "Operaciones"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Order vt. kit"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Pending"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "Picking Equipment SYSTEMS"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_product_stock_mixin
+msgid "Product Stock Mixin"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_mrp_production
+msgid "Production Order"
+msgstr "Orden de producción"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Purch. order"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Purchase price"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.monolitic_report_mrporder
+msgid "Quantity"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "REST"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Reference"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_report_ftt_wizard
+msgid "Report FTT Wizard"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_report_monolitic_manufacturing_report_ftt
+msgid "Report Monolitic Manufacturing FTT"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_stock_move__sn_prod
+msgid "S/N Prod."
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "SAT"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "SO"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Sale order"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Sale price <br/> excl.l"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_stock_scrap
+msgid "Scrap"
+msgstr "Desechar"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Shipping Date"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Shipping Date <br/>Confirm."
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model.fields,field_description:monolitic_manufacturing.field_report_ftt_wizard__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "State"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Stk Reserv."
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Stk sec"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model:ir.model,name:monolitic_manufacturing.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Supplier"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.manufacturing_layout_standard
+msgid "Tel:"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: code:addons/monolitic_manufacturing/models/product_template.py:0
+#, python-format
+msgid "The product %s cannot be archived because it has stock! "
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Total Ordered"
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: model_terms:ir.ui.view,arch_db:monolitic_manufacturing.report_actual_stock
+msgid "Total Purch."
+msgstr ""
+
+#. module: monolitic_manufacturing
+#: code:addons/monolitic_manufacturing/models/stock_warehouse_orderpoint.py:0
+#, python-format
+msgid ""
+"You cannot create a stock warehouse orderpoint on a product with material "
+"lists!"
+msgstr "No puedes crear una regla de abastecimiento sobre un producto que tenga una lista de materiales asociada!"
+
+#. module: monolitic_manufacturing
+#: model:ir.actions.report,name:monolitic_manufacturing.monolitic_ftt_xlsx
+msgid "monolitic_manufacturing.report_ftt"
+msgstr ""

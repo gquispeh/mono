@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="stock_csv_export_view" model="ir.ui.view">
+            <field name="name">Export CSV Stock</field>
+            <field name="model">csv.export.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export File">
+                    <button name="action_csv_export" string="Export CSV" type="object" icon="fa-cog"/>
+                    <footer>
+                        <button special="cancel" string="Close" type="object" class="btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="stock_csv_download_view" model="ir.ui.view">
+            <field name="name">Download CSV File</field>
+            <field name="model">csv.export.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Download File">
+                    <field name="name" invisible="1"/>
+                    <div>
+                        <h2>File Complete</h2>
+                        <p>Here is the csv file: <field name="data" readonly="1" filename="name"/></p>
+                    </div>
+                    <footer>
+                        <button special="cancel" string="Close" type="object" class="btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stock_csv_export" model="ir.actions.act_window">
+            <field name="name">Stock CSV Export</field>
+            <field name="res_model">csv.export.wizard</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock_csv_export_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="action_stock_csv_download" model="ir.actions.act_window">
+            <field name="name">Stock CSV Download</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">csv.export.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

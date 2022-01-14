@@ -1,0 +1,657 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_hr_training
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-24 09:39+0000\n"
+"PO-Revision-Date: 2020-01-24 10:41+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__access_token
+msgid "Access Token"
+msgstr "Token de acceso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__address_course
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__address_course
+msgid "Adress Course"
+msgstr "Centro del curso"
+
+#. module: monolitic_hr_training
+#: model:ir.actions.act_window,name:monolitic_hr_training.all_training_training_type_action
+#: model:ir.ui.menu,name:monolitic_hr_training.all_training_training_menu_act
+msgid "All Trainings"
+msgstr "Todas las formaciones"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__is_pass
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__local_url
+msgid "Attachment URL"
+msgstr "URL del adjunto"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__available_rule_ids
+msgid "Available Rules"
+msgstr "Reglas disponibles"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__bonus_price
+msgid "Bonus"
+msgstr "Bonificado"
+
+#. module: monolitic_hr_training
+#: selection:training.training,state:0
+msgid "Borrador"
+msgstr ""
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Calification"
+msgstr "Calificación"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: monolitic_hr_training
+#: selection:training.training,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__checksum
+msgid "Checksum/SHA1"
+msgstr "Suma de verificación/SHA1"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__partner_id
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Cost"
+msgstr "Coste"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__course_name
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Course"
+msgstr "Curso"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_course_view_form
+msgid "Course Name"
+msgstr "Nombre del curso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__course_tags
+msgid "Course Tags"
+msgstr "Etiquetas del Curso"
+
+#. module: monolitic_hr_training
+#: model:ir.actions.act_window,name:monolitic_hr_training.training_course_type_action
+#: model:ir.ui.menu,name:monolitic_hr_training.training_course_menu_act
+msgid "Courses"
+msgstr "Cursos"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.actions.act_window,help:monolitic_hr_training.training_course_type_action
+msgid "Create new course"
+msgstr "Crear nuevo curso"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.actions.act_window,help:monolitic_hr_training.all_training_training_type_action
+#: model_terms:ir.actions.act_window,help:monolitic_hr_training.my_training_training_type_action
+#: model_terms:ir.actions.act_window,help:monolitic_hr_training.to_validate_training_training_type_action
+msgid "Create new training"
+msgstr "Crear una nueva formacion"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__create_uid
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__create_uid
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__create_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__create_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__db_datas
+msgid "Database Data"
+msgstr "Datos de la base de datos"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Date"
+msgstr "Fecha"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__department_id
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Department"
+msgstr "Departamento"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__description
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__display_name
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__display_name
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_my_training_view_form
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: monolitic_hr_training
+#: model:ir.model,name:monolitic_hr_training.model_hr_employee
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__employee_id
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: monolitic_hr_training
+#: selection:training.training,type:0
+msgid "Empty"
+msgstr "Vacio"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__favorited_ids
+msgid "Favorite of"
+msgstr "Favorito de"
+
+#. module: monolitic_hr_training
+#: selection:training.training,type:0
+msgid "File"
+msgstr "Archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__datas
+msgid "File Content"
+msgstr "Contenido del archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__file_size
+msgid "File Size"
+msgstr "Tamaño del archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__datas_fname
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__folder_id
+msgid "Folder"
+msgstr "Carpeta"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__grade
+msgid "Grades"
+msgstr "Nota"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__id
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__id
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__id
+msgid "ID"
+msgstr ""
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__index_content
+msgid "Indexed Content"
+msgstr "Contenido indexado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__public
+msgid "Is public document"
+msgstr "Es un documento publico"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course____last_update
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags____last_update
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__write_uid
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__write_uid
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__write_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__write_date
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__lock_uid
+msgid "Locked by"
+msgstr "Bloqueado por"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__mimetype
+msgid "Mime Type"
+msgstr "Tipo MIME"
+
+#. module: monolitic_hr_training
+#: model:ir.actions.act_window,name:monolitic_hr_training.my_training_training_type_action
+#: model:ir.ui.menu,name:monolitic_hr_training.my_training_training_menu_act
+msgid "My Trainings"
+msgstr "Mis formaciones"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__name
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course_tags__name
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la siguiente actividad"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la siguiente actividad"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: monolitic_hr_training
+#: selection:training.training,activity_state:0
+msgid "Overdue"
+msgstr "Atrasado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__owner_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: monolitic_hr_training
+#: selection:training.training,state:0
+msgid "Pending To Validate"
+msgstr "Pendiente de Validar"
+
+#. module: monolitic_hr_training
+#: selection:training.training,activity_state:0
+msgid "Planned"
+msgstr "Planeado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_course__price
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__user_id
+msgid "Related user name for the resource to manage its access."
+msgstr "Usuario relacionado con el recurso para gestionar su acceso."
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__res_model_name
+msgid "Res Model Name"
+msgstr "Nombre del Modelo"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__res_field
+msgid "Resource Field"
+msgstr "Campo del recurso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__res_id
+msgid "Resource ID"
+msgstr "ID del recurso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__res_model
+msgid "Resource Model"
+msgstr "Modelo del recurso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__res_name
+msgid "Resource Name"
+msgstr "Nombre del recurso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__user_id
+msgid "Responsable"
+msgstr ""
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "Search Description"
+msgstr "Buscar descripción"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__state
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "State"
+msgstr "Estado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__store_fname
+msgid "Stored Filename"
+msgstr "Nombre del archivo almacenado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__tag_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__res_model
+msgid "The database object this attachment will be attached to."
+msgstr "Objeto de la base de datos a la que será añadido este adjunto."
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__res_id
+msgid "The record id this is attached to."
+msgstr "El id. de registro está adjuntado a."
+
+#. module: monolitic_hr_training
+#: code:addons/monolitic_hr_training/models/training_training.py:67
+#, python-format
+msgid "There isn't a employeer related with your odoo user account"
+msgstr "No hay un empleado vinculado con la cuenta actual de Odoo"
+
+#. module: monolitic_hr_training
+#: code:addons/monolitic_hr_training/models/training_training.py:107
+#, python-format
+msgid "This employee has already taken this course"
+msgstr "Este emplado  ya ha hecho este curso"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__thumbnail
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#. module: monolitic_hr_training
+#: model:ir.actions.act_window,name:monolitic_hr_training.to_validate_training_training_type_action
+msgid "To Approve"
+msgstr "Por Aprobar"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_search
+msgid "To Validate"
+msgstr "Por Validar"
+
+#. module: monolitic_hr_training
+#: selection:training.training,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: monolitic_hr_training
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_training_view_tree
+msgid "Total"
+msgstr ""
+
+#. module: monolitic_hr_training
+#: model:ir.model,name:monolitic_hr_training.model_training_training
+msgid "Training"
+msgstr "Formacion"
+
+#. module: monolitic_hr_training
+#: model:ir.model,name:monolitic_hr_training.model_training_course
+msgid "Training Course"
+msgstr "Curso de formación"
+
+#. module: monolitic_hr_training
+#: model:ir.model,name:monolitic_hr_training.model_training_course_tags
+msgid "Training Course Tags"
+msgstr "Etiquetas del curso de formación"
+
+#. module: monolitic_hr_training
+#: model:base.automation,name:monolitic_hr_training.training_notification
+#: model:ir.actions.server,name:monolitic_hr_training.training_notification_ir_actions_server
+msgid "Training Notification"
+msgstr "Notificacion de Formación"
+
+#. module: monolitic_hr_training
+#: model:base.automation,name:monolitic_hr_training.training_on_aprovve
+#: model:ir.actions.server,name:monolitic_hr_training.training_on_aprovve_ir_actions_server
+msgid "Training On Approve"
+msgstr "Formacion validadas"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_hr_employee__training_ids
+#: model:ir.ui.menu,name:monolitic_hr_training.training_root_menu
+#: model_terms:ir.ui.view,arch_db:monolitic_hr_training.training_hr_employee_form_view
+msgid "Trainings"
+msgstr "Formaciones"
+
+#. module: monolitic_hr_training
+#: model:ir.ui.menu,name:monolitic_hr_training.approve_training_training_menu_act
+msgid "Trainings To Approve"
+msgstr "Formacion por validar"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: monolitic_hr_training
+#: selection:training.training,type:0
+msgid "URL"
+msgstr "URL"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__url
+msgid "Url"
+msgstr "URL"
+
+#. module: monolitic_hr_training
+#: selection:training.training,state:0
+msgid "Validated"
+msgstr "Valídado"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,field_description:monolitic_hr_training.field_training_training__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: monolitic_hr_training
+#: model:ir.model.fields,help:monolitic_hr_training.field_training_training__type
+msgid "You can either upload a file from your computer or copy/paste an internet link to your file."
+msgstr "Puede tanto subir un archivo de su ordenador como copiar/pegar un enlace de internet a su fichero."
+
+#. module: monolitic_hr_training
+#: code:addons/monolitic_hr_training/models/training_training.py:55
+#, python-format
+msgid "You cannot delete a validated course"
+msgstr "No puedes eliminar un curso validado"

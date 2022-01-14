@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="group_action_window" model="res.groups">
+        <field name="name">Can see action window</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+    <record id="group_common_icons" model="res.groups">
+        <field name="name">Common Icons</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="menu_access" eval="[
+            (4, ref('mail.menu_root_discuss')),
+            (4, ref('calendar.mail_menu_calendar')),
+            (4, ref('note.menu_note_notes')),
+            (4, ref('contacts.menu_contacts')),
+            (4, ref('documents.menu_root')),
+            (4, ref('helpdesk.menu_helpdesk_root')),
+            (4, ref('project.menu_main_pm')),
+            (4, ref('hr_timesheet.timesheet_menu_root')),
+            (4, ref('hr.menu_hr_root')),
+            (4, ref('hr_attendance.menu_hr_attendance_root')),
+            (4, ref('base.menu_board_root'))
+        ]"/>
+    </record>
+    <record id="group_all_icons" model="res.groups">
+        <field name="name">All Icons</field>
+        <field name="implied_ids" eval="[(4, ref('monolitic_base.group_common_icons'))]"/>
+        <field name="category_id" ref="base.module_category_usability"/>
+        <field name="menu_access" eval="[
+            (4, ref('crm.crm_menu_root')),
+            (4, ref('sale.sale_menu_root')),
+            (4, ref('sign.menu_document')),
+            (4, ref('hr_appraisal.menu_hr_appraisal_root')),
+            (4, ref('purchase.menu_purchase_root')),
+            (4, ref('utm.menu_link_tracker_root')),
+            (4, ref('stock.menu_stock_root')),
+            (4, ref('mrp.menu_mrp_root')),
+            (4, ref('repair.menu_repair_order')),
+            (4, ref('account_accountant.menu_accounting')),
+            (4, ref('stock_barcode.stock_barcode_menu')),
+            (4, ref('quality_control.menu_quality_root')),
+            (4, ref('mrp_plm.menu_mrp_plm_root')),
+            (4, ref('event.event_main_menu')),
+            (4, ref('survey.menu_surveys')),
+            (4, ref('hr_holidays.menu_hr_holidays_root')),
+            (4, ref('maintenance.menu_maintenance_title')),
+            (4, ref('fleet.menu_root')),
+            (4, ref('base.menu_management')),
+            (4, ref('base.menu_administration')),
+            (4, ref('planning.planning_menu_root')),
+        ]"/>
+    </record>
+    <record id="group_view_all_contacts" model="res.groups">
+        <field name="name">View all contacts</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+        <field name="menu_access" eval="[
+            (4, ref('contacts.menu_contacts')),
+        ]"/>
+    </record>
+    <record id="group_partner_edition" model="res.groups">
+        <field name="name">Partner edition</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+        <field name="menu_access" eval="[
+            (4, ref('contacts.menu_contacts')),
+        ]"/>
+    </record>
+    <record id="group_view_partner_ledger" model="res.groups">
+        <field name="name">Partner view partner ledger</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+    </record>
+    <record id="group_financial_risk" model="res.groups">
+        <field name="name">Financial Risk</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+    </record>
+    <record id="group_credit_control" model="res.groups">
+        <field name="name">Credit Control</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+    </record>
+    <record id="group_accounting" model="res.groups">
+        <field name="name">Accounting</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+    </record>
+    <record id="group_create_company" model="res.groups">
+        <field name="name">Create company</field>
+        <field name="category_id" ref="base.module_category_partner"/>
+    </record>
+    <record id="group_currency_view" model="res.groups">
+        <field name="name">Currency View</field>
+        <field name="category_id" ref="base.module_category_accounting_accounting"/>
+        <field name="menu_access" eval="[
+            (4, ref('account_accountant.menu_accounting')),
+            (4, ref('account.menu_finance_configuration')),
+            (4, ref('account.account_account_menu')),
+            (4, ref('account.menu_action_currency_form')),
+        ]"/>
+    </record>
+    <record id="group_currency_edition" model="res.groups">
+        <field name="name">Currency Edition</field>
+        <field name="category_id" ref="base.module_category_accounting_accounting"/>
+        <field name="implied_ids" eval="[
+            (4, ref('monolitic_base.group_currency_view')),
+        ]"/>
+    </record>
+    <record id="group_all_commercial_activities" model="res.groups">
+        <field name="name">All commercial activities</field>
+        <field name="category_id" ref="base.module_category_usability"/>
+    </record>
+
+</odoo>

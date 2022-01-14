@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data noupdate="0">
+        <!-- Public api: layout to t-call from reports -->
+        <template id="ml_picking_external_layout">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="monolitic_stock.ml_picking_external_layout_standard">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+        <template id="ml_picking_external_layout_standard">
+            <div class="header">
+                <div class="row"/>
+                <div class="row" style="margin-left: 0px;">
+                    <div>
+                        <div style="font-size:10px;line-height:5px;margin-right: 20px; margin-top:15px;">
+                            <p>
+                                <strong>
+                                    <p> Monolitic S.A.</p>
+                                </strong>
+                            </p>
+                            <p>
+                                C/De la Mora, 34(P.E. GranLand)
+                            </p>
+                            <p>08918 Badalona(BARCELONA)</p>
+                            <p>
+                                <span>
+                                    <p>Tel:93 285 92 92</p>
+                                    <p>Fax:93 284 11 93</p>
+                                </span>
+                            </p>
+                            <p>
+                                monolitic@monolitc.com
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size:10px;line-height:5px;margin-right: 20px; margin-top:15px;">
+                            <p>
+                                <strong>
+                                    <p> MONOLITIC S.A.</p>
+                                </strong>
+                            </p>
+                            <p>
+                                Fco. Gervas, 17 5º G
+                            </p>
+                            <p>
+                                28020 MADRID
+                            </p>
+                            <p>
+                                <span>
+                                    <p>Tel:91 572 03 28</p>
+                                    <p>Fax:91 572 02 18</p>
+                                </span>
+                            </p>
+                            <p>
+                                monolitic.madrid@monolitic.com
+                            </p>
+                        </div>
+                    </div>
+                    <div style="font-size:10px;line-height:5px;margin-right: 20px;">
+                        <p>
+                            <strong>
+                                <p> MONOLITIC S.A. </p>
+                            </strong>
+                        </p>
+                        <p>
+                            Av. J. Luis de Goyoaga 32, Of, 208
+                        </p>
+                        <p>
+                            48950 Erandio(VIZCAYA)
+                        </p>
+                        <p>
+                            <span>
+                                <p>Tel:94 411 62 49</p>
+                                <p>Fax:93 264 11 93</p>
+                            </span>
+                        </p>
+                        <p>
+                            monolitic.bilbao@monolitic.com
+                        </p>
+                    </div>
+                    <div class="col-3" style="float: right;text-align: right;">
+                        <span style="margin-left: 20%">Page:</span>
+                        <span class="page"/>
+                        <img t-if="o._name == 'account.move'" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 140px;max-width:300px;margin-left:20px;" class="float-left"/>
+                    </div>
+                </div>
+
+                <div class="col-9" style="padding-left: 0px;margin-left: 0;padding-top: 20px;">
+                    <strong t-if="o._name != 'account.move'">Website: https://www.monolitic.com</strong>
+                    <strong t-if="o._name == 'account.move'">Website: https://www.monolitic.com  -  NºR.I. Productor AEE 3520</strong>
+                </div>
+                <div>
+                    <div style="display:inline;font-size: 27px; margin-top:35px">
+                        <p></p>
+                        <strong t-if="o._name == 'stock.picking'">PICKING</strong>
+                        <strong t-if="o._name == 'account.move'">INVOICE</strong>
+                    </div>
+                    <div style="display:inline;float: right;border: solid;width: 160px;border-bottom: 0;border-right: 0;border-top: 1px solid;padding-left: 5px;">
+                        <p style="margin-bottom: 5px;">
+                            <strong t-if="o._name =='stock.picking'">Picking Number:</strong>
+                            <strong t-if="o._name =='account.move'">Invoice Number:</strong>
+                        </p>
+                        <p style="margin-bottom: 0;text-align:center;" t-esc="o.name"/>
+                    </div>
+                    <div style="display:inline;float: right;border: solid;width: 160px;border-bottom: 0;margin-right: 10px;border-right: 0;border-top: 1px solid;padding-left: 5px;">
+                        <p style="margin-bottom: 5px;">
+                            <strong>Date:</strong>
+                        </p>
+                        <p t-if="o._name == 'stock.picking'" style="margin-bottom: 0;text-align:right;" t-esc="o.date.strftime('%d/%m/%Y')"/>
+                        <p t-if="o._name == 'account.move' and o.invoice_date" style="margin-bottom: 0;text-align:right;" t-esc="o.invoice_date.strftime('%d/%m/%Y')"/>
+                    </div>
+                </div>
+            </div>
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+            </div>
+        </template>
+
+
+        <!-- New external layout for template monolitic_stock.ml_picking_wo_man_external_layout -->
+        <template id="ml_picking_wo_man_external_layout">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <t t-call="monolitic_stock.ml_picking_wo_man_external_layout_standard">
+                <t t-raw="0"/>
+            </t>
+        </template>
+
+
+        <template id="ml_picking_wo_man_external_layout_standard">
+            <div class="header">
+                <div class="row"/>
+                <div class="row" style="margin-left: 0px;">
+                    <t t-foreach="company.adress_report_header" t-as="partner_adress">
+                        <div style="font-size:10px;line-height:5px;margin-right: 20px; margin-top:15px;">
+                            <p>
+                                <strong>
+                                    <span t-field="partner_adress.name"/>
+                                </strong>
+                            </p>
+                            <p>
+                                <span t-field="partner_adress.street"/>
+                            </p>
+                            <p>
+                                <span t-field="partner_adress.zip"/>
+                                <t t-if="partner_adress.city">
+                                    <span t-field="partner_adress.city"/>
+                                </t>
+                                <t t-if="partner_adress.state_id">
+                                    (
+                                    <span t-field="partner_adress.state_id.name"/>
+                                    )
+                                </t>
+                            </p>
+                            <p t-if="partner_adress.phone">
+                                <span>
+                                    Tel:
+                                    <span t-field="partner_adress.phone" />
+                                </span>
+                            </p>
+                            <p t-if="partner_adress.email">
+                                <span t-field="partner_adress.email" />
+                            </p>
+                        </div>
+                    </t>
+                    <div class="col-3" style="float: right;text-align: right;">
+                        <span style="margin-left: 20%">Page:</span>
+                        <span class="page"/>
+                        <img class="img img-responsive" src="/monolitic_base/static/src/img/monolitic_logo.png" style="max-height: 100px;" alt="Logo"/>
+                    </div>
+                </div>
+                <div class="col-9" style="padding-left: 0px;margin-left: 0;padding-top: 10px;">
+                    <strong>Website: https://www.monolitic.com</strong>
+                </div>
+                <div>
+                    <div style="display:inline;font-size: 27px; margin-top:25px">
+                        <strong>PICKING</strong>
+                    </div>
+                    <div style="display:inline;float: right;width: 160px;margin-right: 10px;padding-left: 5px;">
+                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:150px;height:50px;" alt="Barcode"/>
+                    </div>
+                    <div style="display:inline;float: right;border: solid;width: 160px;border-bottom: 0;margin-right: 10px;border-right: 0;border-top: 1px solid;padding-left: 5px;">
+                        <p style="margin-bottom: 5px;">
+                            <strong>Picking Number:</strong>
+                        </p>
+                        <p style="margin-bottom: 0;text-align:center;" t-esc="o.name"/>
+
+                    </div>
+                    <div style="display:inline;float: right;border: solid;width: 160px;border-bottom: 0;margin-right: 10px;border-right: 0;border-top: 1px solid;padding-left: 5px;">
+                        <p style="margin-bottom: 5px;">
+                            <strong>Date:</strong>
+                        </p>
+                        <p style="margin-bottom: 0;text-align:right;" t-esc="o.date.strftime('%d/%m/%Y')"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+                <div style="display:inline;">
+                </div>
+
+                <div class="footer o_standard_footer">
+                    <div class="text-center" style="border-top: 1px solid black;">
+                        <ul class="list-inline mb4">
+                            <li t-if="company.phone" class="list-inline-item">
+                                Phone:
+                                <span t-field="company.phone"/>
+                            </li>
+                            <li t-if="company.email" class="list-inline-item">
+                                Email:
+                                <span t-field="company.email"/>
+                            </li>
+                            <li t-if="company.website" class="list-inline-item">
+                                Web:
+                                <span t-field="company.website"/>
+                            </li>
+                            <li t-if="company.vat" class="list-inline-item">
+                                <t t-esc="company.country_id.vat_label or 'Tax ID'"/>
+                                :
+                                <span t-field="company.vat"/>
+                            </li>
+                        </ul>
+
+                        <div name="financial_infos">
+                            <span t-field="company.report_footer"/>
+                        </div>
+
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Page:
+                            <span class="page"/>
+                            /
+                            <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </data>
+</odoo>

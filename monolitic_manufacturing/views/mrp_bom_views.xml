@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="mrp_bom_form_view_inherit_monolitic_manufacturing" model="ir.ui.view">
+        <field name="name">mrp.bom.form.view.inherit.monolitic.manufacturing</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook/page/field[@name='bom_line_ids']/tree/field[last()]"
+                   position="after">
+                <button class="oe_stat_button"
+                        name="print_product_actual_stock_action"
+                        type="object"
+                        icon="fa-file-text-o"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

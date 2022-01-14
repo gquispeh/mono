@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2021 Albert Farrés <albert.farres@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- account.intrastat.code.form inherit form view -->
+    <record id="account_intrastat_code_inherit_view_id" model="ir.ui.view">
+        <field name="name">account.intrastat.code.form.inherit.view.form</field>
+        <field name="model">account.intrastat.code</field>
+        <field name="inherit_id" ref="account_intrastat.view_report_intrastat_code_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description']" position="after">
+                <field name="rate"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

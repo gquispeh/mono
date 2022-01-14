@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    
+        <record id="monolitic_ftt_xlsx" model="ir.actions.report">
+            <field name="name">monolitic_manufacturing.report_ftt</field>
+            <field name="model">report.ftt.wizard</field>
+            <field name="report_name">Print to XLSX</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_file">FTT Manufacturing</field>
+            <field name="attachment_use">True</field>
+        </record>
+
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="commercial_target_coeficient_tree_view" model="ir.ui.view">
+        <field name="name">commercial.target.coeficient.tree.view</field>
+        <field name="model">commercial.target.coeficient</field>
+        <field name="arch" type="xml">
+            <tree string="Commercial Target Coeficient">
+                <field name="year" />
+                <field name="user_id" />
+                <field name="partner_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="commercial_target_coeficient_form_view" model="ir.ui.view">
+        <field name="name">commercial.target.coeficient.form.view</field>
+        <field name="model">commercial.target.coeficient</field>
+        <field name="arch" type="xml">
+            <form string="Commercial Target Coeficient">
+                <sheet>
+                    <group>
+                        <field name="year" />
+                        <field name="user_id" />
+                        <field name="partner_id" />
+                    </group>
+
+                    <separator string="Month / Coeficient"/>
+                    <group>
+                        <field name="monthly_coef_amount_ids" nolabel="1" colspan="4"
+                            widget="one2many_list" context="{'default_target_coeficient_id': active_id}">
+                            <tree string="Target Coeficient Monthly Amounts" editable="bottom" create="false">
+                                <field name="month" />
+                                <field name="amount" string="Coeficient" />
+                                <field name="amount_type" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_commercial_target_coeficient" model="ir.actions.act_window">
+        <field name="name">Commercial Target Coeficient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">commercial.target.coeficient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_commercial_target_coeficient" name="Commercial Target Coeficient" parent="sale.menu_sale_config"
+        action="action_commercial_target_coeficient" sequence="2" groups="sales_team.group_sale_manager"/>
+
+</odoo>

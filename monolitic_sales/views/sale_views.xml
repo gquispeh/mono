@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+        <field name="domain">[('state', 'in', ('draft', 'sent', 'cancel'))]</field>
+    </record>
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="context">{'default_state': 'sale_to_acuse'}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_sale_report">
+        <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+
+</odoo>

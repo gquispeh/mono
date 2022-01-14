@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- report.expense.wizard form view -->
+    <record id="report_expense_wizard_view" model="ir.ui.view">
+        <field name="name">report.expense.wizard.view.form</field>
+        <field name="model">report.expense.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>
+
+                <footer>
+                    <button name="%(report_expense_weighted)d" string="Generate Report" type="action" class="oe_highlight" />
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_report_expense_weighted" model="ir.actions.act_window">
+        <field name="name">Report Expense Weighted</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.expense.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="report_expense_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="expense_report_menu_act" name="Expense Weighted Report"
+        parent="account_reports.account_reports_audit_reports_menu"
+        action="action_report_expense_weighted" sequence="1"/>
+</odoo>

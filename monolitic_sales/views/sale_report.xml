@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- sale.report inherit form view -->
+    <record id="sale_report2_view_id" model="ir.ui.view">
+        <field name="name">sale.report.inherit.view.form</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale_enterprise.sale_report_view_dashboard"/>
+        <field name="arch" type="xml">
+            <xpath expr="//aggregate[@name='price_subtotal_confirmed_orders']" position="after">
+                <aggregate name="commercial_zone_id" string="Commercial Zone" field="commercial_zone_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

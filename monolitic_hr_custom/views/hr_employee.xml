@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- hr.employee inherit form view -->
+    <record id="training_hr_employee_form_view" model="ir.ui.view">
+        <field name="name">training.hr.employee.form.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='address_home_id']" position="after">
+                <!-- Add your fields here -->
+                <field name="state_id"
+                    options="{'no_create_edit': True}"
+                    />
+            </xpath>
+            <xpath expr="//field[@name='category_ids']" position="after">
+                <group>
+                    <field name="employee_code"/>
+                    <field name="show_personal_info" invisible="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='coach_id']" position="after">
+                <field name="is_delegate"/>
+                <field name="is_commercial"/>
+                <field name="replaces_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <field name="nssid"/>
+            </xpath>
+
+            <xpath expr="//field[@name='passport_id']" position="after">
+                <field name="naf"/>
+            </xpath>
+
+            <xpath expr="//field[@name='gender']" position="after">
+                <field name="age"/>
+            </xpath>
+
+            <xpath expr="//field[@name='replaces_id']" position="after">
+                <field name="profesional_group"/>
+                <field name="is_ocupation"/>
+            </xpath>
+
+            <xpath expr="//page[@name='personal_information']" position="attributes">
+                <attribute name="attrs">{'invisible': [('show_personal_info', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='work_email']" position="after">
+                <!-- Add your fields here -->
+                <field name="skype_user"/>
+                <field name="gmail_user"/>
+            </xpath>
+            <xpath expr="//group[@name='work_permit']" position="after">
+
+                <group string="Annual Instalments" name="annual_installments">
+                    <field name="fix_instalment"/>
+                    <field name="variable_instalment"/>
+                    <label for="instalment_percentage" string="Instalment Percentage"/>
+                    <span>
+                        <field nolabel="1" name="instalment_percentage"/>
+                        %
+                    </span>
+
+                    <field name="total_remuneration"/>
+                    <field name="social_security_expenses"/>
+                    <field name="total_year_expenses"/>
+                </group>
+
+                <group name="seniority" string="Seniority">
+                    <field name="date_of_seniority"/>
+                    <field name="age_of_seniority"/>
+                </group>
+            </xpath>
+
+            <field name="age_of_seniority" position="after">
+                <field name="resource_calendar_id" position="move"/>
+                <field name="contract_type"/>
+            </field>
+
+            <xpath expr="//page[@name='hr_settings']" position="attributes">
+                <attribute name="attrs">{'invisible': [('show_personal_info', '=', False)]}</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- model.name inherit form view -->
+    <record id="custom_hr_departament_view" model="ir.ui.view">
+        <field name="name">Monolitic Custom HR Employee</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='manager_id']" position="after">
+                <field name="can_edit" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='manager_id']" position="attributes">
+                <attribute name="attrs">{'readonly':[('manager_id', '!=', False), ('can_edit', '=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="appraisal_hr_employee_form_view" model="ir.ui.view">
+        <field name="name">appraisal.hr.employee.form.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_appraisal.hr_employee_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(hr_appraisal.open_view_hr_appraisal_tree2)d']" position="attributes">
+                <attribute name="attrs">{'invisible': [('show_personal_info', '=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//page[2]" position="attributes">
+                <attribute name="attrs">{'invisible': [('show_personal_info', '=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

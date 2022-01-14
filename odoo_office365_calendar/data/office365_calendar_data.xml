@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record forcecreate="True" id="ir_cron_sync_office365_all_cals"
+            model="ir.cron">
+        <field name="name">Office365 Calendar synchronization</field>
+        <field eval="True" name="active"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="model_id" ref="model_calendar_event"/>
+        <field name="interval_type">hours</field>
+        <field name="code">model.sync_datas()</field>
+        <field name="state">code</field>
+        <field name="numbercall">-1</field>
+        <field eval="False" name="doall"/>
+    </record>
+</odoo>

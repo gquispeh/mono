@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="group_project_creation" model="res.groups">
+        <field name="name">Project creation</field>
+        <field name="category_id" ref="base.module_category_project"/>
+        <field name="implied_ids" eval="[
+            (4, ref('project.group_project_user'))
+        ]"/>
+    </record>
+    <record model="res.groups" id="project.group_project_user">
+        <field name="menu_access" eval="[
+            (4, ref('project.menu_projects')),
+        ]"/>
+        <field name="view_access" eval="[(4,ref('project.view_task_partner_info_form'))]"/>
+    </record>
+
+    <record model="res.groups" id="project.group_project_manager">
+        <field name="implied_ids" eval="[(6,0,[ref('monolitic_project.group_project_creation')])]"/>
+    </record>
+
+</odoo>

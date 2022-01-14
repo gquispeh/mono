@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <menuitem id="components_menu_parent" name="Inventory TIC Managment" parent="sale.product_menu_catalog"
+        groups="group_tic_department" sequence="3"/>
+</odoo>

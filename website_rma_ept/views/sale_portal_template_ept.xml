@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<template id="rma_add_address">
+			<div class="modal fade" id="Addressformmodal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Add Address</h4>
+							<button type="button" class="close" data-dismiss="modal">&amp;times;</button>
+						</div>
+						<div id="add_address" class="mb32 modal-body">
+							<div>
+								<div class="form-row checkout_autoformat">
+									<form action="/rma/manage/shipping" method="POST">
+										<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+										<t t-set="countries" t-value="request.env['res.country'].sudo().search([])"></t>
+										<input type="hidden" t-att-value="delivery_order.id" name="delivery_order"></input>
+										<div class="form-row checkout_autoformat">
+											<div t-attf-class="form-group col-lg-12 div_name">
+												<label class="col-form-label" for="name">Name</label>
+												<input type="text" name="name" t-attf-class="form-control" />
+											</div>
+											<div class="w-100" />
+											<div t-attf-class="form-group col-lg-6" id="div_email">
+												<label class="col-form-label" for="email">Email</label>
+												<input type="email" name="email" t-attf-class="form-control" />
+											</div>
+											<div t-attf-class="form-group col-lg-6" id="div_phone">
+												<label class="col-form-label" for="phone">Phone</label>
+												<input type="tel" name="phone" t-attf-class="form-control" />
+											</div>
+											<div class="w-100" />
+											<div t-attf-class="form-group col-lg-12 div_street">
+												<label class="col-form-label" for="street">
+													Street
+													<span class="d-none d-md-inline">and Number</span>
+												</label>
+												<input type="text" name="street" t-attf-class="form-control" />
+											</div>
+											<div t-attf-class="form-group col-lg-12 div_street2">
+												<label class="col-form-label label-optional" for="street2">Street
+													2</label>
+												<input type="text" name="street2" t-attf-class="form-control" />
+											</div>
+											<div class="w-100" />
+											<div t-attf-class="form-group col-md-8 div_city">
+												<label class="col-form-label" for="city">City</label>
+												<input type="text" name="city" t-attf-class="form-control" />
+											</div>
+											<div t-attf-class="form-group col-md-4 div_zip">
+												<label class="col-form-label label-optional" for="zip">Zip
+													Code</label>
+												<input type="text" name="zip" t-attf-class="form-control" />
+											</div>
+											<div class="w-100" />
+
+											<div t-attf-class="form-group col-lg-6 div_country">
+												<label class="col-form-label" for="country_id">Country</label>
+												<select id="country_id" name="country_id" class="form-control">
+													<option value="">Country...</option>
+													<t t-foreach="countries" t-as="c">
+														<option t-att-value="c.id">
+															<t t-esc="c.name" />
+														</option>
+													</t>
+												</select>
+											</div>
+											<div t-attf-class="form-group col-lg-6 div_state">
+												<label class="col-form-label" for="state_id">State / Province</label>
+												<select name="state_id" t-attf-class="form-control"
+													data-init="0" id="state_id">
+													<option value="">State / Province...</option>
+													<t t-if="states">
+														<t t-foreach="states" t-as="s">
+															<option t-att-value="s.id">
+																<t t-esc="s.name" />
+															</option>
+														</t>
+													</t>
+												</select>
+											</div>
+										</div>
+
+										<div class="button_address_form col-lg-12">
+											<input type="submit" value="Save" class="btn btn-primary" />
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+    	
+    
+        <!-- Add Return Order Button to Website Sale Order Form -->
+        <template id="portal_order_page_shipping_ept"  inherit_id="sale_stock.sale_order_portal_content_inherit_sale_stock">
+            <xpath expr="//a[@t-att-href='delivery_report_url']" position="after">
+                <t t-if="i.picking_type_id.code == 'outgoing' and i.state == 'done'">
+                <t t-set="returnable_order" t-value="request.env['crm.claim.ept'].sudo().get_returnable_order(i)"/>
+                    <button type="button" t-if="returnable_order" style="background: transparent; border: 0; padding: 0;" class="rma_btn_icon"
+                            title="Return Order" data-toggle="modal"
+                            t-att-data-target="'#myModal_%s'%(int(i.id))">
+                        <span class="badge badge-primary orders_label_text_align">
+                            <i class="fa fa-cart-arrow-down fa-lg"/>
+                            Return Order
+                        </span>
+                    </button>
+                </t>
+                <div class="modal fade" t-att-id="'myModal_%s'%(int(i.id))" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Return</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure about returning this product?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-primary" t-att-href="'/rma/form/%s'%(int(i.id))" id="rma_form_ept">
+                                    Confirm
+                                </a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <!-- Return Material Authorization Request Form -->
+        <template id="rma_form_ept" name="Return Material Authorization Request Form"  inherit_id="portal.portal_sidebar" primary="True">
+            <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            	<t t-call="website_rma_ept.rma_add_address">		
+				</t>
+                <t t-set="wrapwrap_classes" t-value="'o_portal_bg_dark'"/>
+                <div class="row mt16 o_portal_sale_sidebar">
+                    <!-- Sidebar -->
+                    <t t-call="portal.portal_record_sidebar">
+                        <t t-set="classes" t-value="'col-12 col-lg flex-lg-grow-0 d-print-none'"/>
+                        <t t-set="entries">
+                            <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">
+                                <li class="navspy list-group-item pl-0 d-none d-lg-block" t-ignore="true"
+                                    role="complementary">
+                                    <ul class="nav flex-column bs-sidenav" data-id="quote_sidebar"></ul>
+                                </li>
+                                <li t-if="sale_order.user_id"
+                                    class="list-group-item flex-grow-1 o_portal_contact_block">
+                                    <div class="small mb-1">
+                                        <strong class="text-muted">Your Contact:</strong>
+                                    </div>
+                                    <div class="row flex-nowrap">
+                                        <div class="col flex-grow-0 pr-2">
+                                            <img class="rounded-circle mr4 float-left o_portal_contact_img"
+                                                 t-if="sale_order.user_id.image_1920"
+                                                 t-attf-src="data:image/png;base64,#{sale_order.user_id.image_1920}"
+                                                 alt="Contact"/>
+                                            <img class="rounded-circle mr4 float-left o_portal_contact_img"
+                                                 t-if="not sale_order.user_id.image_1920"
+                                                 src="/web/static/src/img/placeholder.png" alt="Contact"/>
+                                        </div>
+                                        <div class="col pl-0" style="min-width: 150px">
+                                            <span t-field="sale_order.user_id"
+                                                  t-options='{"widget": "contact", "fields": ["name", "phone"], "no_marker": True}'/>
+                                            <a href="#discussion" class="small">
+                                                <i class="fa fa-comment"></i>
+                                                Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </t>
+                    </t>
+
+                    <!-- Page content -->
+                    <div id="quote_content" class="col-12 col-lg justify-content-end">
+                        <div t-attf-class="card #{'pb-5' if report_type == 'html' else ''}" style="padding:20px;">
+                            <!-- Intro -->
+                            <div id="introduction" t-attf-class="pb-2 pt-3 #{'card-header bg-white' if report_type == 'html' else ''}">
+                                <h2 class="my-0">
+                                    <center>
+                                        <em>Product Return Request</em>
+                                    </center>
+                                </h2>
+                                <hr/>
+                            </div>
+                            <div t-attf-class="#{'card-body' if report_type == 'html' else ''}">
+                                <!-- Informations -->
+                                <form action="/rma/form/submit" method="post" class="rma_form">
+                                    <input type="hidden" t-att-value="delivery_order.id" name="current_order"/>
+                                    <input type="hidden" t-att-value="uid" name="user_id"/>
+                                    <div class="row">
+                                        <div class="col-md-3" style="margin-bottom:5px;">
+                                            <span>Sale Order Number:</span>
+                                        </div>
+                                        <div class="col-md-3" style="margin-bottom:5px;">
+                                            <span t-esc="delivery_order.origin"/>
+                                        </div>
+                                        <div class="col-md-3" style="margin-bottom:5px;">
+                                            <span>Sale Order Date:</span>
+                                        </div>
+                                        <div class="col-md-3" style="margin-bottom:5px;">
+                                            <input type="hidden" t-att-value="current_datetime" name="rma_date"/>
+                                            <span t-esc="current_datetime"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <span>Shipping Reference:</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span t-esc="delivery_order.name"/>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <span>Return Address:</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="hidden" t-att-value="return_address"
+                                                   name="rma_return_address"/>
+                                            <span t-esc="return_address"/>
+                                        </div>
+                                    </div>
+									<div class="clearfix" />
+								<hr/>
+
+								<h4 class="mb32">
+									<strong>Contact User Details :</strong>
+								</h4>
+								<ul class="list-group rma_shipping_address_ul">
+											<t t-foreach="contact_partner_ids" t-as="contact">
+												<li class="list-group-item">
+													<span class="mr4">
+														<input t-att-value="contact.id" t-att-order="sale_order.id"
+															type="radio" name="contact_user" class="input_for_select_shipping" />
+													</span>
+													<span t-esc='contact'
+														t-options="dict(widget='contact', fields=['name'], no_marker=True, separator=', ')"
+														class="address-inline shipping_address_line" />
+												</li>
+											</t>
+										<li class="list-group-item">
+										<span class="mr4">
+											<input value="new" checked="checked" t-att-order="sale_order.id"
+												type="radio" name="contact_user" class="input_for_select_shipping" />
+											<div class="rma_contact_form">
+												<div class="form-group col-lg-4">
+													<label class="col-form-label">Name</label>
+													<input type="text" name="contact_name" class="form-control" />
+												</div>
+												<div class="form-group col-lg-4">
+													<label class="col-form-label">E-mail</label>
+													<input type="text" name="contact_email" class="form-control" />
+												</div>
+												<div class="form-group col-lg-4">
+													<label class="col-form-label">Mobile</label>
+													<input type="text" name="contact_phone" class="form-control" />
+												</div>
+											</div>
+											</span>
+											</li>
+								</ul>
+								<h4 class="mb16">
+									<strong>Shipping Details :</strong>
+								</h4>
+							
+								<t t-if="delivery_partner_ids">
+									<t t-foreach="delivery_partner_ids" t-as="ship">
+										<ul class="list-group rma_shipping_address_ul">
+											<li class="list-group-item">
+												<span class="mr4">
+													<input t-att-value="ship.id" t-att-order="sale_order.id" type="radio" name="shipping_add" class="input_for_select_shipping" checked="checked if sale_order.partner_shipping_id==ship"/>
+												</span>
+												<span t-esc="ship" t-options="dict(widget='contact', fields=['address'], no_marker=True, separator=', ')" class="address-inline shipping_address_line"/>
+											</li>
+										</ul>
+									</t>
+								</t>
+								<div class="mb32">
+									<button class="btn btn-primary" type="button"
+										data-toggle="modal" data-target="#Addressformmodal">
+										<i class="fa fa-plus">
+										</i>
+										Add New Delivery Address
+									</button>
+								</div>
+								
+                                    <!-- stock Move Lines header -->
+                                    <div class="row rma_table_th">
+                                        <div class="col-md-1">
+                                            <strong>Tick</strong>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <strong>Product</strong>
+                                        </div>
+                                        <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                            <strong>Delivered Quantity</strong>
+                                        </div>
+                                        <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                            <strong>Uom</strong>
+                                        </div>
+                                        <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                            <strong>Return Reason:</strong>
+                                        </div>
+                                        <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                            <strong>Quantity to Return</strong>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <!-- stock Move Lines header End Here -->
+                                    <!-- stock Move Lines values -->
+                                    <t t-foreach="delivery_order.move_lines" t-as="ml">
+                                    <t t-set="line_qty" t-value="request.env['crm.claim.ept'].sudo().get_returnable_product_quantity(ml)"/>
+                                        <div class="row orders_vertical_align" t-if="line_qty &gt;= 1">
+                                            <div class="col-md-1">
+                                                <input type="checkbox" t-att-name="'%s_tick_line'%(int(ml.id))"
+                                                       class="tick_box"/>
+                                            </div>
+                                            <div class="visible-lg col-lg-1 text-center">
+                                                <span t-field="ml.product_id.image_1920"
+                                                      t-options="{'widget': 'image', 'class': 'img-rounded', 'style':'max-width: 48px;max-height:48px'}"/>
+                                            </div>
+                                            <div id='product_name' class="col-lg-2 col-sm-4 col-xs-2">
+                                                <span t-esc="ml.product_id.name"/>
+                                            </div>
+                                           
+                                           <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                                <input type="hidden" t-att-value="line_qty" id="delivered_qty" />
+												<span t-esc="line_qty" />
+                                            </div> 
+                                            <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                                <span t-esc="ml.product_uom.name if ml.product_uom else ''"/>
+                                            </div>
+                                            <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                                <select class="form-control" id="return_reason_1"
+                                                        t-att-name="'%s_line_return_reason'%(int(ml.id))">
+                                                    <option value="">Select Reason...</option>
+                                                    <t t-foreach="return_reason" t-as="reason">
+                                                        <option t-att-value="reason.id">
+                                                            <t t-esc="reason.name"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="hidden-sm hidden-xs col-md-2 text-center">
+                                                <center>
+                                                    <input type="text" style="width:50px;" maxlength="3"
+                                                           pattern="[0-9]"
+                                                           class="return_qty form-control"
+                                                           t-att-name="'%s_line_qty_return'%(int(ml.id))"/>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <!-- stock Move Lines values End Here -->
+                                    <!-- add return note field -->
+                                    <div class="form-group  mt32">
+                                        <label for="return_note">Return Note:</label>
+                                        <textarea class="form-control" rows="3" name="return_note"></textarea>
+                                    </div>
+
+
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="row mt64 mb32 text-center d-block">
+                                        <center>
+                                            <p class="form_error_msg"></p>
+                                            <input type="submit" id="btnsubmit" class="btn btn-success"></input>
+                                            <a t-att-href="'/my/orders/%s'%(int(sale_order))"
+                                               class="btn btn-danger">
+                                                <span class="hidden-xs">Cancel</span>
+                                            </a>
+                                        </center>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="sale_order_communication" class="mt-4">
+                            <h2>Communication</h2>
+                            <t t-call="portal.message_thread">
+                                <t t-set="object" t-value="delivery_order"/>
+                            </t>
+                        </div>
+                    </div><!-- // #quote_content -->
+                </div>
+            </xpath>
+        </template>
+
+        <!-- RMA Response Template -->
+        <template id="rma_record_ept"
+                  name="Return Material Authorization Request Form Successfull or not create in ERP">
+            <t t-call="portal.portal_layout">
+                <div class="container">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <t t-if="success">
+                                <div class="alert text-center">
+                                    <span class="fa fa-thumbs-o-up fa-5x rma_sucess_icon"/>
+                                    <div>
+                                        <p class="rma_customer_name">
+                                            Dear
+                                            <span t-esc="order.partner_id.name"/>
+                                        </p>
+
+                                        <p class="rma_success_description">
+                                            We have recieved your Return Material Authorization request
+                                            <a t-att-href="'/my/rma/orders/%s?%s' % (rma.id, keep_query())">
+                                                <span t-esc="rma.code"/>
+                                            </a>
+                                            and we will get back to you soon.
+                                        </p>
+                                        <p class="rma_tq">
+                                            Thank You,
+                                        </p>
+
+                                        <span class="rma_company_name" t-esc="order.company_id.name"/>
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="not success">
+                                <div class="alert  text-center">
+                                    <span class="fa fa-thumbs-o-down fa-5x rma_danger_icon text-danger"/>
+                                    <div>
+                                        <p class="rma_customer_name">
+                                            Dear
+                                            <span t-esc="order.partner_id.name if order.partner_id else ''"/>
+                                        </p>
+                                        <p class="rma_success_description">
+                                            We have Not recieved your Return Material Authorization request.
+                                        </p>
+                                        <p class="rma_tq">
+                                            Thank You,
+                                        </p>
+                                        <span class="rma_company_name"
+                                              t-esc="order.company_id.name if order.company_id else ''"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <!-- RMA Menu to Portal Home (ListView) -->
+        <template id="portal_my_home_rma" name="Portal My Home : rma entries" inherit_id="portal.portal_my_home"
+                  priority="20">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-if="order_count" t-call="portal.portal_docs_entry">
+                    <t t-set="title">Return Orders</t>
+                    <t t-set="url" t-value="'/my/rma/orders'"/>
+                    <t t-set="count" t-value="rma_record_count"/>
+                </t>
+            </xpath>
+        </template>
+
+        <!-- RMA Portal ListView -->
+        <template id="rma_orders_form_ept" name="My RMA Orders">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Return Orders</t>
+                </t>
+
+                <t t-if="not rma_orders">
+                    <p>There are currently no Return Orders for your account.</p>
+                </t>
+
+                <t t-if="rma_orders" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active">
+                            <th>
+                                <span class='d-none d-md-inline'>Orders #</span>
+                            </th>
+                            <th class="text-left">Delivery Order</th>
+                            <th class="text-left">Sale Order</th>
+                            <th class="text-left">Date</th>
+                            <th class="text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="rma_orders" t-as="rma_order">
+                        <tr>
+                            <td>
+                                <a t-att-href="'/my/rma/orders/%s'%(int(rma_order.id))">
+                                    <t t-esc="rma_order.code"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-esc="rma_order.picking_id.name if rma_order.picking_id else ''"/>
+                            </td>
+                            <td>
+                                <span t-esc="rma_order.sale_id.name if rma_order.sale_id else ''"/>
+                            </td>
+                            <td>
+                                <span t-field="rma_order.date"/>
+                            </td>
+                            <td>
+                                <span t-field="rma_order.state"/>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <!-- Add breadcrumb to RMA -->
+        <template id="portal_my_rma_breadcrumb_ept" name="Portal layout : rma menu entries"
+                  inherit_id="portal.portal_breadcrumbs" priority="25">
+            <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+                <li t-if="page_name == 'rma' or rma_order"
+                    t-attf-class="breadcrumb-item #{'active ' if not sale_order else ''}">
+                    <a t-if="rma_order" t-attf-href="/my/rma/orders?{{ keep_query() }}">Return orders</a>
+                    <t t-else="">Return orders</t>
+                </li>
+                <li t-if="rma_order" class="breadcrumb-item active">
+                    <span t-field="rma_order.code"/>
+                </li>
+            </xpath>
+        </template>
+
+        <template id="portal_my_home_menu_sale_rma_ept" inherit_id="sale.portal_my_home_menu_sale">
+            <xpath expr="//t[@t-esc='sale_order.name']" position="replace">
+                <a t-att-href="'/my/orders/%s'%(int(sale_order))" t-esc="sale_order.name"></a>
+            </xpath>
+        </template>
+
+        <!-- RMA Order FormView -->
+        <template id="portal_rma_order_page" name="RMA Order" inherit_id="portal.portal_sidebar" primary="True">
+            <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+
+                <t t-set="wrapwrap_classes" t-value="'o_portal_bg_dark'"/>
+                <t t-set="rma_order" t-value="order"/>
+
+                <div class="row mt16 o_portal_sale_sidebar">
+                    <!-- Sidebar -->
+                    <t t-call="portal.portal_record_sidebar">
+                        <t t-set="classes" t-value="'col-12 col-lg flex-lg-grow-0 d-print-none'"/>
+                        <t t-set="entries">
+                            <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">
+                                <li class="list-group-item flex-grow-1">
+                                    <a role="button" class="btn btn-block btn-secondary" target="_blank"
+                                       t-att-href="'/my/rma/orders/pdf/%s?%s' % (order.id, keep_query())"><i
+                                            class="fa fa-download"/> Download
+                                    </a>
+                                </li>
+
+                                <li class="navspy list-group-item pl-0 d-none d-lg-block" t-ignore="true"
+                                    role="complementary">
+                                    <ul class="nav flex-column bs-sidenav" data-id="quote_sidebar"></ul>
+                                </li>
+
+                                <li t-if="order.sale_id.user_id"
+                                    class="list-group-item flex-grow-1 o_portal_contact_block">
+                                    <div class="small mb-1">
+                                        <strong class="text-muted">Your Contact:</strong>
+                                    </div>
+                                    <div class="row flex-nowrap">
+                                        <div class="col flex-grow-0 pr-2">
+                                            <img class="rounded-circle mr4 float-left o_portal_contact_img"
+                                                 t-if="order.sale_id.user_id.image_1920"
+                                                 t-attf-src="data:image/png;base64,#{order.sale_id.user_id.image_1920}"
+                                                 alt="Contact"/>
+                                            <img class="rounded-circle mr4 float-left o_portal_contact_img"
+                                                 t-if="not order.sale_id.user_id.image_1920"
+                                                 src="/web/static/src/img/placeholder.png" alt="Contact"/>
+                                        </div>
+                                        <div class="col pl-0" style="min-width: 150px">
+                                            <span t-field="order.sale_id.user_id"
+                                                  t-options='{"widget": "contact", "fields": ["name", "phone"], "no_marker": True}'/>
+                                            <a href="#discussion" class="small">
+                                                <i class="fa fa-comment"></i>
+                                                Send message
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </t>
+                    </t>
+
+                    <!-- Page content -->
+                    <div id="quote_content" class="col-12 col-lg justify-content-end">
+                        <div t-attf-class="card #{'pb-5' if report_type == 'html' else ''}">
+                            <!-- Call RMA Order Portal Content Template -->
+                            <div t-call="website_rma_ept.rma_order_portal_content" style="padding:20px;"/>
+                        </div>
+                        <div id="sale_order_communication" class="mt-4">
+                            <h2>Communication</h2>
+                            <t t-call="portal.message_thread">
+                                <t t-set="object" t-value="order"/>
+                            </t>
+                        </div>
+                    </div><!-- // #quote_content -->
+                </div>
+            </xpath>
+        </template>
+
+        <template id="rma_order_portal_content" name="RMA Order Portal Content">
+            <!-- Intro -->
+            <div id="introduction" t-attf-class="pb-2 pt-3 #{'card-header bg-white' if report_type == 'html' else ''}">
+                <h2 class="my-0">
+                    <span>Return Order #</span>
+                    <em t-esc="order.code"/>
+                    <span t-if="order.state in ['open']" style="color:green;">-
+                        Open
+                    </span>
+                    <!-- <span t-if="order.state in ['approve','process']" style="color:green;">-
+                        Approved
+                    </span> -->
+                    <!-- <span t-if="order.state in ['draft']" style="color:orange;">- Waiting For
+                        Approval
+                    </span> -->
+                    <span t-if="order.state in ['close']" style="color:red;">- Closed</span>
+                    <!-- <span t-if="order.state in ['reject']" style="color:red;">- Rejected</span> -->
+                </h2>
+                <hr/>
+            </div>
+
+            <div t-attf-class="#{'card-body' if report_type == 'html' else ''}">
+                <!-- Informations -->
+                <div id="informations">
+                    <div class="row">
+                        <div t-if="order.partner_id.name" class="col-lg-3">
+                            <strong>Customer:</strong>
+                            <p t-field="order.partner_id"/>
+                        </div>
+                        <div t-if="order.sale_id.name" class="col-lg-3">
+                            <strong>Order Reference:</strong>
+                            <p t-field="order.sale_id"/>
+                        </div>
+                        <div t-if="order.picking_id.name" class="col-lg-3">
+                            <strong>Shipping Reference:</strong>
+                            <p t-field="order.picking_id"/>
+                        </div>
+                        <div t-if="order.date" class="col-lg-3">
+                            <strong>Date:</strong>
+                            <p t-field="order.date" t-options='{"widget": "date"}'/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <strong class="d-block mb-1">Return Address:</strong>
+                            <p t-esc="return_address"/>
+                        </div>
+                        <div t-if="order.user_id.name" class="col-lg-3">
+                            <strong class="d-block mb-1">Responsible:</strong>
+                            <p t-field="order.user_id"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="details" style="page-break-inside: auto;">
+                <h3 id="details">Details</h3>
+                <table class="table table-sm" id="rma_order_table">
+                    <thead class="bg-100">
+                        <tr>
+                            <t t-set="colspan" t-value="7"/>
+                            <th class="d-none d-xl-table-cell"></th>
+                            <th class="text-left">Description</th>
+                            <th class="text-right">Delivered Quantity</th>
+                            <th class="text-right">Return Quantity</th>
+                            <th/>
+                            <th class="text-left">Return Reason</th>
+                            <th class="text-left">Line state</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                        <t t-foreach="order.claim_line_ids" t-as="ol">
+                            <tr>
+                                <td class="text-center d-none d-xl-table-cell"
+                                    style="height:48px; vertical-align: middle">
+                                    <span t-field="ol.product_id.image_1920"
+                                          t-options="{'widget': 'image', 'class': 'rounded', 'style':'max-width: 48px;max-height:48px'}"/>
+                                </td>
+                                <td id='product_name' class="text-left">
+                                    <span t-esc="ol.product_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="ol.done_qty"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="ol.quantity"/>
+                                </td>
+                                <td/>
+                                <td class="text-left">
+                                    <span t-esc="ol.rma_reason_id.name"/>
+                                </td>
+                                <td class="text-left">
+                                    <span t-esc="ol.ept_state_id.name"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </section>
+            <div t-if="order.description" height="10px">
+                <strong>RMA Note:</strong>
+                <p t-field="order.description"/>
+            </div>
+        </template>
+
+    </data>
+</odoo>

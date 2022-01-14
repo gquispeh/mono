@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="hr_attendance_my_attendaces_action" model="ir.actions.act_window">
+        <field name="name">Attendances</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{"search_default_today":1}</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="search_view_id" ref="hr_attendance.hr_attendance_view_filter" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No attendance records found
+            </p><p>
+                The attendance records of your employees will be displayed here.
+            </p>
+        </field>
+    </record>
+
+    <record id="hr_attendance_form_view_inherit" model="ir.ui.view">
+        <field name="name">hr.attendance.form.view.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="edit">1</attribute>
+                <attribute name="create">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance_tree_view_inherit" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.view.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_attendance.view_attendance_tree_inherit">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="menu_hr_attendance_own_attendaces" name="My Attendances" parent="hr_attendance.menu_hr_attendance_root" sequence="15" groups="hr_attendance.group_hr_attendance" action="hr_attendance_my_attendaces_action"/>
+    <menuitem id="menu_hr_attendance_own_attendaces_employee" name="My Attendances" parent="menu_hr_attendance_own_attendaces" sequence="10" action="hr_attendance_my_attendaces_action"/>
+
+</odoo>

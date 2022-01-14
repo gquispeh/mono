@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+
+    <!-- ml.notes form view -->
+    <record id="ml_notes_form_view" model="ir.ui.view">
+        <field name="name">ml.notes.view.form</field>
+        <field name="model">ml.notes</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="user_id" invisible="1"/>
+                        <field name="note"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ml.notes.mixing form view -->
+    <record id="ml_notes_mixing_view_form" model="ir.ui.view">
+        <field name="name">ml.notes.mixing.view.form</field>
+        <field name="model">ml.notes.mixing</field>
+        <field name="arch" type="xml">
+            <form string="Notes">
+                <sheet>
+                    <field name="note_ids">
+                        <tree>
+                            <field name="note"/>
+                            <field name="create_uid"/>
+                            <field name="write_date"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- ml.notes action window -->
+    <record id="ml_notes_action" model="ir.actions.act_window">
+        <field name="name">Notes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ml.notes</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

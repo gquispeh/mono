@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="group_employee_view" model="res.groups">
+        <field name="name">Employee View</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="menu_access" eval="[
+            (4, ref('hr.menu_hr_root')),
+            (4, ref('hr.menu_hr_employee_user')),
+            (4, ref('hr.menu_hr_employee')),
+            (4, ref('hr.menu_hr_department_kanban')),
+            (4, ref('monolitic_hr_training.training_root_menu')),
+            (4, ref('hr.menu_hr_employee_payroll')),
+            (4, ref('monolitic_hr_training.my_training_training_menu_act')),
+            (4, ref('monolitic_hr_training.all_training_training_menu_act')),
+            (4, ref('monolitic_hr_training.approve_training_training_menu_act')),
+            (4, ref('monolitic_hr_training.training_course_menu_act')),
+            (4, ref('hr.hr_menu_hr_reports')),
+            (4, ref('hr_contract_reports.menu_report_contract_employee_all')),
+        ]"/>
+    </record>
+    <record id="group_private_information_view" model="res.groups">
+        <field name="name">View private information employees</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+
+    <record model="res.groups" id="hr.group_hr_user">
+        <field name="implied_ids" eval="[
+            (4, ref('monolitic_hr_custom.group_employee_view'))
+        ]"/>
+    </record>
+    <record model="res.groups" id="hr.group_hr_manager">
+        <field name="implied_ids" eval="[
+            (4, ref('hr.group_hr_user'))
+        ]"/>
+    </record>
+</odoo>

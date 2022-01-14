@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <record id="crm_closing_action_none" model="crm.closing.action">
+        <field name="name">None</field>
+    </record>
+    <record id="crm_closing_action_minimum_amount" model="crm.closing.action">
+        <field name="name">Minimum amount</field>
+    </record>
+    <record id="crm_closing_action_get_credit" model="crm.closing.action">
+        <field name="name">Get credit</field>
+    </record>
+    <record id="crm_closing_action_improve_price" model="crm.closing.action">
+        <field name="name">Improve price</field>
+    </record>
+    <record id="crm_closing_action_lead_time" model="crm.closing.action">
+        <field name="name">Lead time</field>
+    </record>
+    <record id="crm_closing_action_improve_price_lead_time" model="crm.closing.action">
+        <field name="name">Improve price and lead time</field>
+    </record>
+</odoo>

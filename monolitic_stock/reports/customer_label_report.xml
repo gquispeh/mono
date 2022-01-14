@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- NO RECIBE EL OBJETO -->
+    <template id="report_customer_label_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <t t-call="monolitic_stock.report_customer_label_layout_standard">
+            <t t-raw="0"/>
+        </t>
+    </template>
+
+    <template id="report_customer_label_layout_standard">
+        <div class="header">
+            <div class="row"/>
+            <div class="row" style="margin-left: 0px;margin-bottom:-40px;">
+                <div style="margin-top:5px;">
+                    <div style="font-size:12px;line-height:0px;margin-right: 350px;">
+                        <p>
+                            C/De la Mora, 34(P.E. GranLand)
+                        </p>
+                        <p>08918 Badalona(BARCELONA)</p>
+                        <p>
+                            <span>
+                                <p>Tel:93 285 92 92</p>
+                                <p>Fax:93 284 11 93</p>
+                            </span>
+                        </p>
+                        <p>
+                            monolitic@monolitc.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4" style="float: right;text-align: right;margin-top:40px;">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 140px;max-width:300px; margin-left:20px;" class="float-left"/>
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+
+    <template id="report_customer_label_document">
+        <t t-call="web.html_container">
+            <t t-call="monolitic_stock.report_customer_label_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-foreach="o.move_line_ids_without_package" t-as="move_line">
+                        <img t-if="move_line.picking_id.partner_id.logistic_customer_tag_type== 'barcode_qr'" t-att-src="'data:image/png;base64,%s' % to_text(move_line.generate_qr())"
+                            style="height:125px;width:125px;"/>
+                        <div class="row" style="height: 75px;">
+                            <div class="col-3" style="border:1px solid black;">
+                                <b>Proveedor:</b><br/>
+                                <t t-esc="move_line.picking_id.company_id.name"></t>
+                            </div>
+                            <div class="col-3" style="border:1px solid black;">
+                                <b>Nº Proveedor:</b><br/>
+                                <t t-esc="move_line.picking_id.partner_id.monolitic_supplier_code"></t>
+                            </div>
+                            <div class="col-6" style="border:1px solid black;">
+                                <b>Cliente:</b><br/>
+                                <t t-esc="move_line.picking_id.partner_id.name"></t>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 125px;">
+                            <div class="col-3" style="border:1px solid black;">
+                                <b>Fecha albarán:</b><br/>
+                                <t t-esc="move_line.picking_id.date"></t>
+                            </div>
+                            <div class="col-4" style="border:1px solid black;">
+                                <b>Nº Albarán:</b><br/>
+                                <t t-esc="move_line.picking_id.name"></t><br/>
+                                <!-- Falta codigo de barras albaran -->
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', move_line.picking_id.name, 600, 100)"
+                                    style="width:275px;height:50px;margin-left:-10px;"/>
+                            </div>
+                            <div class="col-4" style="border:1px solid black;">
+                                <b>Su pedido:</b><br/>
+                                <t t-esc="move_line.picking_id.sale_id.name"></t>
+                                <!-- Falta codigo barras pedido -->
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', move_line.picking_id.sale_id.name, 600, 100)"
+                                    style="width:275px;height:50px;margin-left:-10px;"/>
+                            </div>
+                            <div class="col-1" style="border:1px solid black; widht: 100px;">
+                                <b>Pos. PV</b><br/>
+                                <t t-esc="move_line.sale_line_number"></t>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 145px;">
+                            <div class="col-3" style="border:1px solid black;">
+                                <b>Código Cliente:</b><br/>
+                                <t t-esc="move_line.client_product_code "></t><br/>
+                            </div>
+                            <div class="col-7" style="border:1px solid black;">
+                                <b>Nº Ref.:</b>
+                                <t t-esc="move_line.product_id.default_code"></t><br/>
+                                <b>Descripción:</b>
+                                <t t-esc="move_line.product_id.description"></t><br/>
+                                <b>Lote Nº:</b><br/>
+                                <!-- Falta codigo barras lote -->
+                                <img t-if="move_line.lot_id" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', move_line.lot_id.name, 600, 100)"
+                                    style="width:275px;height:50px;margin-left:-10px;"/>
+                            </div>
+                            <div class="col-2" style="border:1px solid black;">
+                                <b>Cantidad:</b><br/>
+                                <t t-esc="move_line.qty_done"></t>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="report_customer_label" model="ir.actions.report">
+        <field name="name">Customer Label Report</field>
+        <field name="model">stock.picking</field>
+        <field name="report_name">monolitic_stock.report_customer_label_document</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">Customer Label Report</field>
+    </record>
+
+    <record id="report_customer_label" model="ir.actions.report">
+        <field name="paperformat_id" ref="monolitic_stock.paperformat_wo_mrp_stock_picking"/>
+    </record>
+
+</odoo>

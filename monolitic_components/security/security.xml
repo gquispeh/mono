@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="group_tic_department" model="res.groups">
+            <field name="name">Stock Manager TIC Department</field>
+            <field name="category_id" ref="base.module_category_administration"/>
+            <field name="users" eval="[(5, ref('base.user_root'))]" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template id="manufacturing_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-call="monolitic_manufacturing.manufacturing_layout_standard">
+            <t t-raw="0"/>
+        </t>
+    </template>
+
+    <template id="manufacturing_layout_standard">
+        <div class="header">
+            <div class="row mt16">
+                <t t-foreach="company.adress_report_header" t-as="partner_adress">
+                    <div class="col-3" style="margin-top: 1%; font-size:10px; line-height:5px">
+                        <p>
+                            <strong>
+                                <span t-field="partner_adress.name"/>
+                            </strong>
+                        </p>
+                        <p>
+                            <span t-field="partner_adress.street"/>
+                        </p>
+                        <p>
+                            <span t-field="partner_adress.zip"/>
+                            <t t-if="partner_adress.city">
+                                <span t-field="partner_adress.city"/>
+                            </t>
+                            <t t-if="partner_adress.state_id">
+                                (<span t-field="partner_adress.state_id"/>)
+                            </t>
+                        </p>
+                        <p t-if="partner_adress.phone">
+                            <span>
+                                Tel:
+                                <span t-field="partner_adress.phone" />
+                            </span>
+                        </p>
+                        <p t-if="partner_adress.email">
+                                <span t-field="partner_adress.email" />
+                        </p>
+                    </div>
+                </t>
+
+                <div class="col-3">
+                    <img class="img img-responsive" src="/monolitic_base/static/src/img/monolitic_logo.png" style="max-height: 100px;" alt="Logo"/>
+                </div>
+            </div>
+
+            <div class="row mt16" style="font-size: 12px;">
+                <div class="col-9">
+                    <strong>Website: http://www.monolitic.com</strong>
+                </div>
+
+                <div class="col-3">
+                    <span t-esc="datetime.datetime.now().strftime('%d. %B %Y')"></span>
+                    <span style="margin-left: 20%">Page </span><span class="page"/>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer">
+            <div class="row" style="height: 175px;">
+                <div class="col-3" style="font-size: 12px; border: 1px solid black">
+                    <div style="text-align: center">
+                        <strong>Vº Bº Production Responsible</strong>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                        <span>Date : </span><span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"></span>
+                    </div>
+                </div>
+                <div class="col-3" style="font-size: 12px; border: 1px solid black">
+                    <div style="text-align: center">
+                        <strong>Vº Bº Assembly</strong>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                        <span>Date : </span>
+                    </div>
+                </div>
+                <div class="col-3" style="font-size: 12px; border: 1px solid black">
+                    <div style="text-align: center">
+                        <strong>Vº Bº Test and Verification</strong>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                        <span>Date : </span>
+                    </div>
+                </div>
+                <div class="col-3" style="font-size: 12px; border: 1px solid black">
+                    <div style="text-align: center">
+                        <strong>Vº Bº Quality Control</strong>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 5; font-style: italic;">
+                        <span>Date : </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="monolitic_report_mrporder" inherit_id="mrp.report_mrporder">
+        <xpath expr="//t[@t-call='web.internal_layout']" position="attributes">
+            <attribute name="t-call">monolitic_manufacturing.manufacturing_layout</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('row')][1]/div[hasclass('col-7')]" position="replace">
+            <div class="col-12">
+                <h2>Picking Equipment SYSTEMS</h2>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('row')][1]/div[hasclass('col-5')]" position="replace">
+        </xpath>
+
+        <xpath expr="//div[hasclass('row')][2]" position="replace">
+            <div class="row mt32 mb16" style="font-size: 18px">
+                <t t-if="o.partner_id">
+                    <div class="col-7">
+                        <span>Customer:</span>
+                        <strong><span t-field="o.partner_id"/></strong>
+                    </div>
+                    <div class="col-5">
+                        <span>Sale Order:</span>
+                        <strong><span t-field="o.origin"/></strong>
+                    </div>
+                </t>
+
+                <t t-if="not o.partner_id">
+                    <div class="col-6">
+                        <span>Origin:</span>
+                        <strong><span t-field="o.origin"/></strong>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('row')][3]" position="replace">
+            <div class="row mt16 mb32" style="font-size: 18px">
+                <div class="col-7">
+                    <span>Reference:</span>
+                    <strong><span t-field="o.product_id.name"/></strong>
+                </div>
+                <t t-if="o.interval_tracking">
+                    <div class="col-5">
+                        <span>S/N equipment:</span>
+                        <strong><span t-field="o.interval_tracking"/></strong>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+
+        <xpath expr="//h3[@t-if='o.move_raw_ids']" position="replace">
+        </xpath>
+
+        <xpath expr="//table[@t-if='o.move_raw_ids']" position="replace">
+            <table class="table table-sm" t-if="o.move_raw_ids">
+                <t t-set="has_serial_number" t-value="any(o.move_raw_ids.filtered(lambda x: x.move_line_ids.filtered(lambda x: x.lot_id or x.lot_name)))" groups="stock.group_production_lot"/>
+                <t t-set="has_product_available" t-value="any(o.move_raw_ids.filtered(lambda x: x.move_line_ids.filtered(lambda x: x.product_qty)))"/>
+                <t t-set="has_manufacturer" t-value="any(o.move_raw_ids.filtered(lambda x: x.move_line_ids.filtered(lambda x: x.product_id.manufacturer)))"/>
+                <t t-set="has_sequence_fifo" t-value="any(o.move_raw_ids.filtered(lambda x: x.move_line_ids.filtered(lambda x: x.quant_sequence_fifo)))"/>
+
+                <t t-if="o.state=='done'">
+                    <t t-set="has_product_available" t-value="any(o.move_raw_ids.filtered(lambda x: x.move_line_ids.filtered(lambda x: x.qty_done)))"/>
+                </t>
+                <thead>
+                    <tr t-if="has_product_available">
+                        <th>Quantity</th>
+                        <th>Nº</th>
+                        <th>Description</th>
+                        <th t-if="has_manufacturer">Manufacturer</th>
+                        <th t-if="has_serial_number" width="15%">Lot/Serial</th>
+                        <th t-if="has_sequence_fifo">FIFO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-if="has_product_available and o.move_raw_ids">
+                        <t t-set="lines" t-value="o.move_raw_ids"/>
+                        <t t-foreach="lines" t-as="line">
+                            <t t-set="move_lines" t-value="line.move_line_ids.filtered(lambda x: x.state != 'done' and x.product_qty)"/>
+                            <t t-if="o.state == 'done'">
+                                <t t-set="move_lines" t-value="line.move_line_ids.filtered(lambda x: x.state == 'done' and x.qty_done)"/>
+                            </t>
+                            <t t-foreach="move_lines" t-as="ml">
+                                <tr>
+                                    <td>
+                                        <span t-esc="ml.product_uom_qty" t-if="ml.state !='done'"/>
+                                        <span t-esc="ml.qty_done" t-if="ml.state =='done'"/>
+                                        <span t-field="ml.product_uom_id" groups="uom.group_uom"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.product_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.product_id.description"/>
+                                    </td>
+                                    <td t-if="has_manufacturer">
+                                        <span t-field="line.product_id.manufacturer.name"/>
+                                    </td>
+                                    <td t-if="has_serial_number" width="15%">
+                                        <t t-if="has_serial_number and (ml.lot_id or ml.lot_name)">
+                                            <span t-field="ml.lot_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td t-if="has_sequence_fifo">
+                                        <span t-field="line.quant_sequence_fifo"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>
+
+        <xpath expr="//table[@t-if='o.move_raw_ids']" position="after">
+            <t t-if="o.observations">
+                <p style="font-size: 18px"><strong>Observations</strong></p>
+                <p t-field="o.observations"/>
+            </t>
+        </xpath>
+
+    </template>
+
+    <record id="mrp.action_report_production_order" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_mrporder"/>
+    </record>
+
+</odoo>

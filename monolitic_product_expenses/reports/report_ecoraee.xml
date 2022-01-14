@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_product_ecoraee">
+        <t t-call="web.html_container">
+             <t t-foreach="docs" t-as="o">
+                 <div class="header">
+                <div style="display:block;float:left;">
+                    <strong>Product Billing RAEE</strong>
+                    <br/>
+                    <span t-field="env.user.company_id.name"/>
+                    <br/>
+                    <br/>
+                    <span>Registration Date:</span>
+                    <span t-esc="o.start_date"/>
+                    ...
+                    <span t-esc="o.end_date"/>
+                </div>
+                <div style="display:block;float:right;text-align:right;">
+                   <span t-esc="datetime.datetime.now().strftime('%d. %B %Y')"></span>
+                   <br/>
+                   <span>Page </span><span class="page"/>
+                   <br/>
+                   <span t-esc="user.name"></span>
+                </div>
+            </div>
+                     <div>
+                        <table class="table table-sm"  style="width:100%">
+                            <thead style="text-align:left;margin-left:1px;!important">
+                                <th class="text-left">Invoice Number</th>
+                                <th>Customer</th>
+                                <th>Invoice Date</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                            </thead>
+                            <tbody>
+                                <t t-set="qty" t-value="0"/>
+                                <t t-foreach="docs.get_invoices_line_ecoraee()" t-as="invoice_line">
+                                    <t t-set="qty" t-value="qty + invoice_line.quantity"/>
+                                    <tr>
+                                        <td t-esc="invoice_line.move_id.name" class="text-left"/>
+                                        <td t-esc="invoice_line.move_id.partner_id.name" class="text-left"/>
+                                        <td t-esc="invoice_line.move_id.invoice_date" class="text-center"/>
+                                        <td t-esc="invoice_line.product_id.name" class="text-left"/>
+                                        <td t-esc="invoice_line.quantity" class="text-center"/>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td/>
+                                    <td/>
+                                    <td/>
+                                    <strong>
+                                        <td><strong>TOTAL Quantity:</strong></td>
+                                        <td><strong><span class="text-right" t-esc="qty"/></strong></td>
+                                    </strong>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+             </t>
+        </t>
+    </template>
+
+    <data noupdate="0">
+        <record id="report_ecoraee" model="ir.actions.report">
+            <field name="name">Report EcoRAEE</field>
+            <field name="model">report.ecoraee.wizard</field>
+            <field name="report_name">monolitic_product_expenses.report_product_ecoraee</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_file">EcoRAEE Report</field>
+        </record>
+    </data>
+
+</odoo>

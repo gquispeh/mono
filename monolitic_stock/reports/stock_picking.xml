@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="ml_report_sale_delivery_document">
+        <t t-call="web.html_container">
+            <t t-call="monolitic_stock.ml_picking_external_layout">
+                <style>
+                    .table_header {
+                    border: 1px solid;
+                    padding-left: 6px;
+                    margin-top: 25px;
+                    }
+                    .left {
+                    float: left;
+                    width: 401px;
+                    }
+                    .right {
+                    float: right;
+                    align: left;
+                    width: 40%;
+                    }
+                    .right td{
+                    padding-left:6px;
+                    }
+                    .left td{
+                    padding-left:6px;
+                    }
+                    .table-padding td{
+                    padding:0 5px 0 0;
+                    }
+                </style>
+                <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
+                <t t-set="partner" t-value="o.partner_id or (o.move_lines and o.move_lines[0].partner_id) or False"/>
+                <t t-set="company" t-value="o.company_id" />
+                <t t-set="sale" t-value="o.sale_id"/>
+                <t t-if="partner" name="partner_header">
+                    <t t-set="address">
+                        <div class="table_header">
+                            <strong>
+                            Invoicing address:</strong>
+                            <div t-esc="sale.partner_invoice_id"
+                                t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;:[&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+
+                        </div>
+                        <t t-set="information_block">
+                            <div class="table_header">
+                                <strong>
+                                    Shipping address:
+                                    <div t-field="sale.partner_shipping_id"
+                                        t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: False}"/>
+                                </strong>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+
+                <div class="page">
+
+                    <div style="display:inline;">
+                        <table class="table_header left">
+                            <tr>
+                                <td>
+                                    <strong>Order:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.origin"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Carrier:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.delivery_conditions"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Delivery Conditions:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.carrier_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Nº Bultos:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.number_lumps"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Horario Entrega:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.delivery_time"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Customer Number:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.partner_id.ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>CIF / NIF:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.partner_id.vat"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="table_header right">
+                            <tr>
+                                <td>
+                                    <strong>Supplier Nº:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="o.partner_id.monolitic_supplier_code"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Ntro. Order:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="sale.client_order_ref"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Comercial:</strong>
+                                </td>
+                                <td>
+                                    <span t-field="sale.user_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Payment Mode:</strong>
+                                </td>
+                                <td>
+                                    <span t-esc="sale.payment_mode_id.name or ''"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table class="table table-sm mt48">
+                        <thead>
+                            <tr>
+                                <th class="text-right">
+                                    <strong>Su código</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Po</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>PPv</strong>
+                                </th>
+                                <th>
+                                    <strong>Product</strong>
+                                </th>
+                                <th>
+                                    <strong>Quantity</strong>
+                                </th>
+                                <th class="text-right">
+                                    <strong>Warehouse</strong>
+                                </th>
+                                <th t-if="not o.not_valued_picking" class="text-right">
+                                    <strong>Unit Price</strong>
+                                </th>
+
+                                <th t-if="not o.not_valued_picking" class="text-right">
+                                    <strong>Subtotal</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                            <tr t-foreach="lines" t-as="move">
+                                <td class="text-right">
+                                    <span t-esc="move.product_id.get_customer_code(move.sale_line_id.order_id.partner_id)" />
+                                </td>
+                                <td class="text-right">
+                                    <span
+                                        t-field="move.number"/>
+                                </td>
+                                <td class="text-right">
+                                    <span
+                                        t-field="move.sale_line_id.number" />
+                                </td>
+                                <td>
+                                    <strong>
+                                        <span t-field="move.product_id.default_code"/>
+                                    </strong>
+                                    <t t-if="move.product_id.description_sale">
+                                        <br/>
+                                        <span t-field="move.product_id.description_sale"/>
+                                    </t>
+                                    <t t-if="move.get_serial_numbers()">
+                                        <br/>
+                                        S/N:
+                                        <span t-esc="move.get_serial_numbers()"/>
+                                    </t>
+                                </td>
+                                <td>
+                                    <span t-field="move.product_uom_qty"/>
+                                </td>
+                                <td class="text-right">
+                                    <span
+                                        t-field="move.warehouse_id" />
+                                </td>
+                                <td t-if="not o.not_valued_picking" class="text-right">
+                                    <span t-field="move.sale_line_id.price_unit" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                                <td t-if="not o.not_valued_picking" class="text-right">
+                                    <span t-field="move.sale_line_id.price_subtotal" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p t-if="len(o.move_lines) > 6" style="page-break-after: always;"/>
+                    <p t-field="o.picking_note"/>
+                    <div>
+                        <p style="border: black 1px;border-style: solid;padding-left: 3px;margin-bottom: 0;text-align: center;">
+                            <span style="font-weight: bold;text-decoration: underline;font-size: 16px;">DECLARACIÓN DE CONFORMIDAD:</span>
+                            Se declara que el/los producto/s incluídos en este albarán son conformes
+                            con lo solicitado por el cliente y cumplen las especificaciones técnicas expresadas en el catálogo del fabricante.
+                        </p>
+                        <p style="text-align: center;font-size: 14px;">
+                            Estos productos pueden precisar autorización previa para ser exportados.
+                        </p>
+                        <p style="font-size: 12px;">
+                            Le informamos de que las condiciones relacionadas con la formalización de pedidos, entregas, formas de pago, propiedad intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta que aparecen publicadas en la web : www.monolitic.com
+                            <br/>
+                            El/Los productos ofertados son conforme a lo solicitado por el cliente y cumplen las especificaciones técnicas expresadas en el catálogo del proveedor. La responsabilidad de Monolitic se circunscribe a las especificaciones que definan nuestros proveedores.
+                        </p>
+                        <p style="font-style: italic;">
+                            En caso de recibir la mercancía con daños aparentes, la reclamación o reserva se debe efectuar en el ACTO. Si los daños no son
+                            manifiestos, el plazo máximo para su notificación es de 7 DÍAS NATURALES
+                        </p>
+                    </div>
+                    <t t-if="not o.not_valued_picking and o.sale_id and o.move_lines">
+                        <div style="page-break-inside: avoid;" t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                            <table class="table table-sm;">
+                                <tr class="border-black o_subtotal" style="">
+                                    <td>
+                                        <strong>Subtotal</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                    <tr style="">
+                                        <td>
+                                            <span t-esc="amount_by_group[1]"/>
+                                        </td>
+                                        <td class="text-right o_price_total">
+                                            <span t-esc="amount_by_group[0]"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <!-- <td>
+                                    <strong>Taxes</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_tax"/>
+                                </td> -->
+                                <tr class="border-black o_total">
+                                    <td>
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_total"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="clearfix">
+                            <div id="total" class="row">
+                                <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="ml_report_sale_delivery">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="monolitic_stock.ml_report_sale_delivery_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </template>
+</odoo>

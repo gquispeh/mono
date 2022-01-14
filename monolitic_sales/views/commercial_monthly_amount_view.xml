@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- Menu, tree, search and action for Target Amount -->
+
+    <record id="commercial_target_amount_tree_view" model="ir.ui.view">
+        <field name="name">commercial.target.amount.tree.view</field>
+        <field name="model">commercial.monthly.amount</field>
+        <field name="arch" type="xml">
+            <tree create="0" default_order="year, month, user_id">
+                <field name="commercial_target_id" invisible="1" />
+                <field name="year" />
+                <field name="month" />
+                <field name="user_id" />
+                <field name="market_segmentation_id" />
+                <field name="product_segmentation_id" />
+                <field name="amount" string="Target amount" />
+                <button type="object" name="action_open_commercial_target_form" icon="fa-pencil" context="{'target_id': commercial_target_id}" groups="sales_team.group_sale_manager"/>
+                <field name="prevision_amount" string="Prevision amount" />
+                <button type="object" name="action_open_prevision_amount_tree" icon="fa-search" context="{'target_id': commercial_target_id}"/>
+                <field name="diff_amount" />
+                <field name="invoiced_amount" />
+                <button type="object" name="action_open_invoiced_amount_tree" icon="fa-search"/>
+                <field name="menf_amount" />
+                <button type="object" name="action_open_menf_amount_tree" icon="fa-search"/>
+                <field name="real_diff_amount" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="commercial_target_amount_search" model="ir.ui.view">
+        <field name="name">commercial.target.amount.search</field>
+        <field name="model">commercial.monthly.amount</field>
+        <field name="arch" type="xml">
+            <search string="Search Target Amounts">
+                <field name="year" />
+                <field name="month" />
+                <field name="user_id" />
+                <field name="market_segmentation_id" />
+                <field name="amount" />
+                <group string="Group By" name="groupby">
+                    <filter name="year_groupby" string="Year" context="{'group_by': 'year'}"/>
+                    <filter name="month_groupby" string="Month" context="{'group_by': 'month'}"/>
+                    <filter name="user_id_groupby" string="Commercial" context="{'group_by': 'user_id'}"/>
+                    <filter name="market_segmentation_id_groupby" string="Market Segmentation" context="{'group_by': 'market_segmentation_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_commercial_target_amount" model="ir.actions.act_window">
+        <field name="name">Target Amounts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">commercial.monthly.amount</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('commercial_target_amount_tree_view')})]"/>
+        <field name="domain">[('amount_type', '=', 'target')]</field>
+    </record>
+
+    <menuitem id="menu_commercial_target_amount" name="Target amounts" parent="sale.menu_sale_report"
+        action="action_commercial_target_amount" sequence="10" groups="sales_team.group_sale_salesman"/>
+
+
+    <!-- Menu, tree, search and action for Sales Previsions Amounts -->
+
+    <record id="sales_prevision_amount_tree_view" model="ir.ui.view">
+        <field name="name">sales.prevision.amount.tree.view</field>
+        <field name="model">commercial.monthly.amount</field>
+        <field name="arch" type="xml">
+            <tree create="0" default_order="year, month, user_id, market_segmentation_id, product_segmentation_id, partner_id, amount">
+                <field name="customer_prevision_id" invisible="1" />
+                <field name="year" />
+                <field name="month" />
+                <field name="user_id" />
+                <field name="market_segmentation_id" />
+                <field name="product_segmentation_id" />
+                <field name="partner_id" />
+                <field name="amount" string="Prevision amount" />
+                <button type="object" name="action_open_partner_oppns" icon="fa-pencil-square-o" context="{'partner_id': partner_id}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sales_prevision_amount_search" model="ir.ui.view">
+        <field name="name">sales.prevision.amount.search</field>
+        <field name="model">commercial.monthly.amount</field>
+        <field name="arch" type="xml">
+            <search string="Search Target Amounts">
+                <field name="year" />
+                <field name="month" />
+                <field name="user_id" />
+                <field name="market_segmentation_id" />
+                <field name="product_segmentation_id" />
+                <field name="partner_id" />
+                <field name="amount" />
+                <group string="Group By" name="groupby">
+                    <filter name="year_groupby" string="Year" context="{'group_by': 'year'}"/>
+                    <filter name="month_groupby" string="Month" context="{'group_by': 'month'}"/>
+                    <filter name="user_id_groupby" string="Commercial" context="{'group_by': 'user_id'}"/>
+                    <filter name="market_segmentation_id_groupby" string="Market Segmentation" context="{'group_by': 'market_segmentation_id'}"/>
+                    <filter name="product_segmentation_id_groupby" string="Product Segmentation" context="{'group_by': 'product_segmentation_id'}"/>
+                    <filter name="partner_id_groupby" string="Contact" context="{'group_by': 'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sales_prevision_amount" model="ir.actions.act_window">
+        <field name="name">Sales Previsions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">commercial.monthly.amount</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('sales_prevision_amount_tree_view')})]"/>
+        <field name="search_view_id" ref="sales_prevision_amount_search"/>
+        <field name="domain">[('amount_type', '=', 'prevision')]</field>
+    </record>
+
+    <menuitem id="menu_sales_prevision_amount" name="Sales previsions" parent="sale.menu_sale_report"
+        action="action_sales_prevision_amount" sequence="11" groups="sales_team.group_sale_salesman"/>
+
+</odoo>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="res_users_target_amount_inherit" model="ir.ui.view">
+        <field name="name">res.users.target.amount.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="show_commercial_target" invisible="1"/>
+            </field>
+
+            <xpath expr="//notebook[last()]" position="inside">
+                <page string="Target Amount" attrs="{'invisible': [('show_commercial_target', '=', False)]}">
+                    <field name="commercial_target_ids" nolabel="1" colspan="4" widget="one2many_list" context="{'default_user_id': active_id, 'default_related_user': active_id}">
+                        <tree string="Commercial Targets">
+                            <field name="year" />
+                            <field name="market_segmentation_id" />
+                            <field name="product_segmentation_id" />
+                            <field name="total_amount" />
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_users_commercial_simple_inherit" model="ir.ui.view">
+        <field name="name">res.users.commercial.simple.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+
+            <field name="mobile" position="after">
+                <field name="show_commercial_target" invisible="1"/>
+            </field>
+            <field name="property_warehouse_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <xpath expr="//sheet" position="inside">
+                <notebook colspan="4">
+                    <page string="Employee Functions" groups="hr.group_hr_manager">
+                        <group>
+                            <field name="is_delegate"/>
+                            <field name="is_commercial"/>
+                            <field name="replaces_id" />
+                            <field name="department_id" />
+                        </group>
+                    </page>
+                    <page string="Target Amount" attrs="{'invisible': [('show_commercial_target', '=', False)]}">
+                        <field name="commercial_target_ids" nolabel="1" colspan="4" widget="one2many_list" context="{'default_user_id': active_id, 'default_related_user': active_id}">
+                            <tree string="Commercial Targets">
+                                <field name="year" />
+                                <field name="market_segmentation_id" />
+                                <field name="product_segmentation_id" />
+                                <field name="total_amount" />
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- New menu and action for Users / Commercials -->
+
+    <record id="res_users_commercial_tree_view" model="ir.ui.view">
+        <field name="name">res.users.commercial.tree.view</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <tree create="0">
+                <field name="name" />
+                <field name="login" />
+                <field name="phone" />
+                <field name="mobile" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_commercial_users" model="ir.actions.act_window">
+        <field name="name">Commercials</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('res_users_commercial_tree_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('base.view_users_simple_form')})]"/>
+        <field name="domain">[('is_commercial', '=', True)]</field>
+    </record>
+
+    <menuitem id="menu_commercial_users" name="Commercials" parent="sale.menu_sale_config" action="action_commercial_users" sequence="2" groups="sales_team.group_sale_manager"/>
+</odoo>

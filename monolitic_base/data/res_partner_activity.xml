@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="res_partner_activity_manufacturer" model="res.partner.activity">
+            <field name="name">Manufacturer</field>
+        </record>
+        <record id="res_partner_activity_distributor" model="res.partner.activity">
+            <field name="name">Distributor</field>
+        </record>
+        <record id="res_partner_activity_engineering" model="res.partner.activity">
+            <field name="name">Engineering and Consulting</field>
+        </record>
+        <record id="res_partner_activity_integrator" model="res.partner.activity">
+            <field name="name">Integrator</field>
+        </record>
+        <record id="res_partner_activity_cabler" model="res.partner.activity">
+            <field name="name">Cabler</field>
+        </record>
+        <record id="res_partner_activity_installer_and_maintenance" model="res.partner.activity">
+            <field name="name">Installer and Maintenance</field>
+        </record>
+        <record id="res_partner_activity_electronic_fitter" model="res.partner.activity">
+            <field name="name">Electronic Fitter</field>
+        </record>
+        <record id="res_partner_activity_shop" model="res.partner.activity">
+            <field name="name">Shop</field>
+        </record>
+        <record id="res_partner_activity_start_up" model="res.partner.activity">
+            <field name="name">Start up</field>
+        </record>
+        <record id="res_partner_activity_competence" model="res.partner.activity">
+            <field name="name">Competence</field>
+        </record>
+        <record id="res_partner_activity_exploiter" model="res.partner.activity">
+            <field name="name">Exploiter</field>
+        </record>
+        <record id="res_partner_activity_training_research_center" model="res.partner.activity">
+            <field name="name">Training and Research Center</field>
+        </record>
+        <record id="res_partner_activity_particular" model="res.partner.activity">
+            <field name="name">Particular</field>
+        </record>
+        <record id="res_partner_activity_architect_interior_design" model="res.partner.activity">
+            <field name="name">Architect and Interior Designer</field>
+        </record>
+        <record id="res_partner_activity_warehouse" model="res.partner.activity">
+            <field name="name">Warehouse</field>
+        </record>
+        <record id="res_partner_activity_builder" model="res.partner.activity">
+            <field name="name">Builder</field>
+        </record>
+        <record id="res_partner_activity_franchise" model="res.partner.activity">
+            <field name="name">Franchise</field>
+        </record>
+        <record id="res_partner_activity_other" model="res.partner.activity">
+            <field name="name">Other</field>
+        </record>
+    </data>
+</odoo>

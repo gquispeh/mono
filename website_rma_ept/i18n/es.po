@@ -1,0 +1,427 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_rma_ept
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-13 13:52+0000\n"
+"PO-Revision-Date: 2020-10-13 13:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "&amp;times;"
+msgstr ""
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "-\n"
+"                        Open"
+msgstr "-\n"
+"                        Abierto"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "- Closed"
+msgstr "Cerrado"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<em>Product Return Request</em>"
+msgstr "<em>Solicitud de devolución de producto</em>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_rma_order_page
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<i class=\"fa fa-comment\"/>\n"
+"                                                Send message"
+msgstr "<i class=\"fa fa-comment\"/>\n"
+"                                                Enviar mensaje"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_rma_order_page
+msgid "<i class=\"fa fa-download\"/> Download"
+msgstr "<i class=\"fa fa-download\"/> Descargar"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<i class=\"fa fa-plus\">\n"
+"										</i>\n"
+"										Add New Delivery Address"
+msgstr "<i class=\"fa fa-plus\">\n"
+"										</i>\n"
+"										Añadir nueva dirección de entrega"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_order_page_shipping_ept
+msgid "<span class=\"badge badge-primary label-text-align\">\n"
+"                            <i class=\"fa fa-cart-arrow-down fa-lg\"/>\n"
+"                            Return Order\n"
+"                        </span>"
+msgstr "<span class=\"badge badge-primary label-text-align\">\n"
+"                            <i class=\"fa fa-cart-arrow-down fa-lg\"/>\n"
+"                            RMA\n"
+"                        </span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "<span class=\"d-none d-md-inline\">Orders #</span>"
+msgstr "<span class=\"d-none d-md-inline\">Pedidos #</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<span class=\"hidden-xs\">Cancel</span>"
+msgstr "<span class=\"hidden-xs\">Cancelar</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<span>Return Address:</span>"
+msgstr "<span>Dirección de devolución:</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<span>Return Order #</span>"
+msgstr "<span>RMA #</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<span>Sale Order Date:</span>"
+msgstr "<span>Fecha del pedido de venta:</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<span>Sale Order Number:</span>"
+msgstr "<span>Número del pedido de venta:</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<span>Shipping Reference:</span>"
+msgstr "<span>Referencia de la entrega:</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong class=\"d-block mb-1\">Responsible:</strong>"
+msgstr "<strong class=\"d-block mb-1\">Responsable:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong class=\"d-block mb-1\">Return Address:</strong>"
+msgstr "<strong class=\"d-block mb-1\">Dirección de devolución:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_rma_order_page
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong class=\"text-muted\">Your Contact:</strong>"
+msgstr "<strong class=\"text-muted\">Tu Contacto:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Contact User Details :</strong>"
+msgstr "<strong>Detalles del contacto :</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong>Customer:</strong>"
+msgstr "<strong>Cliente:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Delivered Quantity</strong>"
+msgstr "<strong>Cantidad Entregada</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong>Order Reference:</strong>"
+msgstr "<strong>Referencia del pedido:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Product</strong>"
+msgstr "<strong>Producto</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Quantity to Return</strong>"
+msgstr "<strong>Cantidad a devolver</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong>RMA Note:</strong>"
+msgstr "<strong>Nota RMA:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Return Reason:</strong>"
+msgstr "<strong>Motivo de devolución:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Shipping Details :</strong>"
+msgstr "<strong>Detalles de la entrega :</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "<strong>Shipping Reference:</strong>"
+msgstr "<strong>Referencia de la entrega:</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Tick</strong>"
+msgstr ""
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "<strong>Uom</strong>"
+msgstr "<strong>UdM</strong>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Add Address"
+msgstr "Añadir Dirección"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_order_page_shipping_ept
+msgid "Are you sure about returning this product?"
+msgstr "¿Está seguro de devolver este producto?"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_order_page_shipping_ept
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "City"
+msgstr "Ciudad"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_rma_order_page
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "Communication"
+msgstr "Comunicación"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_order_page_shipping_ept
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_rma_order_page
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Country"
+msgstr "País"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Country..."
+msgstr "País..."
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "Date"
+msgstr "Fecha"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_record_ept
+msgid "Dear"
+msgstr "Hola"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "Delivered Quantity"
+msgstr "Cantidad Entregada"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "Delivery Order"
+msgstr "Órden de entrega"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "Description"
+msgstr "Descripción"
+
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "Details"
+msgstr "Detalles"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "E-mail"
+msgstr "Email"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "Line state"
+msgstr "Estado de la línea"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "Name"
+msgstr "Nombre"
+
+#. module: website_rma_ept
+#: code:addons/website_rma_ept/controllers/main.py:181
+#, python-format
+msgid "Order Date"
+msgstr "Fecha de pedido"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: website_rma_ept
+#: model:ir.model,name:website_rma_ept.model_crm_claim_ept
+msgid "RMA Claim"
+msgstr "Reclamación de RMA"
+
+#. module: website_rma_ept
+#: code:addons/website_rma_ept/controllers/main.py:182
+#, python-format
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_order_page_shipping_ept
+msgid "Return"
+msgstr "Devolver"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "Return Note:"
+msgstr "Notas sobre la devolución"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_order_page_shipping_ept
+msgid "Return Order"
+msgstr "RMA"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_my_home_rma
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "Return Orders"
+msgstr "RMA"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "Return Quantity"
+msgstr "Devolver Ctdad."
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_order_portal_content
+msgid "Return Reason"
+msgstr "Motivo de devolución"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.portal_my_rma_breadcrumb_ept
+msgid "Return orders"
+msgstr "RMA"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_form_ept
+msgid "Select Reason..."
+msgstr "Seleccione motivo..."
+
+#. module: website_rma_ept
+#: code:addons/website_rma_ept/controllers/main.py:183
+#, python-format
+msgid "Stage"
+msgstr "Estado"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "State / Province"
+msgstr "Provincia"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "State / Province..."
+msgstr "Estado / Provincia..."
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "Status"
+msgstr "Estado"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Street\n"
+"													2"
+msgstr "Calle\n"
+"													2"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Street\n"
+"													<span class=\"d-none d-md-inline\">and Number</span>"
+msgstr "Calle\n"
+"													<span class=\"d-none d-md-inline\">y número</span>"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_record_ept
+msgid "Thank You,"
+msgstr "Gracias,"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_orders_form_ept
+msgid "There are currently no Return Orders for your account."
+msgstr "Actualmente no tiene ninguna RMA"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_record_ept
+msgid "We have Not recieved your Return Material Authorization request."
+msgstr "No hemos recibido su solicitud de RMA"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_record_ept
+msgid "We have recieved your Return Material Authorization request"
+msgstr "Hemos recibido su solitud de RMA con referencia"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_add_address
+msgid "Zip\n"
+"													Code"
+msgstr "Código\n"
+"													ZIP"
+
+#. module: website_rma_ept
+#: model_terms:ir.ui.view,arch_db:website_rma_ept.rma_record_ept
+msgid "and we will get back to you soon."
+msgstr "y le contactaremos lo antes posible. "
+

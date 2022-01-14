@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="helpdesk_ticket_timesheets_inherit" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.timesheets.inherit</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_timesheet"/>
+        <field name="arch" type="xml">
+            <!-- Sub-tree view for timesheet_ids -->
+            <xpath expr="//field[@name='timesheet_ids']/tree//field[@name='date']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']/tree//field[@name='date']" position="after">
+                <field name="date_time" string="Date" required="1"/>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']/tree" position="attributes">
+                <attribute name="default_order">date_time desc</attribute>
+            </xpath>
+
+            <!-- Sub-kanban view for timesheet_ids -->
+            <xpath expr="//field[@name='timesheet_ids']/kanban//*[@t-esc='record.date.value']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']/kanban//*[@t-esc='record.date.value']" position="after">
+                <field name="date_time" required="1"/>
+            </xpath>
+
+            <!-- Sub-form view for timesheet_ids -->
+            <xpath expr="//field[@name='timesheet_ids']/form//field[@name='date']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']/form//field[@name='date']" position="after">
+                <field name="date_time" required="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

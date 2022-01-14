@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_ftt_wizard,access_report_ftt_wizard,model_report_ftt_wizard,base.group_user,1,1,1,1
+access_mrp_bom_stock_view,access.mrp.bom.stock.view,model_mrp_bom,monolitic_stock.group_stock_view,1,0,0,0
+access_report_ftt_wizard,access_report_ftt_wizard,model_report_ftt_wizard,base.group_user,1,1,1,1
+access_deconstruction_order,access.deconstruction.order,mrp.model_mrp_unbuild,monolitic_manufacturing.group_create_deconstruction_orders,1,1,1,1
+access_warn_insuficient_qty_unbuild,access.warn.qty.unbuild,mrp.model_stock_warn_insufficient_qty_unbuild,monolitic_manufacturing.group_create_deconstruction_orders,1,1,1,1
+mrp.access_mrp_unbuild_manager,mrp.unbuild manager,mrp.model_mrp_unbuild,mrp.group_mrp_manager,1,0,0,0
+mrp.access_mrp_unbuild,mrp.unbuild,mrp.model_mrp_unbuild,mrp.group_mrp_user,1,0,0,0
+mrp.access_stock_warn_insufficient_qty_unbuild,access.stock.warn.insufficient.qty.unbuild,mrp.model_stock_warn_insufficient_qty_unbuild,mrp.group_mrp_user,1,0,0,0

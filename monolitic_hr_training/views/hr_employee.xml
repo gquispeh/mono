@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- hr.employee inherit form view -->
+    <record id="training_hr_employee_form_view" model="ir.ui.view">
+        <field name="name">training.hr.employee.form.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page string="Trainings" name="training" attrs="{'invisible': [('show_personal_info', '=', False)]}">
+                    <field name="training_ids" widget="one2many">
+                        <tree editable="bottom">
+                            <field name="start_date" autocomplete="off"/>
+                            <field name="course_name" options="{'no_create_edit': True}" />
+                            <field name="address_course"/>
+                            <field name="state" groups="hr.group_hr_manager"/>
+                            <field name="bonus_price" groups="hr.group_hr_manager"/>
+                            <field name="price" groups="hr.group_hr_manager"/>
+                            <field name="is_pass"/>
+                            <field name="grade"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="training_root_menu" name="Trainings" parent="hr.menu_hr_root" sequence="80"/>
+
+</odoo>

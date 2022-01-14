@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Aleix De la Rubia Campamà <aleix.delarubia@qubiq.es>
+License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- product.category inherit form view -->
+    <record id="view_id_product_category_responsibles" model="ir.ui.view">
+        <field name="name">product.category.inherit.view.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='first']" position="after">
+                <group string="Responsibles">
+                    <field name="product_manager" options="{'no_create': True, 'no_create_edit':True}" widget="many2many_tags" />
+                    <field name="field_application_engineer" options="{'no_create': True, 'no_create_edit':True}" widget="many2many_tags"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

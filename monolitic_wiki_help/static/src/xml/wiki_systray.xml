@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Sergi Oliva <sergi.oliva@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<!-- Template view to integrate wiki button -->
+<templates>
+   <t t-name="monolitic_wiki_help.wiki">
+       <li class="new_icon">
+           <label class="my_icon" style="margin-bottom:0px;"
+            title="Wiki help">
+              <div class="icon_div">
+                  <div class="toggle-icon"><i class="fa fa-question" id="fa-icon"/>
+                  </div>
+              </div>
+           </label>
+       </li>
+   </t>
+</templates>

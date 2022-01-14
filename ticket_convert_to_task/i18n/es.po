@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ticket_convert_to_task
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-11 16:49+0000\n"
+"PO-Revision-Date: 2019-03-11 16:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ticket_convert_to_task
+#: model:ir.ui.view,arch_db:ticket_convert_to_task.helpdesk_ticket_convert2task_view_form
+msgid "<span class=\"o_stat_text\">Convert To</span>\n"
+"                        <span class=\"o_stat_text\">Task</span>"
+msgstr "<span class=\"o_stat_text\">Convertir a</span>\n"
+"                        <span class=\"o_stat_text\">Tarea</span>"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_user_id
+msgid "Assign To"
+msgstr "Asignar a"
+
+#. module: ticket_convert_to_task
+#: model:ir.ui.view,arch_db:ticket_convert_to_task.ticket_convert2task_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: ticket_convert_to_task
+#: model:ir.actions.act_window,name:ticket_convert_to_task.ticket_convert2task_action
+#: model:ir.ui.view,arch_db:ticket_convert_to_task.helpdesk_ticket_convert2task_view_form
+#: model:ir.ui.view,arch_db:ticket_convert_to_task.ticket_convert2task_view_form
+msgid "Convert to Task"
+msgstr "Convertir a Tarea"
+
+#. module: ticket_convert_to_task
+#: model:ir.ui.view,arch_db:ticket_convert_to_task.ticket_convert2task_view_form
+msgid "Create Task"
+msgstr "Crear Tarea"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_id
+msgid "ID"
+msgstr "ID"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: ticket_convert_to_task
+#: model:ir.model,name:ticket_convert_to_task.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_project_task_ticket_id
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_ticket_id
+msgid "Ticket"
+msgstr "Ticket"
+
+#. module: ticket_convert_to_task
+#: model:ir.model.fields,field_description:ticket_convert_to_task.field_ticket_convert2task_name
+msgid "Ticket Name"
+msgstr "Nombre del Ticket"
+
+#. module: ticket_convert_to_task
+#: model:ir.model,name:ticket_convert_to_task.model_ticket_convert2task
+msgid "ticket.convert2task"
+msgstr "ticket.convert2task"
+

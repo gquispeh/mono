@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="picking_notes_res_config_picking" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h2[@id='schedule_info']" position="before">
+                <h2 lass="mt32">Reports</h2>
+                <div class="row mt16 o_settings_container" name="picking_notes">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="use_picking_note"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="use_picking_note"/>
+                            <div class="text-muted">
+                                Use Default Notes in picking orders
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-group" attrs="{'invisible': [('use_picking_note','=',False)]}">
+                    <div class="mt16">
+                        <field name="picking_note" placeholder="Insert your terms &amp; conditions here..."/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

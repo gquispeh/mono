@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- helpdesk.team inherit form view -->
+    <record id="custom_monolitic_helpdesk_team" model="ir.ui.view">
+        <field name="name">custom.monolitic.helpdesk.team</field>
+        <field name="model">helpdesk.team</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='timesheet']" position="after">
+                <div class="col-lg-6 o_setting_box" id="team_config_ncc">
+                    <!-- NCC field -->
+                    <div class="o_setting_left_pane">
+                        <field name="is_ncc"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="is_ncc"/>
+                        <div class="text-muted">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 o_setting_box" id="team_config_author">
+                    <!-- Customer Author field -->
+                    <div class="o_setting_left_pane">
+                        <field name="is_author_customer"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="is_author_customer"/>
+                        <div class="text-muted">
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr="//div[@id='productivity']" position="inside">
+                <div class="col-lg-6 o_setting_box">
+                    <div class="o_setting_right_pane">
+                        <label for="manager_id"/>
+                        <div class="text-muted">
+                            Set the manager for this Helpdesk team
+                        </div>
+                        <div>
+                            <field name="manager_id" widget="many2many_tags"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="helpdeks_team_dashborad_view_id" model="ir.ui.view">
+        <field name="name">helpdesk.team.inherit.view.kanban</field>
+        <field name="model">helpdesk.team</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_team_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@groups='helpdesk.group_helpdesk_manager']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

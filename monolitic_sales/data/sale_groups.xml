@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="group_discount_sale_lines" model="res.groups">
+        <field name="name">Add max discount sale lines</field>
+        <field name="category_id" ref="base.module_category_sale"/>
+    </record>
+    <record id="edit_pricelist_price" model="res.groups">
+        <field name="name">Edit pricelist price</field>
+        <field name="category_id" ref="base.module_category_sale"/>
+    </record>
+
+    <!-- <record model="res.groups" id="rma_ept.group_rma_user_ept">
+        <field name="implied_ids" eval="[(6,0,[ref('monolitic_sales.group_sat_view')])]"/>
+    </record>
+    <record model="res.groups" id="rma_ept.group_rma_manager_ept">
+        <field name="implied_ids" eval="[(6,0,[ref('rma_ept.group_rma_user_ept')])]"/>
+    </record> -->
+</odoo>

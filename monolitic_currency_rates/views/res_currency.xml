@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- res.currency inherit form view -->
+    <record id="margin_currency_form_view" model="ir.ui.view">
+        <field name="name">margin.currency.form.view</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[2]/group[2]" position="after">
+                <group string="Margins">
+                    <field name="sell_margin"/>
+                    <field name="purchase_margin"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

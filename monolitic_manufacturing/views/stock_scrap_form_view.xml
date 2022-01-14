@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- stock.scrap inherit form view -->
+    <record id="monolitic_manufacturing_scrap_form_view2" model="ir.ui.view">
+        <field name="name">monolitic.manufacturing.scrap.form.view</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_id']/.." position="after">
+                <field name="note"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- stock.scrap inherit form view -->
+    <record id="monolitic_manufacturing_scrap_form_view" model="ir.ui.view">
+        <field name="name">monolitic.manufacturing.scrap.form.view</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_id']/.." position="after">
+                <field name="note"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="paperformat_stock_picking" model="report.paperformat">
+        <field name="name">Stock Picking</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="default" eval="False" />
+        <field name="dpi" eval="90" />
+        <field name="margin_top" eval="59" />
+        <field name="margin_right" eval="7" />
+        <field name="margin_bottom" eval="20" />
+        <field name="margin_left" eval="7" />
+        <field name="header_line" eval="False" />
+        <field name="header_spacing" eval="59" />
+    </record>
+
+    <record id="paperformat_wo_mrp_stock_picking" model="report.paperformat">
+        <field name="name">Stock WO MRP Picking</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="default" eval="False" />
+        <field name="dpi" eval="90" />
+        <field name="margin_top" eval="55" />
+        <field name="margin_right" eval="7" />
+        <field name="margin_bottom" eval="20" />
+        <field name="margin_left" eval="7" />
+        <field name="header_line" eval="False" />
+        <field name="header_spacing" eval="50" />
+    </record>
+
+    <record id="paperformat_product_labels" model="report.paperformat">
+        <field name="name">Product Labels</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="default" eval="False" />
+        <field name="dpi" eval="90" />
+        <field name="margin_top" eval="10" />
+        <field name="margin_right" eval="1" />
+        <field name="margin_bottom" eval="10" />
+        <field name="margin_left" eval="2" />
+        <field name="header_line" eval="False" />
+        <field name="header_spacing" eval="1" />
+    </record>
+
+</odoo>

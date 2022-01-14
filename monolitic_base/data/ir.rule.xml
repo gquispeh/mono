@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="all_contacts_rule" model="ir.rule">
+        <field name="name">View all contacts</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_base.group_view_all_contacts'))]"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="all_contacts_view" model="ir.rule">
+        <field name="name">All contacts</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="False" />
+        <field name="perm_unlink" eval="False" />
+        <field name="groups" eval="[(4, ref('monolitic_base.group_view_all_contacts'))]"/>
+        <field name="domain_force">[1,'=',1]</field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="all_commercial_activities" model="ir.rule">
+        <field name="name">All commercial activities</field>
+        <field name="model_id" ref="mail.model_mail_activity"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('monolitic_base.group_all_commercial_activities'))]"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="active" eval="True" />
+    </record>
+
+</odoo>

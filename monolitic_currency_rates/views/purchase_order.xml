@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="rates_purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position='after'>
+                <field name="is_rate_editable" invisible="1"/>
+                <field name="different_agreement_rate" attrs="{'readonly': [('is_rate_editable', '=', False)]}"/>
+                <field name="rate" attrs="{'readonly': [('is_rate_editable', '=', False)], 'invisible': [('different_agreement_rate', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

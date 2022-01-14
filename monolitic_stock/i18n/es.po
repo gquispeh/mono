@@ -1,0 +1,1630 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-10 08:33+0000\n"
+"PO-Revision-Date: 2022-01-10 08:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+", a partir de la fecha del albarán de entrega, para todo el material suministrado.\n"
+"                                    En ningún caso el periodo de garantía ofrecido podrá ser superior al que nos ofrecen nuestros proveedores de material."
+msgstr ""
+", a partir de la fecha del albarán de entrega, para todo el material suministrado.\n"
+"                                    En ningún caso el periodo de garantía ofrecido podrá ser superior al que nos ofrecen nuestros proveedores de material.\""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_layout_standard
+msgid "08918 Badalona(BARCELONA)"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "28020 MADRID"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "48950 Erandio(VIZCAYA)"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Cantidad:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Cliente:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Código Cliente:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Fecha albarán:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Nº Albarán:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Nº Proveedor:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Nº Ref.:</b>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Pos. PV</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Proveedor:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid "<b>Su pedido:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid ""
+"<br/>\n"
+"                                        S/N:"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid ""
+"<br/>\n"
+"                                <b>Descripción:</b>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_document
+msgid ""
+"<br/>\n"
+"                                <b>Lote Nº:</b><br/>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_picking_product_label
+msgid ""
+"<br/>\n"
+"                        <strong>Cantidad\n"
+"                        </strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"<i class=\"fa fa-arrow-right\" style=\"color: #006579\"/><strong> Fecha, "
+"Sello y Firma</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"<i class=\"fa fa-arrow-right\" style=\"color: #006579\"/><strong> Ficha de "
+"Garantía</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_picking_product_label
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_product_label_wizard_document
+msgid "<span class=\"text-muted\">No barcode available</span>"
+msgstr "<span class=\"text-muted\">No hay código de barras disponible</span>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid ""
+"<span style=\"font-weight: bold;text-decoration: underline;font-size: 16px;\">DECLARACIÓN DE CONFORMIDAD:</span>\n"
+"                            Se declara que el/los producto/s incluídos en este albarán son conformes\n"
+"                            con lo solicitado por el cliente y cumplen las especificaciones técnicas expresadas en el catálogo del fabricante."
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid ""
+"<span style=\"margin-left: 20%\">Page:</span>\n"
+"                        <span class=\"page\"/>"
+msgstr ""
+"<span style=\"margin-left: 20%\">Pág. </span>\n"
+"                        <span class=\"page\"/>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "<span>COPIA PARA </span>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "<span>Fecha : </span>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"<span>Nombre del comprador</span>\n"
+"                                <br/>\n"
+"                                <span>Dirección</span>\n"
+"                                <br/>\n"
+"                                <span>C.P. y Población</span>\n"
+"                                <br/>\n"
+"                                <span>Modelo</span>\n"
+"                                <br/>\n"
+"                                <span>Nº de serie</span>\n"
+"                                <br/>\n"
+"                                <span>Nº Albarán</span>\n"
+"                                <br/>\n"
+"                                <span>Fecha Envío Material</span>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid ""
+"<strong>\n"
+"                            Invoicing address:</strong>"
+msgstr ""
+"<strong>\n"
+"                            Dirección de facturación:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"<strong><span style=\"font-size: 14px; font-style:italic\">COPIA PARA "
+"MONOLITIC S.A.</span></strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"<strong><span style=\"font-size: 28px\">CERTIFICADO</span> <span "
+"style=\"font-size: 16px\">DE</span> <span style=\"font-size: "
+"28px\">GARANTÍA</span></strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>CIF / NIF:</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_picking_product_label
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_product_label_wizard_document
+msgid "<strong>CP  </strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Carrier:</strong>"
+msgstr "<strong>Transportista:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Cod. Location</strong>"
+msgstr "<strong>Cód. Ubicación</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Comercial:</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Customer Number:</strong>"
+msgstr "<strong>Nº Cliente:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Delivery Conditions:</strong>"
+msgstr "<strong>Condiciones de envío:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Family</strong>"
+msgstr "<strong>Familia</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Horario Entrega:</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "<strong>MONOLITIC, S.A.</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Ntro. Order:</strong>"
+msgstr "<strong>Ntro. Pedido:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Nº Bultos:</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Order:</strong>"
+msgstr "<strong>Pedido:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "<strong>PICKING</strong>"
+msgstr "<strong>ALBARÁN</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid "<strong>PPv</strong>"
+msgstr "<strong>Ppv</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Payment Mode:</strong>"
+msgstr "<strong>Modo de pago:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "<strong>Picking Number:</strong>"
+msgstr "<strong>Nº Albarán:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Po</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid "<strong>Product</strong>"
+msgstr "<strong>Producto</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.monolitic_report_inventory
+msgid "<strong>Quantity (scanned / real)</strong>"
+msgstr "<strong>Cantidad (escaneada / real)</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Reference - Description</strong>"
+msgstr "<strong>Referencia - Descripción</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de Envío</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Su código</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Supplier Nº:</strong>"
+msgstr "<strong>Nº Proveedor:</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_picking_product_label
+msgid "<strong>Un. Embalaje    </strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_product_label_wizard_document
+msgid "<strong>Un. Embalaje</strong>"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Precio Unidad</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "<strong>Warehouse</strong>"
+msgstr "<strong>Almacén</strong>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "<strong>Website: https://www.monolitic.com</strong>"
+msgstr "<strong>Página web: https://www.monolitic.com</strong>"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_delivery_mixing
+msgid "Abstract Model for add extra info in deliveries"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Av. J. Luis de Goyoaga 32, Of, 208"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__available_quantity
+msgid "Available Quantity"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_picking_product_label
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_product_label_wizard_document
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_layout_standard
+msgid "C/De la Mora, 34(P.E. GranLand)"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_product_label_wizard_document
+msgid "Cantidad"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_company__client_code
+msgid "Client Code"
+msgstr "Código cliente"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__client_product_code
+msgid "Client Product Code"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_download_view
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_export_view
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__company_id
+msgid "Company"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__copy_date
+msgid "Copy Date"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.server,name:monolitic_stock.copy_stock_quant_cron_ir_actions_server
+#: model:ir.cron,cron_name:monolitic_stock.copy_stock_quant_cron
+#: model:ir.cron,name:monolitic_stock.copy_stock_quant_cron
+msgid "Copy stock quant table"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__create_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__create_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__create_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__create_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__create_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__create_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__create_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__create_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__create_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__create_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "Cuando se desee repaso y limpieza general del equipo."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__currency_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.report,name:monolitic_stock.report_customer_label
+msgid "Customer Label Report"
+msgstr "Etiqueta de cliente"
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__res_partner__logistic_customer_tag_type__barcode_qr
+msgid "Código QR"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__res_partner__logistic_customer_tag_type__barcode
+msgid "Código de barras"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__res_partner__logistic_customer_tag_type__barcode_expanded
+msgid "Código de barras desglosado"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__product_template__warranty_type__day
+msgid "Day(s)"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_config_settings__use_picking_note
+msgid "Default Terms & Conditions"
+msgstr "Términos y condiciones predeterminados"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_res_partner__property_delivery_carrier_id
+#: model:ir.model.fields,help:monolitic_stock.field_res_users__property_delivery_carrier_id
+msgid "Default delivery method used in sales orders."
+msgstr "Método de envío predeterminado usado en las ordenes de venta."
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__product_uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.stock_delivery_condition_action
+#: model:ir.ui.menu,name:monolitic_stock.menu_action_stock_delivery_condition
+msgid "Delivery Conditions"
+msgstr "Transportistas"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_mixing__delivery_time
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__delivery_time
+msgid "Delivery Time"
+msgstr "Horario de entrega"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__delivery_conditions_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__delivery_conditions_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order__delivery_conditions_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_mixing__delivery_conditions
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__delivery_conditions
+msgid "Delivery carrier"
+msgstr "Transportista"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__property_delivery_carrier_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__property_delivery_carrier_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order__carrier_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__carrier_id
+msgid "Delivery conditions"
+msgstr "Condiciones de envío"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__description
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_inventory_line__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_inventory_barcode_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_inventory_description_form_inherit
+msgid "Description for the inventory adjustment"
+msgstr "Descripción para el ajuste de inventario"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_inventory_line__difference
+msgid "Difference"
+msgstr "Diferencia"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_account_move__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_procurement_group__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_product__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_template__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_company__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_mixing__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_inventory_line__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__display_name
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_warehouse_orderpoint__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_download_view
+msgid "Download File"
+msgstr "Descargar fichero"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid ""
+"En caso de recibir la mercancía con daños aparentes, la reclamación o reserva se debe efectuar en el ACTO. Si los daños no son\n"
+"                            manifiestos, el plazo máximo para su notificación es de 7 DÍAS NATURALES"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__tracking
+msgid "Ensure the traceability of a storable product in your warehouse."
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"Envíe el comprobante a MONOLITIC, S.A. debidamente rellenado antes de 30 días a partir de la fecha del albarán de entrega del material suministrado.\n"
+"                                    Esta garantía ampara los posibles defectos de fabricación, durante"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid ""
+"Estos productos pueden precisar autorización previa para ser exportados."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__res_partner__logistic_customer_tag_type__special_tag
+msgid "Etiqueta especial"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__use_expiration_date
+msgid "Expiration Date"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_export_view
+msgid "Export CSV"
+msgstr "Exportar CSV"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_export_view
+msgid "Export File"
+msgstr "Exportar fichero"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move__quant_sequence_fifo
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.product_label_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_move_label_wizard_form_view
+msgid "FIFO"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__fifo_name
+msgid "FIFO Name"
+msgstr "Nombre FIFO"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Fax:91 572 02 18"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Fax:93 264 11 93"
+msgstr "Fax:93 26411 93"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_layout_standard
+msgid "Fax:93 284 11 93"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Fco. Gervas, 17 5º G"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__fifo
+msgid "Fifo"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__data
+msgid "File"
+msgstr "Fichero"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_download_view
+msgid "File Complete"
+msgstr "Fichero procesado"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__name
+msgid "File name"
+msgstr "Nombre de fichero"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_sale_order__carrier_id
+msgid "Fill this field if you plan to invoice the shipping based on picking."
+msgstr ""
+"Rellena este campo si vas a facturar el envío basado en el método de "
+"entrega."
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_csv_download_view
+msgid "Here is the csv file:"
+msgstr "A continuación está el archivo CSV:"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_account_move__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_procurement_group__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_product__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_template__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_company__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_config_settings__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order_line__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_mixing__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_inventory_line__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_warehouse_orderpoint__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "IMPORTANTE: Cuide el embalaje y asegure el envío."
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "INVOICE"
+msgstr "FACTURA"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__impack_weight
+msgid "Impack shipping weight"
+msgstr "Peso envío IMPACK"
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__res_partner__logistic_customer_tag_type__manual_printing_packages
+msgid "Impresión manual x bultos"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__in_date
+msgid "Incoming Date"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.picking_notes_res_config_picking
+msgid "Insert your terms & conditions here..."
+msgstr "Inserta tus términos y condiciones aquí ..."
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__inventory_quantity
+msgid "Inventoried Quantity"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Línea inventario"
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.action_stock_inventory_adjustment_lines
+#: model:ir.ui.menu,name:monolitic_stock.inventory_adjustment_lines
+msgid "Inventory adjustment lines"
+msgstr "Líneas de ajustes de inventario"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Invoice Number:"
+msgstr "Número de Factura:"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_stock_delivery_document_wo_manufacturing
+msgid "Invoicing address:"
+msgstr "Dirección de facturación:"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_account_move____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_procurement_group____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_product____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_template____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_company____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_mixing____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_inventory_line____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence____last_update
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_warehouse_orderpoint____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__write_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__write_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__write_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__write_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__write_uid
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_csv_export_wizard__write_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__write_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__write_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__write_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__write_date
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid ""
+"Le informamos de que las condiciones relacionadas con la formalización de pedidos, entregas, formas de pago, propiedad intelectual y demás condiciones de esta operación están sujetas a nuestras Condiciones Generales de Venta que aparecen publicadas en la web : www.monolitic.com\n"
+"                            <br/>\n"
+"                            El/Los productos ofertados son conforme a lo solicitado por el cliente y cumplen las especificaciones técnicas expresadas en el catálogo del proveedor. La responsabilidad de Monolitic se circunscribe a las especificaciones que definan nuestros proveedores."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__company_id
+msgid "Let this field empty if this location is shared between companies"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__location_id
+msgid "Location"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__logistic_customer_tag
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__logistic_customer_tag
+msgid "Logistic customer tag"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__logistic_customer_tag_type
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__logistic_customer_tag_type
+msgid "Logistic customer tag type"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "Logo"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__lot_id
+msgid "Lot/Serial Number"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "MONOLITIC S.A."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__min_quantity
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_warehouse_orderpoint__product_min_qty
+msgid "Min Quantity"
+msgstr "Cantidad Mínima"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_warehouse_orderpoint
+msgid "Minimum Inventory Rule"
+msgstr "Regla de inventario mínimo"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_orderpoint_reservation
+msgid "Model for make reordering rule per client product units"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Monolitic S.A."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__product_template__warranty_type__month
+msgid "Month(s)"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__move_id
+msgid "Move"
+msgstr "Asiento"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_condition__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.view_order_form
+msgid "Nbr"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__not_valued_picking
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__not_valued_picking
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order__not_valued_picking
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__not_valued_picking
+msgid "Not valued picking"
+msgstr "Albarán no valorado"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_config_settings__picking_note
+msgid "Notes"
+msgstr "Notas"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order_line__number
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move__number
+msgid "Number"
+msgstr "Número"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_delivery_mixing__number_lumps
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__number_lumps
+msgid "Number Lumps"
+msgstr "Nº Bultos"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__on_hand
+msgid "On Hand"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__available_quantity
+msgid ""
+"On hand quantity which hasn't been reserved on a transfer, in the default "
+"unit of measure of the product"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__orderpoint_id
+msgid "Orderpoint"
+msgstr "Punto de Pedido"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_warehouse_orderpoint__orderpoint_reservation_ids
+msgid "Orderpoint Reservation"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.action_outgoing_picking_lines
+#: model:ir.ui.menu,name:monolitic_stock.menu_outgoing_picking_lines
+msgid "Outgoing picking lines"
+msgstr "Líneas de órdenes de entrega"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__owner_id
+msgid "Owner"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "PICKING"
+msgstr "ALBARAN"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__package_id
+msgid "Package"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid ""
+"Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+msgstr ""
+"Pág. \n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"Para poder hacer efectiva esta garantía, el material deberá ser enviado al domicilio de MONOLITIC, S.A. con los portes pagados, efectuándose la\n"
+"                                    reparación sin cargo alguno, salvo en los casos siguientes, en los que esta garantía no será considerada válida :"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "Para que su garantía sea válida observe las siguientes instrucciones :"
+msgstr ""
+
+#. module: monolitic_stock
+#: code:addons/monolitic_stock/models/stock_picking.py:0
+#, python-format
+msgid "Partial deliveries are prohibited for this order !"
+msgstr "Los envíos parciales no están permitidos en este pedido !"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.reservation_warehouse_orderpoint_form_view
+msgid "Partner Reservations"
+msgstr "Reservas de Clientes"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__picking_note
+msgid "Picking Note"
+msgstr "Notas del albarán"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_company__picking_note
+msgid "Picking Notes"
+msgstr "Nota del Albarán"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Picking Number:"
+msgstr "Nº Albarán:"
+
+#. module: monolitic_stock
+#: model:ir.actions.report,name:monolitic_stock.report_stock_delivery_wo_manufacturing
+msgid "Picking WO Manufacturing"
+msgstr "Albarán sin fabricación"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_price_subtotal
+msgid "Price subtotal"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.action_product_label_wizard
+#: model:ir.actions.act_window,name:monolitic_stock.action_product_template_label_wizard
+#: model:ir.actions.act_window,name:monolitic_stock.action_stock_move_label_wizard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.product_label_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_move_label_wizard_form_view
+msgid "Print Labels"
+msgstr "Imprimir Etiquetas"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_procurement_group
+msgid "Procurement Group"
+msgstr "Grupo de abastecimiento"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_product_product
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__product_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_orderpoint_reservation__product_id
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: monolitic_stock
+#: model:ir.actions.report,name:monolitic_stock.picking_product_labels
+#: model:ir.actions.report,name:monolitic_stock.report_product_template_wizard_label
+#: model:ir.actions.report,name:monolitic_stock.report_product_wizard_label
+msgid "Product Labels"
+msgstr "Etiquetas Productos"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimientos de producto (línea de movimiento de inventario)"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_product_template
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__product_tmpl_id
+msgid "Product Template"
+msgstr "Plantilla del producto"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__product_tmpl_id
+msgid "Product Tmpl"
+msgstr "Plantilla del Producto"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__product_uom
+msgid "Product Uom"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__prohibited_partial_shippings
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__prohibited_partial_shippings
+#: model:ir.model.fields,field_description:monolitic_stock.field_sale_order__prohibited_partial_shippings
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__prohibited_partial_shippings
+msgid "Prohibited partial shippings"
+msgstr "Envíos parciales prohibidos"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move__purchase_link_id
+msgid "Purchase order"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__label_qty
+msgid "Qty Labels"
+msgstr "Ctd. Etiquetas"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__qty_package
+msgid "Qty Package"
+msgstr "Cantidad por bulto"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__quant_id
+msgid "Quant"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__quant_sequence_fifo
+msgid "Quant Sequence Fifo"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__quantity
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: monolitic_stock
+#: model:ir.model.constraint,message:monolitic_stock.constraint_stock_quant_sequence_valid_quant_qty
+msgid "Quantity cant be negative !"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__quantity
+msgid ""
+"Quantity of products in this quant, in the default unit of measure of the "
+"product"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__reserved_quantity
+msgid ""
+"Quantity of reserved products in this quant, in the default unit of measure "
+"of the product"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_label_wizard__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_line
+msgid "Related order line"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__removal_date
+msgid "Removal Date"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.picking_notes_res_config_picking
+msgid "Reports"
+msgstr "Informes"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.res_partner_suplier_number_form_view
+msgid "Reservas"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__reservation_orderpoint_ids
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__reservation_orderpoint_ids
+msgid "Reservation Orderpoint"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__reservation_orderpoint_count
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__reservation_orderpoint_count
+msgid "Reservation Orderpoint Count"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__reserved_quantity
+msgid "Reserved Quantity"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.constraint,message:monolitic_stock.constraint_stock_quant_sequence_valid_reserved_qty
+msgid "Reserved quantity cant be negative !"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__is_return
+msgid "Return"
+msgstr "Retorno"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__currency_id
+msgid "Sale Currency"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_line_number
+msgid "Sale Line Number"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.report,name:monolitic_stock.ml_report_stock_delivery_document
+msgid "Sale Picking"
+msgstr "Albarán de Venta"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_tax_id
+msgid "Sale Tax"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_discount
+msgid "Sale discount (%)"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move__sale_link_id
+msgid "Sale order"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_price_unit
+msgid "Sale price unit"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linea de pedido de venta"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_warehouse_orderpoint__security_stock
+msgid "Security Stock"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant__quant_sequence_ids
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__quant_sequence_ids
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_sequence__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_quant_sequence
+msgid "Sequence on Quants for FIFO"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_quant_form_editable_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_quant_form_inherit
+msgid "Sequences"
+msgstr "Secuencias"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_report_sale_delivery_document
+msgid "Shipping address:"
+msgstr "Dirección de envio:"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"Si el equipo ha recibido golpes o malos tratos por accidente o falta de "
+"cuidado."
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"Si el uso no se corresponde a lo indicado en las especificaciones técnicas "
+"del equipo."
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid "Si no se observan las instrucciones de la presente garantía."
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_warranty_document
+msgid ""
+"Si se observan señales de que el equipo haya sido manipulado por personal "
+"ajeno a MONOLITIC, S.A. durante la vigencia de la presente garantía."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.action_stock_csv_download
+msgid "Stock CSV Download"
+msgstr "Descargar archivo CSV"
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.action_stock_csv_export
+msgid "Stock CSV Export"
+msgstr "Exportar CSV Stock"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_delivery_condition
+msgid "Stock Delivery Condition Model"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_quant_historic
+msgid "Stock Quant Historic"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.actions.act_window,name:monolitic_stock.stock_orderpoint_reservation_action
+msgid "Stock Reservation"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:res.groups,name:monolitic_stock.group_stock_view
+msgid "Stock view"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_partner__monolitic_supplier_code
+#: model:ir.model.fields,field_description:monolitic_stock.field_res_users__monolitic_supplier_code
+msgid "Supplier Number"
+msgstr "Número proveedor"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_tax_description
+msgid "Tax Description"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__amount_by_group
+msgid "Tax amount by group"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_price_tax
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__amount_tax
+msgid "Taxes"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "Tel:"
+msgstr "Tel.:"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Tel:91 572 03 28"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_layout_standard
+msgid "Tel:93 285 92 92"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Tel:94 411 62 49"
+msgstr "el:94 411 62 49"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__package_id
+msgid "The package containing this quant"
+msgstr ""
+
+#. module: monolitic_stock
+#: code:addons/monolitic_stock/models/stock_quant.py:0
+#, python-format
+msgid ""
+"The serial number has already been assigned: \n"
+" Product: %s, Serial Number: %s"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__removal_date
+msgid ""
+"This is the date on which the goods with this Serial Number should be "
+"removed from the stock. This date will be used in FEFO removal strategy."
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__owner_id
+msgid "This is the owner of the quant"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_move_line__sale_price_total
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__amount_total
+msgid "Total"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_picking__weight
+msgid "Total weight of the products in the picking."
+msgstr "Peso total de los productos en la recolección."
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__tracking
+msgid "Tracking"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.product_label_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_move_label_wizard_form_view
+msgid "Unidad Embalaje"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__product_uom_id
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__amount_untaxed
+msgid "Untaxed Amount"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.picking_notes_res_config_picking
+msgid "Use Default Notes in picking orders"
+msgstr "Usar notas por defectos en albáran"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_quant_historic__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.product_template_extend_warranty
+msgid "Warranty"
+msgstr "Garantía"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_product__warranty
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_template__warranty
+msgid "Warranty Duration"
+msgstr "Duración de la Garantía"
+
+#. module: monolitic_stock
+#: model:ir.actions.report,name:monolitic_stock.report_warranty
+msgid "Warranty Report"
+msgstr "Informe Garantía"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_product__warranty_type
+#: model:ir.model.fields,field_description:monolitic_stock.field_product_template__warranty_type
+msgid "Warranty Type"
+msgstr "Tipo de Garantía"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_wo_man_external_layout_standard
+msgid "Web:"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Website: https://www.monolitic.com"
+msgstr "Página Web: https://www.monolitic.com"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "Website: https://www.monolitic.com  -  NºR.I. Productor AEE 3520"
+msgstr "Página Web: https://www.monolitic.com  -  NºR.I. Productor AEE 3520"
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__product_template__warranty_type__week
+msgid "Week(s)"
+msgstr "Semana(s)"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,field_description:monolitic_stock.field_stock_picking__weight
+msgid "Weight"
+msgstr "Peso"
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.stock_delivery_shipping_weight_form_view
+msgid "Weight for Impack shipping"
+msgstr "Peso envío IMPACK"
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_warehouse_orderpoint__product_min_qty
+msgid ""
+"When the virtual stock equals to or goes below the Min Quantity specified "
+"for this field, Odoo generates a procurement to bring the forecasted "
+"quantity to the Max Quantity."
+msgstr ""
+"Cuando el stock virtual es igual o inferior a la Cantidad mínima "
+"especificada para este campo, Odoo genera un abastecimiento para llevar la "
+"cantidad pronosticada a la Cantidad máxima."
+
+#. module: monolitic_stock
+#: model:ir.model.fields,help:monolitic_stock.field_stock_quant_historic__use_expiration_date
+msgid ""
+"When this box is ticked, you have the possibility to specify dates to manage"
+" product expiration, on the product and on the corresponding lot/serial "
+"numbers"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_product_label_wizard
+msgid "Wizard for set up and print a product label"
+msgstr ""
+
+#. module: monolitic_stock
+#: model:ir.model.fields.selection,name:monolitic_stock.selection__product_template__warranty_type__year
+msgid "Year(s)"
+msgstr "año(s)"
+
+#. module: monolitic_stock
+#: model:ir.model,name:monolitic_stock.model_csv_export_wizard
+msgid "csv.export.wizard"
+msgstr ""
+
+#. module: monolitic_stock
+#: code:addons/monolitic_stock/models/stock_picking.py:0
+#, python-format
+msgid "from %i to %i"
+msgstr ""
+
+#. module: monolitic_stock
+#: code:addons/monolitic_stock/models/stock_picking.py:0
+#, python-format
+msgid "from %i to %s"
+msgstr ""
+
+#. module: monolitic_stock
+#: code:addons/monolitic_stock/models/stock_picking.py:0
+#, python-format
+msgid "from %s to %s"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "monolitic.bilbao@monolitic.com"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+msgid "monolitic.madrid@monolitic.com"
+msgstr ""
+
+#. module: monolitic_stock
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.ml_picking_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:monolitic_stock.report_customer_label_layout_standard
+msgid "monolitic@monolitc.com"
+msgstr ""

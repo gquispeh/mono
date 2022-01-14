@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="report_expenses_weighted_document">
+        <t t-set="o" t-value="o.with_context(lang=user.lang)"/>
+        <div class="header">
+            <div style="display:block;float:left;">
+                <strong>Cálculo Gasto Ponderado con Costes Logísticos REALES</strong>
+                <br/>
+                <span>MONOLITIC, S.A.</span>
+                <br/>
+                <br/>
+                <span>Nº Proveedor:</span>
+                <br/>
+                <span>Comprador:</span>
+            </div>
+            <div style="display:block;float:right;text-align:right;">
+                <span t-esc="datetime.datetime.now().strftime('%d. %B %Y')"/>
+                <br/>
+                <span>Página</span>
+                <span class="page"/>
+                <br/>
+                <span t-esc="user.name"/>
+            </div>
+        </div>
+        <h2>IMPRESIÓN</h2>
+        <style>
+            table {font-size: 110%; padding-top:10px}
+            table.total {width:190mm;}
+            table.expense td{text-align:center;}
+            table.expense {width:325mm;}
+            tab1 { padding-left: 4em; }
+            tab2 { padding-left: 8em; }
+        </style>
+        <!-- TEMPORAL VARIABLES FOR COSTS-->
+        <t t-set="total_tranport" t-value="0" />
+        <t t-set="total_tranport_expected" t-value="0" />
+        <t t-set="total_arancel" t-value="0" />
+        <t t-set="total_ecorae" t-value="0" />
+        <t t-set="total_expenses" t-value="0" />
+        <t t-set="total_expected_expenses" t-value="0" />
+        <t t-set="total_material" t-value="0" />
+        <t t-set="total_facturas" t-value="0" />
+
+        <t t-foreach="o.get_supplier_list()" t-as="supplier">
+            <div class="tab1">
+                <h3 t-esc="supplier_value"/>
+                <div class="tab2">
+                    <table class="expense">
+                        <thead>
+                            <th>Nº Factura</th>
+                            <th>Fecha reg.</th>
+                            <th>Dossier Nº</th>
+                            <th>Importe Material</th>
+                            <th>Importe Factura</th>
+                            <th>Gastos Imp. Real</th>
+                            <th>Gastos Imp. Est.</th>
+                            <th>Gastos Transport</th>
+                            <th>Gastos Transport Est.</th>
+                            <th>Gastos Aranceles</th>
+                            <th>Gastos ECORAEE</th>
+                        </thead>
+                        <t t-set="invoices" t-value="o.get_invoice_supplier(supplier)"/>
+                        <t t-foreach="invoices" t-as="invoice">
+                            <t t-set="invoice" t-value="invoice.with_context({'lang': 'es_ES'})"/>
+                            <t t-if="invoice.total_import_material">
+                                <t t-set="exp_perc" t-value="round(invoice.total_expenses/invoice.total_import_material*100,2)"/>
+                                <t t-set="expect_perc" t-value="round(invoice.total_expected_expenses/invoice.total_import_material*100,2)"/>
+                                <t t-set="arancel_perc" t-value="round(invoice.total_arancel/invoice.total_import_material*100,2)"/>
+                                <t t-set="ecoraee_perc" t-value="round(invoice.total_ecorae/invoice.total_import_material*100,2)"/>
+                                <t t-set="delivery_perc" t-value="round(invoice.total_cost_delivery/invoice.total_import_material*100,2)"/>
+                                <t t-set="delivery_perc_expected" t-value="round(invoice.total_cost_delivery_expected/invoice.total_import_material*100,2)"/>
+                            </t>
+                            <t t-else="">
+                                <t t-set="exp_perc" t-value="0"/>
+                                <t t-set="expect_perc" t-value="0"/>
+                                <t t-set="delivery_perc" t-value="0"/>
+                                <t t-set="delivery_perc_expected" t-value="0"/>
+                                <t t-set="arancel_perc" t-value="0"/>
+                                <t t-set="ecoraee_perc" t-value="0"/>
+                            </t>
+                            <tr>
+                                <td>
+                                    <strong t-esc="invoice.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="invoice.invoice_date.strftime('%d/%m/%Y')"/>
+                                </td>
+                                <td style="text-align:center;">
+                                    <span t-esc="invoice.doc_number or '-'"/>
+                                </td>
+                                <td>
+                                    <strong t-field="invoice.total_import_material"/>
+                                </td>
+                                <td>
+                                    <strong t-field="invoice.total_import_invoice"/>
+                                </td>
+                                <td>
+                                    <strong t-field="invoice.total_expenses"
+                                        />
+                                    <br/>
+                                    (
+                                    <span t-esc="str(exp_perc).replace('.',',')"/>
+                                    %)
+                                </td>
+                                <td>
+                                    <strong t-field="invoice.total_expected_expenses"/>
+                                    <br/>
+                                    (
+                                    <span t-esc="str(expect_perc).replace('.',',')"/>
+                                    %)
+                                </td>
+                                <td>
+                                    <strong t-field="invoice.total_cost_delivery"/>
+                                    <br/>
+                                    (
+                                    <span t-esc="str(delivery_perc).replace('.',',')"/>
+                                    %)
+                                </td>
+                                <td>
+                                    <span>
+                                        <strong t-field="invoice.total_cost_delivery_expected"/>
+                                        <br/>
+                                        (
+                                        <span t-esc="str(delivery_perc_expected).replace('.',',')"/>
+                                        %)
+                                    </span>
+                                </td>
+                                <td>
+                                    <span>
+                                        <strong t-field="invoice.total_arancel"/>
+                                        <br/>
+                                        (
+                                        <span t-esc="str(arancel_perc).replace('.',',')"/>
+                                        %)
+                                    </span>
+                                </td>
+                                <td>
+                                    <span>
+                                        <strong t-field="invoice.total_ecorae"/>
+                                        <br/>
+                                        (
+                                        <span t-esc="str(ecoraee_perc).replace('.',',')"/>
+                                        %)
+                                    </span>
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-if="invoices">
+                            <t t-set="total_material_sup" t-value="sum(invoices.mapped('total_import_material'))"/>
+                            <t t-set="total_facturas_sup" t-value="sum(invoices.mapped('total_import_invoice'))"/>
+                            <t t-set="total_expenses_sup" t-value="sum(invoices.mapped('total_expenses'))"/>
+                            <t t-set="total_expected_expenses_sup" t-value="sum(invoices.mapped('total_expected_expenses'))"/>
+                            <t t-set="total_delivery_sup" t-value="sum(invoices.mapped('total_cost_delivery'))"/>
+                            <t t-set="total_delivery_expected_sup" t-value="sum(invoices.mapped('total_cost_delivery_expected'))"/>
+                            <t t-set="total_arancel_sup" t-value="sum(invoices.mapped('total_arancel'))"/>
+                            <t t-set="total_ecorae_sup" t-value="sum(invoices.mapped('total_ecorae'))"/>
+                            <td colspan="2">
+                                <h3>TOTAL APS</h3>
+                            </td>
+                            <td>
+                            </td>
+                            <t t-if="total_material_sup">
+                                <t t-set="total_exp_perc" t-value="round((total_expenses_sup/total_material_sup*100),2)"/>
+                                <t t-set="total_expected_perc" t-value="round((total_expected_expenses_sup/total_material_sup*100),2)"/>
+                                <t t-set="total_delivery_perc" t-value="round(total_delivery_sup/total_material_sup*100,2)"/>
+                                <t t-set="total_delivery_perc_expected" t-value="round(total_delivery_expected_sup/total_material_sup*100,2)"/>
+                                <t t-set="total_arancel_perc" t-value="round(total_arancel_sup/total_material_sup*100,2)"/>
+                                <t t-set="total_ecoraee_perc" t-value="round(total_ecorae_sup/total_material_sup*100,2)"/>
+                            </t>
+                            <t t-else="">
+                                <t t-set="total_exp_perc" t-value="0"/>
+                                <t t-set="total_expected_perc" t-value="0"/>
+                                <t t-set="total_delivery_perc" t-value="0"/>
+                                <t t-set="total_delivery_perc_expected" t-value="0"/>
+                                <t t-set="total_arancel_perc" t-value="0"/>
+                                <t t-set="total_ecoraee_perc" t-value="0"/>
+                            </t>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_material_sup,2))"/>
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_facturas_sup,2))"/>
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_expenses_sup,2))"/>
+                                <br/>
+                                (
+                                <span t-esc="str(total_exp_perc).replace('.',',')" />
+                                %)
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_expected_expenses_sup,2))"/>
+                                <br/>
+                                (
+                                <span t-esc="str(total_expected_perc).replace('.',',')" />
+                                %)
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_delivery_sup,2))"/>
+                                <br/>
+                                (
+                                <span t-esc="str(total_delivery_perc).replace('.',',')" />
+                                %)
+
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_delivery_expected_sup,2))"/>
+                                <br/>
+                                (
+                                <span t-esc="str(total_delivery_perc_expected).replace('.',',')" />
+                                %)
+
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_arancel_sup,2))"/>
+                                <br/>
+                                (
+                                <span t-esc="str(total_arancel_perc).replace('.',',')" />
+                                %)
+                            </td>
+                            <td>
+                                <strong t-esc="o.format_float(round(total_ecorae_sup, 2))"/>
+                                <br/>
+                                (
+                                <span t-esc="str(total_ecoraee_perc).replace('.',',')" />
+                                %)
+                            </td>
+                            <!-- SUM TOTAL COSTS-->
+                            <t t-set="total_material" t-value="total_material + total_material_sup"/>
+                            <t t-set="total_facturas" t-value="total_facturas + total_facturas_sup"/>
+                            <t t-set="total_expenses" t-value="total_expenses + total_expenses_sup"/>
+                            <t t-set="total_expected_expenses" t-value="total_expected_expenses + total_expected_expenses_sup"/>
+                            <t t-set="total_ecorae" t-value="total_ecorae + total_ecorae_sup"/>
+                            <t t-set="total_arancel" t-value="total_arancel + total_arancel_sup"/>
+
+                            <t t-set="total_tranport" t-value="round(total_tranport + total_delivery_sup,2)"/>
+                            <t t-set="total_tranport_expected" t-value="round(total_tranport_expected + total_delivery_expected_sup,2)"/>
+                        </t>
+                    </table>
+                </div>
+                <t t-esc="a"/>
+                <!-- <t t-esc="invoices"/> -->
+            </div>
+        </t>
+        <h2>TOTALES REPORT</h2>
+        <table class="total">
+            <thead>
+                <th/>
+                <th>Imp. Real</th>
+                <th>Imp. Previsto</th>
+            </thead>
+            <tr>
+                <td>Gastos Transporte TOTALES</td>
+
+                <td>
+                    <t t-if="total_tranport">
+                        <t t-set="total_perc_transport" t-value="round(total_tranport /total_material*100,2)" />
+                    </t>
+                    <t t-else="">
+                        <t t-set="total_perc_transport" t-value="0"/>
+                    </t>
+                    <span t-esc="o.format_float(round(total_tranport,2))"/>
+                    (
+                    <span t-esc="str(round(total_perc_transport,2)).replace('.',',')"/>
+                    %)
+                </td>
+                <td style="text-align:right;">
+                    <t t-if="total_tranport_expected">
+                        <t t-set="total_perc_transport_expected" t-value="round(total_tranport_expected /total_material*100,2)" />
+                    </t>
+                    <t t-else="">
+                        <t t-set="total_perc_transport_expected" t-value="0"/>
+                    </t>
+                    <span t-esc="o.format_float(round(total_tranport_expected,2))"/>
+                    (
+                    <span t-esc="str(total_perc_transport_expected).replace('.',',')"/>
+                    %)
+                </td>
+            </tr>
+            <tr>
+                <td>Gastos Aranceles TOTALES</td>
+                <t t-if="total_arancel">
+                    <t t-set="total_perc_arancel" t-value="round(total_arancel /total_material*100,2)" />
+                </t>
+                <t t-else="">
+                    <t t-set="total_perc_arancel" t-value="0"/>
+                </t>
+                <td>
+                    <span t-esc="o.format_float(round(total_arancel,2))"/>
+                    (
+                    <span t-esc="str(total_perc_arancel).replace('.',',')"/>
+                    %)
+                </td>
+            </tr>
+            <tr>
+                <td>Gastos ECORAEE TOTALES</td>
+                <t t-if="total_ecorae">
+                    <t t-set="total_perc_ecorae" t-value="round(total_ecorae/total_material*100, 2)" />
+                </t>
+                <t t-else="">
+                    <t t-set="total_perc_ecorae" t-value="0"/>
+                </t>
+                <td>
+                    <span t-esc="o.format_float(round(total_ecorae, 2))"/>
+                    (
+                    <span t-esc="str(total_perc_ecorae).replace('.',',')"/>
+                    %)
+                </td>
+            </tr>
+            <tr/>
+            <tr>
+                <t t-if="total_ecorae">
+                    <t t-set="total_perc_expenses" t-value="round(total_expenses /total_material*100,2)" />
+                </t>
+                <t t-else="">
+                    <t t-set="total_perc_expenses" t-value="0"/>
+                </t>
+                <td>
+                    <strong>Gastos IMPORTACIÓN</strong>
+                </td>
+                <td>
+                    <strong>
+                        <span t-esc="o.format_float(round(total_expenses,2))"/>
+                        (
+                        <span t-esc="str(total_perc_expenses).replace('.',',')"/>
+                        %)
+                    </strong>
+                </td>
+                <td style="text-align:right;">
+                    <strong>
+                        <t t-if="total_expected_expenses">
+                            <t t-set="total_expected_perc_expenses" t-value="round(total_expected_expenses /total_material*100,2)" />
+                        </t>
+                        <t t-else="">
+                            <t t-set="total_expected_perc_expenses" t-value="0"/>
+                        </t>
+
+                        <span t-esc="o.format_float(round(total_expected_expenses,2))"/>
+                        (
+                        <span t-esc="str(total_expected_perc_expenses).replace('.',',')"/>
+                        %)
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <strong>Importe TOTAL Material Comprado</strong>
+                </td>
+                <td>
+                    <strong>
+                        <span t-esc="o.format_float(round(total_material,2))"/>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>Importe TOTAL Facturas de Compra</td>
+                <td>
+                    <span t-esc="o.format_float(round(total_facturas,2))"/>
+                </td>
+            </tr>
+        </table>
+    </template>
+    <template id="report_expenses_weighted_docs">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="monolitic_product_expenses.report_expenses_weighted_document" t-lang="user.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <data noupdate="0">
+        <record id="report_expense_weighted" model="ir.actions.report">
+            <field name="name">Report Expenses Weighted</field>
+            <field name="model">report.expense.wizard</field>
+            <field name="report_name">monolitic_product_expenses.report_expenses_weighted_docs</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_file">Expense Report</field>
+            <field name="attachment_use">True</field>
+        </record>
+    </data>
+</odoo>

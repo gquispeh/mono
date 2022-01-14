@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="crm_lead_convert2task_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.convert2ticket.form</field>
+        <field name="model">crm.lead.convert2ticket</field>
+        <field name="arch" type="xml">
+            <form string="Convert to Ticket">
+                <group>
+                    <field name="helpdesk_id" options="{'no_create_edit': True}"/>
+                    <field name="name"/>
+                    <field name="user_id" options="{'no_create_edit': True}"/>
+                </group>
+                <footer>
+                    <button type="object" name="lead_convert2ticket" string="Create Ticket" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="crm_lead_convert2ticket_action" model="ir.actions.act_window">
+        <field name="name">Convert to Ticket</field>
+        <field name="res_model">crm.lead.convert2ticket</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

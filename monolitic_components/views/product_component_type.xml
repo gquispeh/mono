@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- product.component.type tree view -->
+    <record id="model_name_view_tree" model="ir.ui.view">
+        <field name="name">product.component.type.view.tree</field>
+        <field name="model">product.component.type</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name"/>
+                <field name="attributes_ids"
+                    widget="many2many_tags"
+                    />
+            </tree>
+        </field>
+    </record>
+
+    <!-- product.component.type action window -->
+    <record id="product_component_type_action" model="ir.actions.act_window">
+        <field name="name">Component Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.component.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create new component type
+            </p>
+        </field>
+    </record>
+
+    <!--Menu-->
+    <menuitem id="components_type_menu_act" name="Inventory TIC Types" parent="components_menu_parent"
+        action="product_component_type_action" sequence="5"/>
+
+</odoo>

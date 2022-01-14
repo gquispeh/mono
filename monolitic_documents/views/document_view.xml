@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="documents_view_list_inherit" model="ir.ui.view">
+        <field name="name">documents.view.list.inherit</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.documents_view_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_date']" position='after'>
+                <field name="public"/>
+                <field name="local_url"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="documents_view_form_inherit" model="ir.ui.view">
+        <field name="name">documents.view.form.inherit</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='res_model']" position='attributes'>
+                <attribute name="readonly">0</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='res_id']" position='replace'>
+                <field name="res_model_name" invisible="1"/>
+                <field name="res_id" attrs="{'invisible' : [('res_model_name', '=', False)]}" />
+            </xpath>
+
+            <xpath expr="//field[@name='type']" position='after'>
+                <field name="public"/>
+                <field name="local_url"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

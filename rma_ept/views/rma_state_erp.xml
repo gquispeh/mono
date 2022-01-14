@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rma_state_ept_tree_view">
+            <field name="name">RMA State Ept Tree</field>
+            <field name="model">crm.claim.ept.state</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="index"/>
+                    <field name="name"/>
+                    <field name="is_closed"/>
+                    <field name="template_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="rma_state_ept_form_view">
+            <field name="name">RMA state Ept Tree</field>
+            <field name="model">crm.claim.ept.state</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="index"/>
+                            <field name="is_closed"/>
+                            <field name="template_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="rma_state_ept_action">
+            <field name="name">RMA States</field>
+            <field name="res_model">crm.claim.ept.state</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="rma_state_ept_tree_view"/>
+        </record>
+
+        <menuitem name="RMA States" id="menu_rma_state_ept" groups="rma_ept.group_rma_manager_ept" action="rma_state_ept_action" parent="rma_ept.menu_crm_claim_ept_after_sale" sequence="3"/>
+    </data>
+</odoo>

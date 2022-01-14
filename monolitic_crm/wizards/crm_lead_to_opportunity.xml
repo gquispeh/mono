@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="crm_lead_to_opportunity_case_form" model="ir.ui.view">
+        <field name="name">crm.lead2opportunity.partner.mass</field>
+        <field name="model">crm.lead2opportunity.partner.mass</field>
+        <field name="inherit_id" ref="crm.view_crm_lead2opportunity_partner_mass"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="date_next_stage"/>
+                <field name="date_deadline"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_lead_to_opportunity_case_form2" model="ir.ui.view">
+        <field name="name">crm.lead2opportunity.partner</field>
+        <field name="model">crm.lead2opportunity.partner</field>
+        <field name="inherit_id" ref="crm.view_crm_lead2opportunity_partner"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="date_next_stage"/>
+                <field name="date_deadline"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contract_employee_view,access.contract.employee.view,hr_contract.model_hr_contract,monolitic_hr_custom.group_employee_view,1,0,0,0
+access_employee_public_employee_view,access.employee.public.employee.view,hr.model_hr_employee_public,monolitic_hr_custom.group_employee_view,1,0,0,0
+access_employee_view,access.employee.view,hr.model_hr_employee,monolitic_hr_custom.group_employee_view,1,0,0,0
+access_hr_department_employee_view,access.hr.department.employee.view,hr.model_hr_department,monolitic_hr_custom.group_employee_view,1,0,0,0
+access_contract_employee_report_employee_view,access_contract.employee.report.employee.view,hr_contract_reports.model_hr_contract_employee_report,monolitic_hr_custom.group_employee_view,1,0,0,0

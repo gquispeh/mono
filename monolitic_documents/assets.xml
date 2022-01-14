@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+   <template id="assets_backend" name="monolitic documents assets backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/monolitic_documents/static/src/js/monolitic_documents_kanban_view.js"/>
+            <script type="text/javascript" src="/monolitic_documents/static/src/js/monolitic_documents.js"/>
+        </xpath>
+    </template>
+
+</odoo>

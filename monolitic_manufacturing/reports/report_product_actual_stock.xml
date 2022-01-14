@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="internal_layout_custom">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+                <div style="display:block;float:left;">
+                         <strong>Material Stock Situation</strong>
+                         <br/>
+                         <span t-field="env.user.company_id.name"/>
+                         <br/>
+                         <br/>
+                         <span>Shipping Date:</span>
+                     </div>
+                     <div style="display:block;float:right;text-align:right;">
+                         <span t-esc="datetime.datetime.now().strftime('%d. %B %Y')"></span>
+                         <br/>
+                         <span>Page</span>
+                         <span class="page"/>
+                         <br/>
+                         <span t-esc="user.name"></span>
+                </div>
+        </div>
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="report_actual_stock">
+        <t t-call="web.html_container">
+            <t t-call="monolitic_manufacturing.internal_layout_custom">
+                <div class="page">
+                <div t-foreach="docs" t-as="o">
+                    <style>
+                        .table-borderless th {
+                            border: 0;
+                        }
+                        td.border_r {
+                                border-right: 1px solid black;
+                            }
+                    </style>
+                    <t t-set="data" t-value="o.get_data_actual_stock()"/>
+                    <t t-if="isinstance(data, list)">
+                        <t t-set="data" t-value="data[0]"/>
+                    </t>
+                    <t t-else="">
+                    </t>
+                    <t t-set="product_ids" t-value="list(data.keys())"/>
+                    <t t-foreach="product_ids" t-as="product_id">
+                        <t t-set="sale_line_ids" t-value="data[product_id]['so']"/>
+                        <t t-set="sale_production_ids" t-value="data[product_id]['sale_mo']"/>
+                        <t t-set="purchase_line_ids" t-value="data[product_id]['po']"/>
+                        <t t-set="production_line_ids" t-value="data[product_id]['mo']"/>
+                        <br/>
+
+                        <!--SUMMARY TABLE-->
+                        <table class="table table-borderless"  style="width:100%">
+                            <thead>
+                                <tr style="font-size: 12px;">
+                                    <th style="width:15px">Reference</th>
+                                    <th>Supplier</th>
+                                    <th>Exist</th>
+                                    <th>Assembled in kits</th>
+                                    <th>Stk sec</th>
+                                    <th>Stk Reserv.</th>
+                                    <th>Purch. order</th>
+                                    <th>Sale order</th>
+                                    <th>Order vt. kit</th>
+                                    <th>BDN</th>
+                                    <th>BCN</th>
+                                    <th>DEP</th>
+                                    <th>DOT</th>
+                                    <th>REST</th>
+                                    <th>SAT</th>
+                                    <th>Exp. Stock</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="font-size: 10px; height:12px !important">
+                                    <td class="border_r">
+                                        <t t-esc="product_id.default_code"/>
+                                    </td>
+                                    <td class="border_r">
+                                        <t t-esc="product_id.seller_ids[:1].name.name"/>
+                                    </td>
+                                    <td class="border_r">
+                                        <t t-esc="product_id.qty_available"/>
+                                    </td>
+                                    <td class="border_r">
+                                        <t t-esc="sum(production_line_ids.mapped('quantity_done'))"/>
+                                    </td>
+                                    <td class="border_r">
+                                        0
+                                    </td>
+                                    <td class="border_r">
+                                         <t t-esc="data[product_id]['reserved_availability']"/>
+                                    </td>
+                                    <td class="border_r">
+                                        <t t-esc="sum(purchase_line_ids.mapped('product_qty'))"/>
+                                    </td>
+                                    <td class="border_r">
+                                       <t t-esc="sum(sale_line_ids.mapped('product_uom_qty'))"/>
+                                    </td>
+                                    <td class="border_r">
+                                       <t t-esc="sum(sale_production_ids.mapped('product_uom_qty'))"/>
+                                    </td>
+                                    <td class="border_r">0</td>
+                                    <td class="border_r">0</td>
+                                    <td class="border_r">0</td>
+                                    <td class="border_r">0</td>
+                                    <td class="border_r">0</td>
+                                    <td class="border_r">0</td>
+                                    <td class="border_r">
+                                         <t t-esc="product_id.virtual_available"/>
+                                    </td>
+                                 </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="row" style="font-size: 12px;">
+                                <div class="col-6">
+                                    <strong>
+                                    <p><t t-esc="product_id.default_code"/></p>
+                                </strong>
+                                </div>
+                                <div class="col-6">
+                                   (RoHS Compliant)
+                                </div>
+                        </div>
+                        <p/><p/>
+                        <div>
+                           <!--SALE ORDERS-->
+                            <t t-if="sale_line_ids">
+                            <p><strong>Sale orders</strong></p>
+                            <table class="table table-borderless"  style="width:100%">
+                            <thead>
+                                <tr style="font-size: 12px;">
+                                    <th>SO</th>
+                                    <th>Custom. Ref.</th>
+                                    <th>Comerc.</th>
+                                    <th>Customer</th>
+                                    <th>Sale price <br/> excl.l</th>
+                                    <th>Total Ordered</th>
+                                    <th>Pending</th>
+                                    <th>Shipping Date</th>
+                                    <th>Conf. Date</th>
+                                    <th>State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="sale_line_ids" t-as="sale_line_id">
+                                    <tr style="font-size: 12px;">
+                                        <td><strong><t t-esc="sale_line_id.order_id.name"/></strong></td>
+                                        <td><t t-esc="sale_line_id.order_id.client_order_ref"/></td>
+                                        <td><t t-esc="sale_line_id.order_id.user_id.name"/></td>
+                                        <td><t t-esc="sale_line_id.order_id.partner_id.name"/></td>
+                                        <td><t t-esc="sale_line_id.price_subtotal"/></td>
+                                        <td><t t-esc="sale_line_id.product_uom_qty"/></td>
+                                        <td><t t-esc="(sale_line_id.product_uom_qty - sale_line_id.qty_delivered)"/></td>
+                                        <td><t t-esc="sale_line_id.requested_shipping_date"/></td>
+                                        <td><t t-esc="sale_line_id.commitment_date"/></td>
+                                        <td><t t-esc="sale_line_id.order_id.state"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        </t>
+
+                            <!--PRODUCTION SALE ORDERS-->
+                            <t t-if="sale_production_ids">
+                           <p><strong>Sale orders production (Kits)</strong></p>
+                            <table class="table table-borderless"  style="width:100%">
+                            <thead>
+                                <tr style="font-size: 12px;">
+                                    <th>SO</th>
+                                    <th>Custom. Ref.</th>
+                                    <th>Comerc.</th>
+                                    <th>Customer</th>
+                                    <th>Equipment</th>
+                                    <th>Sale price <br/> excl.l</th>
+                                    <th>Total Ordered</th>
+                                    <th>Pending</th>
+                                    <th>Conf. Date</th>
+                                    <th>State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="sale_production_ids" t-as="sale_p_line_id">
+                                    <tr style="font-size: 12px;">
+                                        <td><strong><t t-esc="sale_p_line_id.order_id.name"/></strong></td>
+                                        <td><t t-esc="sale_p_line_id.order_id.client_order_ref"/></td>
+                                        <td><t t-esc="sale_p_line_id.order_id.user_id.name"/></td>
+                                        <td><t t-esc="sale_p_line_id.order_id.partner_id.name"/></td>
+                                        <td><t t-esc="sale_p_line_id.product_id.name"/></td>
+                                        <td><t t-esc="sale_p_line_id.price_subtotal"/></td>
+                                        <td><t t-esc="sale_p_line_id.product_uom_qty"/></td>
+                                        <td><t t-esc="(sale_p_line_id.product_uom_qty - sale_p_line_id.qty_delivered)"/></td>
+                                        <td><t t-esc="sale_p_line_id.commitment_date"/></td>
+                                        <td><t t-esc="sale_p_line_id.order_id.state"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        </t>
+
+                            <!--PURCHASE ORDERS-->
+                            <t t-if="purchase_line_ids">
+                            <p><strong>Purchase orders</strong></p>
+                            <table class="table table-borderless"  style="width:100%">
+                            <thead>
+                                <tr style="font-size: 12px;">
+                                    <th>DOC</th>
+                                    <th>Supplier</th>
+                                    <th>Purchase price</th>
+                                    <th>Currency</th>
+                                    <th>Total Purch.</th>
+                                    <th>Pending</th>
+                                    <th>Shipping Date <br/>Confirm.</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 12px;">
+                                <t t-foreach="purchase_line_ids" t-as="purchase_line">
+                                  <tr>
+                                      <td><t t-esc="purchase_line.order_id.name"/></td>
+                                      <td><t t-esc="purchase_line.order_id.partner_id.name"/></td>
+                                      <td><t t-esc="purchase_line.price_subtotal"/> </td>
+                                      <td><t t-esc="purchase_line.currency_id.name"/></td>
+                                      <td><t t-esc="purchase_line.product_qty"/></td>
+                                      <td><t t-esc="(purchase_line.product_qty - purchase_line.qty_received)"/></td>
+                                      <td><t t-esc="purchase_line.requested_shipping_date"/></td>
+                                  </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        </t>
+
+                            <table class="table table-borderless"  style="width:40%">
+                                <tfoot>
+                                  <tr style="font-size: 12px; font-weight:bold">
+                                      <td>Last Purchase Price:</td>
+                                      <td><t t-esc="product_id.standard_price"/></td>
+                                      <td><t t-esc="product_id.currency_id.name"/></td>
+                                  </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+            </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_actual_stock_bom">
+        <t t-call="monolitic_manufacturing.report_actual_stock"/>
+    </template>
+
+    <template id="report_actual_stock_sm">
+        <t t-call="monolitic_manufacturing.report_actual_stock"/>
+    </template>
+
+    <record id="print_product_actual_stock_move" model="ir.actions.report">
+        <field name="name">Actual Stock Report</field>
+        <field name="model">stock.move</field>
+        <field name="report_name">monolitic_manufacturing.report_actual_stock_sm</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">Actual Stock Report</field>
+    </record>
+
+    <record id="print_product_actual_stock_bom" model="ir.actions.report">
+        <field name="name">Actual Stock Report</field>
+        <field name="model">mrp.bom.line</field>
+        <field name="report_name">monolitic_manufacturing.report_actual_stock_bom</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">Actual Stock Report</field>
+    </record>
+</odoo>

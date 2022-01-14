@@ -1,0 +1,489 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_mail_activity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-08 11:54+0000\n"
+"PO-Revision-Date: 2021-11-08 11:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__activity_category
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__activity_category
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__activity_category
+msgid "Action to Perform"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,help:monolitic_mail_activity.field_base_automation__activity_category
+#: model:ir.model.fields,help:monolitic_mail_activity.field_ir_actions_server__activity_category
+#: model:ir.model.fields,help:monolitic_mail_activity.field_ir_cron__activity_category
+msgid ""
+"Actions may trigger specific behavior like opening calendar view or "
+"automatically mark as done when a document is uploaded"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__comercial_activity
+msgid "Actividad comercial"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_sub_type_view_search
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_mail_activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: monolitic_mail_activity
+#: model:ir.actions.act_window,name:monolitic_mail_activity.mail_activity_sub_type_action
+#: model:ir.ui.menu,name:monolitic_mail_activity.menu_crm_activity_sub_type
+#: model:ir.ui.menu,name:monolitic_mail_activity.menu_mail_activity_sub_type
+#: model:ir.ui.menu,name:monolitic_mail_activity.menu_project_activity_sub_type
+msgid "Activity Sub Types"
+msgstr "Subtipos de Actividad"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__sub_type_id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__sub_type_id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__sub_type_id
+msgid "Activity Subtype"
+msgstr "Subtipo de Actividad"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_mail_activity_type
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__activity_type_id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__activity_type_id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__activity_type_id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__activity_type_id
+msgid "Activity Type"
+msgstr "Tipo Actividad"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_mail_activity_sub_type
+msgid "Activity sub type"
+msgstr "Subtipo de Actividad"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_search_inherit
+msgid "All Activities"
+msgstr "Todas las actividades"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_type__sub_type_ids
+msgid "Allowed Sub types"
+msgstr "Subtipos permitidos"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_segmentation__application_ids
+msgid "Application"
+msgstr "Aplicación"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_sub_type_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_form_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.view_id_activity_form
+msgid "Asistente"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__assistants_ids
+msgid "Assistants"
+msgstr "Asistentes"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_form
+msgid "Associated Activities"
+msgstr "Actividades asociadas"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__assistants_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__assistants_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__assistants_ids
+msgid "Attendees"
+msgstr "Asistentes"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_base_automation
+msgid "Automated Action"
+msgstr "Acción automatizada"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_calendar_event
+msgid "Calendar Event"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,help:monolitic_mail_activity.field_res_partner__employee
+#: model:ir.model.fields,help:monolitic_mail_activity.field_res_users__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Marque si el contacto es un empleado"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__classification_id
+msgid "Clasificación estratégica del cliente"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__sub_user_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__sub_user_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__sub_user_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__sub_user_ids
+msgid "Companions"
+msgstr "Acompañantes"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__ir_actions_server__activity_start_date_range_type__days
+msgid "Days"
+msgstr "Días"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_calendar_event__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_helpdesk_ticket__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_type__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_classification__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_segmentation__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_project_task__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users__display_name
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__duration
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__duration
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__duration
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner__employee
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__organisation_id
+msgid "Empresa"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__evaluation
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr "Tiquete del Servicio de Asistencia"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_form_inherit
+msgid "Hours"
+msgstr "Horas"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_calendar_event__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_crm_lead__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_helpdesk_ticket__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_type__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_classification__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_segmentation__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_project_task__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users__id
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__product_id
+msgid "Id del producto"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__mail_activity__evaluation__indifferent
+msgid "Indifferent"
+msgstr "Indiferente"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_form_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.view_id_activity_form
+msgid "Información Comercial"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_calendar_event____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_helpdesk_ticket____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_type____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_classification____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_segmentation____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_project_task____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users____last_update
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_monolitic_client_classification__mail_activity_ids
+msgid "Mail Activity"
+msgstr "Actividad"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_monolitic_client_classification
+msgid "Monolitic Clasificación Cliente"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__ir_actions_server__activity_start_date_range_type__months
+msgid "Months"
+msgstr "Meses"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_search_inherit
+msgid "My Activities"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__mail_activity__evaluation__negative
+msgid "Negative"
+msgstr "Negativo"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.custom_monolitic_mail_activity_calendar
+msgid "Open Calendar"
+msgstr "Abrir calendario"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner__organisation_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users__organisation_ids
+msgid "Organisation"
+msgstr "Organización"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__place
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__place
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__place
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__place
+msgid "Place"
+msgstr "Lugar"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__mail_activity__evaluation__positive
+msgid "Positive"
+msgstr "Positivo"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__mail_activity__evaluation__potential
+msgid "Potential"
+msgstr "Potencial"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__represented_id
+msgid "Proveedor"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner__represented_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users__represented_ids
+msgid "Represented"
+msgstr "Representado"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_type__required_evaluation
+msgid "Required Evaluation"
+msgstr "Evaluación comercial obligatoria"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.custom_monolitic_mail_activity_calendar
+msgid "Save"
+msgstr "Guardar"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.custom_monolitic_mail_activity_calendar
+msgid "Schedule"
+msgstr "Planificacion"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_monolitic_client_segmentation
+msgid "Segmentación cliente"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__application_id
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_form_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.view_id_activity_form
+msgid "Segmentación de mercado"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__business_id
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_form_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.view_id_activity_form
+msgid "Segmentación de producto"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_partner__seller_ids
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_res_users__seller_ids
+msgid "Seller"
+msgstr "Vendedor"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity_sub_type__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_ir_actions_server
+msgid "Server Action"
+msgstr "Acción del servidor"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__start_date
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__activity_start_date_range
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__activity_start_date_range
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__activity_start_date_range
+msgid "Start Date In"
+msgstr "Fecha de Inicio en"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_base_automation__activity_start_date_range_type
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_actions_server__activity_start_date_range_type
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_ir_cron__activity_start_date_range_type
+msgid "Start Date Type"
+msgstr "Fecha de Inicio Tipo"
+
+#. module: monolitic_mail_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_mail_activity.mail_activity_sub_type_view_tree
+msgid "Sub Types"
+msgstr "Subtipos"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__sub_type_id
+msgid "SubType Activity"
+msgstr "Subtipo de Actividad"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: monolitic_mail_activity
+#: code:addons/monolitic_mail_activity/models/mail_activity.py:0
+#, python-format
+msgid "The evaluation is required for this activity !"
+msgstr "La evaluación es obligatoria para esta actividad !"
+
+#. module: monolitic_mail_activity
+#: code:addons/monolitic_mail_activity/models/mail_activity.py:0
+#, python-format
+msgid "This event must be moved through Calendar module!"
+msgstr "Este evento debe ser modificado a través del módulo Calendario!"
+
+#. module: monolitic_mail_activity
+#: model:ir.model,name:monolitic_mail_activity.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields,field_description:monolitic_mail_activity.field_mail_activity__seller_id
+msgid "Vendedor"
+msgstr ""
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__mail_activity__evaluation__very_positive
+msgid "Very positive"
+msgstr "Muy positiva"
+
+#. module: monolitic_mail_activity
+#: model:ir.model.fields.selection,name:monolitic_mail_activity.selection__ir_actions_server__activity_start_date_range_type__weeks
+msgid "Weeks"
+msgstr "Semanas"
+
+#. module: monolitic_mail_activity
+#: code:addons/monolitic_mail_activity/models/mail_activity.py:0
+#, python-format
+msgid "You can not select same user as assigned to and as companion"
+msgstr "No puedes seleccionar al mismo usuario como Asignado a: o acompañante"

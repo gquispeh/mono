@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_creation,access.project.creation,project.model_project_project,monolitic_project.group_project_creation,1,1,1,1
+access_task_creation,access.task.creation,project.model_project_task,monolitic_project.group_project_creation,1,1,1,1
+access_task_analysis_creation,access.task.analysis.creation,project.model_report_project_task_user,monolitic_project.group_project_creation,1,1,1,1
+access_timesheet_forecast_report_creation,access.timesheet.forecast.report.creation,project_timesheet_forecast.model_project_timesheet_forecast_report_analysis,monolitic_project.group_project_creation,1,1,1,1
+access_profitability_creation,access.profitability.creation,sale_timesheet.model_project_profitability_report,monolitic_project.group_project_creation,1,1,1,1
+access_task_type_creation,access.task.type.creation,project.model_project_task_type,monolitic_project.group_project_creation,1,0,0,0
+access_project_tags_creation,access.project.tags.creation,project.model_project_tags,monolitic_project.group_project_creation,1,1,1,1
+access_project_type_creation,access.project.type.creation,project_category.model_project_type,monolitic_project.group_project_creation,1,1,1,1
+access_analitic_account_creation,access.analytic.account.creation,analytic.model_account_analytic_account,monolitic_project.group_project_creation,1,1,1,1
+access_project_stage_manager,access.project.stage.manager,project.model_project_task_type,project.group_project_manager,1,1,1,1
+project.access_project_project,project.project,project.model_project_project,project.group_project_user,1,1,0,0
+access_account_analytic_line,account.analytic.line.access,analytic.model_account_analytic_line,project.group_project_user,1,0,0,0

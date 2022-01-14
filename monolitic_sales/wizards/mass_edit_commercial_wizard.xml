@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<odoo>
+
+    <record id="mass_edit_commercial_wizard_form" model="ir.ui.view">
+        <field name="name">mass.edit.commercial.wizard.form</field>
+        <field name="model">mass.edit.commercial.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Mass Edit Commercial">
+                <group colspan="4" col="4">
+                    <field name="previous_commercial_id" domain="[('is_commercial', '=', True)]" />
+                    <field name="new_commercial_id" domain="[('is_commercial', '=', True)]" />
+                </group>
+                <group>
+                    <p>Select the model and field to update the commercial</p>
+                    <field name="model_id" />
+                    <field name="model_name" invisible="1"/>
+                    <field name="field_id" attrs="{'invisible': [('model_id', '=', False)]}"
+                        domain="[('relation', '=', 'res.users'), ('model_id', '=', model_id), ('store', '=', True), ('name', '=', 'user_id')]"/>
+                    <field name="filter_domain" attrs="{'invisible': [('field_id', '=', False)]}" widget="domain" options="{'model': 'model_name', 'in_dialog': True}"/>
+                </group>
+                <footer>
+                    <button name="change_commercial_records" string="Confirm" type="object" class="oe_highlight" />
+                    <button special="cancel" string="Cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mass_edit_commercial_wizard" model="ir.actions.act_window">
+        <field name="name">Mass Edit Commercial</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mass.edit.commercial.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="mass_edit_commercial_wizard_form" />
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_mass_edit_commercial_wizard" name="Mass Edit Commercials" parent="sale.menu_sale_config" action="action_mass_edit_commercial_wizard" sequence="2" groups="sales_team.group_sale_manager"/>
+
+</odoo>

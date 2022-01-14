@@ -1,0 +1,10 @@
+unique_code,subject,date,author_id,res_id,res_model,body
+123456,Mensaje 1,2021-02-04 00:00:00,Administrator,P/00008,res.partner,QubiQ Mensaje Prueba Contacto
+123457,Mensaje 2,2021-02-04 00:00:01,Administrator,OPPN-00002,crm.lead,QubiQ Mensaje Prueba OPPN
+123458,Mensaje 3,2021-02-04 00:00:02,Administrator,#1N4004-T+A,product.template,QubiQ Mensaje Prueba Producto
+123459,Mensaje 4,2021-02-04 00:00:03,Administrator,WH/MO/00001,mrp.production,QubiQ Mensaje Prueba Fabricación
+123460,Mensaje 5,2021-02-04 00:00:04,Administrator,RMA0071,crm.claim.ept,QubiQ Mensaje Prueba RMA
+123461,Mensaje 6,2021-02-04 00:00:05,Administrator,RMA007170,claim.line.ept,QubiQ Mensaje Prueba Línea RMA
+123462,Mensaje 7,2021-02-04 00:00:06,Administrator,SO003,sale.order,QubiQ Mensaje Prueba Pedido de Venta
+123463,Mensaje 8,2021-02-04 00:00:07,Administrator,WH/OUT/00004,stock.picking,QubiQ Mensaje Prueba Albarán
+123464,Mensaje 9,2021-02-04 00:00:08,Administrator,BILL/2020/0005,account.invoice,QubiQ Mensaje Prueba Factura

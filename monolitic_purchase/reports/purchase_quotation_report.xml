@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_purchasequotation_document_inherit" inherit_id="purchase.report_purchasequotation_document">
+        <xpath expr="//table//tbody//span[@t-field='order_line.product_qty']" position="replace">
+            <t t-if="order_line.max_quantity">
+                <span t-field="order_line.quantity_report"/>
+            </t>
+            <t t-else="">
+                <span t-field="order_line.product_qty"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="mrp_production_form_inherit" model="ir.ui.view">
+        <field name="name">mrp.production.form.inherit</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='miscellaneous']//field[@name='origin']" position="after">
+                <field name="partner_id"/>
+            </xpath>
+
+            <notebook position="inside">
+                <page string="Observations">
+                    <field name="observations" nolabel="1" />
+                </page>
+            </notebook>
+
+            <xpath expr="//field[@name='move_raw_ids']/tree/field[@name='quantity_done']"
+                   position="after">
+                <button class="oe_stat_button"
+                        name="print_product_actual_stock_action"
+                        type="object"
+                        icon="fa-file-text-o"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_production_sn_prod_view_id" model="ir.ui.view">
+        <field name="name">mrp.production.inherit.view.form</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='components']//field//tree//field[@name='quantity_done']" position="after">
+                <field name="sn_prod"/>
+            </xpath>
+            <xpath expr="//page[@name='components']//field//tree//field[@name='product_uom']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

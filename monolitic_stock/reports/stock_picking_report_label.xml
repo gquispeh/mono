@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Aleix De la Rubia Campamà <aleix.delarubia@qubiq.es>
+License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template id="report_stock_picking_product_template">
+        <t t-call="web.basic_layout">
+            <t t-set="move" t-value="docs.move_id"/>
+            <t t-set="product" t-value="move.product_id"/>
+            <t t-foreach="range(docs.label_qty)" t-as="l">
+                <div style="padding-bottom:60px">
+                    <t t-call="monolitic_stock.report_picking_product_label" />
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_picking_product_label">
+        <div class="page" style="page-break-inside: avoid">
+            <div style="padding-left: 1mm; width: 60%;">
+                <table>
+                    <td>
+                        <t t-if="product.barcode">
+                            <div>
+                                <img alt="Barcode" t-if="len(product.barcode) == 13" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', quote_plus(product.barcode or ''), 600, 150)" style="width: 180px;height: 70px;"/>
+                                <img alt="Barcode" t-elif="len(product.barcode) == 8" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN8', quote_plus(product.barcode or ''), 600, 150)" style="width: 180px;height: 70px;"/>
+                                <img alt="Barcode" t-else="" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', quote_plus(product.barcode or ''), 600, 150)" style="width: 180px;height: 70px;"/>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <span class="text-muted">No barcode available</span>
+                        </t>
+                    </td>
+                    <td style="text-align: left; vertical-align:top">
+                        <t t-if="product.seller_ids">
+                            <strong>CP  </strong>
+                            <span t-field="product.seller_ids[0].product_code"/>
+                            <br/>
+                        </t>
+                        <strong>Un. Embalaje    </strong>
+                        <t t-if="docs.product_uom">
+                            <span t-esc="docs.product_uom.name" style="font-size: 18px; margin-left:20px;"/>
+                        </t>
+                        <br/>
+                        <strong>Cantidad
+                        </strong>
+                        <!-- <div style="margin-top:-30px; padding-left: 30px;">
+                                <span t-esc="int(quantity)" style="font-size: 25px;padding-left: 40px;"/>
+                                <span style="text-align:right;padding-left: 80px;font-size: 51px;">
+                                    <span t-field="move.quant_sequence_fifo"/>
+                                </span>
+                            </div> -->
+                        <div style="height:76px">
+                            <div style="margin-top:-30px; padding-left: 30px;">
+                                <span t-esc="int(docs.qty_package)" style="font-size: 25px; padding-left: 50px;"/>
+                            </div>
+                            <t t-if="move.quant_sequence_fifo">
+                                <div style="margin-top:-50px; padding-left: 80px;">
+                                    <span style="text-align:right; padding-left: 80px; font-size: 50px;">
+                                        <span t-field="docs.fifo"/>
+                                    </span>
+                                </div>
+                            </t>
+                        </div>
+                    </td>
+                </table>
+                <div class="div3" style="padding-left: 70px;text-align:left;font-size: 35px;position: relative;margin-top:-30px">
+                    <strong>
+                        <span t-field="docs.reference"/>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <record id="picking_product_labels" model="ir.actions.report">
+        <field name="name">Product Labels</field>
+        <field name="model">product.label.wizard</field>
+        <field name="report_name">monolitic_stock.report_stock_picking_product_template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">Product Labels</field>
+    </record>
+
+
+    <record id="picking_product_labels" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_product_labels"/>
+    </record>
+
+</odoo>

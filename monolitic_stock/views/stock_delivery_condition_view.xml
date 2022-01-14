@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<odoo>
+
+    <!-- stock_orderpoint_reervation tree view -->
+    <record id="stock_delivery_condition_view_tree" model="ir.ui.view">
+        <field name="name">stock_delivery_condition_view_tree</field>
+        <field name="model">stock.delivery.condition</field>
+        <field name="arch" type="xml">
+            <tree create="true" editable="bottom">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="stock_delivery_condition_action" model="ir.actions.act_window">
+        <field name="name">Delivery Conditions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.delivery.condition</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_stock_delivery_condition" parent="sale.menu_sales_config" action="stock_delivery_condition_action" sequence="5"/>
+</odoo>

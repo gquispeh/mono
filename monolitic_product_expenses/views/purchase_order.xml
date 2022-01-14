@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="product_expenses_sale_order" model="ir.ui.view">
+        <field name="name">expenses.product.template.form.view</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ref']" position="after">
+                <!-- Add your fields here -->
+                <field name="doc_number"/>
+            </xpath>
+            <xpath expr="//tree/field[@name='price_unit']" position="after">
+                <field name="total_expense" force_save="1" invisible="1"/>
+                <field name="estimated_perc" force_save="1" attrs="{'readonly': [('state', 'not in', ('draft', 'sent'))]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- sale.order inherit form view -->
+    <record id="view_order_form_purchase_currency_custom" model="ir.ui.view">
+        <field name="name">sale.order.purchase.currency.inherit.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="account_payment_sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_mode_id']" position="after">
+                <field name="is_rate_editable" invisible="1"/>
+                <field name="different_agreement_rate" attrs="{'readonly': [('is_rate_editable', '=', False)]}"/>
+                <field name="rate" attrs="{'readonly': [('is_rate_editable', '=', False)], 'invisible': [('different_agreement_rate', '=', False)]}"/>
+                <field name="purchase_currency_id"/>
+                <field name="parity"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,43 @@
+# Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+{
+    "name": "Monolitic CRM",
+    "summary": "Monolitic CRM changes",
+    "version": "14.0.1.0.1",
+    "category": "CRM",
+    "website": "https://www.qubiq.es",
+    "author": "QubiQ",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
+    "depends": [
+        "crm",
+        "hr",
+        "sale",
+        "sale_crm",
+        "sales_team",
+        "monolitic_base",
+        "monolitic_hr_custom",
+        "monolitic_category_levels",
+        "import_lead",
+    ],
+    "data": [
+        "data/closing_action_data.xml",
+        "wizards/client_segmentation_wizard.xml",
+        "wizards/crm_lead_to_opportunity.xml",
+        "wizards/crm_lead_lost.xml",
+        "views/client_classification.xml",
+        "views/client_segmentation.xml",
+        "views/crm_closing_action_view.xml",
+        "views/crm_lead_view.xml",
+        "views/crm_stage.xml",
+        "views/sale_order.xml",
+        "views/res_partner_view.xml",
+        "data/res.groups.xml",
+        "security/ir.model.access.csv",
+    ],
+}

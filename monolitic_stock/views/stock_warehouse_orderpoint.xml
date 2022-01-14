@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2020 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="stock.action_orderpoint_replenish" model="ir.actions.act_window">
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_warehouse_orderpoint_inherited" model="ir.ui.view">
+        <field name="name">stock.warehouse.orderpoint.tree.inherit</field>
+        <field name="model">stock.warehouse.orderpoint</field>
+        <field name="inherit_id" ref="stock.view_warehouse_orderpoint_tree_editable"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+               <attribute name="editable"></attribute>
+            </xpath>
+
+            <field name="product_id" position="before">
+                <field name="name" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_warehouse_orderpoint_config_inherited" model="ir.ui.view">
+        <field name="name">stock.warehouse.orderpoint.tree.config.inherit</field>
+        <field name="model">stock.warehouse.orderpoint</field>
+        <field name="inherit_id" ref="stock.view_warehouse_orderpoint_tree_editable_config"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+               <attribute name="editable"></attribute>
+            </xpath>
+
+            <field name="product_id" position="before">
+                <field name="name" />
+            </field>
+        </field>
+    </record>
+
+    <!-- stock.warehouse.orderpoint inherit form view -->
+    <record id="reservation_warehouse_orderpoint_form_view" model="ir.ui.view">
+        <field name="name">stock.warehouse.orderpoint.inherit.view.form</field>
+        <field name="model">stock.warehouse.orderpoint</field>
+        <field name="inherit_id" ref="stock.view_warehouse_orderpoint_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <separator string="Partner Reservations"/>
+                <field name="orderpoint_reservation_ids">
+                    <tree editable="bottom">
+                        <field name="partner_id" />
+                        <field name="min_quantity" />
+                    </tree>
+                </field>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="security_stock"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

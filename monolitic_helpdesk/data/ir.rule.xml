@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="helpdesk_user_rule" model="ir.rule">
+        <field name="name">Helpdesk User</field>
+        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('helpdesk.group_helpdesk_user'))]"/>
+        <field name="domain_force">['|', '|', '|', '|',
+            ('user_id','=',user.id),
+            ('author_id','=',user.id),
+            ('user_id', '=', user.replacement_ids.ids),
+            ('message_partner_ids', 'in', [user.partner_id.id]),
+            ('team_id.manager_id','=',user.id)]
+        </field>
+        <field name="active" eval="True" />
+    </record>
+    <record id="helpdesk_manager_rule" model="ir.rule">
+        <field name="name">Helpdesk User manager</field>
+        <field name="model_id" ref="helpdesk.model_helpdesk_team"/>
+        <field name="global" eval="True" />
+        <field name="perm_read" eval="True" />
+        <field name="perm_create" eval="False" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_unlink" eval="True" />
+        <field name="groups" eval="[(4, ref('helpdesk.group_helpdesk_user'))]"/>
+        <field name="domain_force">[('manager_id','=',user.id)]</field>
+        <field name="active" eval="True" />
+    </record>
+</odoo>

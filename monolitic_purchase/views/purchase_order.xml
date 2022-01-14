@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="purchase_order_kpis_tree_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.kpis.tree.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_view_tree_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.view.tree.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_untaxed']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='amount_total']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@class='oe_subtotal_footer oe_right']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='product_qty']" position="after">
+               <field name="max_quantity"/>
+            </xpath>
+            <xpath expr="//page[@name='purchase_delivery_invoice']/group" position='after'>
+                <separator string="Related Sale Orders"/>
+                <field name="related_sale_orders" options="{'no_create': True}" nolabel="1"/>
+			</xpath>
+
+            <xpath expr="//field[@name='order_line']/form//field[@name='date_planned']" position="before">
+                <field name="requested_shipping_date"/>
+                <field name="commitment_date"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='date_planned']" position="attributes">
+                <attribute name="optional">show</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='date_planned']" position="before">
+                <field name="requested_shipping_date"/>
+                <field name="commitment_date"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_inherit_tree_view_custom" model="ir.ui.view">
+        <field name="name">purchase.order.line.inherit.view.tree</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_planned']" position="before">
+                <field name="requested_shipping_date" widget="date"/>
+                <field name="commitment_date" widget="date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Incoming Products Menu since it disappeared on 14 -->
+    <record id="action_receipt_picking_move" model="ir.actions.act_window">
+        <field name="name">Incoming Products</field>
+        <field name="res_model">stock.move</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain" eval="[('picking_id.picking_type_id.code','=','incoming'), ('location_id.usage','!=','internal'), ('location_dest_id.usage', '=', 'internal')]"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('stock.view_move_tree_receipt_picking')})]"/>
+        <field name="context">{'product_receive': True, 'search_default_future': True}</field>
+    </record>
+
+    <menuitem action="action_receipt_picking_move" id="menu_action_picking_tree_in_move" parent="purchase.menu_purchase_products" sequence="25" name="Incoming Products"/>
+
+</odoo>

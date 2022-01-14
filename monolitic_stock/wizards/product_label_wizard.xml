@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="product_label_wizard_form_view" model="ir.ui.view">
+        <field name="name">product.label.wizard.form.view</field>
+        <field name="model">product.label.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <label for="reference"></label>
+                        <field name="reference"/>
+                        <group>
+                            <field name="qty_package"/>
+                            <field name="label_qty"/>
+
+                        </group>
+                        <group>
+                            <field name="product_uom" options="{'no_create_edit': True}" string="Unidad Embalaje"/>
+                            <field name="fifo" string="FIFO"/>
+                        </group>
+                        <field name="product_tmpl_id" invisible="1"/>
+                        <field name="product_id" invisible="1"/>
+                    </group>
+                </sheet>
+                <footer position="inside">
+                    <button name="%(monolitic_stock.report_product_template_wizard_label)d" type="action" string="Print Labels" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="stock_move_label_wizard_form_view" model="ir.ui.view">
+        <field name="name">stock.move.label.wizard.form.view</field>
+        <field name="model">product.label.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <label for="reference"></label>
+                        <field name="reference"/>
+                        <group>
+                            <field name="qty_package"/>
+                            <field name="label_qty"/>
+
+                        </group>
+                        <group>
+                            <field name="product_uom" options="{'no_create_edit': True}" string="Unidad Embalaje"/>
+                            <field name="fifo" string="FIFO" readonly="1"/>
+                        </group>
+                        <field name="product_tmpl_id" invisible="1"/>
+                        <field name="product_id" invisible="1"/>
+                        <field name="move_id" invisible="1"/>
+                    </group>
+                </sheet>
+                <footer position="inside">
+                    <button name="%(monolitic_stock.picking_product_labels)d" type="action" string="Print Labels" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_template_label_wizard" model="ir.actions.act_window">
+        <field name="name">Print Labels</field>
+        <field name="res_model">product.label.wizard</field>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_product_template_label_wizard" model="ir.actions.act_window">
+        <field name="view_id" ref="product_label_wizard_form_view"/>
+        <field name="context">{'default_product_tmpl_id': active_id}</field>
+    </record>
+
+    <record id="action_product_label_wizard" model="ir.actions.act_window">
+        <field name="name">Print Labels</field>
+        <field name="res_model">product.label.wizard</field>
+        <field name="binding_model_id" ref="product.model_product_product"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_product_label_wizard" model="ir.actions.act_window">
+        <field name="view_id" ref="product_label_wizard_form_view"/>
+        <field name="context">{'default_product_id': active_id}</field>
+    </record>
+
+    <record id="action_stock_move_label_wizard" model="ir.actions.act_window">
+        <field name="name">Print Labels</field>
+        <field name="res_model">product.label.wizard</field>
+        <field name="binding_model_id" ref="stock.model_stock_move"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_stock_move_label_wizard" model="ir.actions.act_window">
+        <field name="view_id" ref="stock_move_label_wizard_form_view"/>
+        <field name="context">{'default_move_id': active_id}</field>
+    </record>
+</odoo>

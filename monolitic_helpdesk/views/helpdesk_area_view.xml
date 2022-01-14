@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- helpdesk.area tree view -->
+     <record id="helpdesk_area_view_tree" model="ir.ui.view">
+        <field name="name">helpdesk.area.view.tree</field>
+        <field name="model">helpdesk.area</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string="Tag">
+                <field name="name"/>
+                <field name="helpdesk_team_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- helpdesk.area action window -->
+    <record id="helpdesk_area_action" model="ir.actions.act_window">
+        <field name="name">Helpdesk Area</field>
+        <field name="res_model">helpdesk.area</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new helpdesk area
+            </p><p>
+                Area allows to organize tickets.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="helpdesk_area_menu" action="helpdesk_area_action"
+        sequence="1" parent="helpdesk.helpdesk_menu_config"/>
+
+</odoo>

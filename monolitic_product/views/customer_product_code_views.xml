@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Menu, tree, search and action for Customer Product Codes -->
+    <record id="customer_product_code_tree_view" model="ir.ui.view">
+        <field name="name">product.customerinfo.tree.view</field>
+        <field name="model">product.customerinfo</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="name" />
+                <field name="product_tmpl_id" />
+                <field name="product_code" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_product_code_search" model="ir.ui.view">
+        <field name="name">product.customerinfo.search</field>
+        <field name="model">product.customerinfo</field>
+        <field name="arch" type="xml">
+            <search string="Search Target Amounts">
+                <field name="name" />
+                <field name="product_tmpl_id" />
+                <field name="product_code" />
+                <group string="Group By" name="groupby">
+                    <filter name="name" string="Customer" context="{'group_by': 'name'}"/>
+                    <filter name="product_tmpl_id" string="Product" context="{'group_by': 'product_tmpl_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_customer_product_code" model="ir.actions.act_window">
+        <field name="name">Customer product codes</field>
+        <field name="res_model">product.customerinfo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_id" ref="customer_product_code_tree_view"/>
+        <field name="search_view_id" ref="customer_product_code_search"/>
+    </record>
+
+    <menuitem id="menu_customer_product_code" name="Customer product codes" parent="sale.product_menu_catalog" action="action_customer_product_code" sequence="2"/>
+
+</odoo>

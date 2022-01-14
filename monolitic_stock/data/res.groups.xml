@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="group_stock_view" model="res.groups">
+        <field name="name">Stock view</field>
+        <field name="category_id" ref="base.module_category_inventory_inventory"/>
+        <field name="menu_access" eval="[
+            (4, ref('stock.menu_stock_root')),
+            (4, ref('stock.stock_picking_type_menu')),
+            (4, ref('stock.menu_stock_warehouse_mgmt')),
+            (4, ref('stock.all_picking')),
+            (4, ref('monolitic_stock.menu_outgoing_picking_lines')),
+            (4, ref('stock.menu_reordering_rules_replenish')),
+            (4, ref('stock_picking_batch.stock_picking_batch_menu')),
+            (4, ref('stock.menu_action_inventory_form')),
+            (4, ref('monolitic_stock.inventory_adjustment_lines')),
+            (4, ref('stock.menu_stock_scrap')),
+            (4, ref('stock_landed_costs.menu_stock_landed_cost')),
+            (4, ref('stock.menu_stock_inventory_control')),
+            (4, ref('sale.menu_products')),
+            (4, ref('stock.menu_product_variant_config_stock')),
+            (4, ref('stock.product_product_menu')),
+            (4, ref('stock.menu_action_production_lot_form')),
+            (4, ref('stock.menu_warehouse_report')),
+            (4, ref('stock_enterprise.stock_dashboard_menuitem')),
+            (4, ref('stock.menu_valuation')),
+            (4, ref('stock.menu_forecast_inventory')),
+            (4, ref('stock_account.menu_valuation')),
+            (4, ref('stock.stock_move_menu')),
+            (4, ref('stock.stock_move_line_menu')),
+            (4, ref('stock.menu_stock_config_settings')),
+            (4, ref('stock.menu_warehouse_config')),
+            (4, ref('stock.menu_action_warehouse_form')),
+            (4, ref('stock.menu_action_location_form')),
+            (4, ref('stock.menu_action_rules_form')),
+            (4, ref('stock.menu_routes_config')),
+            (4, ref('stock.menu_pickingtype')),
+            (4, ref('stock.menu_putaway')),
+            (4, ref('stock.menu_product_in_config_stock')),
+            (4, ref('stock.menu_product_category_config_stock')),
+            (4, ref('stock.menu_attribute_action')),
+            (4, ref('stock.menu_reordering_rules_config')),
+            (4, ref('stock.menu_wms_barcode_nomenclature_all')),
+            (4, ref('stock.product_uom_menu')),
+            (4, ref('stock.menu_stock_uom_categ_form_action')),
+            (4, ref('stock.menu_stock_uom_form_action')),
+            (4, ref('monolitic_product_expenses.product_expenses_menu_categ')),
+            (4, ref('delivery.menu_delivery')),
+            (4, ref('delivery.menu_action_delivery_carrier_form')),
+        ]"/>
+    </record>
+</odoo>

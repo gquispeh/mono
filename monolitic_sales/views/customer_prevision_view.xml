@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="customer_prevision_form_view" model="ir.ui.view">
+        <field name="name">customer.prevision.form.view</field>
+        <field name="model">customer.prevision</field>
+        <field name="arch" type="xml">
+            <form string="Customer Prevision">
+                <sheet>
+                    <group>
+                        <field name="year" />
+                        <label for="market_segmentation_id" />
+                        <span>
+                            <button name="%(monolitic_crm.client_segmentation_wizard_action)d" string="Assistant" context="{'default_num_required': 2, 'field_to_write': 'market_segmentation_id'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                            <field name="market_ids" invisible="1"/>
+                            <field name="market_segmentation_id" domain="[('id', '=', market_ids)]" options="{'no_create': True, 'no_create_edit': True}" context="{'form_view_ref': 'monolitic_crm.monolitic_client_segmentation_view_form'}"/>
+                        </span>
+                        <label for="product_segmentation_id" />
+                        <span>
+                            <button name="%(monolitic_product.product_category_wizard_action)d" string="Assistant" context="{'default_num_required': 2, 'field_to_write': 'product_segmentation_id'}" icon="fa-cogs" type="action" class="oe_link oe_edit_only"/>
+                            <field name="product_segmentation_id" domain="[('level_parents', '>=', 2)]" options="{'no_create': True, 'no_create_edit': True}" />
+                        </span>
+                        <field name="user_id" domain="[('is_commercial', '=', True)]"/>
+                        <field name="partner_id" />
+                    </group>
+
+                    <separator string="Month / Amount"/>
+                    <group>
+                        <group>
+                            <field name="total_amount" onchange="_onchange_total_amount" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="monthly_prevision_amount_ids" nolabel="1" colspan="4"
+                            widget="one2many_list" context="{'default_commercial_target_id': active_id}" onchange="_onchange_month_prevision_amounts">
+                            <tree string="Customer Prevision Monthly Amounts" editable="bottom" create="false">
+                                <field name="month" />
+                                <field name="amount" />
+                                <field name="amount_type" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

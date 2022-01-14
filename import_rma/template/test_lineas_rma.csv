@@ -1,0 +1,2 @@
+"product_id"|"product_description"|"product_categ_id"|"product_reference"|"product_manufacturer"|"manufacturer_rma"|"done_qty"|"quantity"|"return_qty"|"rma_reason_id"|"claim_type"|"is_create_refund"|"total_amount"|"warranty"|"ept_state_id"|"code"
+"DIODO 01A 1000V DO-41"||"SEMICONDUCTORES & ELECTROMECÁNICOS / TRADE COMPONENTES / COMPONENTE ELECTRONICO / DIODO"|"#1N4007-T+A"|"Testing Test"|12345|0|0|0|"Repair"|"repair"|"True"|100|"True"|"Draft"|"RMA0133"

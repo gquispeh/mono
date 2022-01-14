@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Aleix De la Rubia Campamà <aleix.delarubia@qubiq.es>
+License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- client.segmentation tree view -->
+    <record id="monolitic_client_segmentation_tree_product_list" model="ir.ui.view">
+        <field name="name">monolitic_client.segmentation.view.tree</field>
+        <field name="model">monolitic_client.segmentation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="complete_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Segmentación del cliente action view -->
+    <record id="action_monolitic_client_segmentation" model="ir.actions.act_window">
+        <field name="name">Segmentación del cliente</field>
+        <field name="res_model">monolitic_client.segmentation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_monolitic_client_segmentation_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="monolitic_client_segmentation_tree_product_list"/>
+        <field name="act_window_id" ref="action_monolitic_client_segmentation"/>
+    </record>
+
+    <!-- business.type tree view -->
+    <record id="monolitic_business_type_tree_product_list" model="ir.ui.view">
+        <field name="name">monolitic_business.type.view.tree</field>
+        <field name="model">monolitic_business.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--  business.type action view -->
+    <record id="action_monolitic_business_type" model="ir.actions.act_window">
+        <field name="name">Línea de negocio</field>
+        <field name="res_model">monolitic_business.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_monolitic_business_type_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="monolitic_business_type_tree_product_list"/>
+        <field name="act_window_id" ref="action_monolitic_business_type"/>
+    </record>
+
+    <!-- client.type tree view -->
+    <record id="monolitic_client_type_tree_product_list" model="ir.ui.view">
+        <field name="name">monolitic_client.type.view.tree</field>
+        <field name="model">monolitic_client.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--  client.type action view -->
+    <record id="action_monolitic_client_type" model="ir.actions.act_window">
+        <field name="name">Clasificación estratégica del cliente</field>
+        <field name="res_model">monolitic_client.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_monolitic_client_type_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="monolitic_client_type_tree_product_list"/>
+        <field name="act_window_id" ref="action_monolitic_client_type"/>
+    </record>
+
+    <menuitem id="menu_action_client_segmentation" parent="crm.crm_menu_config" action="action_monolitic_client_segmentation" sequence="16"/>
+    <menuitem id="menu_action_business_type" parent="crm.crm_menu_config" action="action_monolitic_business_type" sequence="17"/>
+    <menuitem id="menu_action_client_type" parent="crm.crm_menu_config" action="action_monolitic_client_type" sequence="18"/>
+
+</odoo>

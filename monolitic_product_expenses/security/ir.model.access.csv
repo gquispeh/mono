@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_ecoraee_wizard,access_report_ecoraee_wizard,model_report_ecoraee_wizard,base.group_user,1,1,1,1
+access_report_expenses_wizard,access_report_expenses_wizard,model_report_expense_wizard,base.group_user,1,1,1,1

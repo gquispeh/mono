@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.ui.view" id="product.view_partner_property_form">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+    <record id="res_partner_product_view_buttons" model="ir.ui.view">
+        <field name="name">res.partner.product.view.buttons</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority">5</field>
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>
+        <field name="arch" type="xml">
+            <div class="oe_button_box" position="inside">
+                <button class="oe_stat_button" name="action_view_served_product_sales" type="object" icon="fa-signal" help="Products served in the last 365 days">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="served_products" widget="statinfo" nolabel="1" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">Served Products</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo>

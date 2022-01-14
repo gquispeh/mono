@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="stock_inventory_description_form_inherit" model="ir.ui.view">
+        <field name="name">stock.inventory.form.inherit</field>
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock.stock_inventory_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_qty']" position='after'>
+                <field name="description" placeholder="Description for the inventory adjustment"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_inventory_barcode_inherit" model="ir.ui.view">
+        <field name="name">stock.inventory.barcode.inherit</field>
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock_barcode.stock_inventory_line_barcode"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_qty']" position='after'>
+                <field name="description" placeholder="Description for the inventory adjustment"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- stock.inventory.line inherit form view -->
+    <record id="stock_move_line_adjust_view_id" model="ir.ui.view">
+        <field name="name">stock.inventory.line.inherit.view.form</field>
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock.stock_inventory_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='location_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_qty']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="product_uom_id"/>
+                <field name="location_id"/>
+                <field name="prod_lot_id"/>
+                <field name="theoretical_qty"/>
+                <field name="product_qty"/>
+                <field name="difference"/>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field name="create_date"/>
+                <field name="inventory_id"/>
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+               <attribute name="default_order">create_date desc</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_stock_inventory_adjustment_lines" model="ir.actions.act_window">
+        <field name="name">Inventory adjustment lines</field>
+        <field name="res_model">stock.inventory.line</field>
+        <field name="domain">[('state', '=', 'done'), ('inventory_id', '!=', False), ('difference', '!=', 0)]</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem
+        id="inventory_adjustment_lines"
+        name="Inventory adjustment lines"
+        action="action_stock_inventory_adjustment_lines"
+        parent="stock.menu_stock_warehouse_mgmt"
+        sequence="45"/>
+
+</odoo>

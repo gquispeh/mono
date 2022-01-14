@@ -1,0 +1,355 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-16 16:36+0000\n"
+"PO-Revision-Date: 2021-12-16 16:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__activity_id
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__activity_id
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_company__adress_report_header
+msgid "Adress Report Header"
+msgstr "Encabezado del informe de dirección"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_architect_interior_design
+msgid "Architect and Interior Designer"
+msgstr "Arquitecto e Interiorista"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__attachment_ids
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_builder
+msgid "Builder"
+msgstr "Constructora"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_cabler
+msgid "Cabler"
+msgstr "Cableador"
+
+#. module: monolitic_base
+#: model:ir.model,name:monolitic_base.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_competence
+msgid "Competence"
+msgstr "Competencia"
+
+#. module: monolitic_base
+#: model:ir.model,name:monolitic_base.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_base
+#: model:ir.actions.act_window,name:monolitic_base.action_contact_mail_options_form
+#: model:ir.model,name:monolitic_base.model_contact_mail_options
+#: model:ir.ui.menu,name:monolitic_base.menu_contact_mail_options
+msgid "Contact Mail Options"
+msgstr "Opciones de mailings"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__create_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__create_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__create_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__create_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__create_date
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__create_date
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__create_date
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__create_date
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_base
+#: model:ir.actions.act_window,name:monolitic_base.credit_policy_view_action
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__credit_policy
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__credit_policy
+#: model:ir.ui.menu,name:monolitic_base.credit_policy_view_menu
+msgid "Credit Policy"
+msgstr "Póliza de crédito"
+
+#. module: monolitic_base
+#: model:ir.model.fields.selection,name:monolitic_base.selection__res_partner_activity__partner_type__customer
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes_mixing__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_res_company__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__display_name
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_distributor
+msgid "Distributor"
+msgstr "Distribuidor"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_electronic_fitter
+msgid "Electronic Fitter"
+msgstr "Montador electrónico"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_engineering
+msgid "Engineering and Consulting"
+msgstr ""
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__exclude_on_mailing
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__exclude_on_mailing
+msgid "Exclude on mailing"
+msgstr "Excluir en mailings"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_exploiter
+msgid "Exploiter"
+msgstr "Explotadora"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__extra_limit
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__extra_limit
+msgid "Extra Limit"
+msgstr "Límite Extra"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_franchise
+msgid "Franchise"
+msgstr "Franquicia"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__function
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__function
+msgid "Function"
+msgstr ""
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__id
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__id
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__id
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes_mixing__id
+#: model:ir.model.fields,field_description:monolitic_base.field_res_company__id
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__id
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__id
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__include_on_mailing
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__include_on_mailing
+msgid "Include on mailing"
+msgstr "Incluir en mailings"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_installer_and_maintenance
+msgid "Installer and Maintenance"
+msgstr "Instalador y Mantenimiento"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_integrator
+msgid "Integrator"
+msgstr "Integrador"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes_mixing____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_res_company____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity____last_update
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__write_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__write_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__write_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__write_uid
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__write_date
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__write_date
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__write_date
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__write_date
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_base
+#: model_terms:ir.ui.view,arch_db:monolitic_base.monolitic_custom_header
+msgid "Logo"
+msgstr ""
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_manufacturer
+msgid "Manufacturer"
+msgstr "Fabricante"
+
+#. module: monolitic_base
+#: model:ir.model,name:monolitic_base.model_ml_notes_mixing
+msgid "Mixing for Notes"
+msgstr "Mezclar para notas"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_credit_policy__name
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__name
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_job__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__note
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes_mixing__note_ids
+msgid "Note"
+msgstr "Nota"
+
+#. module: monolitic_base
+#: code:addons/monolitic_base/models/ml_notes.py:0
+#: model:ir.actions.act_window,name:monolitic_base.ml_notes_action
+#: model_terms:ir.ui.view,arch_db:monolitic_base.ml_notes_mixing_view_form
+#, python-format
+msgid "Notes"
+msgstr "Notas"
+
+#. module: monolitic_base
+#: model:ir.model,name:monolitic_base.model_ml_notes
+msgid "Notes for models"
+msgstr "Notas para modelos"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__number_of_invoice_copies
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__number_of_invoice_copies
+msgid "Number of Invoice Copies"
+msgstr "Nº copias factura"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_other
+msgid "Other"
+msgstr "Otra"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_particular
+msgid "Particular"
+msgstr ""
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__partner_activity_ids
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__partner_activity_ids
+msgid "Partner Activity"
+msgstr "Actividad de socios"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner_activity__partner_type
+msgid "Partner Type"
+msgstr "Tipo de contacto"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_res_partner__recommended_annual_visits
+#: model:ir.model.fields,field_description:monolitic_base.field_res_users__recommended_annual_visits
+msgid "Recommended annual visits"
+msgstr "Visitas anuales recomendadas"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__res_id
+msgid "Res"
+msgstr ""
+
+#. module: monolitic_base
+#: model:ir.actions.act_window,name:monolitic_base.action_res_partner_form
+#: model:ir.model,name:monolitic_base.model_res_partner_activity
+#: model:ir.ui.menu,name:monolitic_base.menu_res_partner_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_base.view_res_partner_activity
+#: model_terms:ir.ui.view,arch_db:monolitic_base.view_res_partner_activity_tree
+#: model_terms:ir.ui.view,arch_db:monolitic_base.view_res_partner_job
+#: model_terms:ir.ui.view,arch_db:monolitic_base.view_res_partner_job_tree
+msgid "Res Partner Activity"
+msgstr "Actividades"
+
+#. module: monolitic_base
+#: model:ir.actions.act_window,name:monolitic_base.action_res_partner_job_form
+#: model:ir.model,name:monolitic_base.model_res_partner_job
+#: model:ir.ui.menu,name:monolitic_base.menu_res_partner_job
+msgid "Res Partner Job"
+msgstr "Puestos de trabajo"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_shop
+msgid "Shop"
+msgstr "Tienda"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_start_up
+msgid "Start up"
+msgstr "Start Up"
+
+#. module: monolitic_base
+#: model:ir.model.fields.selection,name:monolitic_base.selection__res_partner_activity__partner_type__supplier
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: monolitic_base
+#: model_terms:ir.ui.view,arch_db:monolitic_base.monolitic_custom_header
+msgid "Tel:"
+msgstr "Tel.:"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_training_research_center
+msgid "Training and Research Center"
+msgstr "Centro Formación e Investigación"
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_ml_notes__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: monolitic_base
+#: model:res.partner.activity,name:monolitic_base.res_partner_activity_warehouse
+msgid "Warehouse"
+msgstr "Almacén"
+
+#. module: monolitic_base
+#: model:ir.model,name:monolitic_base.model_credit_policy
+msgid "credit.policy"
+msgstr ""
+
+#. module: monolitic_base
+#: model:ir.model.fields,field_description:monolitic_base.field_contact_mail_options__name
+msgid "name"
+msgstr "Nombre"

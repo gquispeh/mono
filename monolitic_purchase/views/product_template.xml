@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Xavier Jimenez <xavier.jimenez@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record id="product_template_lead_time" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="monolitic_stock.product_template_extend_warranty"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='warranty']" position="inside">
+                <label name="lead_time" for="lead_time"/>
+                <div>
+                    <field name="lead_time" class="oe_inline"/>
+                    <field name="lead_time_type" class="oe_inline" attrs="{'required': [('type', '=', 'product')]}"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- product.template inherit form view -->
+    <record id="product_template_supplier_internal_ref_view_id_" model="ir.ui.view">
+        <field name="name">supplier.internal.ref.view.form.custom</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="purchase.view_product_supplier_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='purchase_method']" position="after">
+                <field name="supplier_internal_ref"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- product.supplierinfo inherit form view -->
+    <record id="product_supplierinfo_archive_filter_inherit_view_id" model="ir.ui.view">
+        <field name="name">product.supplierinfo.inherit.view.form.archived.filter</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='archived']" position="attributes">
+                <attribute name="domain">['|',('active', '=', False),('date_end', '&lt;',  (context_today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d'))]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_form_inherit" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+                <field name="incoming_inspection"/>
+                <field name="rohs_regulation"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_template_product_form_inherit" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+                <field name="incoming_inspection"/>
+                <field name="rohs_regulation"/>
+            </field>
+
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="attrs">{'invisible': [('product_variant_count', '&gt;', 1)], 'required': [('type', '=', 'product')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_common_form_inherit" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='standard_price']" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </xpath>
+
+            <field name="standard_price" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+                <attribute name="attrs">{'readonly': True}</attribute>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="product_template_product_tree_inherit" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="standard_price" position="attributes">
+                <attribute name="groups">monolitic_purchase.group_product_price_view</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_product_tree_inherit" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="standard_price" position="attributes">
+                <attribute name="groups">account.group_account_invoice,purchase.group_purchase_user,stock.group_stock_user</attribute>
+            </field>
+        </field>
+    </record>
+
+    <!-- product.template buttons inherit form view -->
+    <record  model="ir.ui.view" id="purchase.view_product_template_purchase_buttons_from">
+        <field name="groups_id" eval="False"/>
+    </record>
+
+</odoo>

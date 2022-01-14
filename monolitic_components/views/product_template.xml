@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2019 Jesus Ramoneda <jesus.ramoneda@qubiq.es>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <!-- product.template inherit form view -->
+    <record id="components_form_view" model="ir.ui.view">
+        <field name="name">components.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <field name="type" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_component', '=', True)]}</attribute>
+            </field>
+            <field name="type" position="before">
+                <field name="is_component" readonly="1" invisible="1"/>
+            </field>
+            <xpath expr="//page[@name='variants']" position="after">
+                <page string="Component Info" name="components" attrs="{'invisible': [('is_component','=', False)]}">
+                    <group>
+                        <group>
+                            <field name="purchase_date"/>
+                            <field name="last_check_date"/>
+                            <field name="user_id"/>
+                            <field name="component_state"/>
+                        </group>
+                        <group>
+                            <field name="is_accounting_active"/>
+                            <field name="is_insured"/>
+                            <field name="component_location"/>
+                            <field name="component_quantity"/>
+                            <field name="attribute_ids" invisible="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='attribute_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_create_edit': True}</attribute>
+                <attribute name="domain">[('id', 'in', parent.attribute_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='value_ids']" position="attributes">
+                <attribute name="options">{'create': True, 'no_open': True, 'create_edit': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!-- product.template inherit form view -->
+    <record id="component_sale_form_view" model="ir.ui.view">
+        <field name="name">component.sale.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="sale_ok" position="before">
+                <div readonly="1" attrs="{'invisible': [('is_component', '=', False)]}">
+                    <field name="is_component" nolabel="1" attrs="{'readonly': True}"/>
+                    <label for="is_component" string="Is a component"/>
+                </div>
+            </field>
+            <field name="list_price" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_component','=', True)]}</attribute>
+            </field>
+
+            <field name="categ_id" position="before">
+                <field name="component_type" attrs="{'invisible': [('is_component','=', False)]}"/>
+            </field>
+            <xpath expr="//field[@name='sale_ok']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_component','=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//label[@for='sale_ok']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_component','=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='purchase_ok']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_component','=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//label[@for='purchase_ok']" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_component','=', True)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- product.template inherit form view -->
+    <record id="component_sale_form_view_id" model="ir.ui.view">
+        <field name="name">component.sale.form.view.id</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="account.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='taxes_id']" position="after">
+                <field name="is_component" readonly="1" invisible="1"/>
+            </xpath>
+            <field name="taxes_id" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_component','=', True)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <!-- product.template tree view -->
+    <record id="component_view_tree" model="ir.ui.view">
+        <field name="name">product.template.view.tree</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="last_check_date"/>
+                <field name="component_state"/>
+                <field name="component_quantity"/>
+                <field name="user_id"/>
+                <field name="component_type"/>
+                <field name="attribute_line_ids" string="Component Attributes"
+                    widget="many2many_tags"
+                    />
+                <field name="component_location"/>
+                <field name="standard_price" sum="Total"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- product.template search view -->
+    <record id="component_view_search" model="ir.ui.view">
+        <field name="name">component.view.search</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <search string="Search Components">
+                <field name="name"/>
+                <field name="attribute_line_ids"/>
+                <field name="component_type"/>
+                <field name="user_id"/>
+                <filter string="Assigned to me" name="me" domain="[('user_id','=', uid)]"/>
+                <filter string="Operative" name="operative" domain="[('component_state','=','work')]"/>
+                <filter string="Accounting" name="accounting" domain="[('is_accounting_active','=',True)]"/>
+                <filter string="Insured" name="insured" domain="[('is_insured','=',True)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_state" string="State" context="{'group_by':'component_state'}" help=""/>
+                    <filter name="group_by_user_id" string="Employee" context="{'group_by':'user_id'}" help=""/>
+                    <filter name="group_by_component_type" string="Component Type" context="{'group_by':'component_type'}" help=""/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale.product_template_action" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+    </record>
+    <record id="purchase.product_normal_action_puchased" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+    </record>
+    <record id="stock.product_template_action_product" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+        <field name="context">{}</field>
+    </record>
+    <record id="mrp.product_template_action" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+    </record>
+    <record id="product.product_template_action" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+    </record>
+    <record id="account.product_product_action_sellable" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+    </record>
+    <record id="account.product_product_action_purchasable" model="ir.actions.act_window">
+        <field name="domain">[('is_component', '=', False)]</field>
+    </record>
+
+    <!-- product.template action window -->
+    <record id="components_action_view" model="ir.actions.act_window">
+        <field name="name">Components</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_id" ref="component_view_tree"/>
+        <field name="search_view_id" ref="component_view_search"/>
+        <field name="domain">[('is_component', '=', True)]</field>
+        <field name="context">
+            {'default_is_component': 1, 'default_type': 'consu',
+            'default_sale_ok': 0, 'default_purchase_ok': 1,
+            'default_categ_id': 5,
+            'search_default_operative': 1}
+        </field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new Component Here
+            </p>
+        </field>
+    </record>
+
+    <!--Menu -->
+    <menuitem id="components_menu_act" name="Inventory TIC" parent="components_menu_parent"
+        action="components_action_view" sequence="1"/>
+
+</odoo>

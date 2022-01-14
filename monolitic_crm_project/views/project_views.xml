@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="edit_project_inherit" model="ir.ui.view">
+            <field name="name">edit.project.inherit</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="lead_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

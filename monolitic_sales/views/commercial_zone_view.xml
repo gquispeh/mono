@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="commercial_zone_tree_view" model="ir.ui.view">
+        <field name="name">commercial.zone.tree.view</field>
+        <field name="model">commercial.zone</field>
+        <field name="arch" type="xml">
+            <tree string="Commercial Zones" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_commercial_zone" model="ir.actions.act_window">
+        <field name="name">Commercial Zones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">commercial.zone</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_commercial_zone" name="Commercial Zone" parent="contacts.menu_localisation"
+        action="action_commercial_zone" sequence="3"/>
+
+</odoo>

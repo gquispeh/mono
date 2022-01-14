@@ -1,0 +1,589 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* monolitic_crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-30 14:38+0000\n"
+"PO-Revision-Date: 2021-12-30 14:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__allow_categ_ids
+msgid "Allow Categ"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__assembler_id
+msgid "Assembler"
+msgstr "Montador"
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.monolitic_crm_form_view
+msgid "Assistant"
+msgstr "Asistente"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__business_option
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__business_option
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_users__business_option
+msgid "Business Option"
+msgstr "Posibilidad de negocio"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_crm_stage
+msgid "CRM Stages"
+msgstr "Fases del CRM"
+
+#. module: monolitic_crm
+#: model:res.groups,name:monolitic_crm.group_crm_edition
+msgid "CRM edition"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:res.groups,name:monolitic_crm.group_crm_view
+msgid "CRM view"
+msgstr ""
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.client_segmentation_wizard_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__child_id
+msgid "Child Categories"
+msgstr "Categorías hijas"
+
+#. module: monolitic_crm
+#: model:ir.actions.act_window,name:monolitic_crm.action_monolitic_client_classification
+#: model:ir.ui.menu,name:monolitic_crm.menu_action_monolitic_client_classification
+msgid "Clasificación estratégica del cliente"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_client_segmentation_wizard
+msgid "Client Segmentation Levels Wizard"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__name
+msgid "Client Strategic Classification"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__closing_action_id
+msgid "Closing Action"
+msgstr "Acción de cierre"
+
+#. module: monolitic_crm
+#: model:ir.actions.act_window,name:monolitic_crm.action_closing_actions
+#: model:ir.ui.menu,name:monolitic_crm.menu_closing_actions
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.closing_actions_tree_view
+msgid "Closing Actions"
+msgstr "Acciones de cierre"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__commercial_user_ids
+#: model:ir.model.fields,field_description:monolitic_crm.field_sale_order__commercial_user_ids
+msgid "Commercial User"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__competence_distributor
+msgid "Competence Distributor"
+msgstr "Distribuidor competencia"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__competence_maker
+msgid "Competence Maker"
+msgstr "Fabricante competencia"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__competence_reference
+msgid "Competence Reference"
+msgstr "Referencia competencia"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__competence_target
+msgid "Competence Target"
+msgstr "Target competencia (EUR)"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__complete_name
+msgid "Complete name"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_res_partner
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.crm_case_form_view_oppor_inherit
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.crm_lead_case_tree
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_crm_lead2opportunity_partner_mass
+msgid "Convert Lead to Opportunity (in mass)"
+msgstr "Convertir Iniciativa en Oportunidad (en masa)"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_crm_lead2opportunity_partner
+msgid "Convert Lead to Opportunity (not in mass)"
+msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__create_uid
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__create_uid
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__create_uid
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__create_date
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__create_date
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__create_date
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner__date_next_stage
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner_mass__date_next_stage
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__date_next_stage
+msgid "Date next stage"
+msgstr "Fecha próxima etapa"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__date_previous_comment
+msgid "Date previous comment"
+msgstr "Fecha último comentario"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__date_previous_stage
+msgid "Date previous stage"
+msgstr "Fecha última etapa"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__description_lost
+msgid "Descripción Perdida"
+msgstr "Descripción Perdido"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner_mass__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead_lost__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_stage__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__display_name
+#: model:ir.model.fields,field_description:monolitic_crm.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__engineer_id
+msgid "Engineer"
+msgstr "Ingeniería"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,help:monolitic_crm.field_crm_lead2opportunity_partner__date_deadline
+#: model:ir.model.fields,help:monolitic_crm.field_crm_lead2opportunity_partner_mass__date_deadline
+#: model:ir.model.fields,help:monolitic_crm.field_crm_lead__date_deadline
+msgid "Estimate of the date on which the opportunity will be won."
+msgstr "Fecha estimada en la que la oportunidad será ganada."
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner__date_deadline
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner_mass__date_deadline
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__date_deadline
+msgid "Expected Closing"
+msgstr "Cierre previsto"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_crm_lead_lost
+msgid "Get Lost Reason"
+msgstr "Ponga la razón de la perdida"
+
+#. module: monolitic_crm
+#: model:crm.closing.action,name:monolitic_crm.crm_closing_action_get_credit
+msgid "Get credit"
+msgstr "Conseguir crédito"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__hr_department_id
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__hr_department_id
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_users__hr_department_id
+msgid "HR department"
+msgstr "Departamento HR"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__hide_level_2
+msgid "Hide Level 2"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__hide_level_3
+msgid "Hide Level 3"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__hide_level_4
+msgid "Hide Level 4"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__hide_level_5
+msgid "Hide Level 5"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__hide_express
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_stage__hide_express
+msgid "Hide in OPPN Express"
+msgstr "Ocultar en OPPN Express"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner_mass__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead_lost__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_stage__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__id
+#: model:ir.model.fields,field_description:monolitic_crm.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:crm.closing.action,name:monolitic_crm.crm_closing_action_improve_price
+msgid "Improve price"
+msgstr "Mejorar precio"
+
+#. module: monolitic_crm
+#: model:crm.closing.action,name:monolitic_crm.crm_closing_action_improve_price_lead_time
+msgid "Improve price and lead time"
+msgstr "Mejorar precio y plazo de entrega"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__init_category_id
+msgid "Init Category"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__is_assembler
+msgid "Is Assembler"
+msgstr "Hay montador"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__is_competence
+msgid "Is Competence"
+msgstr "Hay competencia"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__is_engineer
+msgid "Is Engineer"
+msgstr "Hay ingeniería"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__is_express
+msgid "Is Express"
+msgstr "OPPN Express"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__won_status
+msgid "Is Won"
+msgstr "Ganado"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner_mass____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead_lost____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_stage____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner____last_update
+#: model:ir.model.fields,field_description:monolitic_crm.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__write_uid
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__write_uid
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__write_uid
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__write_date
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__write_date
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_classification__write_date
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: monolitic_crm
+#: model:crm.closing.action,name:monolitic_crm.crm_closing_action_lead_time
+msgid "Lead time"
+msgstr "Plazo de entrega"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__level_5
+msgid "Level 5"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__level_parents
+msgid "Level Parents"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,help:monolitic_crm.field_crm_lead__partner_id
+msgid ""
+"Linked partner (optional). Usually created when converting the lead. You can"
+" find a partner by its Name, TIN, Email or Internal Reference."
+msgstr ""
+"Partner vinculado (opcional). Usualmente creado al convertir la iniciativa. "
+"Puedes encontrar la compañía por su nombre, identificación fiscal, correo "
+"electrónico o referencia interna."
+
+#. module: monolitic_crm
+#: model:ir.model.fields.selection,name:monolitic_crm.selection__crm_lead__won_status__lost
+msgid "Lost"
+msgstr "Perdido"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead_lost__description_lost
+msgid "Lost Description"
+msgstr "Descripción Perdido"
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.monolitic_crm_form_view
+msgid "Market segmentation"
+msgstr "Segmentación de mercado"
+
+#. module: monolitic_crm
+#: model:crm.closing.action,name:monolitic_crm.crm_closing_action_minimum_amount
+msgid "Minimum amount"
+msgstr "Cantidad mínima"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_crm_closing_action
+msgid "Model for managing closing action for CRM"
+msgstr "Modelo pra gestionar las acciones de cierre en el CRM"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_monolitic_client_classification
+msgid "Monolitic Clasificación Cliente"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_closing_action__name
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: monolitic_crm
+#: model:crm.closing.action,name:monolitic_crm.crm_closing_action_none
+msgid "None"
+msgstr "Ninguna"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__num_required
+msgid "Num Required"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__parent_path
+msgid "Parent Path"
+msgstr "Ruta padre"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_monolitic_client_segmentation__parent_id
+msgid "Parent Segmentation"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields.selection,name:monolitic_crm.selection__crm_lead__won_status__pending
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner__action
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead2opportunity_partner_mass__action
+msgid "Related Customer"
+msgstr "Cliente relacionado"
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.crm_case_form_view_oppor_inherit
+msgid "SET AS STAND BY"
+msgstr "MARCAR COMO STAND BY"
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__team_id
+msgid "Sales Team"
+msgstr "Equipo de ventas"
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.client_segmentation_wizard_view_form
+msgid "Save"
+msgstr "Guardar"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__level_2
+msgid "Sector de mercado"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model,name:monolitic_crm.model_monolitic_client_segmentation
+msgid "Segmentación cliente"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.actions.act_window,name:monolitic_crm.action_monolitic_client_segmentation
+#: model:ir.ui.menu,name:monolitic_crm.menu_action_client_segmentation
+msgid "Segmentación del cliente"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__segmentation_ids
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_users__segmentation_ids
+msgid "Segmentations"
+msgstr "Segmentaciones"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__level_3
+msgid "Segmento de mercado"
+msgstr ""
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.client_segmentation_wizard_view_form
+msgid "Select Category"
+msgstr "Seleccione la categoría para el producto actual."
+
+#. module: monolitic_crm
+#: model:ir.actions.act_window,name:monolitic_crm.client_segmentation_wizard_action
+msgid "Select a Category"
+msgstr "Seleccione la Categoría"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__stage_id
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.crm_case_form_view_oppor_inherit
+msgid "Stand By"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields.selection,name:monolitic_crm.selection__crm_lead__won_status__stand_by
+msgid "Stand by"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__start_date
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__strategic_classification
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__strategic_classification
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_users__strategic_classification
+#: model:ir.model.fields,field_description:monolitic_crm.field_sale_order__strategic_classification
+msgid "Strategic Classification"
+msgstr "Clasificación Estratégica"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__level_4
+msgid "Subsegmento de mercado (nicho)"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__supplier_id
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__supplier_id
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_users__supplier_id
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: monolitic_crm
+#: code:addons/monolitic_crm/wizards/client_segmentation_wizard.py:0
+#, python-format
+msgid "There is not a product select, please click on Edit button again"
+msgstr ""
+
+#. module: monolitic_crm
+#: model_terms:ir.ui.view,arch_db:monolitic_crm.crm_case_form_view_oppor_inherit
+msgid "UNSET AS STAND BY"
+msgstr "DESMARCAR COMO STAND BY"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_client_segmentation_wizard__level_1
+msgid "Unidad de negocio"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_partner__user_id
+#: model:ir.model.fields,field_description:monolitic_crm.field_res_users__user_id
+msgid "User"
+msgstr ""
+
+#. module: monolitic_crm
+#: model:ir.model.fields.selection,name:monolitic_crm.selection__crm_lead__won_status__won
+msgid "Won"
+msgstr "Ganado"
+
+#. module: monolitic_crm
+#: code:addons/monolitic_crm/models/crm_lead.py:0
+#, python-format
+msgid "You can't move the stage if the Lead/Opportunity is on Stand By !"
+msgstr ""
+"No se puede modificar el estado de la Iniciativa/Oportunidad si está en "
+"Stand By !"
+
+#. module: monolitic_crm
+#: code:addons/monolitic_crm/models/client_segmentation.py:0
+#, python-format
+msgid ""
+"You cannot delete this client segmentation if there are clients associated "
+"with it or with its child!"
+msgstr ""
+"No puedes borrar esta segmentación de cliente si tiene clientes asociados a él"
+"o a sus sugmentaciones hijas!"
+
+#. module: monolitic_crm
+#: model:ir.model.fields,field_description:monolitic_crm.field_crm_lead__probability_stand_by
+msgid "probability_stand_by"
+msgstr ""

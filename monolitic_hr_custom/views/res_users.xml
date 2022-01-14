@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="res_users_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.users.inherit.view.form2</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[last()]" position="inside">
+                <page string="Employee Functions">
+                    <group>
+                        <field name="is_delegate" />
+                        <field name="is_commercial" />
+                        <field name="replaces_id" />
+                        <field name="department_id" />
+                        <field name="subordinate_ids" >
+                            <tree>
+                                <field name="id"/>
+                                <field name="name"/>
+                                <field name="login"/>
+                            </tree>
+                        </field>
+                        <field name="replacement_ids" >
+                            <tree>
+                                <field name="id"/>
+                                <field name="name"/>
+                                <field name="login"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

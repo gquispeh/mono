@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- crm.lead inherit kanban view -->
+    <record model="ir.ui.view" id="quick_create_kanban_view">
+        <field name="name">crm.lead.code.kanban</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads" />
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="on_create"></attribute>
+                <attribute name="quick_create_view"></attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- crm.lead inherit form view -->
+    <record id="crm_case_form_view_oppor_inherit" model="ir.ui.view">
+        <field name="name">crm.case.form.view.oppor.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <field name="stage_id" position="attributes">
+                <attribute name="domain">['|', ('hide_express', '=', False), ('hide_express', '!=', is_express)]</attribute>
+            </field>
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="won_status" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//widget[@name='web_ribbon'][1]" position="after">
+                <widget name="web_ribbon" title="Stand By" bg_color="bg-warning" attrs="{'invisible': [('won_status', '!=', 'stand_by')]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='lost_reason']" position="after">
+                <field name="probability_stand_by" invisible="1" />
+                <field name="hide_express" invisible="1" />
+                <field name="description_lost"/>
+                <field name="is_assembler"/>
+                <field name="assembler_id" attrs="{'invisible': [('is_assembler', '=',  False)], 'required': [('is_assembler', '=', True)]}"/>
+                <field name="is_engineer"/>
+                <field name="engineer_id" attrs="{'invisible': [('is_engineer', '=',  False)], 'required': [('is_engineer', '=', True)]}"/>
+                <field name="is_competence"/>
+                <field name="competence_reference" attrs="{'invisible': [('is_competence', '=',  False)]}" />
+                <field name="competence_target" attrs="{'invisible': [('is_competence', '=',  False)]}"/>
+                <field name="competence_maker" attrs="{'invisible': [('is_competence', '=',  False)]}"/>
+                <field name="competence_distributor" attrs="{'invisible': [('is_competence', '=',  False)]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="commercial_user_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', commercial_user_ids)]</attribute>
+                <attribute name="options">{'no_create_edit': True}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="supplier_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='priority']" position="after">
+                <field name="closing_action_id" />
+                <field name="business_option"/>
+            </xpath>
+
+            <xpath expr="//field[@name='date_deadline']" position="attributes">
+                <attribute name="attrs">{'required': [('type', '=', 'opportunity')]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='date_deadline']" position="before">
+                <field name="start_date" readonly="1" force_save="1"/>
+                <field name="date_previous_stage" />
+                <field name="date_next_stage" />
+                <field name="date_previous_comment" />
+            </xpath>
+            <xpath expr="//button[@name='action_set_won_rainbowman']" position="after">
+                <button name="action_set_stand_by" string="SET AS STAND BY" type="object" class="oe_highlight" attrs="{'invisible': [('won_status', 'in', ('won', 'stand_by'))]}"/>
+                <button name="action_unset_stand_by" string="UNSET AS STAND BY" type="object" class="oe_highlight" attrs="{'invisible': [('won_status', '!=', 'stand_by')]}"/>
+            </xpath>
+            <xpath expr="//group[@name='opportunity_partner']//field[@name='partner_id']" position="before">
+                <field name="is_express"/>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_title']/h2/div[2]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']/h2/div[3]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']/h2/div[1]/div/span[1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']/h2/div[1]/div/span[2]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='lead_partner']//field[@name='partner_id']" position="attributes">
+                <attribute name="string">Contact</attribute>
+                <attribute name="domain">[]</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='opportunity_partner']//field[@name='partner_id']" position="attributes">
+                <attribute name="string">Contact</attribute>
+                <attribute name="domain">[]</attribute>
+                <attribute name="attrs">{'required': [('type', '=', 'opportunity')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- crm.lead tree view inherit form view -->
+    <record id="crm_lead_case_tree" model="ir.ui.view">
+        <field name="name">crm.lead.inherit.view.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="string">Contact</attribute>
+            </xpath>
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <field name="won_status"/>
+            </xpath>
+            <xpath expr="//field[@name='stage_id']" position="after">
+                <field name="date_next_stage"/>
+            </xpath>
+            <xpath expr="//field[@name='won_status']" position="before">
+                <field name="date_deadline" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- crm.lead inherit form view -->
+    <record id="crm_case_from_view_leads_inherit" model="ir.ui.view">
+        <field name="name">crm.case.from.view.leads.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <!-- <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="string">Contact</attribute>
+                <attribute name="context">
+                    {
+                    'default_strategic_classification': strategic_classification,
+                    'default_hr_department_id': hr_department_id,
+                    'default_supplier_id': supplier_id,
+                    'default_business_option': business_option,
+                    'default_name': contact_name,
+                    'default_street': street,
+                    'default_street2': street2,
+                    'default_city': city,
+                    'default_state_id': state_id,
+                    'default_zip': zip,
+                    'default_country_id': country_id,
+                    'default_function': function,
+                    'default_phone': phone,
+                    'default_mobile': mobile,
+                    'default_email': email_from,
+                    'default_user_id': user_id,
+                    'default_team_id': team_id,
+                    'default_website': website,
+                    'default_title': title,
+                    'default_fuction': function,
+                    'show_vat': True
+                    }
+                </attribute>
+                <attribute name="domain">[]</attribute>
+            </xpath> -->
+
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="strategic_classification"/>
+                <field name="hr_department_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- crm.lead sale inherit form view -->
+    <record id="sale_crm_opp_inherit_view" model="ir.ui.view">
+        <field name="name">sale.crm.opp.inherit.view</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[1]" position="attributes">
+                <attribute name="context">{
+                    'search_default_partner_id': partner_id,
+                    'default_partner_id': partner_id,
+                    'default_team_id': team_id,
+                    'default_campaign_id': campaign_id,
+                    'default_medium_id': medium_id,
+                    'default_origin': name,
+                    'default_source_id': source_id,
+                    }
+                </attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="crm.crm_lead_opportunities">
+        <field name="context">{'default_type': 'opportunity', 'default_user_id': uid}</field>
+    </record>
+
+</odoo>
